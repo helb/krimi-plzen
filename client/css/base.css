@@ -43,8 +43,12 @@ section#sidebar{
 	background: #fff;
 	float: right;
 	width: 25%;
+	margin-bottom: 2rem;
 	/*padding: 1rem;*/
 	/*border-left: 1px solid #ddd;*/
+	-webkit-box-shadow: 0px 0px 2rem 0px rgba(0, 0, 0, 0.1);
+-moz-box-shadow:    0px 0px 2rem 0px rgba(0, 0, 0, 0.1);
+box-shadow:         0px 0px 2rem 0px rgba(0, 0, 0, 0.1);
 }
 
 section#sidebar h2{
