@@ -4,7 +4,7 @@ $(window).scroll(function () {
     if ($(window).scrollTop() == $(document).height() - $(window).height()) {
       if (!Session.get("currentLimit")) {
         if (document.getElementById("new-articles")) {
-          Session.set("currentLimit", 5);
+          Session.set("currentLimit", 10);
         } else {
           Session.set("currentLimit", 15);
         }
