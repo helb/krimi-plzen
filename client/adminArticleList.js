@@ -10,17 +10,17 @@ Template.adminArticleList.helpers({
 Template.adminArticleList.events({
   'click button.hide': function (event) {
     event.preventDefault();
-    article = event.currentTarget.parentNode.parentNode.dataset.article;
+    article_id = event.currentTarget.parentNode.parentNode.dataset.article;
     if(event.currentTarget.classList.contains("true")){
-      Articles.update({_id: article}, {$set: {is_published: false}});
+      Articles.update({_id: article_id}, {$set: {is_published: false}});
     }else{
-      Articles.update({_id: article}, {$set: {is_published: true}});
+      Articles.update({_id: article_id}, {$set: {is_published: true}});
     }
   },
   'click button.remove': function (event) {
     event.preventDefault();
-    article = event.currentTarget.parentNode.parentNode.dataset.article;
-    Articles.remove({_id: article});
+    article_id = event.currentTarget.parentNode.parentNode.dataset.article;
+    Articles.remove({_id: article_id});
   },
   'click td.category': function (event) {
     article_id =  event.currentTarget.parentNode.dataset.article;
@@ -32,5 +32,10 @@ Template.adminArticleList.events({
     } else {
       Articles.update({_id: article_id}, {$set: {category: null}});
     }
+  },
+  'click input.recommend': function (event) {
+    article_id =  event.currentTarget.parentNode.parentNode.dataset.article;
+    // console.log(!event.currentTarget.checked);
+    Articles.update({_id: article_id}, {$set: {is_recommended: event.currentTarget.checked}});
   },
 })

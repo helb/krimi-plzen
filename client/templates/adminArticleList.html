@@ -6,6 +6,7 @@
 		<td class="category {{category}}"></td>
 		<td class="photo"><a href="{{pathFor 'articleShow'}}"><img src="{{#if photo_url}}{{photo_url}}{{else}}https://scontent-a-fra.xx.fbcdn.net/hphotos-xpf1/t1.0-9/10404172_261576800702751_5525022015083078099_n.jpg{{/if}}" class="grow"></a></td>
 		<td class="title">{{title}}</td>
+		<td class="buttons"><input type="checkbox" class="recommend" title="Doporučený" checked="{{#if is_recommended}}true{{/if}}"></td>
 		<td class="timestamp">{{day_name}} {{date}}, {{time}}</td>
 		{{!-- <td class="intro">{{intro}}</td> --}}
 		<td class="buttons"><button class="hide {{is_published}}">{{hide_button_text is_published}}</button></td>

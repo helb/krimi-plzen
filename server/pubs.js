@@ -59,6 +59,23 @@ Meteor.publish("personArticles", function () {
   });
 });
 
+Meteor.publish("recommendedArticles", function () {
+  return Articles.find({
+    'is_recommended': true,
+    'is_published':  true
+  }, {
+    sort: {
+      timestamp: -1
+    },
+    fields:  {
+      text: 0,
+      photoset:  0,
+      photoset_placement: 0,
+      youtube_url:  0
+    }
+  });
+});
+
 Meteor.publish("adminArticleList", function (limit) {
   return Articles.find({}, {
     sort: {
