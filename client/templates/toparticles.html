@@ -1,0 +1,12 @@
+<template name="toparticles">
+<section id="top-articles">
+<h2>Doporučujeme</h2>
+{{#each articles}}
+	<section class="article-slug">
+		<a href="{{pathFor 'articleShow'}}">
+		<img src="http://www.policie.cz/SCRIPT/ViewImage.aspx?id=578587&amp;docname=4">
+		<h1>{{title}}</h1></a>
+	</section>
+{{/each}}
+</section>
+</template>

@@ -1,0 +1,29 @@
+section#partners img{
+	width: 10rem;
+}
+
+section#partners img[src*="leiko"]{
+	width: 12rem;
+}
+
+section#partners img[src*="los"]{
+	width: 7rem;
+}
+
+section#partners img[src*="denik"]{
+	width: 100px;
+}
+
+section#partners article.partner{
+	text-align: center;
+	margin: 1rem 0 1.5rem 0;
+}
+
+section#partners a{
+	color:#000;
+	text-decoration: none;
+}
+
+section#partners{
+	margin-top: 1rem;
+}

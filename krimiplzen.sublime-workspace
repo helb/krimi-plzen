@@ -1,0 +1,1073 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"partner",
+				"partners"
+			],
+			[
+				"tem",
+				"template"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"listy",
+				"list-style-position"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"tex",
+				"text-transform"
+			],
+			[
+				"max-",
+				"max-width"
+			],
+			[
+				"get",
+				"getElementById(\"rooms"
+			],
+			[
+				"in",
+				"inherit"
+			],
+			[
+				"strin",
+				"stringToColour"
+			],
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"table-c",
+				"table-cell"
+			],
+			[
+				"tab",
+				"table-row"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"r",
+				"right"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"va",
+				"value"
+			],
+			[
+				"chatme",
+				"chatmessage"
+			],
+			[
+				"us",
+				"user_id"
+			],
+			[
+				"time",
+				"timestamp"
+			],
+			[
+				"Me",
+				"Messages"
+			],
+			[
+				"chat",
+				"chatMessages"
+			],
+			[
+				"room",
+				"roomchosen"
+			],
+			[
+				"ac",
+				"activeCategories"
+			],
+			[
+				"loa",
+				"loadHelpers"
+			],
+			[
+				"fi",
+				"find	Meteor: this.find(selector)"
+			],
+			[
+				"frm",
+				"frm_promoprice"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"h",
+				"header	Tag"
+			],
+			[
+				"borde",
+				"border"
+			],
+			[
+				"list-s",
+				"list-style"
+			],
+			[
+				"span",
+				"spacing"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"hea",
+				"header	Tag"
+			],
+			[
+				"getE",
+				"getElementById(\"frm_onlymine"
+			],
+			[
+				"sele",
+				"select"
+			],
+			[
+				"opt",
+				"option	Tag"
+			],
+			[
+				"add",
+				"addDays"
+			],
+			[
+				"s",
+				"start"
+			],
+			[
+				"allo",
+				"allowed_user: "
+			],
+			[
+				"ca",
+				"categories"
+			],
+			[
+				"con",
+				"condiment_included: "
+			],
+			[
+				"arc",
+				"archived_on"
+			],
+			[
+				"Use",
+				"userId"
+			],
+			[
+				"order",
+				"orders_dep"
+			],
+			[
+				"on",
+				"onlymine"
+			],
+			[
+				"ord",
+				"orders"
+			],
+			[
+				"che",
+				"checked"
+			],
+			[
+				"check",
+				"checked"
+			],
+			[
+				"chec",
+				"checkbox"
+			],
+			[
+				"pri",
+				"price"
+			],
+			[
+				"ta",
+				"table_id"
+			],
+			[
+				"cond",
+				"condiment_id"
+			],
+			[
+				"side",
+				"side_quantity"
+			],
+			[
+				"meal",
+				"meal_id"
+			],
+			[
+				"or",
+				"order"
+			],
+			[
+				"a",
+				"absolute"
+			],
+			[
+				"class",
+				"classList"
+			],
+			[
+				"pare",
+				"parentNode"
+			],
+			[
+				"orde",
+				"orders"
+			],
+			[
+				"def",
+				"default"
+			],
+			[
+				"butt",
+				"button	Tag"
+			],
+			[
+				"lett",
+				"letter-spacing"
+			],
+			[
+				"min-",
+				"min-width"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"help",
+				"helpers"
+			],
+			[
+				"frm_s",
+				"frm_side_quantity"
+			],
+			[
+				"line",
+				"line-height"
+			],
+			[
+				"getElementByE",
+				"getElementsByTagName"
+			],
+			[
+				"cur",
+				"currentTarget"
+			],
+			[
+				"l",
+				"left"
+			],
+			[
+				"au",
+				"author_id"
+			],
+			[
+				"pr",
+				"price"
+			],
+			[
+				"data",
+				"dataset"
+			],
+			[
+				"text-",
+				"text-align"
+			],
+			[
+				"cate",
+				"category"
+			],
+			[
+				"ho",
+				"hospoda"
+			],
+			[
+				"price",
+				"priceform"
+			],
+			[
+				"default",
+				"default_variant"
+			],
+			[
+				"po",
+				"pointer"
+			],
+			[
+				"out",
+				"outline"
+			],
+			[
+				"rem",
+				"remove(\"hidden"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"cla",
+				"classList"
+			],
+			[
+				"cu",
+				"currentTarget"
+			],
+			[
+				"vari",
+				"variant"
+			],
+			[
+				"varit",
+				"variants"
+			],
+			[
+				"var",
+				"variants"
+			],
+			[
+				"variant",
+				"variant_of"
+			],
+			[
+				"par",
+				"parent"
+			],
+			[
+				"varia",
+				"variant_of"
+			],
+			[
+				"open",
+				"openchat"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"mart",
+				"margin-bottom"
+			],
+			[
+				"v",
+				"vertical"
+			],
+			[
+				"nu",
+				"null"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"ov",
+				"overflow"
+			],
+			[
+				"d",
+				"default"
+			],
+			[
+				"sid",
+				"side_id"
+			],
+			[
+				"fin",
+				"findOne	Meteor: collection.findOne(selector, [options])"
+			],
+			[
+				"crea",
+				"created"
+			],
+			[
+				"cre",
+				"created"
+			],
+			[
+				"i",
+				"italic"
+			],
+			[
+				"tr",
+				"transparent"
+			],
+			[
+				"bl",
+				"block"
+			],
+			[
+				"n",
+				"none"
+			],
+			[
+				"flo",
+				"float:left"
+			],
+			[
+				"me",
+				"meal_id"
+			],
+			[
+				"cr",
+				"created"
+			],
+			[
+				"se",
+				"section	Tag"
+			],
+			[
+				"C",
+				"Categories"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"le",
+				"left"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"border-r",
+				"border-right"
+			],
+			[
+				"bacl",
+				"background-color"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"Mno",
+				"Množství"
+			],
+			[
+				"Mn",
+				"MnozstviInline"
+			],
+			[
+				"cas",
+				"cas_objednani"
+			],
+			[
+				"Fo",
+				"ForeignKey"
+			],
+			[
+				"Pod",
+				"PodnikAdmin"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "lib/routes.js",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/css/nav.css",
+			"settings":
+			{
+				"buffer_size": 2160,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 71.0,
+		"selected_items":
+		[
+			[
+				"updat",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"comm",
+				"Git: Commit"
+			],
+			[
+				"git add",
+				"Git: Add Current File"
+			],
+			[
+				"git sta",
+				"Git: Status"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"update",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"upd",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"isnta",
+				"Package Control: Install Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 536.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/helb/weby/mrt/krimiplzen/lib/routes.js",
+		"/home/helb/weby/mrt/krimiplzen/client/css/header.css",
+		"/home/helb/weby/mrt/krimiplzen/client/css/articles.css",
+		"/home/helb/weby/mrt/krimiplzen/client/css/anim.css",
+		"/home/helb/weby/mrt/krimiplzen/client/css/base.css",
+		"/home/helb/weby/mrt/krimiplzen/client/templates/header.html",
+		"/home/helb/weby/mrt/krimiplzen/client/templates/login.html",
+		"/home/helb/weby/mrt/krimiplzen/client/css/footer.css",
+		"/home/helb/weby/mrt/krimiplzen/client/css/login.css",
+		"/home/helb/weby/mrt/krimiplzen/client/client.js",
+		"/home/helb/weby/mrt/krimiplzen/lib/models.js",
+		"/home/helb/weby/mrt/krimiplzen/client/client.html",
+		"/home/helb/weby/mrt/krimiplzen/client/templates/footer.html",
+		"/home/helb/weby/mrt/krimiplzen/client/css/partners.css",
+		"/home/helb/weby/mrt/krimiplzen/client/templates/partners.html",
+		"/home/helb/weby/mrt/krimiplzen/client/templates/newarticles.html",
+		"/home/helb/weby/mrt/krimiplzen/client/templates/nav.html",
+		"/home/helb/weby/mrt/krimiplzen/client/css/nav.css",
+		"/home/helb/weby/mrt/hospoda/client/css/login.css",
+		"/home/helb/weby/mrt/krimiplzen/lib/helpers.js",
+		"/home/helb/weby/mrt/hospoda/client/css/base.css",
+		"/home/helb/weby/mrt/hospoda/client/client.js",
+		"/home/helb/weby/mrt/hospoda/client/css/chat.css",
+		"/home/helb/weby/mrt/hospoda/server/server.js",
+		"/home/helb/weby/mrt/hospoda/client/client.html",
+		"/home/helb/weby/mrt/hospoda/lib/routes.js",
+		"/home/helb/weby/mrt/hospoda/lib/models.js",
+		"/home/helb/weby/mrt/hospoda/client/css/meals.css",
+		"/home/helb/tmp/mrt/hospoda/client/css/base.css",
+		"/home/helb/tmp/mrt/hospoda/client/css/scrollbar.css",
+		"/home/helb/tmp/mrt/hospoda/client/css/inventory.css",
+		"/home/helb/tmp/mrt/hospoda/client/css/chat.css",
+		"/home/helb/tmp/mrt/hospoda/client/css/orders.css",
+		"/home/helb/tmp/mrt/hospoda/client/simplechat.js",
+		"/home/helb/tmp/mrt/hospoda/server/server.js",
+		"/home/helb/tmp/mrt/hospoda/client/css/meals.css",
+		"/home/helb/tmp/mrt/hospoda/client/css/zzzfixes.css",
+		"/home/helb/tmp/mrt/hospoda/client/client.js",
+		"/home/helb/tmp/mrt/hospoda/client/client.html",
+		"/home/helb/tmp/mrt/hospoda/client/css/zzzchat.css",
+		"/home/helb/tmp/mrt/hospoda/client/views/includes/loading.html",
+		"/home/helb/tmp/mrt/packages/simplechat/client/simplechat.html",
+		"/home/helb/tmp/mrt/hospoda/smart.json",
+		"/home/helb/tmp/mrt/hospoda/lib/models.js",
+		"/home/helb/tmp/mrt/packages/simplechat/lib/models.js",
+		"/home/helb/tmp/mrt/packages/simplechat/server/publications.js",
+		"/home/helb/tmp/mrt/packages/simplechat/client/simplechat.css",
+		"/home/helb/tmp/mrt/packages/simplechat/smart.json",
+		"/home/helb/tmp/mrt/hospoda/client/helpers.js",
+		"/home/helb/tmp/mrt/hospoda/lib/routes.js",
+		"/home/helb/tmp/mrt/hospoda/packages/chatworks/.build/os/packages/chatworks.js",
+		"/home/helb/tmp/mrt/hospoda/server/kadira.js",
+		"/home/helb/tmp/mrt/hospoda/lib/helpers.js",
+		"/home/helb/tmp/mrt/hospoda/client/subscriptions.js",
+		"/home/helb/tmp/mrt/hospoda/packages/chatworks/client/lib/subscriptions.js",
+		"/home/helb/tmp/mrt/hospoda/packages/chatworks/client/lib/defaults.js",
+		"/home/helb/tmp/mrt/hospoda/client/account.js",
+		"/home/helb/tmp/mrt/hospoda/packages/chatworks/server/publications.js",
+		"/home/helb/tmp/hospoda/models.js",
+		"/home/helb/tmp/mrt/hospoda/client/css/report.css",
+		"/home/helb/tmp/helb.cz/screen.css",
+		"/home/helb/tmp/mrt/hospoda/client/css/tables.css",
+		"/home/helb/tmp/mrt/hospoda/client/views/loading.html",
+		"/home/helb/tmp/mrt/hospoda/client/views/kuchyne.html",
+		"/home/helb/tmp/mrt/hospoda/client/views/includes/orders.html",
+		"/home/helb/tmp/mrt/hospoda/client/views/includes/tables.html",
+		"/home/helb/tmp/mrt/hospoda/client/views/includes/meals.html",
+		"/home/helb/tmp/mrt/hospoda/client/views/includes/cancel.html",
+		"/home/helb/tmp/mrt/hospoda/client/views/report.html",
+		"/home/helb/tmp/mrt/hospoda/models.js",
+		"/home/helb/tmp/mrt/hospoda/routes.js",
+		"/home/helb/.config/sublime-text-3/Packages/Git/Git.sublime-settings",
+		"/home/helb/tmp/mrt/hospoda/changelog.txt",
+		"/home/helb/tmp/helb.cz/index.html",
+		"/home/helb/tmp/html5-boilerplate-4.3.0/index.html",
+		"/home/helb/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/helb/tmp/mrt/hospoda/client/css/sum.css",
+		"/home/helb/tmp/mrt/hospoda/client/css/acwfixes.css",
+		"/home/helb/tmp/mrt/hospoda/client/css/cancel.css",
+		"/home/helb/tmp/tyna.jogurt.txt",
+		"/home/helb/.config/luakit/binds.lua",
+		"/home/helb/tmp/mrt/hospoda/client/css/login.css",
+		"/home/helb/tmp/mrt/hospoda/public/svg/saloon-koncert.svg",
+		"/home/helb/tmp/mrt/hospoda/models/models.js",
+		"/home/helb/tmp/mrt/hospoda/public/svg/saloon-koncert2.svg",
+		"/home/helb/tmp/mrt/hospoda/client/css/tables.svg",
+		"/home/helb/tmp/mrt/hospoda/client/scss/meals.scss",
+		"/home/helb/tmp/mrt/hospoda/client/scss/orders.scss",
+		"/home/helb/tmp/mrt/hospoda/client/scss/chat.scss",
+		"/home/helb/tmp/mrt/hospoda/client/scss/bg.css",
+		"/home/helb/tmp/mrt/hospoda/client/scss/_scrollbar.scss",
+		"/home/helb/tmp/mrt/hospoda/client/scss/_fonts.scss",
+		"/home/helb/tmp/mrt/hospoda/client/scss/login.scss",
+		"/home/helb/tmp/mrt/hospoda/client/scss/_reset.scss",
+		"/home/helb/tmp/mrt/hospoda/client/_reset.scss",
+		"/home/helb/tmp/mrt/hospoda/client/_colors.scss",
+		"/home/helb/tmp/mrt/hospoda/client/chat.css",
+		"/home/helb/tmp/mrt/hospoda/client/client.css",
+		"/home/helb/tmp/mrt/pets/pets.html",
+		"/home/helb/tmp/mrt/chatapp/models.js",
+		"/home/helb/tmp/mrt/chatapp/client/client.js",
+		"/home/helb/tmp/mrt/chatapp/client/client.css",
+		"/home/helb/tmp/mrt/chatapp/client/client.html",
+		"/home/helb/weby/hospoda/hospoda/hospoda/settings.py",
+		"/home/helb/weby/hospoda/hospoda/hospoda/urls.py",
+		"/home/helb/weby/hospoda/hospoda/kuchyne/admin.py",
+		"/home/helb/weby/hospoda/hospoda/kuchyne/models.py",
+		"/home/helb/weby/hospoda/hospoda/kuchyne/urls.py",
+		"/home/helb/tmp/cv/r/index.html",
+		"/home/helb/tmp/cv/r/styles.css",
+		"/home/helb/tmp/cv/index.html"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 102.0,
+		"where_history":
+		[
+			"/home/helb/tmp/mrt/hospoda/",
+			"/home/helb/tmp/mrt/hospoda/client",
+			"/home/helb/tmp/mrt/hospoda/packages/chatworks",
+			"/home/helb/tmp/mrt/hospoda/",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"5078b7",
+			"created",
+			"now",
+			"pagehead",
+			"login",
+			"rendered",
+			"chat",
+			"chatw",
+			"chat",
+			"chatwork",
+			"chat",
+			"autoscroll",
+			"byclass",
+			"report",
+			"minu",
+			"handle",
+			"user",
+			"username",
+			"console.log",
+			"table",
+			"chat",
+			"report",
+			"Orders",
+			"rendered",
+			"order.",
+			"function",
+			"function(order",
+			"virtual",
+			"Collection2",
+			"price",
+			"}\n",
+			"tables",
+			"aawSMm2FSMrAjhsWb",
+			"promo",
+			"promoactive",
+			"active",
+			"report",
+			"button",
+			"frn",
+			"has_button",
+			"5em",
+			"}\n",
+			"#",
+			"end",
+			"console.log",
+			"reset",
+			"console.log",
+			"1rem",
+			"subsc",
+			"tr",
+			"subsc",
+			"room_id",
+			"\"orders\"",
+			"Collection",
+			"only",
+			"variants_dep",
+			"order_id",
+			"Orders.findOne({_id: order_id})",
+			"kuchyne",
+			"sans",
+			"tablemap",
+			"table",
+			"bytag",
+			"byelement",
+			"transit",
+			"trans",
+			"depend",
+			"cancel-side",
+			"cancel",
+			"weight",
+			"#888",
+			"issued",
+			"cancel",
+			"chosen",
+			"half",
+			"hidden",
+			"hover h3",
+			":hover",
+			"opene",
+			"publish",
+			"353535",
+			"price",
+			"author",
+			"side",
+			"section#orders ul ",
+			"88%",
+			"table",
+			"side",
+			"condiment",
+			"ul.tables",
+			"sides",
+			"meals",
+			"4rem",
+			"accepted",
+			"created",
+			"span",
+			"info",
+			"3rem",
+			"never clicked the button",
+			"span.price",
+			"cooked",
+			"cancelled",
+			"size",
+			"300",
+			"sans",
+			"messages",
+			"jednotka",
+			"Kategorie",
+			"priloha",
+			"Podnik"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"2f8fa5",
+			"timestamp",
+			"main-header",
+			"this.",
+			"function(",
+			"Collection",
+			"8hNwA49epxX2i2hgG",
+			"\"",
+			"tr.order",
+			"Collection2",
+			"order._id",
+			"order",
+			"cancel-sides",
+			"#aaa",
+			"meal",
+			"section#orders ul.orders ",
+			"condiment",
+			"table",
+			"ul.rooms",
+			"condiments",
+			"variants",
+			"2rem",
+			"issued",
+			"cooked",
+			"accepted",
+			"4rem",
+			"div.info",
+			"cooking",
+			"cooked",
+			"Meals",
+			"Skupina",
+			"Objednavka",
+			"Mnozstvi",
+			"Jidlo",
+			"Surovina",
+			"Kategorie",
+			"Stul",
+			"Mistnost"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "lib/routes.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "client/css/nav.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2160,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 151.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git-commit":
+	{
+		"height": 104.0
+	},
+	"project": "krimiplzen.sublime-project",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 177.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

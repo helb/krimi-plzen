@@ -1,0 +1,34 @@
+div#photos a{
+	margin: 0;
+	padding: 0;
+}
+
+div#photos img{
+	margin: 0 0.25rem 0.2rem;
+	width: 150px;
+/*	border-radius: 50%;
+ -webkit-border-radius: 50%;
+ -moz-border-radius: 50%;*/
+ /*border: 0.1rem solid #333;*/
+ opacity: 0.85;
+}
+
+div#photos img:hover{
+	opacity: 1;
+	/*border-color: #0065a4;*/
+	-webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+-moz-box-shadow:    0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+box-shadow:         0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+div#photos{
+	/*text-align: center;*/
+	margin: 1rem 0 1rem 0;
+	padding: 0.5rem;
+	/*background-color: #eee;*/
+	/*border: 1px solid #eee;*/
+}
+
+span.lb-number{
+	opacity: 0;
+}

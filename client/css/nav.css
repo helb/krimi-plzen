@@ -1,0 +1,53 @@
+nav#main-nav{
+	display: block;
+	width: 100%;
+	height: 2rem;
+	margin: 2rem 0 0 0;
+}
+
+nav#main-nav ul{
+	list-style: none;
+	display: block;
+width: 100%;
+}
+
+nav#main-nav ul li{
+	float: left;
+	width: 20%;
+	text-align: center;
+}
+
+nav#main-nav ul li a{
+	margin: 0;
+	width: 100%;
+	display: block;
+	height: 2rem;
+	padding-top: 0.25rem;
+	text-decoration: none;
+	margin-top: -1rem;
+	background-color: #1E5169;
+	color: #fff;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 1.25em;
+}
+
+nav#main-nav ul li a:hover{
+background: #1e5169; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFlNTE2OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzUwNzhiNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijg2JSIgc3RvcC1jb2xvcj0iIzFlNTE2OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+background: -moz-linear-gradient(left, #1e5169 0%, #2f8fa5 50%, #1e5169 86%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#1e5169), color-stop(50%,#2f8fa5), color-stop(86%,#1e5169)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left, #1e5169 0%,#2f8fa5 50%,#1e5169 86%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left, #1e5169 0%,#2f8fa5 50%,#1e5169 86%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left, #1e5169 0%,#2f8fa5 50%,#1e5169 86%); /* IE10+ */
+background: linear-gradient(to right, #1e5169 0%,#2f8fa5 50%,#1e5169 86%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5169', endColorstr='#1e5169',GradientType=1 ); /* IE6-8 */
+}
+
+nav#main-nav ul li a.active{
+	background: #24607d;
+}
+
+nav.admin ul li{
+	min-width: 50%;
+}

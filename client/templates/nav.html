@@ -1,0 +1,20 @@
+<template name="nav">
+<nav id="main-nav">
+<ul>
+<li><a class="grow" href="{{pathFor 'newArticles'}}">Hlavní</a></li>
+<li><a class="grow" href="{{pathFor 'archiv'}}">Archiv</a></li>
+<li><a class="grow" href="{{pathFor 'weaponArticles'}}">Zbraně</a></li>
+<li><a class="grow" href="{{pathFor 'redakce'}}">Redakce</a></li>
+<li><a class="grow" href="{{pathFor 'kontakt'}}">Kontakt</a></li>
+</ul>
+</nav>
+</template>
+
+<template name="adminNav">
+<nav id="main-nav" class="admin">
+<ul>
+<li><a class="grow" href="{{pathFor 'adminArticleList'}}">Editace článků</a></li>
+<li><a class="grow" href="{{pathFor 'adminArticleAdd'}}">Nový článek</a></li>
+</ul>
+</nav>
+</template>

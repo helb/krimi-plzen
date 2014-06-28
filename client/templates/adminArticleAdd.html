@@ -1,0 +1,25 @@
+<template name="adminArticleAdd">
+<section id="admin-article-add">
+<h1>Nový článek</h1>
+<form>
+<input type="text" id="form-title" placeholder="Název" required />
+<textarea id="form-intro" placeholder="Úvodní text" required></textarea>
+<div id="editor">
+</div>
+<button id="form-flickr-reload">⟲</button>
+<select id="form-set"></select>
+<select id="form-set-placement" disabled>
+<option value="1" label="Fotky pod článkem"></option>
+<option value="2" label="Fotky mezi úvodem a textem"></option>
+</select>
+<input type="text" id="form-youtube" placeholder="Adresa Youtube videa" />
+<select id="form-category">
+	<option>Články</option>
+	<option value="z">Zbraně</option>
+	<option value="o">Hledané osoby</option>
+</select>
+<span class="hidden" id="form-save-success">✓ Uloženo</span>
+<button id="form-save">Uložit</button>
+</form>
+</section>
+</template>
