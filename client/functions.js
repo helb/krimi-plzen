@@ -15,7 +15,7 @@ titleToSlug = function (title) {
   return tx.trim().toLowerCase().replace(/\W+/g, '-').replace(/-$/, '').replace(/^-/, '');
 }
 
-function cleanHTML(input) {
+cleanHTML = function (input) {
   // 1. remove line breaks / Mso classes
   var stringStripper = /(\n|\r| class=(")?Mso[a-zA-Z]+(")?)/g;
   var output = input.replace(stringStripper, ' ');
@@ -40,7 +40,7 @@ function cleanHTML(input) {
   return output;
 }
 
-function getFlickrSets() {
+getFlickrSets = function () {
   $.ajax({
     url: (window.location.protocol === 'https:' ?
         'https://secure' : 'https://api') +
@@ -70,7 +70,7 @@ function getFlickrSets() {
   });
 }
 
-function getIdFromYoutube(url) {
+getIdFromYoutube = function(url) {
   var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
   var match = url.match(regExp);
   return match[2];
