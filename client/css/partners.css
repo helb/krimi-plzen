@@ -2,7 +2,11 @@ section#partners img{
 	width: 10rem;
 }
 
-section#partners img[src*="leiko"]{
+section#sponsors img{
+	width: 10rem;
+}
+
+section#partners img[src*="leiko"] {
 	width: 12rem;
 }
 
@@ -14,16 +18,12 @@ section#partners img[src*="denik"]{
 	width: 100px;
 }
 
-section#partners article.partner{
+section#partners article.partner, section#sponsors article.partner{
 	text-align: center;
 	margin: 1rem 0 1.5rem 0;
 }
 
-section#partners a{
+section#partners a, section#sponsors a{
 	color:#000;
 	text-decoration: none;
-}
-
-section#partners{
-	margin-top: 1rem;
 }
