@@ -1,0 +1,20 @@
+section#missing-persons{
+	/*background: #1e5169;*/
+	background: #0065a4;
+	color: #fff;
+}
+
+section#missing-persons *{
+	color: #fff;
+}
+
+section#missing-persons h2{
+	font-weight: bold;
+	color: #fff;
+}
+
+
+section#missing-persons section.article-slug{
+	border: none;
+	background: transparent;
+}

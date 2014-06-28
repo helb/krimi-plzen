@@ -217,6 +217,7 @@ section#sidebar section.article-slug p.timestamp{
 }
 
 
-section#missing-persons{
-	margin: 0 0 2rem 0;
+section#sidebar section{
+	/*margin-top: 1rem;*/
+	padding: 1rem;
 }

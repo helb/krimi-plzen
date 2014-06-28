@@ -122,3 +122,7 @@ table td.buttons button{
 table tr:not(.publishedtrue){
 	opacity: 0.35;
 }
+
+table tr td input.recommend{
+margin: 0 0.5rem 0 0.5rem;
+}
