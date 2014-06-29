@@ -25,12 +25,12 @@ Template.adminArticleList.events({
   'click td.category': function (event) {
     article_id =  event.currentTarget.parentNode.dataset.article;
     current_category = Articles.findOne({_id: article_id}).category;
-    if(current_category == null){
-      Articles.update({_id: article_id}, {$set: {category: "z"}});
+    if(current_category == "o"){
+      Articles.update({_id: article_id}, {$set: {category: null}});
     }else if (current_category == "z"){
       Articles.update({_id: article_id}, {$set: {category: "o"}});
     } else {
-      Articles.update({_id: article_id}, {$set: {category: null}});
+      Articles.update({_id: article_id}, {$set: {category: "z"}});
     }
   },
   'click input.recommend': function (event) {

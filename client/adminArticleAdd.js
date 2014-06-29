@@ -27,7 +27,11 @@ Template.adminArticleAdd.events({
     photoset = setselect.value;
     photo_url = setselect.options[setselect.selectedIndex].dataset.photo;
     photoset_placement = document.getElementById("form-set-placement").value;
-    category = document.getElementById("form-category").value;
+    if(document.getElementById("form-category").value.length > 0){
+      category = document.getElementById("form-category").value;
+    } else {
+      category = null;
+    }
     if (document.getElementById("form-youtube").value) {
       youtube_url  = getIdFromYoutube(document.getElementById("form-youtube").value);
     } else {
