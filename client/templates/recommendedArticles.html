@@ -1,5 +1,5 @@
 <template name="recommendedArticles">
-<section id="recommended-articles">
+<section id="recommended-articles" class="{{#if thereAreRecommendedArticles}}visible{{/if}}">
 {{#if thereAreRecommendedArticles}}<h2>Doporučené články</h2>{{/if}}
 {{#each articles}}
 	<section class="article-slug recommended">

@@ -1,5 +1,5 @@
 <template name="missingPersons">
-<section id="missing-persons">
+<section id="missing-persons" class="{{#if thereArePersons}}visible{{/if}}">
 {{#if thereArePersons}}<h2>Pátrání po osobách</h2>{{/if}}
 {{#each persons}}
 	<section class="article-slug person">

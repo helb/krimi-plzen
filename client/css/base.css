@@ -34,7 +34,6 @@ section#content{
 	width: 75%;
 	padding: 1rem 2rem 0 2rem;
 	/*border: 1px solid red;*/
-	min-height: 100rem;
 }
 
 section#page.admin section#content{

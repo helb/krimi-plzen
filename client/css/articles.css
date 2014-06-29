@@ -221,3 +221,11 @@ section#sidebar section{
 	/*margin-top: 1rem;*/
 	padding: 1rem;
 }
+
+section#recommended-articles{
+	display: none;
+}
+
+section#recommended-articles.visible{
+	display: block;
+}
