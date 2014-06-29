@@ -72,9 +72,12 @@ p.timestamp{
 
 article.article{
 	margin-bottom: 2rem;
+		line-height: 1.75em;
 }
 
 article.article h1{
+	width: 95%;
+	margin-top: -0.5rem;
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 3.5em;
 	line-height: 3.5rem;
@@ -91,7 +94,19 @@ article.article p.timestamp{
 
 
 article.article p{
-	line-height: 1.75em;
+	width: 95%;
+
+ -ms-word-break: break-all;
+     word-break: break-all;
+
+     /* Non standard for webkit */
+     word-break: break-word;
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto;
+        text-align: justify;
 }
 
 article.article p.intro{
@@ -125,23 +140,26 @@ article.article h3, div#editor h3{
 }
 
 article.article ul, div#editor ul{
+	width: 95%;
 	list-style-position: inside;
 	list-style-type: square;
 }
 
 article.article ol, div#editor ol{
+	width: 95%;
 	list-style-position: inside;
 }
 
 article.article blockquote, div#editor blockquote{
-		font-size: 1.5rem;
+	width: 95%;
+	font-size: 1.5rem;
 	font-weight: 300;
 	font-style: italic;
 	font-family: 'Open Sans Condensed', sans-serif;
 	line-height: 2rem;
   background: #f9f9f9;
   border-left: 10px solid #ddd;
-  margin: 0.5rem 10px;
+  margin: 1rem 10px 1rem;
   padding: 0.5rem 10px;
   quotes: "\201C""\201D""\2018""\2019";
 }
