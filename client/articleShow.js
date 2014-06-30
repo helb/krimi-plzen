@@ -31,3 +31,7 @@ Template.articleShow.helpers({
     });
   }
 });
+
+Template.articleShow.rendered = function () {
+  GAnalytics.pageview();
+};
