@@ -1,0 +1,19 @@
+{
+  "packages": {
+    "iron-router": {},
+    "collection-helpers": {},
+    "rssfeed": {},
+    "auto-nprogress": {},
+    "simple-schema": {},
+    "marked": {},
+    "epic-editor": {},
+    "pen": {},
+    "fast-render": {},
+    "ms-seo": {},
+    "lightbox2": {},
+    "sitemaps": {},
+    "GAnalytics": {},
+    "HTML5-History-API": {},
+    "kadira": {}
+  }
+}
