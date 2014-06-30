@@ -13,4 +13,5 @@ Template.newArticles.rendered = function () {
 	// $(window).scrollTop(Session.get('scrollTop'));
  //    console.log('scrolled to ' + Session.get('scrollTop'));
 	GAnalytics.pageview();
+	console.log("rendered newArticles");
 };
