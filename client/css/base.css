@@ -20,19 +20,23 @@ body{
 }
 
 section#page{
-	width: 80%;
 	min-width: 1000px;
-	margin: 1rem auto 3rem;
+	margin: 0 auto 3rem;
+}
+
+section#content-wrapper{
+	width: 85%;
+	margin: 0 auto;
 }
 
 @media all and (max-width: 1440px){
-	section#page{
+	section#content-wrapper{
 		width: 90%;
 	}
 }
 
 @media all and (max-width: 1280px){
-	section#page{
+	section#content-wrapper{
 		width: 98%;
 	}
 }

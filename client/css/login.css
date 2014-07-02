@@ -15,6 +15,9 @@ nav#login *{
 }
 
 section#page.admin header#main-header #login-name-link{
-	color: #fff;
 	margin-right: 1rem;
+}
+
+#login-sign-in-link{
+	opacity: 0.25;
 }

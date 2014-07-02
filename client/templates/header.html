@@ -1,17 +1,19 @@
 <template name="logo">
+<a href="{{pathFor 'newArticles'}}" class="grow">
 <div id="logo">
-	<a href="{{pathFor 'newArticles'}}" class="grow">
 	  	<h1>Krimi&nbsp;Plzeň</h1>
 	  	<h2>Vše o kriminalitě v Plzni</h2>
-  	</a>
 </div>
+</a>
 </template>
 
 <template name="header">
 <header id="main-header">
+	<section id="header-inner">
 		{{>logo}}
 	  	<p>Sledujeme veškeré dění v oblasti bezpečnostní situace, práce policistů, strážníků, záchranářů, hasičů nebo prostě jen lidí, kteří se nebojí pomoci jiným v nouzi.</p>
 	  	{{>login}}
+		{{>nav}}
+	</section>
 </header>
-{{>nav}}
 </template>

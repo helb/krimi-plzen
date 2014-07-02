@@ -3,9 +3,15 @@
     <title>Krimi Plzeň</title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
     <link rel="alternate" type="application/rss+xml" title="Krimi Plzeň – nové články" href="http://www.krimi-plzen.cz/rss/clanky" />
     <link rel="alternate" type="application/rss+xml" title="Krimi Plzeň – články o zbraních" href="http://www.krimi-plzen.cz/rss/zbrane" />
     <link rel="alternate" type="application/rss+xml" title="Krimi Plzeň – pátrání po osobách" href="http://www.krimi-plzen.cz/rss/osoby" />
+
+    <link rel="apple-touch-icon-precomposed" sizes="114×114" href="/images/icons/apple-touch-icon-114×114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72×72" href="/images/icons/apple-touch-icon-72×72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="/images/icons/touch-icon-iphone-precomposed.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="/images/icons/favicon.ico" />
   </head>
   <body>
   </body>
@@ -13,10 +19,12 @@
   <template name="masterLayout">
   <section id="page">
     {{>header}}
+    <section id="content-wrapper">
     <section id="content">
       {{> yield}}
     </section>
     {{>sidebar}}
+    </section>
   </section>
   </template>
 

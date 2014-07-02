@@ -95,17 +95,6 @@ article.article p.timestamp{
 
 article.article p{
 	width: 95%;
-
- -ms-word-break: break-all;
-     word-break: break-all;
-
-     /* Non standard for webkit */
-     word-break: break-word;
-
--webkit-hyphens: auto;
-   -moz-hyphens: auto;
-    -ms-hyphens: auto;
-        hyphens: auto;
         text-align: justify;
 }
 
@@ -141,7 +130,8 @@ article.article h3, div#editor h3{
 
 article.article ul, div#editor ul{
 	width: 95%;
-	list-style-position: inside;
+	list-style-position: outside;
+	padding-left: 2em;
 	list-style-type: square;
 }
 
