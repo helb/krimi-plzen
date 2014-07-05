@@ -14,6 +14,10 @@ section#partners img[src*="los"]{
 	width: 7rem;
 }
 
+section#partners img[src*="cwt"]{
+	width: 11rem;
+}
+
 section#partners img[src*="policejnidenik"]{
 	width: 100px;
 }
