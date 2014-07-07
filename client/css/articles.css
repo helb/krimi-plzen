@@ -183,6 +183,35 @@ article.article iframe{
 	margin: 1rem 0 1rem 0;
 }
 
+article.article hr{
+	margin-top:1rem;
+	margin-bottom: 1rem;
+}
+
+article.article table{
+	margin-top:1rem;
+	margin-bottom: 1rem;
+	width: 95%;
+	line-height: 1.25rem;
+	border: 1px solid #ddd;
+}
+
+article.article table td{
+	padding: 0.5rem;
+}
+
+article.article table tr:not(:last-child) td{
+	border-bottom: 1px solid #ddd;
+}
+
+article.article table tr th{
+	border-bottom: 1px solid #bbb;
+	padding: 0.5rem;
+}
+
+article.article table tr td:not(:last-child){
+	border-right: 1px solid #ddd;
+}
 /* SIDEBAR */
 
 section#sidebar section.article-slug h1{
