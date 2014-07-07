@@ -29,10 +29,7 @@ section.article-slug{
 	margin: 0 0 1rem 0;
 	border-bottom: 1px solid #eee;
 	display: block;
-
-	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
-
-background: radial-gradient(ellipse at bottom, rgba(0,0,0,0.07) 0%,rgba(0,0,0,0) 50%); /* W3C */
+	background: radial-gradient(ellipse at bottom, rgba(0,0,0,0.07) 0%,rgba(0,0,0,0) 50%); /* W3C */
 }
 
 section#main section.article-slug:last-child{
@@ -109,7 +106,7 @@ article.article p.intro{
 }
 
 p{
-	  -webkit-hyphens: auto;
+	-webkit-hyphens: auto;
      -moz-hyphens: auto;
           hyphens: auto;
 }

@@ -2,10 +2,10 @@ section#missing-persons{
 	/*background: #1e5169;*/
 	background: #0065a4;
 	color: #fff;
-		-webkit-box-shadow: 0px 0px 1rem 0px rgba(0, 0, 0, 0.5);
--moz-box-shadow:    0px 0px 1rem 0px rgba(0, 0, 0, 0.5);
-box-shadow:         0px 0px 1rem 0px rgba(0, 0, 0, 0.5);
-display: none;
+	-webkit-box-shadow: 0px 0px 1rem 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow:    0px 0px 1rem 0px rgba(0, 0, 0, 0.5);
+	box-shadow:         0px 0px 1rem 0px rgba(0, 0, 0, 0.5);
+	display: none;
 }
 
 section#missing-persons.visible{
