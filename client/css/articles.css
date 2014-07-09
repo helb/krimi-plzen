@@ -42,6 +42,16 @@ section.article-slug p{
 	line-height: 1.65em;
 }
 
+section.article-slug p a, section.article-slug p a:link{
+	text-decoration: underline;
+	color: #1E5169;
+}
+
+section.article-slug p a:hover{
+	text-decoration: underline;
+	color: #0065a4;
+}
+
 
 section.article-slug img{
 	width: 150px;
