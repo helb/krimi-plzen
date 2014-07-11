@@ -37,7 +37,7 @@ Template.adminArticleAdd.events({
     } else {
       youtube_url =  null;
     }
-    console.log(youtube_url);
+    // console.log(youtube_url);
     Articles.insert({
       author_id:  Meteor.userId(),
       timestamp: new Date(),
