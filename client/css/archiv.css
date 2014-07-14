@@ -18,6 +18,8 @@ form#form-archive.fixed{
 
 form#form-archive input{
   margin: 0 0.5rem 0 0.5rem;
+  padding: 0.25rem;
+  width: 8rem;
 }
 
 form#form-archive button{
