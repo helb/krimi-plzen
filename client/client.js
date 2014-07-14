@@ -1,6 +1,6 @@
 // infinite scrolling:
-/*$(window).scroll(function () {
-  if (document.getElementById("new-articles") || document.getElementById("admin-article-list")) {
+$(window).scroll(function () {
+  if (document.getElementById("admin-article-list")) {
     if ($(window).scrollTop() == $(document).height() - $(window).height()) {
       if (!Session.get("currentLimit")) {
         if (document.getElementById("new-articles")) {
@@ -13,4 +13,4 @@
       return Meteor.subscribe(Router.current().route.name, Session.get("currentLimit"));
     }
   }
-});*/
+});
