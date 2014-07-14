@@ -13,7 +13,7 @@ Template.archiv.events({
 Template.archiv.rendered = function () {
     $("html, body").animate({ scrollTop: 0 }, 600);
   now = new Date();
-  weekAgo = new Date(now.getTime() - (24*60*60*1000) * 7);
+  weekAgo = new Date(now.getTime() - (24*60*60*1000) * 3);
   console.log(now.toJSON().substr(0,10));
   console.log(weekAgo.toJSON().substr(0,10));
   $('#form-archive-since').val(weekAgo.toJSON().substr(0,10));
