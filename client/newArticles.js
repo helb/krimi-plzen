@@ -3,7 +3,7 @@ Template.newArticles.events({
       event.preventDefault();
       if (!Session.get("currentLimit")) {
         if (document.getElementById("new-articles")) {
-          Session.set("currentLimit", 10);
+          Session.set("currentLimit", 12);
         } else {
           Session.set("currentLimit", 15);
         }
