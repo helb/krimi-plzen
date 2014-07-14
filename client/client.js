@@ -13,4 +13,13 @@ $(window).scroll(function () {
       return Meteor.subscribe(Router.current().route.name, Session.get("currentLimit"));
     }
   }
+  if (document.getElementById("archive-articles")) {
+    var navHeight = $( window ).height() - 700;
+             if ($(window).scrollTop() > navHeight) {
+                 $('#form-archive').addClass('fixed');
+             }
+             else {
+                 $('#form-archive').removeClass('fixed');
+             }
+  }
 });
