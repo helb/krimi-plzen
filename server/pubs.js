@@ -8,20 +8,20 @@ Meteor.publishAuth = function (name, fn) {
 };
 
 Meteor.publish("newArticles", function (limit) {
-  return Articles.find({
-    'is_published':  true
-  }, {
-    sort: {
-      timestamp: -1
-    },
-    limit: limit,
-    fields:  {
-      text: 0,
-      photoset:  0,
-      photoset_placement: 0,
-      youtube_url:  0
-    }
-  });
+    return Articles.find({
+      'is_published':  true,
+      'timestamp': {$gte: limit},
+    }, {
+      sort: {
+        timestamp: -1
+      },
+      fields:  {
+        text: 0,
+        photoset:  0,
+        photoset_placement: 0,
+        youtube_url:  0
+      }
+    });
 });
 
 Meteor.publish("archiveArticles", function (since, until) {

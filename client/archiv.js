@@ -4,7 +4,7 @@ Template.archiv.events({
     since = new Date($('#form-archive-since').val());
     since.setHours(0,0,0,0);
     until = new Date($('#form-archive-until').val());
-    until.setHours(24,0,0,0);
+    until.setHours(23,59,59,999);
     if(since>until){
       since = [until, until = since][0]; //swap variables
       pickerSince.setDate(since);
