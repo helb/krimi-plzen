@@ -7,6 +7,8 @@ Template.archiv.events({
     until.setHours(24,0,0,0);
     if(since>until){
       since = [until, until = since][0]; //swap variables
+      pickerSince.setDate(since);
+      pickerUntil.setDate(until);
     }
     Session.set('archiveSince', since);
     Session.set('archiveUntil', until);
