@@ -5,6 +5,9 @@ Template.archiv.events({
     since.setHours(0,0,0,0);
     until = new Date($('#form-archive-until').val());
     until.setHours(24,0,0,0);
+    if(since>until){
+      since = [until, until = since][0]; //swap variables
+    }
     Session.set('archiveSince', since);
     Session.set('archiveUntil', until);
   },
