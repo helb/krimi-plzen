@@ -125,9 +125,14 @@ article.article h2, div#editor h2{
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 2.5em;
 	font-weight: 300;
+	line-height: 1.25em;
 	color: #1E5169;
 	margin-bottom: 1rem;
 	margin-top: 1.5rem;
+}
+
+h2 b, h3 b{
+	font-weight: 300;
 }
 
 article.article h3, div#editor h3{
