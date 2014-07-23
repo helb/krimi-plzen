@@ -1,20 +1,29 @@
 Template.adminArticleAdd.rendered = function () {
-  this._editor = new Pen({
+/*  this._editor = new Pen({
     stay: false,
     editor: document.getElementById("editor"),
     list: [
       'blockquote', 'h2', 'h3', 'p', 'insertorderedlist', 'insertunorderedlist',
       'indent', 'outdent', 'bold', 'italic', 'createlink'
     ]
+  });*/
+
+  var editor = new MediumEditor('#editor', {
+    anchorInputPlaceholder: 'adresa odkazu',
+    buttons: ['bold', 'italic', 'strikethrough', 'header1', 'header2', 'unorderedlist', 'orderedlist', 'quote'],
+    checkLinkFormat: true,
+    cleanPastedHTML: true,
+    forcePlainText: false,
+    placeholder: 'Text článku'
   });
 
   getFlickrSets();
 
 };
 
-Template.adminArticleAdd.destroyed = function () {
+/*Template.adminArticleAdd.destroyed = function () {
   this._editor.destroy();
-};
+};*/
 
 Template.adminArticleAdd.events({
   'click button#form-save': function (event) {
@@ -22,7 +31,8 @@ Template.adminArticleAdd.events({
     title = document.getElementById("form-title").value;
     slug = titleToSlug(document.getElementById("form-title").value);
     intro = document.getElementById("form-intro").value;
-    text = cleanHTML(document.getElementById("editor").innerHTML);
+    // text = cleanHTML(document.getElementById("editor").innerHTML);
+    text = document.getElementById("editor").innerHTML;
     setselect = document.getElementById("form-set");
     photoset = setselect.value;
     photo_url = setselect.options[setselect.selectedIndex].dataset.photo;

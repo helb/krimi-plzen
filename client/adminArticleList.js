@@ -8,7 +8,7 @@ Template.adminArticleList.helpers({
 })
 
 Template.adminArticleList.events({
-  'click button.hide': function (event) {
+  'click button.hide-article': function (event) {
     event.preventDefault();
     article_id = event.currentTarget.parentNode.parentNode.dataset.article;
     if(event.currentTarget.classList.contains("true")){

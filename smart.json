@@ -7,7 +7,6 @@
     "simple-schema": {},
     "marked": {},
     "epic-editor": {},
-    "pen": {},
     "fast-render": {},
     "ms-seo": {},
     "lightbox2": {},
@@ -16,6 +15,7 @@
     "kadira": {},
     "HTML5-History-API": {},
     "pikaday": {},
-    "moment": {}
+    "moment": {},
+    "medium-editor-updated": {}
   }
 }
