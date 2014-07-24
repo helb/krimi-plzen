@@ -15,6 +15,15 @@ newestWeaponArticleTime = Articles.findOne({
   }
 }).timestamp;
 
+newestPravniMinimumArticleTime = Articles.findOne({
+  'is_published':  true,
+  'category': 'pravni-minimum-ulice'
+}, {
+  sort: {
+    'timestamp': -1
+  }
+}).timestamp;
+
 sitemaps.add('/sitemap.xml', function () {
   var out = [{
       page: '/kontakt',
@@ -34,6 +43,11 @@ sitemaps.add('/sitemap.xml', function () {
     }, {
       page: '/zbrane',
       lastmod: newestWeaponArticleTime,
+      changefreq: 'daily',
+      priority: 0.7
+    }, {
+      page: '/pravni-minimum-ulice',
+      lastmod: newestPravniMinimumArticleTime,
       changefreq: 'daily',
       priority: 0.7
     },

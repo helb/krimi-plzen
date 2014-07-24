@@ -26,9 +26,11 @@ Template.adminArticleList.events({
     article_id =  event.currentTarget.parentNode.dataset.article;
     current_category = Articles.findOne({_id: article_id}).category;
     if(current_category == "o"){
-      Articles.update({_id: article_id}, {$set: {category: null}});
+      Articles.update({_id: article_id}, {$set: {category: "pravni-minimum-ulice"}});
     }else if (current_category == "z"){
       Articles.update({_id: article_id}, {$set: {category: "o"}});
+    }else if (current_category == "pravni-minimum-ulice"){
+      Articles.update({_id: article_id}, {$set: {category: null}});
     } else {
       Articles.update({_id: article_id}, {$set: {category: "z"}});
     }

@@ -1,4 +1,4 @@
 Template.weaponArticles.rendered = function () {
-	GAnalytics.pageview();
+	// GAnalytics.pageview();
 	// console.log("rendered weaponArticles");
 };

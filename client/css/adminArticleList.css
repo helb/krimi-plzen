@@ -96,7 +96,6 @@ table#admin-article-list td.category{
 	width: 3rem;
 	padding: 0;
 	text-indent: -9999px;
-	/*background-size:   cover;*/
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-color: #fff;
@@ -111,6 +110,10 @@ table#admin-article-list td.category.o{
 	background-image: url("/images/style/o.svg");
 }
 
+table#admin-article-list td.category.pravni-minimum-ulice{
+	background-size:   cover;
+	background-image: url("/images/style/pravni-minimum-ulice.svg");
+}
 
 
 table#admin-article-list td.buttons{

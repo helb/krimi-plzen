@@ -28,7 +28,7 @@ RssFeed.publish('zbrane', function (query) {
   var self = this;
   self.setValue('title', self.cdata('Krimi Plzeň – články o zbraních'));
   self.setValue('description', self.cdata('Sledujeme veškeré dění v oblasti bezpečnostní situace, práce policistů, strážníků, záchranářů, hasičů nebo prostě jen lidí, kteří se nebojí pomoci jiným v nouzi.'));
-  self.setValue('link', 'http://www.krimi-plzen.cz/');
+  self.setValue('link', 'http://www.krimi-plzen.cz/zbrane');
   self.setValue('lastBuildDate', new Date());
   self.setValue('pubDate', new Date());
   self.setValue('ttl', 1);
@@ -36,6 +36,34 @@ RssFeed.publish('zbrane', function (query) {
 
   Articles.find({
     'category': 'z'
+  }, {
+    sort: {
+      timestamp: -1
+    },
+    limit: 30
+  }).forEach(function (article) {
+    self.addItem({
+      title: article.title,
+      description: article.intro,
+      link: 'http://www.krimi-plzen.cz/a/' + article.slug,
+      pubDate: article.timestamp
+        // title, description, link, guid, pubDate
+    });
+  });
+});
+
+RssFeed.publish('pravni-minimum-ulice', function (query) {
+  var self = this;
+  self.setValue('title', self.cdata('Krimi Plzeň – Právní minimum ulice'));
+  self.setValue('description', self.cdata('Sledujeme veškeré dění v oblasti bezpečnostní situace, práce policistů, strážníků, záchranářů, hasičů nebo prostě jen lidí, kteří se nebojí pomoci jiným v nouzi.'));
+  self.setValue('link', 'http://www.krimi-plzen.cz/pravni-minimum-ulice');
+  self.setValue('lastBuildDate', new Date());
+  self.setValue('pubDate', new Date());
+  self.setValue('ttl', 1);
+  // managingEditor, webMaster, language, docs, generator
+
+  Articles.find({
+    'category': 'pravni-minimum-ulice'
   }, {
     sort: {
       timestamp: -1
