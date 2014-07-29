@@ -13,8 +13,8 @@ Template.adminArticleAdd.rendered = function () {
     buttons: ['bold', 'italic', 'strikethrough', 'header1', 'header2', 'unorderedlist', 'orderedlist', 'quote'],
     checkLinkFormat: true,
     cleanPastedHTML: true,
-    forcePlainText: false,
-    placeholder: 'Text článku'
+    forcePlainText: true,
+    placeholder: ''
   });
 
   getFlickrSets();
@@ -31,8 +31,8 @@ Template.adminArticleAdd.events({
     title = document.getElementById("form-title").value;
     slug = titleToSlug(document.getElementById("form-title").value);
     intro = document.getElementById("form-intro").value;
-    // text = cleanHTML(document.getElementById("editor").innerHTML);
-    text = document.getElementById("editor").innerHTML;
+    text = cleanHTML(document.getElementById("editor").innerHTML);
+    // text = document.getElementById("editor").innerHTML;
     setselect = document.getElementById("form-set");
     photoset = setselect.value;
     photo_url = setselect.options[setselect.selectedIndex].dataset.photo;

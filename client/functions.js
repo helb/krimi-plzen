@@ -26,13 +26,13 @@ cleanHTML = function (input) {
   // 3. remove tags leave content if any
   output = output.replace(tagStripper, '');
   // 4. Remove everything in between and including tags '<style(.)style(.)>'
-  var badTags = ['style', 'script', 'applet', 'embed', 'noframes', 'noscript', 'form', 'input', 'textarea', 'button', 'img'];
+  var badTags = ['style', 'script', 'applet', 'embed', 'noframes', 'noscript', 'form', 'input', 'textarea', 'button', 'img', 'font', 'pre'];
   for (var i = 0; i < badTags.length; i++) {
     tagStripper = new RegExp('<' + badTags[i] + '.*?' + badTags[i] + '(.*?)>', 'gi');
     output = output.replace(tagStripper, '');
   }
   // 5. remove attributes ' style="..."'
-  var badAttributes = ['style', 'start', 'class', 'id'];
+  var badAttributes = ['style', 'start', 'class', 'id', 'align'];
   for (var i = 0; i < badAttributes.length; i++) {
     var attributeStripper = new RegExp(' ' + badAttributes[i] + '="(.*?)"', 'gi');
     output = output.replace(attributeStripper, '');
