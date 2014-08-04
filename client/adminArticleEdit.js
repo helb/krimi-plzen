@@ -10,7 +10,7 @@ Template.adminArticleEdit.rendered = function () {
 
   var editor = new MediumEditor('#editor', {
     anchorInputPlaceholder: 'adresa odkazu',
-    buttons: ['bold', 'italic', 'strikethrough', 'header1', 'header2', 'unorderedlist', 'orderedlist', 'quote'],
+    buttons: ['bold', 'italic', 'underline', 'strikethrough', 'header1', 'unorderedlist', 'orderedlist', 'quote', 'anchor'],
     checkLinkFormat: true,
     cleanPastedHTML: true,
     forcePlainText: true,
