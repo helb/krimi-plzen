@@ -1,9 +1,7 @@
 {
     "public": {
         "ga": {
-        "account": "UA-52320835-1",
-	"trackInterests": true,
-	"trackInPage": true
+            "id": "UA-52320835-1"
         }
     }
 }

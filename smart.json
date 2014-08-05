@@ -11,11 +11,11 @@
     "ms-seo": {},
     "lightbox2": {},
     "sitemaps": {},
-    "GAnalytics": {},
     "kadira": {},
     "HTML5-History-API": {},
     "pikaday": {},
     "moment": {},
-    "medium-editor-updated": {}
+    "medium-editor-updated": {},
+    "iron-router-ga": {}
   }
 }
