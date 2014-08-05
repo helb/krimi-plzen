@@ -142,6 +142,8 @@ article.article h3, div#editor h3{
 	color: #1E5169;
 	margin-bottom: 0.5rem;
 	margin-top: 1.5rem;
+	line-height: 1.25em;
+	width: 95%;
 }
 
 article.article ul, div#editor ul{
