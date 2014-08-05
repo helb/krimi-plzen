@@ -1,5 +1,6 @@
 Template.articleShow.helpers({
   flickr: function (set_id) {
+    $('#photos').empty();
     $.ajax({
       url: (window.location.protocol === 'https:' ?
           'https://secure' : 'https://api') +
