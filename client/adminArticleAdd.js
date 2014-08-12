@@ -19,6 +19,10 @@ Template.adminArticleAdd.rendered = function () {
 
   getFlickrSets();
 
+  window.onbeforeunload = function() {
+    return "";
+  };
+
 };
 
 /*Template.adminArticleAdd.destroyed = function () {

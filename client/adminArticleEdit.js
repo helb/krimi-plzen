@@ -17,6 +17,10 @@ Template.adminArticleEdit.rendered = function () {
     placeholder: ''
   });
 
+  window.onbeforeunload = function() {
+    return "";
+  };
+
   // getFlickrSets();
 };
 
