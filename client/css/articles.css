@@ -91,7 +91,7 @@ article.article h1{
 	font-weight: 300;
 	color: #1E5169;
 	margin-bottom: 1rem;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 }
 
 article.article p.timestamp{
