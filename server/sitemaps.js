@@ -24,6 +24,15 @@ newestPravniMinimumArticleTime = Articles.findOne({
   }
 }).timestamp;
 
+newestZachranariArticleTime = Articles.findOne({
+  'is_published':  true,
+  'category': 'pravni-minimum-ulice'
+}, {
+  sort: {
+    'timestamp': -1
+  }
+}).timestamp;
+
 sitemaps.add('/sitemap.xml', function () {
   var out = [{
       page: '/kontakt',
@@ -48,6 +57,11 @@ sitemaps.add('/sitemap.xml', function () {
     }, {
       page: '/pravni-minimum-ulice',
       lastmod: newestPravniMinimumArticleTime,
+      changefreq: 'daily',
+      priority: 0.7
+    }, {
+      page: '/zachranari',
+      lastmod: newestZachranariArticleTime,
       changefreq: 'daily',
       priority: 0.7
     },
