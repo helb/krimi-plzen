@@ -30,6 +30,8 @@ Template.adminArticleList.events({
     }else if (current_category == "z"){
       Articles.update({_id: article_id}, {$set: {category: "o"}});
     }else if (current_category == "pravni-minimum-ulice"){
+      Articles.update({_id: article_id}, {$set: {category: 'zachranari'}});
+    }else if (current_category == "zachranari"){
       Articles.update({_id: article_id}, {$set: {category: null}});
     } else {
       Articles.update({_id: article_id}, {$set: {category: "z"}});

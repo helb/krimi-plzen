@@ -115,6 +115,11 @@ table#admin-article-list td.category.pravni-minimum-ulice{
 	background-image: url("/images/style/pravni-minimum-ulice.svg");
 }
 
+table#admin-article-list td.category.zachranari{
+	background-size:   cover;
+	background-image: url("/images/style/zachranari.svg");
+}
+
 
 table#admin-article-list td.buttons{
 	text-align: center;
