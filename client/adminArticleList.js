@@ -20,7 +20,10 @@ Template.adminArticleList.events({
   'click button.remove': function (event) {
     event.preventDefault();
     article_id = event.currentTarget.parentNode.parentNode.dataset.article;
-    Articles.remove({_id: article_id});
+    var r = confirm("Opravdu smazat?");
+    if (r == true) {
+        Articles.remove({_id: article_id});
+    }
   },
   'click td.category': function (event) {
     article_id =  event.currentTarget.parentNode.dataset.article;
