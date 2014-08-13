@@ -41,8 +41,8 @@ textarea#form-intro{
 	width: 100%;
 	border: 1px solid #ddd;
 	background-color: #fff;
-	font-weight: bold;
-	font-size: 1;
+	font-weight: 300;
+	font-size: 1.75em;
   font-family: 'Open Sans', sans-serif;
 }
 
