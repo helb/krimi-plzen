@@ -1,9 +1,9 @@
-nav#load-more{
+nav#load-more, nav#under-article-links{
   display: block;
   width: 100%;
 }
 
-nav#load-more a{
+nav#load-more a, nav#under-article-links a{
   float: left;
   display: block;
   width: 50%;
@@ -15,15 +15,23 @@ nav#load-more a{
   line-height: 5rem;
   text-decoration: none;
   color: #1E5169;
+  background: #fff;
+  position: relative;
+    -webkit-box-shadow: 0px 0px 2rem 0px rgba(0, 0, 0, 0.03);
+  -moz-box-shadow:    0px 0px 2rem 0px rgba(0, 0, 0, 0.03);
+  box-shadow:         0px 0px 2rem 0px rgba(0, 0, 0, 0.03);
 }
 
 nav#load-more a:first-child{
-  border-right: 1px solid #ddd;
+  border-right: 1px solid #efefef;
 }
 
-nav#load-more a:hover{
-  text-decoration: underline;
-  color: #0065a4;
-  background: #efefef;
+nav#load-more a:hover, nav#under-article-links a:hover{
+  /*text-decoration: underline;*/
+  /*color: #0065a4;
+  background: #efefef;*/
+  background: #0065a4;
+  color: #fff;
   border: none;
+  z-index: 9999;
 }
