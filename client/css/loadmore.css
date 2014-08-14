@@ -17,7 +17,7 @@ nav#load-more a, nav#under-article-links a{
   color: #1E5169;
   background: #fff;
   position: relative;
-    -webkit-box-shadow: 0px 0px 2rem 0px rgba(0, 0, 0, 0.03);
+  -webkit-box-shadow: 0px 0px 2rem 0px rgba(0, 0, 0, 0.03);
   -moz-box-shadow:    0px 0px 2rem 0px rgba(0, 0, 0, 0.03);
   box-shadow:         0px 0px 2rem 0px rgba(0, 0, 0, 0.03);
 }
@@ -34,4 +34,7 @@ nav#load-more a:hover, nav#under-article-links a:hover{
   color: #fff;
   border: none;
   z-index: 9999;
+  -webkit-box-shadow: none;
+  -moz-box-shadow:    none;
+  box-shadow:         none;
 }
