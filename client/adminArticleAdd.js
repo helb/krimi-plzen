@@ -52,6 +52,14 @@ Template.adminArticleAdd.events({
       youtube_url =  null;
     }
     // console.log(youtube_url);
+    if(!checkIfArticleExists(slug)){
+      timestamp = new Date()
+      day = timestamp.getDate();
+      month = timestamp.getMonth() + 1;
+      year = timestamp.getFullYear();
+      slug = slug + "-" + year + "-" + month + "-" + day + "-" + timestamp.getHours() + (timestamp.getMinutes() < 10 ? '0' : '') + timestamp.getMinutes();
+      console.log('slug changed to ' + slug);
+    }
     Articles.insert({
       author_id:  Meteor.userId(),
       timestamp: new Date(),
