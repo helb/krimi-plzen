@@ -33,7 +33,6 @@ Template.articleShow.helpers({
   }
 });
 
-// Template.articleShow.rendered = function () {
-//   GAnalytics.pageview();
-//   console.log("rendered articleShow");
-// };
+Template.articleShow.rendered = function () {
+  $("html, body").animate({ scrollTop: $("#content").offset().top }, 600);
+};
