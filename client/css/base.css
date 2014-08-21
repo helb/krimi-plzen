@@ -82,3 +82,11 @@ section#sidebar h2{
 iframe{
 	width: 100%;
 }
+
+a, a:link, a:visited{
+	color: #1E5169;
+}
+
+a:hover{
+	color: #0065a4;
+}
