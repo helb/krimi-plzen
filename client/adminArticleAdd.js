@@ -51,30 +51,38 @@ Template.adminArticleAdd.events({
     } else {
       youtube_url =  null;
     }
-    // console.log(youtube_url);
-    if(!checkIfArticleExists(slug)){
-      timestamp = new Date()
-      day = timestamp.getDate();
-      month = timestamp.getMonth() + 1;
-      year = timestamp.getFullYear();
-      slug = slug + "-" + year + "-" + month + "-" + day + "-" + timestamp.getHours() + (timestamp.getMinutes() < 10 ? '0' : '') + timestamp.getMinutes();
-      console.log('slug changed to ' + slug);
-    }
-    Articles.insert({
-      author_id:  Meteor.userId(),
-      timestamp: new Date(),
-      title: title,
-      slug: slug,
-      intro: intro,
-      text: text,
-      photo_url:  photo_url,
-      photoset:  photoset,
-      photoset_placement:  photoset_placement,
-      youtube_url:  youtube_url,
-      category: category,
-      is_published:  true
-    });
-    $("#form-save-success").removeClass("hidden");
+
+    Meteor.call('articleExists', slug, function(err, exists) {
+        if(err){
+          console.log(err);
+        }
+        if(exists == true){
+          timestamp = new Date()
+          day = timestamp.getDate();
+          month = timestamp.getMonth() + 1;
+          year = timestamp.getFullYear();
+          finalSlug = slug + "-" + year + "-" + month + "-" + day + "-" + timestamp.getHours() + (timestamp.getMinutes() < 10 ? '0' : '') + timestamp.getMinutes();
+        } else {
+          finalSlug = slug;
+        }
+        if(Articles.insert({
+          author_id:  Meteor.userId(),
+          timestamp: new Date(),
+          title: title,
+          slug: finalSlug,
+          intro: intro,
+          text: text,
+          photo_url:  photo_url,
+          photoset:  photoset,
+          photoset_placement:  photoset_placement,
+          youtube_url:  youtube_url,
+          category: category,
+          is_published:  true
+        })){
+          $("#form-save-success").removeClass("hidden");
+        }
+      })
+
   },
 
   'click button#form-flickr-reload': function (event) {

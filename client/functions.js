@@ -75,12 +75,3 @@ getIdFromYoutube = function(url) {
   var match = url.match(regExp);
   return match[2];
 }
-
-checkIfArticleExists = function(slug) {
-  Meteor.call('articleExists', slug, function(err, exists) {
-      if (err){
-        console.log(err);
-      }
-      return exists;
-    })
-}
