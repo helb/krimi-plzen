@@ -105,6 +105,9 @@ article.article p.timestamp{
 article.article p{
 	width: 95%;
   text-align: justify;
+  font-size: 1.25em;
+	line-height: 1.5em;
+	margin: 0.25em 0 0.25em 0;
 }
 
 article.article p.intro{
