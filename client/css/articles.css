@@ -86,8 +86,8 @@ article.article h1{
 	width: 95%;
 	margin-top: -0.5rem;
 	font-family: 'Open Sans Condensed', sans-serif;
-	font-size: 3.75em;
-	line-height: 3.75rem;
+	font-size: 2.75em;
+	line-height: 1.5em;
 	font-weight: 300;
 	color: #1E5169;
 	margin-bottom: 1rem;
@@ -112,7 +112,6 @@ article.article p{
 
 article.article p.intro{
 	font-weight: 300;
-	font-size: 1.75em;
 	margin-bottom: 1.75rem;
 	line-height: 1.5em;
 	color: #333;
@@ -235,9 +234,9 @@ article.article table tr td:not(:last-child){
 /* SIDEBAR */
 
 section#sidebar section.article-slug h1{
-	font-size: 1.5em;
-	line-height: 1.1em;
-	 overflow: hidden;
+	font-size: 1.25em;
+	line-height: 1.25em;
+	overflow: hidden;
   text-overflow: ellipsis;
   margin: 0;
 }
