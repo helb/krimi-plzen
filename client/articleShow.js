@@ -34,3 +34,7 @@ Template.articleShow.helpers({
     });
   }
 });
+
+Template.articleShow.rendered = function () {
+  scrollToContent();
+};

@@ -25,3 +25,9 @@ Template.missingPersons.helpers({
     }
   }
 });
+
+Template.missingPersons.events({
+  'click section.person a': function (event) {
+    scrollToContent();
+  },
+});

@@ -25,3 +25,9 @@ Template.recommendedArticles.helpers({
     }
   }
 });
+
+Template.recommendedArticles.events({
+  'click section.recommended a': function (event) {
+    scrollToContent();
+  },
+});

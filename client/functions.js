@@ -75,3 +75,7 @@ getIdFromYoutube = function(url) {
   var match = url.match(regExp);
   return match[2];
 }
+
+scrollToContent = function() {
+  $("html, body").animate({ scrollTop: $("#content-wrapper").offset().top }, 600);
+}
