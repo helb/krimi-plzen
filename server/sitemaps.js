@@ -1,4 +1,4 @@
-newestArticleTime = Articles.findOne({
+/*newestArticleTime = Articles.findOne({
   'is_published':  true
 }, {
   sort: {
@@ -75,4 +75,4 @@ sitemaps.add('/sitemap.xml', function () {
     });
   });
   return out;
-});
+});*/
