@@ -114,3 +114,7 @@ select#form-set{
   float: right;
   margin-left: 1rem;
 }
+
+.medium-editor-toolbar{
+  height: 48px;
+}
