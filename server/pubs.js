@@ -110,7 +110,6 @@ Meteor.publish("personArticles", function () {
       youtube_url: 0,
       intro: 0,
       timestamp: 0,
-      is_published: 0,
       author_id: 0,
       author_name: 0
     }
@@ -133,7 +132,6 @@ Meteor.publish("recommendedArticles", function () {
       intro: 0,
       timestamp: 0,
       category: 0,
-      is_published: 0,
       author_id: 0,
       author_name: 0
     }
