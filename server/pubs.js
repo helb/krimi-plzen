@@ -109,7 +109,7 @@ Meteor.publish("personArticles", function () {
       photoset_placement: 0,
       youtube_url: 0,
       intro: 0,
-      timestamp: 0,
+      // timestamp: 0,
       author_id: 0,
       author_name: 0
     }
@@ -130,7 +130,7 @@ Meteor.publish("recommendedArticles", function () {
       photoset_placement: 0,
       youtube_url: 0,
       intro: 0,
-      timestamp: 0,
+      // timestamp: 0,
       category: 0,
       author_id: 0,
       author_name: 0
