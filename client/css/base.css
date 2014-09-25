@@ -15,9 +15,9 @@
 body{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
-	background-color: #fff;
+	background-color: #fdfdfd;
 	color: #000;
-	background-image: url("/images/style/bg.png");
+	/*background-image: url("/images/style/bg.png");*/
 }
 
 section#page{

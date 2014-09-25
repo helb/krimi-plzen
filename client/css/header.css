@@ -4,7 +4,7 @@ header#main-header{
 	height: 320px;
 	font-family: 'Open Sans Condensed', sans-serif;
 	/*background: url('/images/style/header.jpg') no-repeat -2rem center;*/
-	background-image: url('/images/style/header.jpg');
+	background-image: url('https://farm4.staticflickr.com/3921/15159532768_129e15feb2_o.jpg');
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
   -moz-background-size: cover;
