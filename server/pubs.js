@@ -17,9 +17,9 @@ Meteor.publish("newArticles", function (limit) {
       },
       fields:  {
         text: 0,
-        photoset:  0,
+        photoset: 0,
         photoset_placement: 0,
-        youtube_url:  0
+        youtube_url: 0
       }
     });
 });
@@ -34,9 +34,9 @@ Meteor.publish("archiveArticles", function (since, until) {
     },
     fields:  {
       text: 0,
-      photoset:  0,
+      photoset: 0,
       photoset_placement: 0,
-      youtube_url:  0
+      youtube_url: 0
     }
   });
 });
@@ -52,9 +52,9 @@ Meteor.publish("weaponArticles", function (limit) {
     limit: limit,
     fields:  {
       text: 0,
-      photoset:  0,
+      photoset: 0,
       photoset_placement: 0,
-      youtube_url:  0
+      youtube_url: 0
     }
   });
 });
@@ -70,9 +70,9 @@ Meteor.publish("minimumUliceArticles", function (limit) {
     limit: limit,
     fields:  {
       text: 0,
-      photoset:  0,
+      photoset: 0,
       photoset_placement: 0,
-      youtube_url:  0
+      youtube_url: 0
     }
   });
 });
@@ -88,9 +88,9 @@ Meteor.publish("zachranariArticles", function (limit) {
     limit: limit,
     fields:  {
       text: 0,
-      photoset:  0,
+      photoset: 0,
       photoset_placement: 0,
-      youtube_url:  0
+      youtube_url: 0
     }
   });
 });
@@ -105,9 +105,14 @@ Meteor.publish("personArticles", function () {
     },
     fields:  {
       text: 0,
-      photoset:  0,
+      photoset: 0,
       photoset_placement: 0,
-      youtube_url:  0
+      youtube_url: 0,
+      intro: 0,
+      timestamp: 0,
+      category: 0,
+      author_id: 0,
+      author_name: 0
     }
   });
 });
@@ -122,9 +127,14 @@ Meteor.publish("recommendedArticles", function () {
     },
     fields:  {
       text: 0,
-      photoset:  0,
+      photoset: 0,
       photoset_placement: 0,
-      youtube_url:  0
+      youtube_url: 0,
+      intro: 0,
+      timestamp: 0,
+      category: 0,
+      author_id: 0,
+      author_name: 0
     }
   });
 });
@@ -137,9 +147,9 @@ Meteor.publish("adminArticleList", function (limit) {
     limit: limit,
     fields:  {
       text: 0,
-      photoset:  0,
+      photoset: 0,
       photoset_placement: 0,
-      youtube_url:  0,
+      youtube_url: 0,
       intro: 0
     }
   });
