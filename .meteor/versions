@@ -16,6 +16,7 @@ check@1.0.0
 coffeescript@1.0.3
 ctl-helper@1.0.3
 ctl@1.0.1
+daniel:auto-nprogress@0.2.9
 dburles:collection-helpers@1.0.0
 ddp@1.0.8
 deps@1.0.3
@@ -53,6 +54,7 @@ mongo-livedata@1.0.4
 mongo@1.0.5
 mrt:lightbox2@0.0.1
 mrt:moment@2.8.1
+mrt:nprogress@0.0.5
 npm-bcrypt@0.7.7
 observe-sequence@1.0.2
 ordered-dict@1.0.0
