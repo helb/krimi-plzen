@@ -10,10 +10,13 @@ Template.adminArticleAdd.rendered = function () {
 
   var editor = new MediumEditor('#editor', {
     anchorInputPlaceholder: 'adresa odkazu',
+    // buttons: ['bold', 'italic', 'underline', 'strikethrough', 'header1', 'unorderedlist', 'orderedlist', 'quote', 'anchor'],
     buttons: ['bold', 'italic', 'underline', 'strikethrough', 'header1', 'unorderedlist', 'orderedlist', 'quote', 'anchor'],
     checkLinkFormat: true,
     cleanPastedHTML: true,
     forcePlainText: true,
+    firstHeader: 'h2',
+    secondHeader: 'h3',
     placeholder: ''
   });
 
