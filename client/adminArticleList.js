@@ -40,6 +40,7 @@ Template.adminArticleList.events({
       Articles.update({_id: article_id}, {$set: {category: "z"}});
     }
   },
+
   'click input.recommend': function (event) {
     article_id =  event.currentTarget.parentNode.parentNode.dataset.article;
     // console.log(!event.currentTarget.checked);
