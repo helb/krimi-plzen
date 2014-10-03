@@ -33,7 +33,7 @@ id-map@1.0.0
 iron:core@0.3.4
 iron:dynamic-template@0.4.1
 iron:layout@0.4.1
-iron:router@0.9.3
+iron:router@0.9.4
 jquery@1.0.0
 json@1.0.0
 lampe:rssfeed@0.1.1
@@ -43,8 +43,8 @@ localstorage@1.0.0
 logging@1.0.3
 meteor-platform@1.1.1
 meteor@1.1.1
-meteorhacks:kadira-binary-deps@1.0.1
-meteorhacks:kadira@2.9.6
+meteorhacks:kadira-binary-deps@1.2.0
+meteorhacks:kadira@2.11.1
 minifiers@1.1.0
 minimongo@1.0.3
 mobile-status-bar@1.0.0
