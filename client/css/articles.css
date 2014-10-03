@@ -152,10 +152,12 @@ article.article ul, div#editor ul{
 	width: 95%;
 	list-style-position: outside;
 	padding-left: 2em;
+	font-size: 1.25em;
 	list-style-type: square;
 }
 
 article.article ol, div#editor ol{
+	font-size: 1.25em;
 	width: 95%;
 	list-style-position: inside;
 }
