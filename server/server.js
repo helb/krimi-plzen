@@ -10,3 +10,7 @@ articleExists: function(slug) {
   }
 }
 });
+
+Meteor.startup(function () {
+  Articles._ensureIndex({'slug': 1, 'category': 1});
+});
