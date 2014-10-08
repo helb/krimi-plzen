@@ -20,9 +20,9 @@ Template.adminArticleEdit.rendered = function () {
     placeholder: ''
   });
 
-  window.onbeforeunload = function() {
+/*  window.onbeforeunload = function() {
     return "";
-  };
+  };*/
 
   // getFlickrSets();
 };
@@ -62,6 +62,6 @@ Template.adminArticleEdit.events({
       }
     });
     $("#form-save-success").removeClass("hidden");
-    window.location.href = '/admin';
+    // window.location.href = '/admin';
   },
 });
