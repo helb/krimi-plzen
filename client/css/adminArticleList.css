@@ -120,6 +120,11 @@ table#admin-article-list td.category.zachranari{
 	background-image: url("/images/style/zachranari.svg");
 }
 
+table#admin-article-list td.category.hasici{
+	background-size:   cover;
+	background-image: url("/images/style/hasici.svg");
+}
+
 
 table#admin-article-list td.buttons{
 	text-align: center;
