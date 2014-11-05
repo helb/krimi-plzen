@@ -21,7 +21,7 @@ body{
 }
 
 section#page{
-	min-width: 1000px;
+	min-width: 960px;
 	margin: 0 auto 3rem;
 }
 
