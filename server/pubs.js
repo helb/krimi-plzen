@@ -95,6 +95,24 @@ Meteor.publish("zachranariArticles", function (limit) {
   });
 });
 
+Meteor.publish("hasiciArticles", function (limit) {
+  return Articles.find({
+    'category': 'hasici',
+    'is_published':  true
+  }, {
+    sort: {
+      timestamp: -1
+    },
+    limit: limit,
+    fields:  {
+      text: 0,
+      photoset: 0,
+      photoset_placement: 0,
+      youtube_url: 0
+    }
+  });
+});
+
 Meteor.publish("personArticles", function () {
   return Articles.find({
     'category': 'o',

@@ -1,7 +1,7 @@
 header#main-header{
 	display: block;
 	width: 100%;
-	height: 320px;
+	height: 280px;
 	font-family: 'Open Sans Condensed', sans-serif;
 	/*background: url('/images/style/header.jpg') no-repeat -2rem center;*/
 	background-image: url('https://farm4.staticflickr.com/3921/15159532768_129e15feb2_o.jpg');
@@ -12,7 +12,7 @@ header#main-header{
   background-size: cover;
 	background-size: 100%;
 	margin-bottom: 2rem;
-	padding-top: 3rem;
+	padding-top: 2rem;
 }
 
 
