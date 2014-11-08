@@ -112,7 +112,7 @@ article.article p.timestamp{
 
 
 article.article p{
-	font-weight: 300;
+	font-weight: 400;
 	width: 98%;
   text-align: left;
   font-size: 1.25em;
@@ -158,18 +158,21 @@ article.article h3, div#editor h3{
 	width: 95%;
 }
 
-article.article ul, div#editor ul{
+article.article ul, div#editor ul,{
 	width: 95%;
 	list-style-position: outside;
 	padding-left: 2em;
 	font-size: 1.25em;
 	list-style-type: square;
+	font-weight: 400;
 }
 
 article.article ol, div#editor ol{
-	font-size: 1.25em;
 	width: 95%;
-	list-style-position: inside;
+	list-style-position: outside;
+	padding-left: 2em;
+	font-size: 1.25em;
+	font-weight: 400;
 }
 
 article.article blockquote, div#editor blockquote{
