@@ -302,7 +302,7 @@ section#recommended-articles.visible{
 	display: block;
 }
 
-@media (max-device-width: 800px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.25){
+@media (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.25){
 	article.article,
 	.article-slug{
 		font-size: 2em;
@@ -310,7 +310,7 @@ section#recommended-articles.visible{
 
 }
 
-@media (max-device-width: 800px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.25){
+@media (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.25){
 	article.article,
 	.article-slug{
 		font-size: 1.5em;
