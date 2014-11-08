@@ -1,0 +1,10 @@
+article.loading{
+  display: block;
+  margin: 1rem auto;
+  background: url("/images/style/loader.gif");
+  width: 10em;
+  height: 10em;
+  background-repeat: no-repeat;
+  background-size: contain;
+  text-indent: -9999px;
+}
