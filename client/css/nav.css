@@ -2,10 +2,9 @@ nav#main-nav{
 	display: block;
 	width: 100%;
 	height: 2em;
-	margin: 0;
+	margin: 0 0 1em 0;
 	padding: 0;
 	font-size: 1.25em;
-	border-bottom: 1px solid #222;
 	background-color: #222;
 }
 
@@ -33,7 +32,8 @@ nav#main-nav ul li a{
 	text-decoration: none;
 	background-color: #222;
 	border-right: 1px solid #333;
-	color: #fff;
+	border-top: 1px solid #333;
+	color: #ddd;
 	font-family: 'Open Sans Condensed', sans-serif;
 }
 
@@ -54,8 +54,31 @@ nav.admin ul li{
 	min-width: 50%;
 }
 
-@media (-webkit-min-device-pixel-ratio: 1.25) and (max-device-width: 800px),
-(-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 1081px){
+@media (orientation: portrait) and (max-device-width: 800px),
+(orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 1081px){
+	nav#main-nav{
+		height: 12rem;
+	}
+
+	nav#main-nav ul li{
+		float: left;
+		width: 25%;
+		text-align: center;
+	}
+
+nav#main-nav ul li:nth-child(4) a{
+	border-right: none;
+}
+
+
+	nav#main-nav ul li a{
+		line-height: 6rem;
+		font-size: 2.5em;
+	}
+}
+
+@media (orientation: landscape) and (max-device-width: 800px),
+(orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 1081px){
 	nav#main-nav{
 		height: 8rem;
 	}
@@ -72,9 +95,7 @@ nav#main-nav ul li:nth-child(4) a{
 
 
 	nav#main-nav ul li a{
-		border-bottom: 1px solid #333;
 		line-height: 4rem;
 		font-size: 2em;
 	}
 }
-
