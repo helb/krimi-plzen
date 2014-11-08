@@ -31,7 +31,7 @@ section.article-slug{
 	padding-bottom: 1em;
 	min-height: 11em;
 	margin: 0 0 1em 0;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #eee;
 	display: block;
 	background: radial-gradient(ellipse at bottom, rgba(0,0,0,0.09) 0%,rgba(0,0,0,0) 50%); /* W3C */
 	width: 100%;
