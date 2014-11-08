@@ -77,5 +77,5 @@ getIdFromYoutube = function(url) {
 }
 
 scrollToContent = function() {
-  $("html, body").animate({ scrollTop: $("#content-wrapper").offset().top }, 600);
+  $("html, body").animate({ scrollTop: $("#main-nav").offset().top - 8}, 600);
 }
