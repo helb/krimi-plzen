@@ -18,7 +18,8 @@ RssFeed.publish('clanky', function (query) {
       title: article.title,
       description: article.intro,
       link: 'http://www.krimi-plzen.cz/a/' + article.slug,
-      pubDate: article.timestamp
+      pubDate: article.timestamp,
+      image: article.photo_url
         // title, description, link, guid, pubDate
     });
   });
@@ -46,7 +47,8 @@ RssFeed.publish('zbrane', function (query) {
       title: article.title,
       description: article.intro,
       link: 'http://www.krimi-plzen.cz/a/' + article.slug,
-      pubDate: article.timestamp
+      pubDate: article.timestamp,
+      image: article.photo_url
         // title, description, link, guid, pubDate
     });
   });
@@ -74,7 +76,8 @@ RssFeed.publish('pravni-minimum-ulice', function (query) {
       title: article.title,
       description: article.intro,
       link: 'http://www.krimi-plzen.cz/a/' + article.slug,
-      pubDate: article.timestamp
+      pubDate: article.timestamp,
+      image: article.photo_url
         // title, description, link, guid, pubDate
     });
   });
@@ -102,7 +105,8 @@ RssFeed.publish('zachranari', function (query) {
       title: article.title,
       description: article.intro,
       link: 'http://www.krimi-plzen.cz/a/' + article.slug,
-      pubDate: article.timestamp
+      pubDate: article.timestamp,
+      image: article.photo_url
         // title, description, link, guid, pubDate
     });
   });
@@ -132,7 +136,8 @@ RssFeed.publish('hasici', function (query) {
       title: article.title,
       description: article.intro,
       link: 'http://www.krimi-plzen.cz/a/' + article.slug,
-      pubDate: article.timestamp
+      pubDate: article.timestamp,
+      image: article.photo_url
         // title, description, link, guid, pubDate
     });
   });
@@ -161,7 +166,8 @@ RssFeed.publish('osoby', function (query) {
       title: article.title,
       description: article.intro,
       link: 'http://www.krimi-plzen.cz/a/' + article.slug,
-      pubDate: article.timestamp
+      pubDate: article.timestamp,
+      image: article.photo_url
         // title, description, link, guid, pubDate
     });
   });
