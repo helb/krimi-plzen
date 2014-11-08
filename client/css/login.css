@@ -1,5 +1,6 @@
 nav#login{
 	font-family: "DejaVu Sans", "Arial", sans-serif;
+  float: right;
 }
 
 a.login-link-text{

@@ -14,18 +14,18 @@
 
 body{
 	font-family: 'Open Sans', sans-serif;
-	font-size: 14px;
+	/*font-size: 14px;*/
 	background-color: #fdfdfd;
 	color: #000;
 	/*background-image: url("/images/style/bg.png");*/
 }
 
 section#page{
-	min-width: 960px;
-	margin: 0 auto 3rem;
+	/*min-width: 960px;*/
+	margin: 0 auto 3rem 0;
 }
 
-section#content-wrapper{
+/*section#content-wrapper{
 	width: 85%;
 	margin: 0 auto;
 }
@@ -40,7 +40,7 @@ section#content-wrapper{
 	section#content-wrapper{
 		width: 98%;
 	}
-}
+}*/
 
 
 section#page.admin{
@@ -50,7 +50,7 @@ section#page.admin{
 section#content{
 	float: left;
 	width: 75%;
-	padding: 1rem 2rem 0 2rem;
+	padding: 1rem 2rem 0 1rem;
 	/*border: 1px solid red;*/
 }
 
@@ -63,6 +63,7 @@ section#sidebar{
 	float: right;
 	width: 25%;
 	margin: 1.1rem 0 2rem;
+	font-size: 0.9em;
 	/*padding: 1rem;*/
 	/*border-left: 1px solid #ddd;*/
 	-webkit-box-shadow: 0px 0px 2rem 0px rgba(0, 0, 0, 0.1);
@@ -72,10 +73,20 @@ section#sidebar{
 
 @media all and (max-width: 1000px){
 	section#sidebar{
-		display: none;
+		width: 100%;
+		float: none;
+		margin-top: 10rem;
 	}
+
+	section#sidebar .article-slug h1{
+	max-height: 1.25em !important;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
 	section#content{
 		width: 100%;
+		float: none;
 	}
 }
 

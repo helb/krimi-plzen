@@ -31,3 +31,19 @@ section#partners a, section#sponsors a{
 	color:#000;
 	text-decoration: none;
 }
+
+
+@media all and (max-width: 1000px){
+	.partner{
+		display: inline-block;
+	}
+	#partners {
+		height: 20rem;
+	}
+	#partners .partner{
+		float: left;
+		width: 25%;
+		text-align: center;
+		height: 10rem;
+	}
+}

@@ -1,25 +1,23 @@
 header#main-header{
 	display: block;
 	width: 100%;
-	height: 320px;
+	height: 230px;
+	border-bottom: 1px solid #333;
 	font-family: 'Open Sans Condensed', sans-serif;
 	/*background: url('/images/style/header.jpg') no-repeat -2rem center;*/
-	background-image: url('https://farm4.staticflickr.com/3921/15159532768_129e15feb2_o.jpg');
+	background-color: #000;
+	background-image: url('https://farm4.staticflickr.com/3939/15550182360_3bdda84179_o.jpg');
 	background-repeat: no-repeat;
-	-webkit-background-size: cover;
+	background-position: right top;
+/*-2rem-webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
-	background-size: 100%;
-	margin-bottom: 2rem;
+  background-size: cover;*/
+	background-size: auto 230px;
+	padding: 1rem;
 	padding-top: 3rem;
 }
 
-
-header#main-header *{
-	float: left;
-	margin: 0;
-}
 
 section#header-inner{
 	float: none;
@@ -33,56 +31,6 @@ header#main-header div#logo{
 	margin-bottom: 5.5rem;
 }
 
-@media all and (max-width: 1440px){
-	section#header-inner{
-		width: 90%;
-	}
-
-	header#main-header{
-		height: 280px;
-	}
-
-	header#main-header div#logo{
-		margin-bottom: 2.5rem;
-	}
-}
-
-@media all and (max-width: 1366px){
-	section#header-inner{
-		width: 95%;
-	}
-	header#main-header{
-		height: 215px;
-		padding-top: 0.5rem;
-	}
-	header#main-header div#logo{
-		margin-bottom: 2.5rem;
-	}
-}
-
-@media all and (max-width: 1280px){
-	section#header-inner{
-		width: 98%;
-	}
-	header#main-header{
-		height: 215px;
-		padding-top: 0.5rem;
-	}
-	header#main-header div#logo{
-		margin-bottom: 2rem;
-	}
-}
-
-@media all and (min-width: 1666px){
-header#main-header{
-		height: 360px;
-		padding-top: 3rem;
-	}
-header#main-header div#logo{
-		margin-bottom: 7.5rem;
-	}
-}
-
 header#main-header div#logo{
 	cursor: pointer;
 	width: 288px;
@@ -94,37 +42,8 @@ header#main-header div#logo{
 }
 
 
-/*header#main-header h1{
-	text-transform: uppercase;
-	font-size: 3.5em;
-	font-weight: 700;
-	color: #1E5169;
-	border-bottom: 0.2rem solid #fff;
-	width: 100%;
-	letter-spacing: -2px;
-	color: #fff;
-}
-
-header#main-header h2{
-	text-transform: uppercase;
-	color: #0065a4;
-	margin-top: 0.1rem;
-	font-size: 1.75em;
-	width: 100%;
-	font-weight: 300;
-	color: #fff;
-}*/
-
-
 header#main-header p{
 	display: none;
-	width: 38rem;
-	margin: 1.4rem 0 0 2rem;
-	font-size: 1.5rem;
-	font-weight: 300;
-	font-style: italic;
-	/*color: #0065a4;*/
-	color: #fff;
 }
 
 header#main-header nav#login{
@@ -146,3 +65,28 @@ section#page.admin header#main-header div#logo{
  section#page.admin header#main-header #logo{
  	margin: 0;
  }
+
+ 	section#header-inner{
+		width: 90%;
+	}
+
+	header#main-header div#logo{
+		margin-bottom: 2.5rem;
+	}
+
+
+@media (max-device-width: 800px)  and (-webkit-min-device-pixel-ratio: 1.25) and (orientation: portrait){
+	header#main-header{
+		text-align: center;
+		padding-top: 1rem;
+	}
+
+	header#main-header div#logo{
+		margin: 0 auto;
+		width: 432px;
+		height: 190px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: contain;
+	}
+}

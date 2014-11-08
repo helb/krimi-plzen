@@ -22,12 +22,11 @@ Template.articleShow.helpers({
           baseUrl = 'http://farm' + photo.farm + '.static.flickr.com/' +
           photo.server + '/' + photo.id + '_' + photo.secret;
           $('<a/>')
-            .attr('data-lightbox', 'article')
-            // .attr('data-title', photo.title)
-            .append($('<img>').prop('src', baseUrl + '_q.jpg'))
+            // .prop('rel', 'krimiplzen-gallery')
+            .append($('<img>').prop('src', baseUrl + '_q.jpg').prop('alt', 'fotka'))
             .prop('href', baseUrl + '_b.jpg')
             // .prop('title', photo.title)
-            .attr('class', 'grow')
+            .attr('class', 'swipebox')
             .appendTo(linksContainer);
         });
       }
@@ -37,4 +36,13 @@ Template.articleShow.helpers({
 
 Template.articleShow.rendered = function () {
   scrollToContent();
+  $.getScript("/js/ios-orientationchange-fix.js");
+  $.getScript("/js/jquery.swipebox.min.js")
+    .done(function(script, textStatus){
+      $('.swipebox').swipebox({
+            beforeOpen: null, // called before opening
+            afterOpen: null, // called after opening
+            afterClose: null // called after closing
+      });
+    });
 };

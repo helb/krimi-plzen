@@ -4,8 +4,8 @@ div#photos a{
 }
 
 div#photos img{
-	margin: 0 0.25rem 0.2rem;
-	width: 150px;
+	margin: 0 0.2em 0 0.2em;
+	width: 8em;
 /*	border-radius: 50%;
  -webkit-border-radius: 50%;
  -moz-border-radius: 50%;*/
@@ -31,4 +31,18 @@ div#photos{
 
 span.lb-number{
 	opacity: 0;
+}
+
+@media (max-device-width: 800px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.25){
+	div#photos img{
+		width: 30%;
+		opacity: 1;
+	}
+}
+
+@media (max-device-width: 800px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.25){
+	div#photos img{
+		width: 18%;
+		opacity: 1;
+	}
 }

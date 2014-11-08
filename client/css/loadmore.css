@@ -33,7 +33,7 @@ nav#load-more a:hover, nav#under-article-links a:hover{
   background: #0065a4;
   color: #fff;
   border: none;
-  z-index: 9999;
+  z-index: 9990;
   -webkit-box-shadow: none;
   -moz-box-shadow:    none;
   box-shadow:         none;

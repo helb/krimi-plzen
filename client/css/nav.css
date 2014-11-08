@@ -1,18 +1,21 @@
 nav#main-nav{
 	display: block;
 	width: 100%;
-	height: 2rem;
-	margin: 0 0 0 0;
+	height: 2em;
+	margin: 0;
+	padding: 0;
+	font-size: 1.25em;
+	border-bottom: 1px solid #222;
+	background-color: #222;
 }
 
 nav#main-nav ul{
 	list-style: none;
 	display: block;
 	width: 100%;
-	-webkit-box-shadow: 0px 0px 0.5rem 0.2rem rgba(0, 0, 0, 0.7);
-  -moz-box-shadow:    0px 0px 0.5rem 0.2rem rgba(0, 0, 0, 0.7);
-	box-shadow:         0px 0px 0.5rem 0.2rem rgba(0, 0, 0, 0.7);
-	height: 2rem;
+	/*height: 2em;*/
+	margin: 0;
+	padding: 0;
 }
 
 nav#main-nav ul li{
@@ -25,19 +28,21 @@ nav#main-nav ul li a{
 	margin: 0;
 	width: 100%;
 	display: block;
-	height: 2rem;
-	padding-top: 0.1rem;
+	/*height: 2em;*/
+	line-height: 2em;
 	text-decoration: none;
-	/*margin-top: -2rem;*/
-	/*background-color: #1E5169;*/
-	background-color: rgba(0,0,0,0.7);
+	background-color: #222;
+	border-right: 1px solid #333;
 	color: #fff;
 	font-family: 'Open Sans Condensed', sans-serif;
-	font-size: 1.5em;
+}
+
+nav#main-nav ul li:last-child a{
+	border-right: none;
 }
 
 nav#main-nav ul li a:hover{
-	background: #fff;
+	background: #fdfdfd;
 	color: #333;
 }
 
@@ -48,3 +53,27 @@ nav#main-nav ul li a.active{
 nav.admin ul li{
 	min-width: 50%;
 }
+
+@media (max-device-width: 800px) and (-webkit-min-device-pixel-ratio: 1.25){
+	nav#main-nav{
+		height: 8rem;
+	}
+
+	nav#main-nav ul li{
+		float: left;
+		width: 25%;
+		text-align: center;
+	}
+
+nav#main-nav ul li:nth-child(4) a{
+	border-right: none;
+}
+
+
+	nav#main-nav ul li a{
+		border-bottom: 1px solid #333;
+		line-height: 4rem;
+		font-size: 2em;
+	}
+}
+

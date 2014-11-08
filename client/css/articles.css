@@ -1,8 +1,12 @@
 /* ARTICLE LIST */
 
+section.article-slug *{
+	background: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7") no-repeat;
+}
+
 section.article-slug h1, section.article h1{
 	font-family: 'Open Sans Condensed', sans-serif;
-	font-size: 2.5em;
+	font-size: 2em;
 	font-weight: 300;
 	color: #1E5169;
 	/*text-transform: uppercase;*/
@@ -20,16 +24,20 @@ section.article-slug a:hover h1{
 section.article-slug h1{
 	line-height: 1.25em;
 	margin-bottom: 0.25rem;
+	max-height: 2.5em;
+	overflow: hidden;
+	text-overflow: "ellipsis";
 }
 
 
 section.article-slug{
-	padding-bottom: 1rem;
-	min-height: 11rem;
-	margin: 0 0 1rem 0;
+	padding-bottom: 1em;
+	min-height: 12em;
+	margin: 0 0 1em 0;
 	border-bottom: 1px solid #eee;
 	display: block;
 	background: radial-gradient(ellipse at bottom, rgba(0,0,0,0.07) 0%,rgba(0,0,0,0) 50%); /* W3C */
+	width: 100%;
 }
 
 section#main section.article-slug:last-child{
@@ -54,7 +62,7 @@ section.article-slug p a:hover{
 
 
 section.article-slug img{
-	width: 150px;
+	width: 10em;
 	float: left;
 	margin: 0.25rem 1rem;
 }
@@ -77,17 +85,21 @@ p.timestamp{
 
 /* SINGLE ARTICLE */
 
+article.article *{
+	background: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7") no-repeat;
+}
+
 article.article{
 	margin-bottom: 2rem;
 		line-height: 1.75em;
 }
 
 article.article h1{
-	width: 95%;
+	width: 98%;
 	margin-top: -0.5rem;
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 2.75em;
-	line-height: 1.5em;
+	line-height: 1.25em;
 	font-weight: 300;
 	color: #1E5169;
 	margin-bottom: 1rem;
@@ -95,7 +107,7 @@ article.article h1{
 }
 
 article.article p.timestamp{
-	font-size: 0.9rem;
+	font-size: 0.9em;
 	margin-bottom: 1rem;
 	font-weight: 300;
 	border-top: 1px solid #eee;
@@ -103,8 +115,8 @@ article.article p.timestamp{
 
 
 article.article p{
-	width: 95%;
-  text-align: justify;
+	width: 98%;
+  text-align: left;
   font-size: 1.25em;
 	line-height: 1.5em;
 	margin: 0.25em 0 0.25em 0;
@@ -164,7 +176,7 @@ article.article ol, div#editor ol{
 
 article.article blockquote, div#editor blockquote{
 	width: 95%;
-	font-size: 1.5rem;
+	font-size: 1.5em;
 	font-weight: 300;
 	font-style: italic;
 	font-family: 'Open Sans Condensed', sans-serif;
@@ -210,15 +222,15 @@ article.article hr{
 }
 
 article.article table{
-	margin-top:1rem;
-	margin-bottom: 1rem;
+	margin-top:1em;
+	margin-bottom: 1em;
 	width: 95%;
-	line-height: 1.25rem;
+	line-height: 1.25em;
 	border: 1px solid #ddd;
 }
 
 article.article table td{
-	padding: 0.5rem;
+	padding: 0.5em;
 }
 
 article.article table tr:not(:last-child) td{
@@ -227,7 +239,7 @@ article.article table tr:not(:last-child) td{
 
 article.article table tr th{
 	border-bottom: 1px solid #bbb;
-	padding: 0.5rem;
+	padding: 0.5em;
 }
 
 article.article table tr td:not(:last-child){
@@ -288,4 +300,19 @@ section#recommended-articles{
 
 section#recommended-articles.visible{
 	display: block;
+}
+
+@media (max-device-width: 800px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.25){
+	article.article,
+	.article-slug{
+		font-size: 2em;
+	}
+
+}
+
+@media (max-device-width: 800px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.25){
+	article.article,
+	.article-slug{
+		font-size: 1.5em;
+	}
 }

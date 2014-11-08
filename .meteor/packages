@@ -14,7 +14,6 @@ accounts-ui
 accounts-password
 gadicohen:sitemaps
 richsilv:pikaday
-mrt:lightbox2
 daniel:auto-nprogress
 yasinuslu:blaze-meta
 spiderable
@@ -22,3 +21,5 @@ mrt:medium-editor-updated
 meteorhacks:fast-render
 meteorhacks:subs-manager
 markdown
+gabrielengel:konecty-magnific-popup
+
