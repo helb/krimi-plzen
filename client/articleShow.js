@@ -40,6 +40,7 @@ Template.articleShow.rendered = function () {
   $.getScript("/js/jquery.swipebox.min.js")
     .done(function(script, textStatus){
       $('.swipebox').swipebox({
+            useCSS: false,
             beforeOpen: null, // called before opening
             afterOpen: null, // called after opening
             afterClose: null // called after closing

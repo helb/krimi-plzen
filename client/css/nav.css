@@ -54,8 +54,8 @@ nav.admin ul li{
 	min-width: 50%;
 }
 
-@media (-webkit-min-device-pixel-ratio: 1.25) and (orientation: portrait),
-(-webkit-min-device-pixel-ratio: 1.25) and (orientation: landscape){
+@media (-webkit-min-device-pixel-ratio: 1.25) and (max-device-width: 800px),
+(-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 1081px){
 	nav#main-nav{
 		height: 8rem;
 	}

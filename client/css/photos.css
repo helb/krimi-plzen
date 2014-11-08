@@ -33,14 +33,16 @@ span.lb-number{
 	opacity: 0;
 }
 
-@media (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.25){
+@media (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.25) and (max-device-width: 800px),
+(orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 1081px){
 	div#photos img{
 		width: 30%;
 		opacity: 1;
 	}
 }
 
-@media (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.25){
+@media (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.25) and (max-device-width: 800px),
+(orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 1081px){
 	div#photos img{
 		width: 18%;
 		opacity: 1;

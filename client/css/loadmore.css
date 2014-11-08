@@ -12,7 +12,7 @@ nav#load-more a, nav#under-article-links a{
   font-weight: 300;
   font-size: 1.75em;
   margin-bottom: 1.75rem;
-  line-height: 5rem;
+  line-height: 1.5em;
   text-decoration: none;
   color: #1E5169;
   background: #fff;
@@ -37,4 +37,18 @@ nav#load-more a:hover, nav#under-article-links a:hover{
   -webkit-box-shadow: none;
   -moz-box-shadow:    none;
   box-shadow:         none;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.25) and (max-device-width: 800px),
+(-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 1081px){
+nav#under-article-links a{
+    font-size: 2.5em;
+    line-height: 2em;
+  }
+}
+
+@media (max-device-width: 500px){
+  nav#under-article-links a{
+    font-size: 4em;
+  }
 }

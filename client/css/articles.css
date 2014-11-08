@@ -6,7 +6,7 @@ section.article-slug *{
 
 section.article-slug h1, section.article h1{
 	font-family: 'Open Sans Condensed', sans-serif;
-	font-size: 2em;
+	font-size: 1.8em;
 	font-weight: 300;
 	color: #1E5169;
 	/*text-transform: uppercase;*/
@@ -22,11 +22,8 @@ section.article-slug a:hover h1{
 }
 
 section.article-slug h1{
-	line-height: 1.25em;
+	line-height: 1.1em;
 	margin-bottom: 0.25rem;
-	max-height: 2.5em;
-	overflow: hidden;
-	text-overflow: "ellipsis";
 }
 
 
@@ -302,17 +299,33 @@ section#recommended-articles.visible{
 	display: block;
 }
 
-@media (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.25){
+@media (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.25) and (max-device-width: 800px),
+(orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 1081px){
 	article.article,
 	.article-slug{
 		font-size: 2em;
 	}
-
 }
 
-@media (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.25){
+@media (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.25) and (max-device-width: 800px),
+(orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 1081px){
 	article.article,
 	.article-slug{
+		font-size: 1.5em;
+	}
+}
+
+@media (max-device-width: 500px){
+	article.article h1{
+		font-size: 3.25em;
+	}
+	article.article p.timestamp{
+		font-size: 1.25em;
+	}
+	article.article p.intro{
+		font-size: 1.25em;
+	}
+	article.article p{
 		font-size: 1.5em;
 	}
 }
