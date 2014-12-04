@@ -10,6 +10,10 @@ section#partners img[src*="leiko"] {
 	width: 12rem;
 }
 
+section#partners img[src*="plzen_cz"] {
+	width: 11rem;
+}
+
 section#partners img[src*="los"]{
 	width: 7rem;
 }
