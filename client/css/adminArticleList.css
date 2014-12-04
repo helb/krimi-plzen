@@ -143,3 +143,9 @@ table#admin-article-list tr:not(.publishedtrue){
 table#admin-article-list tr td input.recommend{
 margin: 0 0.5rem 0 0.5rem;
 }
+
+button.admin-list-load-more{
+	display: block;
+	width: 8rem;
+	margin: 0 auto 2rem;
+}

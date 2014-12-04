@@ -48,4 +48,9 @@ Template.adminArticleList.events({
     // console.log(!event.currentTarget.checked);
     Articles.update({_id: article_id}, {$set: {is_recommended: event.currentTarget.checked}});
   },
+
+  'click button.admin-list-load-more': function (event)  {
+    event.preventDefault();
+    return Meteor.subscribe("adminArticleList", $("tr").length + 10);
+  }
 })
