@@ -23,7 +23,11 @@ section#partners img[src*="cwt"]{
 }
 
 section#partners img[src*="policejnidenik"]{
-	width: 100px;
+	width: 7.5rem;
+}
+
+section#partners img[src*="rescue"]{
+	width: 7.5rem;
 }
 
 section#partners article.partner, section#sponsors article.partner{
