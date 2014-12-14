@@ -1,16 +1,6 @@
 Template.adminArticleAdd.rendered = function () {
-/*  this._editor = new Pen({
-    stay: false,
-    editor: document.getElementById("editor"),
-    list: [
-      'blockquote', 'h2', 'h3', 'p', 'insertorderedlist', 'insertunorderedlist',
-      'indent', 'outdent', 'bold', 'italic', 'createlink'
-    ]
-  });*/
-
   var editor = new MediumEditor('#editor', {
     anchorInputPlaceholder: 'adresa odkazu',
-    // buttons: ['bold', 'italic', 'underline', 'strikethrough', 'header1', 'unorderedlist', 'orderedlist', 'quote', 'anchor'],
     buttons: ['bold', 'italic', 'underline', 'strikethrough', 'header1', 'unorderedlist', 'orderedlist', 'quote', 'anchor'],
     checkLinkFormat: true,
     cleanPastedHTML: true,
@@ -22,15 +12,8 @@ Template.adminArticleAdd.rendered = function () {
 
   getFlickrSets();
 
-/*  window.onbeforeunload = function() {
-    return "";
-  };*/
-
 };
 
-/*Template.adminArticleAdd.destroyed = function () {
-  this._editor.destroy();
-};*/
 
 Template.adminArticleAdd.events({
   'click button#form-save': function (event) {

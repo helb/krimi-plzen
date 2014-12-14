@@ -1,16 +1,7 @@
 Template.adminArticleEdit.rendered = function () {
-/*  this._editor = new Pen({
-    stay: false,
-    editor: document.getElementById("editor"),
-    list: [
-      'blockquote', 'h2', 'h3', 'p', 'insertorderedlist', 'insertunorderedlist',
-      'indent', 'outdent', 'bold', 'italic', 'createlink'
-    ]
-  });*/
 
   var editor = new MediumEditor('#editor', {
     anchorInputPlaceholder: 'adresa odkazu',
-    // buttons: ['bold', 'italic', 'underline', 'strikethrough', 'header1', 'unorderedlist', 'orderedlist', 'quote', 'anchor'],
     buttons: ['bold', 'italic', 'underline', 'strikethrough', 'header1', 'unorderedlist', 'orderedlist', 'quote', 'anchor'],
     checkLinkFormat: true,
     cleanPastedHTML: true,
@@ -20,24 +11,14 @@ Template.adminArticleEdit.rendered = function () {
     placeholder: ''
   });
 
-/*  window.onbeforeunload = function() {
-    return "";
-  };*/
-
-  // getFlickrSets();
 };
 
-/*Template.adminArticleEdit.destroyed = function () {
-  this._editor.destroy();
-};*/
 
 Template.adminArticleEdit.events({
   'click button#form-save': function (event) {
     event.preventDefault();
     article_id = event.currentTarget.dataset.article;
-    // console.log(article_id);
     title = document.getElementById("form-title").value;
-    // slug = titleToSlug(document.getElementById("form-title").value);
     intro = document.getElementById("form-intro").value;
     text = cleanHTML(document.getElementById("editor").innerHTML);
     // text = document.getElementById("editor").innerHTML;
@@ -62,6 +43,5 @@ Template.adminArticleEdit.events({
       }
     });
     $("#form-save-success").removeClass("hidden");
-    // window.location.href = '/admin';
   },
 });

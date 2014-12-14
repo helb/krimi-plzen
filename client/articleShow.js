@@ -9,7 +9,6 @@ Template.articleShow.helpers({
         format: 'json',
         method: 'flickr.photosets.getPhotos',
         photoset_id:  set_id,
-        // per_page: '1',
         api_key: '7617adae70159d09ba78cfec73c13be3'
       },
       dataType: 'jsonp',
@@ -22,10 +21,8 @@ Template.articleShow.helpers({
           baseUrl = 'http://farm' + photo.farm + '.static.flickr.com/' +
           photo.server + '/' + photo.id + '_' + photo.secret;
           $('<a/>')
-            // .prop('rel', 'krimiplzen-gallery')
             .append($('<img>').prop('src', baseUrl + '_q.jpg').prop('alt', 'fotka'))
             .prop('href', baseUrl + '_b.jpg')
-            // .prop('title', photo.title)
             .attr('class', 'swipebox')
             .appendTo(linksContainer);
         });

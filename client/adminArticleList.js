@@ -45,7 +45,6 @@ Template.adminArticleList.events({
 
   'click input.recommend': function (event) {
     article_id =  event.currentTarget.parentNode.parentNode.dataset.article;
-    // console.log(!event.currentTarget.checked);
     Articles.update({_id: article_id}, {$set: {is_recommended: event.currentTarget.checked}});
   },
 
