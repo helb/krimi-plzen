@@ -120,10 +120,12 @@ article.article p{
 	margin: 0.25em 0 0.25em 0;
 }
 
-article.article p.intro{
+article.article p.intro,
+article.article p.intro p{
 	font-weight: 300;
 	margin-bottom: 1.75rem;
 	line-height: 1.5em;
+	font-size: 1.5rem;
 	color: #333;
 }
 
