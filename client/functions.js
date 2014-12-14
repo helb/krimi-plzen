@@ -59,13 +59,15 @@ getFlickrSets = function () {
     var setsContainer = $('#form-set');
     $('<option/>')
       .prop('label', '(bez fotek)').appendTo(setsContainer);
-    // Add the demo images as links with thumbnails to the page:
+
     $.each(result.photosets.photoset, function (index, photoset) {
       $('<option/>')
         .prop('label', photoset.title._content)
         .attr('data-photo', photoset.primary_photo_extras.url_q)
         .prop('value', photoset.id)
         .appendTo(setsContainer);
+
+      $('#form-set option:eq(1)').attr('selected', 'selected');
     });
   });
 }
