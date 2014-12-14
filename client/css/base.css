@@ -111,3 +111,7 @@ a, a:link, a:visited{
 a:hover{
 	color: #0065a4;
 }
+
+ul, ol{
+	list-style-position: inside;
+}
