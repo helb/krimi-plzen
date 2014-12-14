@@ -27,15 +27,23 @@ Template.adminArticleAdd.events({
     photoset = setselect.value;
     photo_url = setselect.options[setselect.selectedIndex].dataset.photo;
     photoset_placement = document.getElementById("form-set-placement").value;
+
     if(document.getElementById("form-category").value.length > 0){
       category = document.getElementById("form-category").value;
     } else {
       category = null;
     }
+
     if (document.getElementById("form-youtube").value) {
       youtube_url  = getIdFromYoutube(document.getElementById("form-youtube").value);
     } else {
       youtube_url =  null;
+    }
+
+    if (document.getElementById("form-publish").checked) {
+      is_published = true;
+    } else {
+      is_published = false;
     }
 
     Meteor.call('articleExists', slug, function(err, exists) {
@@ -63,7 +71,7 @@ Template.adminArticleAdd.events({
           photoset_placement:  photoset_placement,
           youtube_url:  youtube_url,
           category: category,
-          is_published:  true
+          is_published: is_published
         })){
           $("#form-save-success").removeClass("hidden");
         }
