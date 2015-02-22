@@ -4,19 +4,19 @@ nav#load-more, nav#under-article-links{
 }
 
 nav#load-more a, nav#under-article-links a{
-  float: left;
-  display: block;
-  width: 50%;
+  display: inline-block;
+  width: 40%;
   height: 5rem;
   text-align: center;
   font-weight: 300;
   font-size: 1.75em;
   margin-bottom: 1.75rem;
   line-height: 1.5em;
+  padding-top: 0.5em;
   text-decoration: none;
   color: #1E5169;
-  background: #fff;
-  position: relative;
+  background: #f8f8f8;
+  border: 1px solid #eee;
   -webkit-box-shadow: 0px 0px 2rem 0px rgba(0, 0, 0, 0.03);
   -moz-box-shadow:    0px 0px 2rem 0px rgba(0, 0, 0, 0.03);
   box-shadow:         0px 0px 2rem 0px rgba(0, 0, 0, 0.03);
@@ -32,23 +32,8 @@ nav#load-more a:hover, nav#under-article-links a:hover{
   background: #efefef;*/
   background: #0065a4;
   color: #fff;
-  border: none;
   z-index: 9990;
   -webkit-box-shadow: none;
   -moz-box-shadow:    none;
   box-shadow:         none;
-}
-
-@media (-webkit-min-device-pixel-ratio: 1.25) and (max-device-width: 800px),
-(-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 1081px){
-nav#under-article-links a{
-    font-size: 2.5em;
-    line-height: 2em;
-  }
-}
-
-@media (max-device-width: 500px){
-  nav#under-article-links a{
-    font-size: 4em;
-  }
 }
