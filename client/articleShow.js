@@ -28,10 +28,10 @@ Template.articleShow.rendered = function() {
           display: false
         },
         viewerToolbar:  {
-          style:   "stuckImage",
+          style: "stuckImage",
           autoMinimize: 500,
-          standard:   "previousButton, pageCounter, nextButton, playPauseButton, fullscreenButton, closeButton",
-          minimized: "playPauseButton, closeButton",
+          standard: "previousButton, pageCounter, nextButton, playPauseButton, fullscreenButton, closeButton",
+          minimized: "minimizeButton, playPauseButton, closeButton",
         }
       });
     })
