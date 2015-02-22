@@ -6,7 +6,7 @@
 	<p class="intro">{{#markdown}}{{intro}}{{/markdown}}</p>
 	{{#if youtube_url}}<iframe width="853" height="480" src="//www.youtube-nocookie.com/embed/{{youtube_url}}" frameborder="0" allowfullscreen></iframe>{{/if}}
 	{{#markdown}}{{text}}{{/markdown}}
-	{{#if photo_url}}<div id="photos">{{flickr photoset}}</div>{{/if}}
+	{{#if photo_url}}<div id="photos" data-set="{{photoset}}"></div>{{/if}}
 </article>
 {{/with}}
 {{>underArticleLinks}}
