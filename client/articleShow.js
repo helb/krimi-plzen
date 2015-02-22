@@ -13,9 +13,9 @@ Template.articleShow.helpers({
       dataType: 'jsonp',
       jsonp: 'jsoncallback'
     }).done(function (result) {
-      var photoContainer = $('#photos'),
-          baseUrl;
       if(result.photoset){
+        var photoContainer = $('#photos'),
+            baseUrl;
         photoContainer.empty();
         $.each(result.photoset.photo, function (index, photo) {
           baseUrl = 'http://farm' + photo.farm + '.static.flickr.com/' +
