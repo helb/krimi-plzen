@@ -23,7 +23,6 @@ Template.articleShow.helpers({
           $('<a/>')
             .append($('<img>').prop('src', baseUrl + '_q.jpg').prop('alt', photo.title))
             .prop('href', baseUrl + '_b.jpg')
-            .data('id', photo.id)
             .appendTo(photoContainer);
         });
       }
