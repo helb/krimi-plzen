@@ -23,7 +23,6 @@ Template.articleShow.helpers({
           $('<a/>')
             .append($('<img>').prop('src', baseUrl + '_q.jpg').prop('alt', 'fotka'))
             .prop('href', baseUrl + '_b.jpg')
-            .attr('class', 'swipebox')
             .appendTo(photoContainer);
         });
       }
@@ -33,14 +32,4 @@ Template.articleShow.helpers({
 
 Template.articleShow.rendered = function () {
   scrollToContent();
-  $.getScript("/js/ios-orientationchange-fix.js");
-  $.getScript("/js/jquery.swipebox.min.js")
-    .done(function(script, textStatus){
-      $('.swipebox').swipebox({
-            useCSS: false,
-            beforeOpen: null, // called before opening
-            afterOpen: null, // called after opening
-            afterClose: null // called after closing
-      });
-    });
 };
