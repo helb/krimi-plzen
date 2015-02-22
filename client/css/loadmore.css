@@ -27,9 +27,6 @@ nav#load-more a:first-child{
 }
 
 nav#load-more a:hover, nav#under-article-links a:hover{
-  /*text-decoration: underline;*/
-  /*color: #0065a4;
-  background: #efefef;*/
   background: #0065a4;
   color: #fff;
   z-index: 9990;

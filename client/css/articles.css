@@ -9,7 +9,6 @@ section.article-slug h1, section.article h1{
 	font-size: 1.8em;
 	font-weight: 300;
 	color: #1E5169;
-	/*text-transform: uppercase;*/
 }
 
 section.article-slug a{
@@ -293,7 +292,6 @@ section#sidebar section.article-slug p.timestamp{
 
 
 section#sidebar section{
-	/*margin-top: 1rem;*/
 	padding: 1rem;
 }
 
