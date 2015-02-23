@@ -17,8 +17,6 @@ Template.articleShow.rendered = function() {
           kind: 'flickr',
           photoset: $("#photos").data("set"),
           locationHash:  false,
-          thumbnailLazyLoad: true,
-          lazyBuild: "display",
           thumbnailWidth: 128,
           thumbnailHeight: "auto",
           thumbnailAlignment:   "left",
