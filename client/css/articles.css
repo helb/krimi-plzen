@@ -332,7 +332,7 @@ article.article .wysiwyg{
 	display: none !important;
 }
 
-@media (orientation: portrait) and (max-device-width: 800px),
+/*@media (orientation: portrait) and (max-device-width: 800px),
 (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 1081px){
 	.article-slug{
 		font-size: 2.5em;
@@ -340,7 +340,6 @@ article.article .wysiwyg{
 
 	section.article-slug{
 		font-size: 2.25em;
-		/*min-height: 14em !important;*/
 		background: transparent;
 	}
 
@@ -366,4 +365,4 @@ article.article .wysiwyg{
 	.article-slug h1{
 		font-size: 90%;
 	}
-}
+}*/
