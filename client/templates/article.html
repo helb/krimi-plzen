@@ -1,11 +1,11 @@
 <template name="articleShow">
 {{#with article}}
 <article class="article">
- 	<h1>{{title}}</h1>
+ 	<h1>{{> editableText collection="articles" field="title" title="Kliknutím lze editovat nadpis"}}</h1>
 	<p class="timestamp">{{author_name}}, {{day_name}} {{date}}, {{time}}</p>
-	<p class="intro">{{#markdown}}{{intro}}{{/markdown}}</p>
+	<p class="intro">{{> editableText collection="articles" field="intro" wysiwyg=true  title="Kliknutím lze editovat úvod"}}</p>
 	{{#if youtube_url}}<iframe width="853" height="480" src="//www.youtube-nocookie.com/embed/{{youtube_url}}" frameborder="0" allowfullscreen></iframe>{{/if}}
-	{{#markdown}}{{text}}{{/markdown}}
+	{{> editableText collection="articles" field="text" wysiwyg=true userCanEdit=userCanEdit title="Kliknutím lze editovat text článku"}}
 	{{#if photo_url}}<div id="photos" data-set="{{photoset}}"></div>{{/if}}
 </article>
 {{/with}}
