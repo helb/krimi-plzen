@@ -67,8 +67,7 @@ section#page.admin header#main-header div#logo{
 	}
 
 
-@media (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.25) and (max-device-width: 800px),
-(orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 1081px){
+@media all and (max-width: 55em){
 	header#main-header{
 		text-align: center;
 		padding-top: 1rem;

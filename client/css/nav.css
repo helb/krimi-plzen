@@ -53,7 +53,7 @@ nav.admin ul li{
 }
 
 @media (orientation: portrait) and (max-device-width: 800px),
-(orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 1081px){
+(orientation: portrait) and (max-device-width: 1081px){
 	nav#main-nav{
 		height: 12rem;
 	}
@@ -71,12 +71,10 @@ nav#main-nav ul li:nth-child(4) a{
 
 	nav#main-nav ul li a{
 		line-height: 6rem;
-		font-size: 2.5em;
 	}
 }
 
-@media (orientation: landscape) and (max-device-width: 800px),
-(orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 1081px){
+@media all and (max-width: 55em){
 	nav#main-nav{
 		height: 8rem;
 	}
@@ -94,6 +92,5 @@ nav#main-nav ul li:nth-child(4) a{
 
 	nav#main-nav ul li a{
 		line-height: 4rem;
-		font-size: 2em;
 	}
 }
