@@ -3,7 +3,7 @@ Template.articleShow.rendered = function() {
 
   scrollToContent();
 
-  if($("#photos").length > 0){
+  if ($("#photos").length > 0) {
     if (document.createStyleSheet) {
       document.createStyleSheet(nanocss);
     } else {
