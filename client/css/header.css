@@ -21,9 +21,6 @@ section#header-inner{
 
 header#main-header div#logo{
 	margin-bottom: 5.5rem;
-}
-
-header#main-header div#logo{
 	cursor: pointer;
 	width: 288px;
 	height: 127px;
@@ -80,5 +77,6 @@ section#page.admin header#main-header div#logo{
 		background-repeat: no-repeat;
 		background-position: center center;
 		background-size: contain;
+        max-width: 75%;
 	}
 }
