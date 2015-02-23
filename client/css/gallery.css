@@ -22,7 +22,7 @@
   left: 0;
 }
 
-.nanoGalleryViewer .toolbar .label .description{
+.nanoGalleryViewer .toolbar .label .description:not(:empty){
   display: inline-block !important;
   margin: 0 auto !important;
   background: rgba(0,0,0,0.75) !important;
