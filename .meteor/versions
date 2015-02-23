@@ -27,6 +27,7 @@ ejson@1.0.5
 email@1.0.5
 fastclick@1.0.2
 follower-livedata@1.0.3
+fortawesome:fontawesome@4.2.0_2
 gadicohen:robots-txt@0.0.8
 gadicohen:sitemaps@0.0.20
 geojson-utils@1.0.2
@@ -88,6 +89,7 @@ spiderable@1.0.6
 srp@1.0.2
 templating@1.0.11
 tracker@1.0.5
+twbs:bootstrap-noglyph@3.3.2
 ui@1.0.5
 underscore@1.0.2
 url@1.0.3

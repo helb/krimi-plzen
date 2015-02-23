@@ -5,3 +5,7 @@
 .nanoGalleryNavigationbarContainer{
   display: none !important;
 }
+
+#photos{
+  margin-top: 5rem;
+}

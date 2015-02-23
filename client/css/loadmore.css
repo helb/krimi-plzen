@@ -6,13 +6,13 @@ nav#load-more, nav#under-article-links{
 nav#load-more a, nav#under-article-links a{
   display: inline-block;
   width: 40%;
-  height: 5rem;
+  height: 7rem;
   text-align: center;
   font-weight: 300;
-  font-size: 1.75em;
+  font-size: 1.35em;
   margin-bottom: 1.75rem;
   line-height: 1.5em;
-  padding-top: 0.5em;
+  padding-top: 0.6em;
   text-decoration: none;
   color: #1E5169;
   background: #f8f8f8;

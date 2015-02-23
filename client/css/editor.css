@@ -12,6 +12,7 @@ input{
   padding: 0.25rem;
   background: #fff;
   border: 1px solid #ddd;
+  font-family: "Open Sans", sans-serif;
 }
 
 
@@ -31,6 +32,7 @@ select{
   padding: 0.25rem;
   background: #fff;
   border: 1px solid #ddd;
+  font-family: "Open Sans", sans-serif;
 }
 
 textarea#form-intro{
@@ -47,6 +49,8 @@ textarea#form-intro{
 }
 
 button {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.75em;
   background-color: #2f8fa5;
   background: -webkit-gradient(linear, left top, left bottom, from(#2f8fa5), to(#1e5091));
   background: -webkit-linear-gradient(top, #2f8fa5, #1e5091);
