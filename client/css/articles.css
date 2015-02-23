@@ -30,6 +30,7 @@ section.article-slug{
 	margin: 0 0 1em 0;
 	border-bottom: 1px solid #eee;
 	background: radial-gradient(ellipse at bottom, rgba(0,0,0,0.09) 0%,rgba(0,0,0,0) 50%); /* W3C */
+    display: block;
 	width: 100%;
 }
 
@@ -55,7 +56,8 @@ section.article-slug p a:hover{
 
 
 section.article-slug img{
-	width: 16rem;
+    width: 15%;
+	width: 8em;
 	display: inline-block;
 	margin: 0.25rem 1rem;
 	vertical-align: top;
@@ -65,13 +67,9 @@ div.teaser{
 	padding: 0;
 	vertical-align: top;
 	display: inline-block;
-	width: calc(100% - 20rem);
-	min-height: 16rem;
-}
-
-#sidebar div.teaser{
-	width: calc(100% - 7rem);
-	margin-top: -0.5rem;
+    width: 69%;
+	width: calc(100% - 10em);
+	min-height: 8em;
 }
 
 div.teaser h1{
@@ -129,8 +127,8 @@ article.article p.timestamp{
 article.article p{
 	font-weight: 400;
 	width: 98%;
-  text-align: left;
-  font-size: 1em;
+    text-align: left;
+    font-size: 1em;
 	line-height: 1.5em;
 	margin: 0.25em 0 0.25em 0;
 }
@@ -274,13 +272,18 @@ section#sidebar section.article-slug h1{
 }
 
 section#sidebar section.article-slug img{
-	width: 6rem;
-	margin: 0 0.5rem 0 0;
+	width: 4em;
+	margin: 0 0.5em 0 0;
+}
+
+#sidebar div.teaser{
+    width: calc(100% - 5em);
+    margin-top: -0.5rem;
 }
 
 section#sidebar section.article-slug{
-	padding: 1rem 0 1rem 0;
-	margin:0.5rem 0 0 0;
+	padding: 1em 0 1em 0;
+	margin:0.5em 0 0 0;
 }
 
 section#sidebar section.article-slug *{
@@ -290,7 +293,7 @@ section#sidebar section.article-slug *{
 section#sidebar section.article-slug p{
 	font-size: 0.8em;
 	overflow: hidden;
-	margin: 0 0 0.25rem 0;
+	margin: 0 0 0.25em 0;
 	padding: 0;
   text-overflow: ellipsis;
   line-height: 1.2em;
@@ -299,7 +302,7 @@ section#sidebar section.article-slug p{
 
 section#sidebar section.article-slug p.timestamp{
 	font-size: 0.75em;
-	height: 1rem;
+	height: 1em;
 	margin: 0;
 	padding: 0;
 }
@@ -331,38 +334,3 @@ article.article .wysiwyg{
 .wysiwyg-tools .btn-group:nth-child(2){
 	display: none !important;
 }
-
-/*@media (orientation: portrait) and (max-device-width: 800px),
-(orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 1081px){
-	.article-slug{
-		font-size: 2.5em;
-	}
-
-	section.article-slug{
-		font-size: 2.25em;
-		background: transparent;
-	}
-
-		section.article-slug img{
-			width: 8em;
-		}
-
-	.article-slug p{
-		line-height: 1.1em !important;
-	}
-
-	.article-slug p.timestamp{
-		padding: 0.5em 0 0.25em 0;
-	}
-}
-
-@media (orientation: landscape) and (max-device-width: 800px),
-(orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) and (max-device-width: 1081px){
-	.article-slug{
-		font-size: 1.75em;
-	}
-
-	.article-slug h1{
-		font-size: 90%;
-	}
-}*/

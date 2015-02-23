@@ -52,9 +52,9 @@ nav.admin ul li{
 	min-width: 50%;
 }
 
-@media all and (max-width: 60rem){
+@media all and (max-width: 65em){
 	nav#main-nav{
-		height: 8rem;
+		height: 4em;
 	}
 
 	nav#main-nav ul li{
@@ -63,12 +63,12 @@ nav.admin ul li{
 		text-align: center;
 	}
 
-nav#main-nav ul li:nth-child(4) a{
-	border-right: none;
-}
+    nav#main-nav ul li:nth-child(4) a{
+    	border-right: none;
+    }
 
 
 	nav#main-nav ul li a{
-		line-height: 4rem;
+		line-height: 2em;
 	}
 }

@@ -67,7 +67,7 @@ section#page.admin header#main-header div#logo{
 	}
 
 
-@media all and (max-width: 60rem){
+@media all and (max-width: 65em){
 	header#main-header{
 		text-align: center;
 		padding-top: 1rem;

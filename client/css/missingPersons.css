@@ -1,9 +1,7 @@
 section#missing-persons{
 	background: #333;
+    background: linear-gradient(to right, #222 0%, #333 5%);
 	color: #fff;
-	-webkit-box-shadow: 0px 0px 1rem 0px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow:    0px 0px 1rem 0px rgba(0, 0, 0, 0.5);
-	box-shadow:         0px 0px 1rem 0px rgba(0, 0, 0, 0.5);
 	display: none;
 }
 
