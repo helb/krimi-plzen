@@ -52,28 +52,6 @@ nav.admin ul li{
 	min-width: 50%;
 }
 
-@media (orientation: portrait) and (max-device-width: 800px),
-(orientation: portrait) and (max-device-width: 1081px){
-	nav#main-nav{
-		height: 12rem;
-	}
-
-	nav#main-nav ul li{
-		float: left;
-		width: 25%;
-		text-align: center;
-	}
-
-nav#main-nav ul li:nth-child(4) a{
-	border-right: none;
-}
-
-
-	nav#main-nav ul li a{
-		line-height: 6rem;
-	}
-}
-
 @media all and (max-width: 60rem){
 	nav#main-nav{
 		height: 8rem;

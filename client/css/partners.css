@@ -40,8 +40,7 @@ section#partners a, section#sponsors a{
 	text-decoration: none;
 }
 
-
-@media all and (max-width: 1000px){
+@media all and (max-width: 60rem){
 	.partner{
 		display: inline-block;
 	}
