@@ -30,8 +30,8 @@ Template.articleShow.rendered = function() {
           viewerToolbar:  {
             style: "stuckImage",
             autoMinimize: 500,
-            standard: "previousButton, pageCounter, nextButton, playPauseButton, fullscreenButton, closeButton",
-            minimized: "minimizeButton, playPauseButton, closeButton",
+            standard: "label, previousButton, pageCounter, nextButton, playPauseButton, fullscreenButton",
+            minimized: "label, minimizeButton, playPauseButton, closeButton",
           },
           displayBreadcrumb: false,
         });
