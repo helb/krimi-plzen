@@ -67,16 +67,18 @@ section#page.admin header#main-header div#logo{
 @media all and (max-width: 65em){
 	header#main-header{
 		text-align: center;
-		padding-top: 1rem;
+		padding: 1rem 0 0 0;
+        height: 130px;
+        background-position: center center;
 	}
 
 	header#main-header div#logo{
-		margin: 0 auto;
-		width: 432px;
-		height: 190px;
+		margin: -2rem auto;
+		width: auto;
+		height: auto;
 		background-repeat: no-repeat;
 		background-position: center center;
 		background-size: contain;
-        max-width: 75%;
+        width: 90vw;
 	}
 }
