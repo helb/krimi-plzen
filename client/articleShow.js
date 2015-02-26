@@ -17,7 +17,7 @@ Template.articleShow.rendered = function() {
           $("#photos").nanoGallery({
             userID: '124879138@N07',
             kind: 'flickr',
-            photoset: ,
+            photoset: setId,
             lazyBuild: 'loadData',
             thumbnailLazyLoad: true,
             locationHash: false,
