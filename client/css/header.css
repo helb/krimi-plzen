@@ -73,12 +73,10 @@ section#page.admin header#main-header div#logo{
 	}
 
 	header#main-header div#logo{
-		margin: -2rem auto;
-		width: auto;
-		height: auto;
+		margin: -3rem auto;
 		background-repeat: no-repeat;
 		background-position: center center;
 		background-size: contain;
-        width: 90vw;
+    max-width: 90%;
 	}
 }
