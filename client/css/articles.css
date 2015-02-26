@@ -282,8 +282,8 @@ section#sidebar section.article-slug img{
 }
 
 section#sidebar section.article-slug{
-	padding: 1em 0 1em 0;
-	margin:0.5em 0 0 0;
+	padding: 0.5em 0 0.5em 0;
+	margin: 0;
 }
 
 section#sidebar section.article-slug *{
