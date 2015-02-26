@@ -10,29 +10,31 @@ Template.articleShow.rendered = function() {
       $("head").append($("<link rel='stylesheet' href='" + nanocss + "' type='text/css' media='screen' />"));
     }
 
-    $.getScript("https://cdnjs.cloudflare.com/ajax/libs/nanogallery/5.4.0/jquery.nanogallery.min.js")
-      .done(function() {
-        $("#photos").nanoGallery({
-          userID: '124879138@N07',
-          kind: 'flickr',
-          photoset: $("#photos").data("set"),
-          locationHash:  false,
-          thumbnailWidth: 128,
-          thumbnailHeight: "auto",
-          thumbnailAlignment:   "left",
-          colorScheme: "light",
-          touchAnimation:  false,
-          thumbnailLabel:  {
-            display: false
-          },
-          viewerToolbar:  {
-            style: "stuckImage",
-            autoMinimize: 500,
-            standard: "label, previousButton, pageCounter, nextButton, playPauseButton, fullscreenButton",
-            minimized: "label, minimizeButton, playPauseButton, closeButton",
-          },
-          displayBreadcrumb: false,
-        });
-      })
+    $(document).ready(function() {
+      $.getScript("https://cdnjs.cloudflare.com/ajax/libs/nanogallery/5.4.0/jquery.nanogallery.min.js")
+        .done(function() {
+          $("#photos").nanoGallery({
+            userID: '124879138@N07',
+            kind: 'flickr',
+            photoset: $("#photos").data("set"),
+            locationHash: false,
+            thumbnailWidth: 128,
+            thumbnailHeight: "auto",
+            thumbnailAlignment:   "left",
+            colorScheme: "light",
+            touchAnimation:  false,
+            thumbnailLabel:  {
+              display: false
+            },
+            viewerToolbar:  {
+              style: "stuckImage",
+              autoMinimize: 500,
+              standard: "label, previousButton, pageCounter, nextButton, playPauseButton, fullscreenButton",
+              minimized: "label, minimizeButton, playPauseButton, closeButton",
+            },
+            displayBreadcrumb: false,
+          });
+        })
+    });
   }
 };
