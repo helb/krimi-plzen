@@ -1,5 +1,6 @@
 Template.articleShow.rendered = function() {
   var nanocss = "https://cdnjs.cloudflare.com/ajax/libs/nanogallery/5.4.0/css/nanogallery.min.css";
+  var setId = String($("#photos").data("set"));
 
   scrollToContent();
 
@@ -16,7 +17,7 @@ Template.articleShow.rendered = function() {
           $("#photos").nanoGallery({
             userID: '124879138@N07',
             kind: 'flickr',
-            photoset: $("#photos").data("set"),
+            photoset: ,
             lazyBuild: 'loadData',
             thumbnailLazyLoad: true,
             locationHash: false,
