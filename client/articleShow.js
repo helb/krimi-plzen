@@ -18,7 +18,6 @@ Template.articleShow.rendered = function() {
             userID: '124879138@N07',
             kind: 'flickr',
             photoset: setId,
-            lazyBuild: 'loadData',
             thumbnailLazyLoad: true,
             locationHash: false,
             thumbnailWidth: 128,
