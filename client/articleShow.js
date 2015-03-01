@@ -38,7 +38,8 @@ Template.articleShow.rendered = function() {
             breakpointSizeSM: 480,
             breakpointSizeME: 800,
             breakpointSizeLA: 960,
-            breakpointSizeXL: 1100
+            breakpointSizeXL: 1100,
+            flickrSkipOriginal: false
           });
         })
     });
