@@ -24,6 +24,6 @@ section#missing-persons section.article-slug{
 }
 
 section#missing-persons section.article-slug:not(:last-child){
-	border-bottom: 1px solid rgba(255,255,255,0.07);
-	background: radial-gradient(ellipse at bottom, rgba(0,0,0,0.07) 0%,rgba(0,0,0,0) 50%);
+	border-bottom: 1px solid #3a3a3a;
+	background: radial-gradient(ellipse at bottom, rgba(0,0,0,0.15) 0%,rgba(0,0,0,0) 75%);
 }
