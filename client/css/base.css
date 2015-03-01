@@ -35,7 +35,7 @@ section#page.admin section#content{
 
 section#sidebar{
 	background: #eee;
-    background: linear-gradient(to right, rgba(0,0,0,0.25) 0%, #eee 5%);
+    background: linear-gradient(to right, #ddd 0%, #eee 5%);
 	float: right;
 	width: 25%;
 	margin: 1.1rem 0 2rem;
