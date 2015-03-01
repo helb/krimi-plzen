@@ -35,6 +35,10 @@ Template.articleShow.rendered = function() {
               minimized: "label, minimizeButton, playPauseButton, closeButton",
             },
             displayBreadcrumb: false,
+            breakpointSizeSM: 480,
+            breakpointSizeME: 800,
+            breakpointSizeLA: 960,
+            breakpointSizeXL: 1100
           });
         })
     });
