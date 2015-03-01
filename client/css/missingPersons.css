@@ -1,6 +1,6 @@
 section#missing-persons{
 	background: #333;
-    background: linear-gradient(to right, #222 0%, #333 5%);
+  background: linear-gradient(to right, #333 0%, #444 5%);
 	color: #fff;
 	display: none;
 }
