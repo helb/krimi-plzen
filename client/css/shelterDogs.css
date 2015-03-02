@@ -46,4 +46,10 @@ article.dog p{
   text-align: center;
   font-family: "Open Sans Condensed";
   font-weight: bold;
+  padding-top: 0.25rem;
+  text-decoration: none;
+}
+
+#shelter-link:hover{
+  text-decoration: underline;
 }
