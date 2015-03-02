@@ -9,7 +9,7 @@ padding: 0 0 0.5rem 0;
 
 article.dog:not(:last-child){
   margin: 0 0 0.5rem 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #ddd;
   background: radial-gradient(ellipse at bottom, rgba(0,0,0,0.07) 0%,rgba(0,0,0,0) 75%);
 }
 
