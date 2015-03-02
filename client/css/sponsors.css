@@ -14,6 +14,10 @@ section#sponsors h2{
   margin: 0 0 0.5rem 0;
 }
 
+section#sponsors img{
+  max-width: 15.5rem;
+}
+
 section#sponsors p{
   display: block;
   font-size: 1.5rem;
