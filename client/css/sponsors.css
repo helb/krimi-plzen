@@ -1,0 +1,56 @@
+section#sponsors{
+  display: block;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  color: #888;
+  text-align: center;
+  width: 15.5rem;
+  padding: 0;
+}
+
+section#sponsors h2{
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+}
+
+section#sponsors p{
+  display: block;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+section#sponsors a:hover{
+  text-decoration: none !important;
+}
+
+@media all and (max-width: 65em){
+  section#sponsors{
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    padding: 0.5rem 0 0.6rem 0;
+  }
+
+  section#sponsors h2,
+  section#sponsors a,
+  section#sponsors p{
+    margin: 0;
+    display: inline;
+    color: #fff;
+  }
+
+  section#sponsors h2::after{
+    content: ":";
+  }
+
+  section#sponsors a{
+    font-weight: bold;
+  }
+
+  section#sponsors img{
+    display: none;
+  }
+}
