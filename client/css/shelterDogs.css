@@ -1,0 +1,49 @@
+#dogs{
+  background: #eee;
+  background: linear-gradient(to right, #ccc 0%, #eee 5%);
+}
+
+article.dog{
+padding: 0 0 0.5rem 0;
+}
+
+article.dog:not(:last-child){
+  margin: 0 0 0.5rem 0;
+  border-bottom: 1px solid #eee;
+  background: radial-gradient(ellipse at bottom, rgba(0,0,0,0.07) 0%,rgba(0,0,0,0) 75%);
+}
+
+article.dog a.grow{
+  margin: 0;
+  width: 6rem;
+  height: 6rem;
+  overflow: hidden;
+  display: block;
+  margin-right: 1rem;
+  float: left;
+  background-size: cover;
+  background-position: 50% 0%;
+  border: 1px solid #ccc;
+}
+
+article.dog a.grow:hover{
+-webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow:    0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+  box-shadow:         0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+article.dog p{
+  margin: 0;
+  display: block;
+  width: 100%;
+  height: 6rem;
+  font-family: "Open Sans Condensed";
+}
+
+#shelter-link{
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-family: "Open Sans Condensed";
+  font-weight: bold;
+}

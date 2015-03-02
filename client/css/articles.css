@@ -318,7 +318,7 @@ section#recommended-articles{
 
 section#recommended-articles.visible{
 	background: #eee;
-	background: linear-gradient(to right, #ddd 0%, #eee 5%);
+	background: linear-gradient(to right, #ccc 0%, #eee 5%);
 	display: block;
 	max-height: 50rem;
 	overflow-y: scroll;
