@@ -67,11 +67,6 @@ function switchPhoto(currentIndex, direction) {
         marginLeft: direction * 200 + 'vw'
       }, 0, function() {
         loadFlickrSizes($("#currentImage"), nextThumb);
-      })
-      .animate({
-        marginLeft: 0
-      }, 500, function() {
-        $("#loading-circle").hide();
       });
   }
 }
@@ -130,6 +125,15 @@ Template.articleShow.rendered = function() {
     $("#navPrev").click(function(e) {
       e.preventDefault();
       switchPhoto($("#photos a.current").index(), -1);
+    });
+
+    $("#currentImage img").load(function() {
+      $("#currentImage").animate({
+        marginLeft: 0,
+        width: '100%'
+      }, 500, function() {
+        $("#loading-circle").hide();
+      });
     });
 
     $(document).unbind('keyup').keyup(function(e) {
