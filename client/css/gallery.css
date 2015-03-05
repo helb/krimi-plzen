@@ -19,33 +19,68 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0,0,0,0.95);
+  background-color: rgba(0,0,0,0.95);
+  z-index: 9997;
+  display: none;
+  padding: 1rem;
+}
+
+#photoViewer #loading-circle{
+  position: fixed;
+  left: calc(50vw - 75px);
+  top: -8rem;
+  z-index: -1 !important;
+}
+
+
+#photoViewer,
+#photoViewer *{
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #photoViewer a{
-  color: #bbb;
   cursor: pointer;
-  font-weight: bold;
 }
 
-#photoViewer a:hover{
-  color: #fff;
-  text-decoration: none;
-  opacity: 1;
+#photoViewer a svg polygon{
+  fill:#bbb;
+}
+
+#photoViewer a:hover svg polygon{
+  fill:#fff;
 }
 
 
 #closeViewer{
   position: absolute;
   top: 0;
-  right: 1rem;
-  font-size: 2.5rem;
+  right: 0;
+  display: block;
+  background: rgba(0,0,0,0.75);
+  width: 5rem;
+  height: 5rem;
+  padding: 0;
+}
+
+#closeViewer svg {
+  margin-top: 1rem;
+  width: 3rem;
+  height: 3rem;
 }
 
 #currentImage{
-  margin: 1rem;
-  max-width: calc(100vw - 2rem);
+  z-index: 9999;
+  display: block;
+}
+
+#currentImage img{
   max-height: calc(100vh - 6rem);
+  max-width: 100%;
 }
 
 #viewerNav{
@@ -53,7 +88,33 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 4rem;
-  background: #000;
+  height: 4.5rem;
+  text-align: center;
+  padding-top: 0.5rem;
+  background: rgba(0,0,0,0.75);
+}
+
+#viewerNav *{
+  display: inline-block;
+}
+
+#viewerNav a,
+#viewerNav a svg{
+  width: 3rem;
+  height: 3rem;
+}
+
+#viewerNav a.disabled svg polygon,
+#viewerNav a.disabled:hover svg polygon{
+  color: #aaa;
+  cursor: default;
+}
+
+#photoCounter{
+  font-size: 2rem;
+  line-height: 2rem;
+  height: 3rem;
+  position: relative;
+  top: -0.75rem;
   color: #ddd;
 }
