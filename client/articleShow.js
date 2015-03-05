@@ -22,40 +22,40 @@ function openViewer(thumb) {
   $("#totalPhotos").text(totalPhotos);
   $("#currentPhotoIndex").text(index + 1);
   if (index == 0) {
-    $("#navPrev svg").hide();
+    $("#navPrev svg").transition({opacity: 0}, 700);
   }
   if (index + 1 == totalPhotos) {
-    $("#navNext svg").hide();
+    $("#navNext svg").transition({opacity: 0}, 700);
   }
   loadFlickrSizes($("#currentImage"), thumb);
-  $("#photoViewer").fadeIn();
+  $("#photoViewer").css({"opacity": 0, "display": "block"}).transition({opacity: 1}, 500);
 }
 
 function closeViewer() {
-  $("#photoViewer").fadeOut(function() {
+  $("#photoViewer").transition({opacity: 0}, 500, function() {
     $("#currentImage").children().attr("src", "");
     $("#photos a").removeClass("current");
-  });
+  }).css({"display": "none"});
 }
 
 function switchPhoto(currentIndex, direction) {
   var nextIndex = currentIndex + direction + 1;
   if (nextIndex <= 1) {
-    $("#navPrev svg").fadeOut();
+    $("#navPrev svg").transition({opacity: 0}, 700);
   } else {
-    $("#navPrev svg").fadeIn();
+    $("#navPrev svg").transition({opacity: 1}, 700);
   }
   if (nextIndex >= $("#photos a").length) {
-    $("#navNext svg").fadeOut();
+    $("#navNext svg").transition({opacity: 0}, 700);
   } else {
-    $("#navNext svg").fadeIn()
+    $("#navNext svg").transition({opacity: 1}, 700);
   }
 
   if ((direction > 0 && nextIndex <= $("#photos a").length) || (direction < 0 && nextIndex >= 1)) {
     var nextThumb = $("#photos a:nth-child(" + nextIndex + ")");
     $("#loading-circle").show();
     $("#currentImage")
-      .animate({
+      .transition({
         marginLeft: direction * -200 + 'vw'
       }, 500, function() {
         $("#photos a").removeClass("current");
@@ -63,7 +63,7 @@ function switchPhoto(currentIndex, direction) {
         nextThumb.addClass("current");
         $("#currentImage").children().attr("src", "");
       })
-      .animate({
+      .transition({
         marginLeft: direction * 200 + 'vw'
       }, 0, function() {
         loadFlickrSizes($("#currentImage"), nextThumb);
@@ -128,9 +128,8 @@ Template.articleShow.rendered = function() {
     });
 
     $("#currentImage img").load(function() {
-      $("#currentImage").animate({
-        marginLeft: 0,
-        width: '100%'
+      $("#currentImage").transition({
+        marginLeft: 0
       }, 500, function() {
         $("#loading-circle").hide();
       });

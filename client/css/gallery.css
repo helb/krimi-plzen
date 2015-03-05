@@ -76,11 +76,13 @@
 #currentImage{
   z-index: 9999;
   display: block;
-}
-
-#currentImage img{
   max-height: calc(100vh - 6rem);
   max-width: 100%;
+}
+
+#currentImage .sliding-out{
+  transition: 0.5s;
+  margin-left: -200vw;
 }
 
 #viewerNav{

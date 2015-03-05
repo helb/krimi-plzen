@@ -17,6 +17,7 @@ boilerplate-generator@1.0.2
 callback-hook@1.0.2
 check@1.0.4
 chuangbo:cookie@1.1.0
+clode:transit@0.9.12
 daniel:auto-nprogress@0.2.9
 dburles:collection-helpers@1.0.2
 dburles:mongo-collection-instances@0.2.6
