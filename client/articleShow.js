@@ -1,4 +1,7 @@
 function loadFlickrSizes(currentImage, thumb) {
+  $("#loading-circle").transition({
+    opacity: 1
+  }, 800);
   var b = thumb.attr("href");
   var c = b.replace("_b.jpg", "_c.jpg");
   var z = b.replace("_b.jpg", "_z.jpg");
@@ -22,52 +25,71 @@ function openViewer(thumb) {
   $("#totalPhotos").text(totalPhotos);
   $("#currentPhotoIndex").text(index + 1);
   if (index == 0) {
-    $("#navPrev svg").transition({opacity: 0}, 700);
+    $("#navPrev svg").transition({
+      opacity: 0
+    }, 700);
   }
   if (index + 1 == totalPhotos) {
-    $("#navNext svg").transition({opacity: 0}, 700);
+    $("#navNext svg").transition({
+      opacity: 0
+    }, 700);
   }
   loadFlickrSizes($("#currentImage"), thumb);
-  $("#photoViewer").css({"opacity": 0, "display": "block"}).transition({opacity: 1}, 500);
+  $("#photoViewer").css({
+    "opacity": 0,
+    "display":   "block"
+  }).transition({
+    opacity: 1
+  }, 500);
 }
 
 function closeViewer() {
-  $("#photoViewer").transition({opacity: 0}, 500, function() {
+  $("#photoViewer").transition({
+    opacity: 0
+  }, 500, function() {
     $("#currentImage").children().attr("src", "");
     $("#photos a").removeClass("current");
-  }).css({"display": "none"});
+  }).css({
+    "display":   "none"
+  });
 }
 
 function switchPhoto(currentIndex, direction) {
   var nextIndex = currentIndex + direction + 1;
   if (nextIndex <= 1) {
-    $("#navPrev svg").transition({opacity: 0}, 700);
+    $("#navPrev svg").transition({
+      opacity: 0
+    }, 700);
   } else {
-    $("#navPrev svg").transition({opacity: 1}, 700);
+    $("#navPrev svg").transition({
+      opacity: 1
+    }, 700);
   }
   if (nextIndex >= $("#photos a").length) {
-    $("#navNext svg").transition({opacity: 0}, 700);
+    $("#navNext svg").transition({
+      opacity: 0
+    }, 700);
   } else {
-    $("#navNext svg").transition({opacity: 1}, 700);
+    $("#navNext svg").transition({
+      opacity: 1
+    }, 700);
   }
 
   if ((direction > 0 && nextIndex <= $("#photos a").length) || (direction < 0 && nextIndex >= 1)) {
     var nextThumb = $("#photos a:nth-child(" + nextIndex + ")");
-    $("#loading-circle").show();
     $("#currentImage")
       .transition({
         marginLeft: direction * -200 + 'vw'
       }, 500, function() {
+        loadFlickrSizes($("#currentImage"), nextThumb);
         $("#photos a").removeClass("current");
         $("#currentPhotoIndex").text(nextIndex);
         nextThumb.addClass("current");
         $("#currentImage").children().attr("src", "");
       })
       .transition({
-        marginLeft: direction * 200 + 'vw'
-      }, 0, function() {
-        loadFlickrSizes($("#currentImage"), nextThumb);
-      });
+        marginLeft: direction * 100 + 'vw'
+      }, 0);
   }
 }
 
@@ -131,7 +153,9 @@ Template.articleShow.rendered = function() {
       $("#currentImage").transition({
         marginLeft: 0
       }, 500, function() {
-        $("#loading-circle").hide();
+        $("#loading-circle").transition({
+          opacity: 0
+        }, 200);
       });
     });
 
@@ -153,7 +177,8 @@ Template.articleShow.rendered = function() {
           switchPhoto($("#photos a.current").index(), 1);
         } else if (direction == "right") {
           switchPhoto($("#photos a.current").index(), -1);
-        } else if (direction == "up") {
+        } else
+        if (direction == "up") {
           closeViewer();
         }
       }
