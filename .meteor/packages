@@ -13,18 +13,13 @@ dburles:collection-helpers
 accounts-ui
 accounts-password
 gadicohen:sitemaps
-richsilv:pikaday
 daniel:auto-nprogress
 spiderable
-mrt:medium-editor-updated
 meteorhacks:fast-render
 meteorhacks:subs-manager
-markdown
 yasinuslu:blaze-meta
 
-babrahams:editable-text
-babrahams:editable-text-wysiwyg-bootstrap-3
-fortawesome:fontawesome
-twbs:bootstrap-noglyph
 hedcet:touch-swipe
 clode:transit
+appcache
+chuangbo:marked
