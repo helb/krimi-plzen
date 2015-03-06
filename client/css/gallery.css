@@ -62,15 +62,14 @@
   right: 0;
   display: block;
   background: rgba(0,0,0,0.75);
-  width: 5rem;
-  height: 5rem;
+  width: 2.5rem;
   padding: 0;
 }
 
 #closeViewer svg {
-  margin-top: 1rem;
-  width: 3rem;
-  height: 3rem;
+  margin-top: 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 #currentImage img{
@@ -87,10 +86,11 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 4.5rem;
+  height: 2.5rem;
   text-align: center;
-  padding-top: 0.5rem;
+  padding-top: 0.25rem;
   background: rgba(0,0,0,0.75);
+  font-size: 1rem;
 }
 
 #viewerNav *{
@@ -99,21 +99,32 @@
 
 #viewerNav a,
 #viewerNav a svg{
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
 }
 
-#viewerNav a.disabled svg polygon,
-#viewerNav a.disabled:hover svg polygon{
-  color: #aaa;
-  cursor: default;
+#viewerNav a{
+  width: 2.5rem;
+  -webkit-transition: padding-left 0.25s;
+  transition: padding-left 0.25s;
+}
+
+#viewerNav a#navPrev{
+  padding-left: 0.5rem;
+}
+
+#viewerNav a#navPrev:hover{
+  padding-left: 0rem;
+}
+
+#viewerNav a#navNext:hover{
+  padding-left: 0.5rem;
 }
 
 #photoCounter{
-  font-size: 2rem;
-  line-height: 2rem;
-  height: 3rem;
-  position: relative;
-  top: -0.75rem;
+  font-size: 1.25rem;
+  line-height: 2.5rem;
   color: #ddd;
+  position: relative;
+  top: -0.5rem;
 }
