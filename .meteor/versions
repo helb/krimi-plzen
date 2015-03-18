@@ -22,6 +22,7 @@ deps@1.0.7
 ejson@1.0.6
 email@1.0.6
 fastclick@1.0.3
+fourseven:scss@2.0.1_4
 gadicohen:robots-txt@0.0.8
 gadicohen:sitemaps@0.0.20
 geojson-utils@1.0.3
