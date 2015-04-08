@@ -37,16 +37,13 @@ section#partners a{
 }
 
 @media all and (max-width: 65em){
-	.partner{
-		display: inline-block;
-	}
-	#partners {
-		height: 20rem;
-	}
 	#partners .partner{
-		float: left;
-		width: 25%;
+		display: inline-block;
+		/*float: left;*/
+		/*width: 25%;*/
+		max-width: 30vw;
 		text-align: center;
 		height: 10rem;
+		margin: 20rem;
 	}
 }

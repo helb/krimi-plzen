@@ -48,7 +48,9 @@ textarea#form-intro{
   font-family: 'Open Sans', sans-serif;
 }
 
-button {
+button,
+.button {
+  display: inline-block;
   font-family: "Open Sans", sans-serif;
   font-size: 0.75em;
   background-color: #2f8fa5;
@@ -77,11 +79,13 @@ button {
   text-shadow: 0 -1px 0 #396715;
   margin-bottom: 2rem;
 }
-button:hover {
+button:hover,
+.button:hover {
   opacity:.85;
   cursor: pointer;
 }
-button:active {
+button:active,
+.button:active {
   border: 1px solid #1e2091
   box-shadow: 0 0 10px 5px #0b356b inset;
   -webkit-box-shadow:0 0 10px 5px #0b356b inset ;
@@ -97,8 +101,9 @@ button#form-save{
 button#form-flickr-reload{
   font-size: 1.8rem;
   font-weight: normal;
-  line-height: 2.4rem;
-  width: 4rem;
+  line-height: 1rem;
+  width: 2rem;
+  height: 2rem;
   padding: 0.25rem 0.25rem 0.5rem 0.1rem;
   margin: 0.25rem 0.25rem;
   float: left;

@@ -1,9 +1,5 @@
 /* ARTICLE LIST */
 
-section.article-slug *{
-	background: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7") no-repeat;
-}
-
 section.article-slug h1, section.article h1{
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 1.8em;
@@ -93,10 +89,6 @@ p.timestamp{
 
 
 /* SINGLE ARTICLE */
-
-article.article *{
-	background: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7") no-repeat;
-}
 
 article.article{
 	margin-bottom: 2rem;
@@ -228,6 +220,12 @@ article.article a:hover{
 }
 
 
+article.article a.edit-article{
+	text-decoration: none;
+	color: #fff;
+	float: right;
+}
+
 article.article iframe{
 	margin: 1rem 0 1rem 0;
 }
@@ -282,7 +280,7 @@ section#sidebar section.article-slug img{
 }
 
 section#sidebar section.article-slug{
-	padding: 0.5em 0 0.5em 0;
+	padding: 0.65em 0 0.65em 0;
 	margin: 0;
 	border-color: #ddd;
 }

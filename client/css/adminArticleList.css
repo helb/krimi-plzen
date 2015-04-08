@@ -10,9 +10,10 @@ table#admin-article-list {
 	-moz-box-shadow: 0 1px 2px #d1d1d1;
 	-webkit-box-shadow: 0 1px 2px #d1d1d1;
 	box-shadow: 0 1px 2px #d1d1d1;
-	margin-bottom: 2rem;
+	margin: 2rem 0 2rem 0;
 	color:#666;
 	background:#eaebec;
+	font-size: 0.9em;
 }
 
 table#admin-article-list tr:first-child th:first-child {
@@ -68,7 +69,7 @@ table#admin-article-list tr:hover td:not(.category) {
 
 
 table#admin-article-list td img{
-	width: 6rem;
+	width: 4rem;
 }
 
 
@@ -99,38 +100,45 @@ table#admin-article-list td.category{
 }
 
 table#admin-article-list td.category.z{
+	background-size:   75%;
 	background-image: url("/images/style/z.svg");
 }
 
 table#admin-article-list td.category.o{
+	background-size:   2rem ;
 	background-image: url("/images/style/o.svg");
 }
 
 table#admin-article-list td.category.pravni-minimum-ulice{
-	background-size:   cover;
+	background-size:   75%;
 	background-image: url("/images/style/pravni-minimum-ulice.svg");
 }
 
 table#admin-article-list td.category.zachranari{
-	background-size:   cover;
+	background-size:   75%;
 	background-image: url("/images/style/zachranari.svg");
 }
 
 table#admin-article-list td.category.hasici{
-	background-size:   cover;
+	background-size:   75%;
 	background-image: url("/images/style/hasici.svg");
 }
 
 
+table#admin-article-list td.category.recruitment{
+	background-size:   75%;
+	background-image: url("/images/style/recruitment.svg");
+}
+
 table#admin-article-list td.buttons{
 	text-align: center;
-	width: 11rem;
+	width: 8rem;
 }
 
 
 table#admin-article-list td.buttons button{
 	margin: 0;
-	width: 10rem;
+	width: 8rem;
 }
 
 table#admin-article-list tr:not(.publishedtrue){
@@ -145,4 +153,18 @@ button.admin-list-load-more{
 	display: block;
 	width: 14rem;
 	margin: 0 auto 2rem;
+}
+
+td.buttons.recommend{
+	width: 1rem !important;
+}
+
+td.photo,
+td.category{
+	width: 4rem !important;
+}
+
+td.timestamp{
+	font-size: 0.9em;
+	white-space: nowrap;
 }

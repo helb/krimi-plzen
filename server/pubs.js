@@ -134,6 +134,28 @@ Meteor.publish("personArticles", function () {
   });
 });
 
+Meteor.publish("recruitmentArticles", function () {
+  return Articles.find({
+    'category': 'recruitment',
+    'is_published':  true
+  }, {
+    sort: {
+      timestamp: -1
+    },
+    fields:  {
+      text: 0,
+      photoset: 0,
+      photoset_placement: 0,
+      youtube_url: 0,
+      intro: 0,
+      // timestamp: 0,
+      author_id: 0,
+      author_name: 0
+    }
+  });
+});
+
+
 Meteor.publish("recommendedArticles", function () {
   return Articles.find({
     'is_recommended': true,

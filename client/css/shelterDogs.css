@@ -4,23 +4,23 @@
 }
 
 #dogs h2{
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 article.dog{
-padding: 0 0 0.5rem 0;
+padding: 0 0 0.4rem 0;
 }
 
 article.dog:not(:last-child){
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.4rem 0;
   border-bottom: 1px solid #ddd;
   background: radial-gradient(ellipse at bottom, rgba(0,0,0,0.07) 0%,rgba(0,0,0,0) 75%);
 }
 
 article.dog a.grow{
   margin: 0;
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
   overflow: hidden;
   display: block;
   margin-right: 1rem;
@@ -44,7 +44,7 @@ article.dog p{
   margin: 0;
   display: block;
   width: 100%;
-  height: 5rem;
+  height: 4rem;
   font-family: "Open Sans Condensed";
 }
 
@@ -54,7 +54,7 @@ article.dog p{
   text-align: center;
   font-family: "Open Sans Condensed";
   font-weight: bold;
-  padding-top: 0.25rem;
+  padding-top: 0.24rem;
   text-decoration: none;
 }
 

@@ -1,0 +1,30 @@
+section#police-recruitment{
+  background: #222;
+  background: linear-gradient(to right, #111 0%, #222 5%);
+  color: #fff;
+  display: none;
+}
+
+section#police-recruitment.visible{
+  display: block;
+}
+
+
+section#police-recruitment *{
+  color: #fff;
+}
+
+section#police-recruitment h2{
+  color: #fc0;
+  margin-bottom: 0.5rem;
+}
+
+section#police-recruitment section.article-slug{
+  border: none;
+  background: transparent;
+}
+
+section#police-recruitment section.article-slug:not(:last-child){
+  border-bottom: 1px solid #151515;
+  background: radial-gradient(ellipse at bottom, rgba(0,0,0,0.15) 0%,rgba(0,0,0,0) 75%);
+}

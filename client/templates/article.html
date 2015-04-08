@@ -1,6 +1,9 @@
 <template name="articleShow">
 {{#with article}}
 <article class="article">
+{{#if currentUser}}
+    <a href="/admin/article/{{slug}}" class="button edit-article">Editovat</a>
+  {{/if}}
  	<h1>{{title}}</h1>
 	<p class="timestamp">{{author_name}}, {{day_name}} {{date}}, {{time}}</p>
 	<p class="intro">{{intro}}</p>
