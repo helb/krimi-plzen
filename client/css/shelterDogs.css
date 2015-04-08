@@ -3,6 +3,10 @@
   background: linear-gradient(to right, #ccc 0%, #eee 5%);
 }
 
+#dogs h2{
+  margin-bottom: 0.5rem;
+}
+
 article.dog{
 padding: 0 0 0.5rem 0;
 }
@@ -15,8 +19,8 @@ article.dog:not(:last-child){
 
 article.dog a.grow{
   margin: 0;
-  width: 6rem;
-  height: 6rem;
+  width: 5rem;
+  height: 5rem;
   overflow: hidden;
   display: block;
   margin-right: 1rem;
@@ -24,6 +28,10 @@ article.dog a.grow{
   background-size: cover;
   background-position: 50% 0%;
   border: 1px solid #ccc;
+}
+
+article.dog a{
+  text-decoration: none;
 }
 
 article.dog a.grow:hover{
@@ -36,7 +44,7 @@ article.dog p{
   margin: 0;
   display: block;
   width: 100%;
-  height: 6rem;
+  height: 5rem;
   font-family: "Open Sans Condensed";
 }
 

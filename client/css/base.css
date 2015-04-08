@@ -38,8 +38,8 @@ section#sidebar{
     background: linear-gradient(to right, #eee 0%, #fefefe 5%);
 	float: right;
 	width: 30%;
-	margin-top: -2.25rem;
 	font-size: 0.9em;
+    margin-top: -1.4rem;
 }
 
 section#sidebar h2{

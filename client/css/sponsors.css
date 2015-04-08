@@ -5,26 +5,26 @@ section#sponsors{
   top: 1rem;
   color: #888;
   text-align: center;
-  width: 15.5rem;
+  width: 12rem;
   padding: 0;
 }
 
 section#sponsors h2{
-  font-size: 1.5rem;
+  font-size: 0.8rem;
   margin: 0 0 0.5rem 0;
 }
 
 section#sponsors img{
-  max-width: 15.5rem;
+  max-width: 6rem;
 }
 
 section#sponsors p{
+  font-size: 0.8rem;
   display: block;
-  font-size: 1.5rem;
   color: #fff;
 }
 
-section#sponsors a:hover{
+section#sponsors a{
   text-decoration: none !important;
 }
 
