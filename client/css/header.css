@@ -19,15 +19,16 @@ section#header-inner{
 	margin: 0 auto;
 }
 
-header#main-header div#logo{
-	margin-top: -2.5rem;
+header#main-header a.logo{
+	margin-top: -1.5rem;
 	cursor: pointer;
-	width: 288px;
-	height: 127px;
+	width: 14rem;
+	height: 6rem;
 	text-align: center;
 	text-shadow: 0 0 0.5rem #000;
 	text-indent: -9999px;
 	background-image: url("/images/style/krimiplzen_logo.png");
+	background-size: cover;
 }
 
 
