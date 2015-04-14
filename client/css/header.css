@@ -67,8 +67,14 @@ section#page.admin header#main-header{
     background-size: auto 16rem;
 	}
 
+
+	header#main-header a.logo{
+	margin-top: 1rem;
+	padding: 0;
+	}
+
 	header#main-header div#logo{
-		margin: 0 auto;
+	margin: 0;
 		background-repeat: no-repeat;
 		background-position: center center;
 		background-size: contain;

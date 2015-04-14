@@ -39,6 +39,7 @@ section#sponsors a{
     background: rgba(0,0,0,0.5);
     width: 100%;
     padding: 0.5rem 0 0.6rem 0;
+    font-size: 1.5rem !important;
   }
 
   section#sponsors .partner{
