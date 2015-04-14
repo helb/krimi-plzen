@@ -1,3 +1,7 @@
+Meteor.startup(function() {
+   $('html').attr('lang', 'cs');
+});
+
 // infinite scrolling:
 $(window).scroll(function () {
   if (document.getElementById("archive-articles")) {

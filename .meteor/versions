@@ -16,6 +16,7 @@ chuangbo:cookie@1.1.0
 chuangbo:marked@0.3.5
 citizenkevin:medium-editor@1.0.1
 clode:transit@0.9.12
+coffeescript@1.0.6
 daniel:auto-nprogress@0.2.9
 dburles:collection-helpers@1.0.3
 ddp@1.1.0
@@ -48,6 +49,7 @@ less@1.0.14
 livedata@1.0.13
 localstorage@1.0.3
 logging@1.0.7
+manuelschoebel:wait-on-lib@0.3.0
 meteor@1.1.6
 meteor-platform@1.2.2
 meteorhacks:fast-render@2.3.2

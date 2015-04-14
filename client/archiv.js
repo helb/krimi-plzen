@@ -43,7 +43,7 @@ Template.archiv.rendered = function() {
 
   $('#form-archive-since').val(year + "-" + prevMonth + "-" + day);
   $('#form-archive-until').val(year + "-" + month + "-" + day);
-
+  $("button#form-archive-submit").trigger("click");
   $("html, body").animate({
     scrollTop: 0
   }, 600);
