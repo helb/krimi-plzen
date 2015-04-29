@@ -1,5 +1,13 @@
 <template name="newArticles">
 <section id="new-articles">
+<div class="notice">
+<h2>Vážení čtenáři,</h2>
+<p>v těchto dnech se věnujeme především přípravám <a href="http://www.slavnostisvobody.cz/" target="_blank">Slavností svobody</a>.</p>
+<p>K běžnému provozu se vrátíme v pondělí a opět budeme přinášet aktuální informace a reportáže několikrát denně.</p>
+<br>
+<p style="text-align:right;">Děkujeme za přízeň,<br>
+<em>redakce krimi-plzen.cz</em>.</p>
+</div>
 {{#each articles}}
 	<section class="article-slug">
 		<a href="{{pathFor 'articleShow'}}" class="article-link">
