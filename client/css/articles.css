@@ -329,10 +329,6 @@ section#recommended-articles.visible{
 
 @media all and (max-width: 65em){
 
-body{
-font-size: 1.75rem !important;
-}
-
 article.article,
 section#content,
 section#new-articles,
@@ -378,13 +374,11 @@ width: 65vw !important;
 }
 
 .teaser h1{
-font-size: 1.8em !important;
 width: 65vw !important;
 margin-bottom: 1rem !important;
 }
 
 article.article h1{
-font-size: 2.5em !important;
 background: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
 width: 100% !important;
 }
@@ -395,14 +389,12 @@ background: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAA
 
 .teaser p{
 background: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
-font-size: 1em !important;
 margin-bottom: 1rem !important;
 width: 70vw !important;
 line-height: 1.5em !important;
 }
 
 p.timestamp{
-font-size: 0.9em !important;
 margin: 0 !important;
 }
 
@@ -427,7 +419,6 @@ width: 87% !important;
 
 
 #sidebar .teaser h1{
-font-size: 1.8rem;
 display: inline-block;
 overflow: ellipsis;
 white-space: nowrap !important;

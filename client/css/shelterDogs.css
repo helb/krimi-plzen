@@ -61,9 +61,3 @@ article.dog p{
 #shelter-link:hover{
   text-decoration: underline;
 }
-
-@media all and (max-width: 65em){
-article.dog{
-font-size: 1.5em;
-}
-}
