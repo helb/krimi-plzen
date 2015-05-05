@@ -1,49 +1,45 @@
+function dateToString(date) {
+  return date.toISOString().slice(0, 10);
+}
+
+function setArchiveSession(since, until) {
+  console.log("since " + since);
+  console.log("until " + until);
+
+  var since = new Date(since);
+  since.setHours(0, 0, 0, 0);
+  var until = new Date(until);
+  until.setHours(23, 59, 59, 999);
+
+  if (since > until) {
+    since = [until, until = since][0]; //swap variables
+  }
+
+  Session.set('archiveSince', since);
+  Session.set('archiveUntil', until);
+}
+
 Template.archiv.events({
   'click button#form-archive-submit': function(event) {
     event.preventDefault();
-    since = new Date($('#form-archive-since').val());
-    since.setHours(0, 0, 0, 0);
-    until = new Date($('#form-archive-until').val());
-    until.setHours(23, 59, 59, 999);
-    if (since > until) {
-      since = [until, until = since][0]; //swap variables
-      pickerSince.setDate(since);
-      pickerUntil.setDate(until);
-    }
-    Session.set('archiveSince', since);
-    Session.set('archiveUntil', until);
+    setArchiveSession($('#form-archive-since').val(), $('#form-archive-until').val());
   },
 });
 
 Template.archiv.rendered = function() {
-  var d = new Date();
-  var day = d.getDate();
-  var month = d.getMonth() + 1;
-  var year = d.getFullYear();
-
-  var prevMonth = month - 1;
-  var prevYear = year;
-
-  if (prevMonth < 1) {
-    prevMonth = 12;
-    prevYear = year - 1;
+  if (typeof Session.get("archiveSince") === "undefined" ||
+    typeof Session.get("archiveUntil") === "undefined") {
+    var now = new Date();
+    var until = now.getDate() - Session.get("currentLimit");
+    var since = until.getDate() - 7;
+  } else {
+    var until = Session.get("archiveUntil");
+    var since = Session.get("archiveSince")
   }
 
-  if (day < 10) {
-    day = '0' + day
-  }
+  $('#form-archive-since').val(dateToString(since));
+  $('#form-archive-until').val(dateToString(until));
 
-  if (month < 10) {
-    month = '0' + month
-  }
-
-  if (prevMonth < 10) {
-    prevMonth = '0' + prevMonth
-  }
-
-  $('#form-archive-since').val(year + "-" + prevMonth + "-" + day);
-  $('#form-archive-until').val(year + "-" + month + "-" + day);
-  $("button#form-archive-submit").trigger("click");
   $("html, body").animate({
     scrollTop: 0
   }, 600);
