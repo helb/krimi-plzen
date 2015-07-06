@@ -24,6 +24,23 @@ Meteor.publish("newArticles", function (limit) {
     });
 });
 
+Meteor.publish("newArticlesLatest", function (limit) {
+    return Articles.find({
+      'is_published':  true
+    }, {
+      limit: 10,
+      sort: {
+        timestamp: -1
+      },
+      fields:  {
+        text: 0,
+        photoset: 0,
+        photoset_placement: 0,
+        youtube_url: 0
+      }
+    });
+});
+
 Meteor.publish("archiveArticles", function (since, until) {
   return Articles.find({
     'is_published':  true,

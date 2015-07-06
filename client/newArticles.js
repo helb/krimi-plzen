@@ -1,14 +1,9 @@
 Template.newArticles.events({
   'click a#load-more-link': function (event) {
       event.preventDefault();
-      if (!Session.get("currentLimit")) {
-        if (document.getElementById("new-articles")) {
-          Session.set("currentLimit", 3);
-        } else {
-          Session.set("currentLimit", 3);
-        }
-      }
+
       Session.set("currentLimit", Session.get("currentLimit") + 2);
+
       dateOffset = (24*60*60*1000) * Session.get("currentLimit");
       daysAgo = new Date();
       daysAgo.setTime(daysAgo.getTime() - dateOffset)
