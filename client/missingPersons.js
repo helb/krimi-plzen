@@ -4,13 +4,13 @@ Template.missingPersons.rendered = function() {
 
 Template.missingPersons.helpers({
   persons: function() {
-    var twoMonthsAgo = new Date();
-    twoMonthsAgo.setMonth(twoMonthsAgo.getMonth() - 2);
+    var threeMonthsAgo = new Date();
+    threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 3);
     return Articles.find({
       'category': 'o',
       'is_published': true,
       'timestamp':  {
-        $gt: twoMonthsAgo
+        $gt: threeMonthsAgo
       }
     }, {
       sort: {
