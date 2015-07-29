@@ -8,10 +8,21 @@
 {{>sponsors}}
 </template>
 
+<template name="featuredArticle">
+<a class="featured-article grow" href="/a/krimi-plzen-hleda-partnery">
+<img src="http://farm1.staticflickr.com/419/20118803765_582f1647bc_q.jpg" />
+<div>
+<h2>Hledáme partnery</h2>
+<p>Chceme oslovit firmy podnikající v&nbsp;oblasti bezpečnosti nebo jiné tématicky shodné s naší náplni.</p>
+</div>
+</a>
+</template>
+
 <template name="header">
 <header id="main-header">
 	{{>logo}}
-  	<p>Sledujeme veškeré dění v oblasti bezpečnostní situace, práce policistů, strážníků, záchranářů, hasičů nebo prostě jen lidí, kteří se nebojí pomoci jiným v nouzi.</p>
+    {{>featuredArticle}}
+  	<p class="motto">Sledujeme veškeré dění v&nbsp;oblasti bezpečnostní situace, práce policistů, strážníků, záchranářů, hasičů nebo prostě jen lidí, kteří se nebojí pomoci jiným v nouzi.</p>
   	{{>login}}
 </header>
 {{>nav}}
