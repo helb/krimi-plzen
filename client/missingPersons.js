@@ -1,12 +1,17 @@
-Template.missingPersons.rendered = function () {
+Template.missingPersons.rendered = function() {
   Meteor.subscribe('personArticles');
 }
 
 Template.missingPersons.helpers({
-  persons: function () {
+  persons: function() {
+    var twoMonthsAgo = new Date();
+    twoMonthsAgo.setMonth(twoMonthsAgo.getMonth() - 2);
     return Articles.find({
       'category': 'o',
-      'is_published':  true
+      'is_published': true,
+      'timestamp':  {
+        $gt: twoMonthsAgo
+      }
     }, {
       sort: {
         timestamp: -1
@@ -14,7 +19,7 @@ Template.missingPersons.helpers({
     });
   },
 
-  thereArePersons: function () {
+  thereArePersons: function() {
     if (Articles.find({
       'category': 'o',
       'is_published':  true
@@ -27,7 +32,7 @@ Template.missingPersons.helpers({
 });
 
 Template.missingPersons.events({
-  'click section.person a': function (event) {
+  'click section.person a': function(event) {
     scrollToContent();
   },
 });
