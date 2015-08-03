@@ -1,5 +1,5 @@
-Meteor.publishAuth = function (name, fn) {
-  Meteor.publish(name, function () {
+Meteor.publishAuth = function(name, fn) {
+  Meteor.publish(name, function() {
     if (!this.userId)
       return this.ready();
 
@@ -7,44 +7,17 @@ Meteor.publishAuth = function (name, fn) {
   });
 };
 
-Meteor.publish("newArticles", function (limit) {
-    return Articles.find({
-      'is_published':  true,
-      'timestamp': {$gte: limit},
-    }, {
-      sort: {
-        timestamp: -1
-      },
-      fields:  {
-        text: 0,
-        photoset: 0,
-        photoset_placement: 0,
-        youtube_url: 0
-      }
-    });
-});
+Meteor.publish("newArticles", function(limit) {
+  var dateOffset = (24 * 60 * 60 * 1000) * limit;
+  var daysAgo = new Date();
+  daysAgo.setTime(daysAgo.getTime() - dateOffset)
+  daysAgo.setHours(0, 0, 0, 0);
 
-Meteor.publish("newArticlesLatest", function (limit) {
-    return Articles.find({
-      'is_published':  true
-    }, {
-      limit: 10,
-      sort: {
-        timestamp: -1
-      },
-      fields:  {
-        text: 0,
-        photoset: 0,
-        photoset_placement: 0,
-        youtube_url: 0
-      }
-    });
-});
-
-Meteor.publish("archiveArticles", function (since, until) {
   return Articles.find({
     'is_published':  true,
-    'timestamp': {$gte: since, $lte: until}
+    'timestamp': {
+      $gte: daysAgo
+    },
   }, {
     sort: {
       timestamp: -1
@@ -58,7 +31,44 @@ Meteor.publish("archiveArticles", function (since, until) {
   });
 });
 
-Meteor.publish("weaponArticles", function (limit) {
+Meteor.publish("newArticlesLatest", function(limit) {
+  return Articles.find({
+    'is_published':  true
+  }, {
+    limit: 10,
+    sort: {
+      timestamp: -1
+    },
+    fields:  {
+      text: 0,
+      photoset: 0,
+      photoset_placement: 0,
+      youtube_url: 0
+    }
+  });
+});
+
+Meteor.publish("archiveArticles", function(since, until) {
+  return Articles.find({
+    'is_published':  true,
+    'timestamp': {
+      $gte: since,
+      $lte: until
+    }
+  }, {
+    sort: {
+      timestamp: -1
+    },
+    fields:  {
+      text: 0,
+      photoset: 0,
+      photoset_placement: 0,
+      youtube_url: 0
+    }
+  });
+});
+
+Meteor.publish("weaponArticles", function(limit) {
   return Articles.find({
     'category': 'z',
     'is_published':  true
@@ -76,7 +86,7 @@ Meteor.publish("weaponArticles", function (limit) {
   });
 });
 
-Meteor.publish("minimumUliceArticles", function (limit) {
+Meteor.publish("minimumUliceArticles", function(limit) {
   return Articles.find({
     'category': 'pravni-minimum-ulice',
     'is_published':  true
@@ -94,7 +104,7 @@ Meteor.publish("minimumUliceArticles", function (limit) {
   });
 });
 
-Meteor.publish("zachranariArticles", function (limit) {
+Meteor.publish("zachranariArticles", function(limit) {
   return Articles.find({
     'category': 'zachranari',
     'is_published':  true
@@ -112,7 +122,7 @@ Meteor.publish("zachranariArticles", function (limit) {
   });
 });
 
-Meteor.publish("hasiciArticles", function (limit) {
+Meteor.publish("hasiciArticles", function(limit) {
   return Articles.find({
     'category': 'hasici',
     'is_published':  true
@@ -130,7 +140,7 @@ Meteor.publish("hasiciArticles", function (limit) {
   });
 });
 
-Meteor.publish("personArticles", function () {
+Meteor.publish("personArticles", function() {
   return Articles.find({
     'category': 'o',
     'is_published':  true
@@ -143,7 +153,7 @@ Meteor.publish("personArticles", function () {
       photoset: 0,
       photoset_placement: 0,
       youtube_url: 0,
-      intro: 0,
+      intro:  0,
       // timestamp: 0,
       author_id: 0,
       author_name: 0
@@ -151,7 +161,7 @@ Meteor.publish("personArticles", function () {
   });
 });
 
-Meteor.publish("recruitmentArticles", function () {
+Meteor.publish("recruitmentArticles", function() {
   return Articles.find({
     'category': 'recruitment',
     'is_published':  true
@@ -164,7 +174,7 @@ Meteor.publish("recruitmentArticles", function () {
       photoset: 0,
       photoset_placement: 0,
       youtube_url: 0,
-      intro: 0,
+      intro:  0,
       // timestamp: 0,
       author_id: 0,
       author_name: 0
@@ -173,9 +183,9 @@ Meteor.publish("recruitmentArticles", function () {
 });
 
 
-Meteor.publish("recommendedArticles", function () {
+Meteor.publish("recommendedArticles", function() {
   return Articles.find({
-    'is_recommended': true,
+    'is_recommended':  true,
     'is_published':  true
   }, {
     sort: {
@@ -186,7 +196,7 @@ Meteor.publish("recommendedArticles", function () {
       photoset: 0,
       photoset_placement: 0,
       youtube_url: 0,
-      intro: 0,
+      intro:  0,
       // timestamp: 0,
       category: 0,
       author_id: 0,
@@ -195,7 +205,7 @@ Meteor.publish("recommendedArticles", function () {
   });
 });
 
-Meteor.publish("adminArticleList", function (limit) {
+Meteor.publish("adminArticleList", function(limit) {
   return Articles.find({}, {
     sort: {
       timestamp: -1
@@ -215,7 +225,7 @@ Meteor.publish("adminArticleList", function (limit) {
     return Articles.find({ }, {sort :{ title: -1}, limit : 3});
 });*/
 
-Meteor.publish("article", function (slug) {
+Meteor.publish("article", function(slug) {
   return Articles.find({
     "slug": slug
   });

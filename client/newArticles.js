@@ -4,15 +4,15 @@ Template.newArticles.events({
 
       Session.set("currentLimit", Session.get("currentLimit") + 2);
 
-      dateOffset = (24*60*60*1000) * Session.get("currentLimit");
-      daysAgo = new Date();
+      var dateOffset = (24*60*60*1000) * Session.get("currentLimit");
+      var daysAgo = new Date();
       daysAgo.setTime(daysAgo.getTime() - dateOffset)
       daysAgo.setHours(0,0,0,0);
-      until = daysAgo;
+      var until = daysAgo;
       until.setHours(23,59,59,999);
       Session.set("archiveUntil", until);
       dateOffset = (24*60*60*1000) * 3;
-      since = daysAgo;
+      var since = daysAgo;
       since.setTime(since.getTime() - dateOffset)
       Session.set("archiveSince", since);
 
