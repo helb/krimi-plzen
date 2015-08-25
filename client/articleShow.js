@@ -113,7 +113,7 @@ Template.articleShow.helpers({
           baseUrl;
         thumbContainer.empty();
         $.each(result.photoset.photo, function(index, photo) {
-          baseUrl = 'http://farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret;
+          baseUrl = '//farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret;
           $('<a/>').addClass('grow')
             .append($('<img>').prop('src', baseUrl + '_q.jpg').prop(
               'alt', photo.title))
