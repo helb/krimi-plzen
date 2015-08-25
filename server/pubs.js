@@ -221,9 +221,9 @@ Meteor.publish("adminArticleList", function(limit) {
   });
 });
 
-/*Meteor.publish("topArticles", function () {
-    return Articles.find({ }, {sort :{ title: -1}, limit : 3});
-});*/
+Meteor.publish("partnerList", function () {
+    return Partners.find({}, {sort: { order: 1}});
+});
 
 Meteor.publish("article", function(slug) {
   return Articles.find({

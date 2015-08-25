@@ -1,49 +1,74 @@
-section#partners img{
-	width: 10rem;
+.partner-box {
+    width: 50%;
+    background: #ddd;
+    border: 0.2em solid #ccc;
+    padding: 0;
+    display: flex;
+    color: #333 !important;
+    text-decoration: none;
+    transition: all 0.33s;
+    font-size: 0.8em;
 }
 
-section#partners img[src*="leiko"] {
-	width: 12rem;
+.partner-box:hover {
+    background-color: #ccc;
+    border-color: #bbb;
 }
 
-section#partners img[src*="plzen_cz"] {
-	width: 11rem;
+.partner-text,
+.partner-logo {
+    padding: 0.5em;
 }
 
-section#partners img[src*="los"]{
-	width: 7rem;
+.partner-text {
+    width: calc(100% - 10em);
+    padding-right: 2em;
 }
 
-section#partners img[src*="cwt"]{
-	width: 11rem;
+.partner-logo {
+    width: 10em;
+    text-align: right;
 }
 
-section#partners img[src*="policejnidenik"]{
-	width: 7.5rem;
+.partner-logo img {
+    width: 100%;
 }
 
-section#partners img[src*="rescue"]{
-	width: 7.5rem;
+.partner-text h2 {
+    font-family: "Open Sans Condensed";
+    margin-bottom: 0.5em;
+    font-size: 1.667em;
 }
 
-section#partners article.partner{
-	text-align: center;
-	margin: 1rem 0 1.5rem 0;
+.partners-label {
+    text-transform: uppercase;
+    font-size: 0.7em;
+    color: #999;
 }
 
-section#partners a{
-	color:#000;
-	text-decoration: none;
+#partners {
+    width: 100%;
+    margin-bottom: 2em;
+    overflow: hidden;
 }
 
-@media all and (max-width: 65em){
-	#partners .partner{
-		display: inline-block;
-		/*float: left;*/
-		/*width: 25%;*/
-		max-width: 30vw;
-		text-align: center;
-		height: 10rem;
-		margin: 20rem;
-	}
+#partners-slider {
+    width: 200%;
+    display: flex;
+    animation: partnerSlide 20s ease-in-out infinite;
+}
+
+@keyframes partnerSlide {
+    0% {
+        margin-left: 0;
+    }
+    46% {
+        margin-left: 0%;
+    }
+    50% {
+        margin-left: -100%;
+    }
+    96% {
+        margin-left: -100%;
+    }
 }
