@@ -90,9 +90,9 @@ section#page.admin header#main-header{
 @media all and (max-width: 65em){
 	header#main-header{
 		text-align: center;
-    height: 12rem;
+    height: 7rem;
     background-position: center center;
-    background-size: auto 16rem;
+    background-size: cover;
 	}
 
 	.featured-article{
@@ -101,7 +101,7 @@ section#page.admin header#main-header{
 
 
 	header#main-header a.logo{
-	margin-top: 1rem;
+	margin-top: -1.5rem;
 	padding: 0;
 	width: 100%;
 		background-repeat: no-repeat;
