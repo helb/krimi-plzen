@@ -77,8 +77,13 @@
   display: block;
   max-height: calc(100vh - 6rem);
   max-width: 100vw;
-  /*max-height: 100vh;*/
   margin: auto;
+}
+
+@media all and (max-width: 65em){
+  #currentImage img{
+    width: 100%;
+  }
 }
 
 #viewerNav{
