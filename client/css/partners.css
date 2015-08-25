@@ -72,3 +72,24 @@
         margin-left: -100%;
     }
 }
+
+@media all and (max-width: 65em){
+    .partner-box {
+        flex-direction: column;
+    }
+
+    .partnet-text{
+        width: 100%;
+        padding-right: 0.5em;
+        padding-bottom: 2em;
+    }
+
+    .partner-logo {
+        width: 100%;
+        text-align: center;
+    }
+
+    .partner-logo img {
+        max-width: 10em;
+    }
+}
