@@ -26,7 +26,7 @@
 }
 
 .partner-logo {
-    width: 10em;
+    width: 12em;
     text-align: right;
 }
 
@@ -73,6 +73,6 @@
     }
 
     .partner-logo img {
-        max-width: 10em;
+        max-width: 12em;
     }
 }
