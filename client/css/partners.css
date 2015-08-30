@@ -53,24 +53,7 @@
 }
 
 #partners-slider {
-    width: 200%;
     display: flex;
-    animation: partnerSlide 20s ease-in-out infinite;
-}
-
-@keyframes partnerSlide {
-    0% {
-        margin-left: 0;
-    }
-    46% {
-        margin-left: 0%;
-    }
-    50% {
-        margin-left: -100%;
-    }
-    96% {
-        margin-left: -100%;
-    }
 }
 
 @media all and (max-width: 65em){
