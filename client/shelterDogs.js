@@ -26,7 +26,6 @@ Template.shelterDogs.rendered = function() {
 Template.shelterDogs.events({
   'mouseup section#dogs a': function (event) {
     event.preventDefault();
-    console.log(event.target.href);
     var url = event.target.href;
     ga('send', 'event', 'outbound', 'click', url);
     window.open(url,'_blank');
