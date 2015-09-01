@@ -4,6 +4,13 @@ Template.adminArticleList.helpers({
       return "Zobrazit"
     }
     return "Schovat"
+  },
+  notPartner: function(name){
+    if (name === "PARTNER") {
+      return false;
+    } else {
+      return true;
+    }
   }
 })
 

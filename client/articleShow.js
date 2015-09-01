@@ -127,6 +127,13 @@ Template.articleShow.helpers({
         });
       }
     });
+  },
+  notPartner: function(name){
+    if (name === "PARTNER") {
+      return false;
+    } else {
+      return true;
+    }
   }
 });
 
