@@ -8,13 +8,13 @@ Template.partners.helpers({
 			var percents = i * 100 / partnerCount;
 			sliderAnimation += percents + "% {margin-left: " + i * -100 + "%} ";
 			sliderAnimation += percents + fTime + "% {margin-left: " + i * -100 + "%} ";
-			fakebgAnimation += percents + "% {left: " + (partnerCount - i) * -4.75 + "em} ";
-			fakebgAnimation += percents + fTime + "% {left: " + (partnerCount - i) * -4.75 + "em} ";
+			fakebgAnimation += percents + "% {left: " + (partnerCount - i) * -6.3 + "rem} ";
+			fakebgAnimation += percents + fTime + "% {left: " + (partnerCount - i) * -6.3 + "rem} ";
 		}
 		var sliderStyle = "#partners-slider {animation: partnerSlide " + partnerCount * 8 +
 			"s ease-in-out infinite; width:"  + partnerCount * 100 + "%; transition: margin-left 0.5s}";
 		var fakebgStyle = ".partner-label-fakebg{animation: fakebgSlide " + partnerCount * 8 +
-			"s ease-in-out infinite; left: " + partnerCount * -4.75 + "em}";
+			"s ease-in-out infinite; left: " + partnerCount * -6.3 + "rem}";
 		var style = "<style>@keyframes partnerSlide{" + sliderAnimation + "} " +
 			sliderStyle + " " + fakebgStyle +
 			" @keyframes fakebgSlide{" + fakebgAnimation + "}</style>";
