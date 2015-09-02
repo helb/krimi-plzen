@@ -11,8 +11,17 @@ Template.adminArticleEdit.rendered = function () {
     placeholder: ''
   });
 
+  setTimeout(function(){
+    $("#form-partner option[value=" + $("#form-partner").data("articlepartner") + "]").prop("selected", "selected");
+    }, 1500);
 };
 
+Template.adminArticleEdit.helpers({
+  partners: function(){
+    Meteor.subscribe("partnerList");
+    return Partners.find();
+  }
+});
 
 Template.adminArticleEdit.events({
   'click button#form-save': function (event) {
@@ -20,6 +29,7 @@ Template.adminArticleEdit.events({
     article_id = event.currentTarget.dataset.article;
     title = document.getElementById("form-title").value;
     intro = document.getElementById("form-intro").value;
+    partner = document.getElementById("form-partner").value;
     text = cleanHTML(document.getElementById("editor").innerHTML);
     // text = document.getElementById("editor").innerHTML;
     // setselect = document.getElementById("form-set");
@@ -39,7 +49,8 @@ Template.adminArticleEdit.events({
       $set: {
         title: title,
         intro: intro,
-        text: text
+        text: text,
+        partner_id: partner
       }
     });
     $("#form-save-success").removeClass("hidden");

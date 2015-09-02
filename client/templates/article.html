@@ -11,6 +11,14 @@
 	<p class="intro">{{intro}}</p>
 	{{#if youtube_url}}<iframe width="853" height="480" src="//www.youtube-nocookie.com/embed/{{youtube_url}}" frameborder="0" allowfullscreen></iframe>{{/if}}
 	{{#markdown}}{{text}}{{/markdown}}
+  {{#if partner_id}}
+    {{#with partnerDetail partner_id}}
+      <a href="/a/{{slug}}" class="article-partner" title="{{name}} – klikněte pro více informací" target="_blank">
+      <p>Partnerem tohoto článku je <strong>{{name}}</strong>.<br><small>{{intro}}</small></p>
+      <img src="//static.krimi-plzen.cz/partner/{{logo}}" alt="{{name}}" />
+      </a>
+    {{/with}}
+  {{/if}}
 	{{#if photoset}}<div id="photos">{{flickrGallery photoset}}</div>{{/if}}
 </article>
 <div id='photoViewer'>

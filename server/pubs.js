@@ -225,6 +225,12 @@ Meteor.publish("partnerList", function () {
     return Partners.find({}, {sort: { order: 1}});
 });
 
+Meteor.publish("partnerDetail", function(id) {
+  return Partners.find({
+    "_id": id
+  });
+});
+
 Meteor.publish("article", function(slug) {
   return Articles.find({
     "slug": slug

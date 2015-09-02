@@ -6,20 +6,14 @@
 <textarea id="form-intro" placeholder="Úvodní text" required>{{intro}}</textarea>
 {{/with}}
 <div id="editor">{{#with article}}{{#markdown}}{{text}}{{/markdown}}{{/with}}</div>
-{{!-- {{#with article}}
-<button id="form-flickr-reload">⟲</button>
-<select id="form-set"></select>
-<select id="form-set-placement" disabled>
-<option value="1" label="Fotky pod článkem"></option>
-<option value="2" label="Fotky mezi úvodem a textem"></option>
+{{#with article}}
+<select id="form-partner" data-articlepartner="{{partner_id}}">
+<option>Partner článku</option>
+{{#each partners}}
+	<option value="{{_id}}">{{name}}</option>
+{{/each}}
 </select>
-<input type="text" id="form-youtube" placeholder="Adresa Youtube videa" value="{{youtube_url}}" />
 {{/with}}
-<select id="form-category">
-	<option>Články</option>
-	<option value="z">Zbraně</option>
-	<option value="o">Hledané osoby</option>
-</select> --}}
 <span class="hidden" id="form-save-success">✓ Uloženo</span>
 {{#with article}}<button id="form-save" data-article="{{_id}}">Uložit</button>{{/with}}
 </form>

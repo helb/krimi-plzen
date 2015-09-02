@@ -21,6 +21,12 @@
   <option value="hasici">Hasiči</option>
   <option value="recruitment">Představujeme policii</option>
 </select>
+<select id="form-partner">
+<option value="" default selected>Partner článku</option>
+{{#each partners}}
+	<option value="{{_id}}">{{name}}</option>
+{{/each}}
+</select>
 <input type="checkbox" id="form-publish" checked="true" />&nbsp;<label for="form-publish">publikovat hned</label>
 <span class="hidden" id="form-save-success">✓ Uloženo</span>
 <button id="form-save">Uložit</button>
