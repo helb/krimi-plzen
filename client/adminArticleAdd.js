@@ -53,6 +53,12 @@ Template.adminArticleAdd.events({
       is_published = false;
     }
 
+    if (document.getElementById("form-publish-for-partner").checked) {
+      publish_for_partner = true;
+    } else {
+      publish_for_partner = false;
+    }
+
     Meteor.call('articleExists', slug, function(err, exists) {
         if(err){
           console.log(err);
@@ -79,6 +85,7 @@ Template.adminArticleAdd.events({
           youtube_url:  youtube_url,
           category: category,
           is_published: is_published,
+          publish_for_partner: publish_for_partner,
           partner_id: partner
         })){
           $("#form-save-success").removeClass("hidden");
