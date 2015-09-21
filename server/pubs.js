@@ -205,6 +205,29 @@ Meteor.publish("recommendedArticles", function() {
   });
 });
 
+Meteor.publish("partnerArticles", function() {
+  return Articles.find({
+    'author_name':  "PARTNER",
+    'is_published':  true
+  }, {
+    limit: 10,
+    sort: {
+      timestamp: -1
+    },
+    fields:  {
+      text: 0,
+      photoset: 0,
+      photoset_placement: 0,
+      youtube_url: 0,
+      intro:  0,
+      // timestamp: 0,
+      category: 0,
+      author_id: 0,
+      author_name: 0
+    }
+  });
+});
+
 Meteor.publish("adminArticleList", function(limit) {
   return Articles.find({}, {
     sort: {

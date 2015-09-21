@@ -1,6 +1,6 @@
 <template name="recommendedArticles">
-<section id="recommended-articles" class="{{#if thereAreRecommendedArticles}}visible{{/if}}">
-{{#if thereAreRecommendedArticles}}<h2>Doporučené články</h2>{{/if}}
+<section id="recommended-articles" class="visible">
+<h2>Doporučené články</h2>
 {{#each articles}}
 	<section class="article-slug recommended">
 		<a href="{{pathFor 'articleShow'}}">
