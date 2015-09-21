@@ -423,3 +423,30 @@ overflow: ellipsis;
 white-space: nowrap !important;
 }
 }
+
+.article-partner {
+	display: block;
+	text-decoration: none !important;
+	color: #333 !important;
+	background: #eee;
+	padding: 0.5em;
+	margin: 1em 0 0;
+	display: flex;
+	transition: background 0.33s;
+	border-radius: 0.33em;
+}
+
+.article-partner:hover,
+.article-partner:focus {
+	background: #ddd;
+}
+
+.article-partner small {
+	font-style: italic;
+}
+
+.article-partner img {
+	height: 7rem;
+	width: 7rem;
+	margin-left: 1em;
+}
