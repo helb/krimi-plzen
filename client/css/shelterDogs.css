@@ -19,8 +19,8 @@ article.dog:not(:last-child){
 
 article.dog a.grow{
   margin: 0;
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   overflow: hidden;
   display: block;
   margin-right: 1rem;
@@ -44,7 +44,7 @@ article.dog p{
   margin: 0;
   display: block;
   width: 100%;
-  height: 4rem;
+  height: 3rem;
   font-family: "Open Sans Condensed";
 }
 
