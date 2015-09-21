@@ -8,6 +8,7 @@ Template.recommendedArticles.helpers({
       'is_recommended': true,
       'is_published':  true
     }, {
+      limit: 10,
       sort: {
         timestamp: -1
       }
