@@ -222,8 +222,7 @@ Meteor.publish("partnerArticles", function() {
       intro:  0,
       // timestamp: 0,
       category: 0,
-      author_id: 0,
-      author_name: 0
+      author_id: 0
     }
   });
 });
