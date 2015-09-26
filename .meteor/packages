@@ -21,7 +21,6 @@ yasinuslu:blaze-meta
 hedcet:touch-swipe
 clode:transit
 chuangbo:marked
-fourseven:scss
 citizenkevin:medium-editor
 manuelschoebel:wait-on-lib
 standard-minifiers
@@ -38,3 +37,4 @@ random
 ejson
 spacebars
 check
+fourseven:scss
