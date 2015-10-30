@@ -33,10 +33,10 @@ deps@1.0.9
 diff-sequence@1.0.1
 ecmascript@0.1.6
 ecmascript-runtime@0.2.6
+ecmascript-collections@0.1.6
 ejson@1.0.7
 email@1.0.8
 fastclick@1.0.7
-fourseven:scss@3.4.1
 gadicohen:robots-txt@0.0.10
 gadicohen:sitemaps@0.0.23
 geojson-utils@1.0.4
