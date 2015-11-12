@@ -7,7 +7,7 @@
     transition: all 0.33s;
     font-size: 0.8em;
     border-radius: 0.33em 0.33em 0.33em 0;
-    background: #ddd linear-gradient(to bottom, #eeeeee 0%, rgba(0, 0, 0, 0.07) 100%); 
+    background: #ddd linear-gradient(to bottom, #eeeeee 0%, rgba(0, 0, 0, 0.07) 100%);
 }
 
 .partner-box:hover {
@@ -31,6 +31,7 @@
 
 .partner-logo img {
     width: 100%;
+    animation: logo-animation 8s ease-in 0s infinite;
 }
 
 .partner-text h2 {
@@ -80,7 +81,7 @@
 }
 
 .partner-radio:checked + .partner-label {
-    background: #ddd linear-gradient(to bottom, #cccccc 0%, #cacaca 100%); 
+    background: #ddd linear-gradient(to bottom, #cccccc 0%, #cacaca 100%);
 }
 
 .partner-label img {
@@ -93,7 +94,6 @@
     width: 6rem;
     height: 6rem;
     border-radius: 0 0 0.33em 0.33em;
-    /*background: #ddd linear-gradient(to bottom, #cccccc 0%,#cacaca 100%); */
     background: rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: -9999;
@@ -111,6 +111,24 @@
     color: #999;
     line-height: 6rem;
     height: 6rem;
+}
+
+@keyframes logo-animation {
+    0% {
+        transform: scale(0) translate(5em, 0);
+        opacity: 0;
+    }
+    3% {
+        opacity: 0.3;
+    }
+    7%, 90% {
+        transform: scale(1) translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0) translate(5em, 0);
+        opacity: 0;
+    }
 }
 
 @media all and (max-width: 65em){

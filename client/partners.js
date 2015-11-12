@@ -17,7 +17,8 @@ Template.partners.helpers({
 			"s ease-in-out infinite; left: " + partnerCount * -6.3 + "rem}";
 		var style = "<style>@keyframes partnerSlide{" + sliderAnimation + "} " +
 			sliderStyle + " " + fakebgStyle +
-			" @keyframes fakebgSlide{" + fakebgAnimation + "}</style>";
+			" @keyframes fakebgSlide{" + fakebgAnimation + "}" +
+			"</style>";
 		return style;
 	}
 });
@@ -31,7 +32,6 @@ Template.partners.events({
 		var frameCount = document.querySelectorAll(".partner-label").length;
 		for (var i = 0; el = el.previousElementSibling; i++);
 		var currentFrame = i / 2;
-		console.log(currentFrame);
 		$("#partners-slider").css({"margin-left": currentFrame * -100 + "%"});
 	}
 });
