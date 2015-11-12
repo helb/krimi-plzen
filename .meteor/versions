@@ -65,7 +65,7 @@ meteor@1.1.10
 meteor-base@1.0.1
 meteorhacks:fast-render@2.10.0
 meteorhacks:inject-data@1.4.1
-meteorhacks:kadira@2.25.0
+meteorhacks:kadira@2.26.3
 meteorhacks:meteorx@1.4.1
 meteorhacks:picker@1.0.3
 meteorhacks:subs-manager@1.6.2
