@@ -1,16 +1,17 @@
 <template name="policeRecruitment">
-<section id="police-recruitment" class="{{#if thereAreRecruitments}}visible{{/if}}">
-{{#if thereAreRecruitments}}<h2>Představujeme policii</h2>{{/if}}
-{{#each recruitments}}
-  <section class="article-slug recruitment">
-    <a href="{{pathFor 'articleShow'}}">
-    <img src="{{#if photo_url}}{{photo_url}}{{else}}https://scontent-a-fra.xx.fbcdn.net/hphotos-xpf1/t1.0-9/10404172_261576800702751_5525022015083078099_n.jpg{{/if}}" class="grow"></a>
-    <div class="teaser">
-    <a href="{{pathFor 'articleShow'}}">
-    <h1>{{title}}</h1>
-    </a>
-    </div>
-  </section>
-{{/each}}
-</section>
+    <section id="police-recruitment" class="{{#if thereAreRecruitments}}visible{{/if}}">
+        {{#if thereAreRecruitments}}
+            <h2>Představujeme policii</h2>{{/if}} {{#each recruitments}}
+            <section class="article-slug recruitment">
+                <a href="{{pathFor 'articleShow'}}">
+                    <img src="{{#if photo_url}}{{photo_url}}{{else}}https://scontent-a-fra.xx.fbcdn.net/hphotos-xpf1/t1.0-9/10404172_261576800702751_5525022015083078099_n.jpg{{/if}}" class="grow">
+                </a>
+                <div class="teaser">
+                    <a href="{{pathFor 'articleShow'}}">
+                        <h1>{{title}}</h1>
+                    </a>
+                </div>
+            </section>
+        {{/each}}
+    </section>
 </template>

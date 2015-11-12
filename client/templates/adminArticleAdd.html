@@ -1,37 +1,39 @@
 <template name="adminArticleAdd">
-<section id="admin-article-add">
-<form>
-<input type="text" id="form-title" placeholder="Název" required />
-<textarea id="form-intro" placeholder="Úvodní text" required></textarea>
-<div id="editor">
-</div>
-<button id="form-flickr-reload">⟲</button>
-<select id="form-set"></select>
-<select id="form-set-placement" disabled class="hidden">
-<option value="1" label="Fotky pod článkem"></option>
-<option value="2" label="Fotky mezi úvodem a textem"></option>
-</select>
-<input type="text" id="form-youtube" placeholder="Adresa Youtube videa" />
-<select id="form-category">
-	<option value="">Články</option>
-	<option value="z">Zbraně</option>
-	<option value="o">Hledané osoby</option>
-  <option value="pravni-minimum-ulice">Právní minimum ulice</option>
-  <option value="zachranari">Záchranáři</option>
-  <option value="hasici">Hasiči</option>
-  <option value="recruitment">Představujeme policii</option>
-</select>
-<select id="form-partner">
-<option value="" default selected>Partner článku</option>
-{{#each partners}}
-	<option value="{{_id}}">{{name}}</option>
-{{/each}}
-</select>
-<button id="form-save">Uložit</button>
-<br>
-<input type="checkbox" id="form-publish" checked="true" />&nbsp;<label for="form-publish">publikovat</label>
-<input type="checkbox" id="form-publish-for-partner" />&nbsp;<label for="form-publish-for-partner">regionplzen</label>
-<span class="hidden" id="form-save-success">✓ Uloženo</span>
-</form>
-</section>
+    <section id="admin-article-add">
+        <form>
+            <input type="text" id="form-title" placeholder="Název" required />
+            <textarea id="form-intro" placeholder="Úvodní text" required></textarea>
+            <div id="editor">
+            </div>
+            <button id="form-flickr-reload">⟲</button>
+            <select id="form-set"></select>
+            <select id="form-set-placement" disabled class="hidden">
+                <option value="1" label="Fotky pod článkem"></option>
+                <option value="2" label="Fotky mezi úvodem a textem"></option>
+            </select>
+            <input type="text" id="form-youtube" placeholder="Adresa Youtube videa" />
+            <select id="form-category">
+                <option value="">Články</option>
+                <option value="z">Zbraně</option>
+                <option value="o">Hledané osoby</option>
+                <option value="pravni-minimum-ulice">Právní minimum ulice</option>
+                <option value="zachranari">Záchranáři</option>
+                <option value="hasici">Hasiči</option>
+                <option value="recruitment">Představujeme policii</option>
+            </select>
+            <select id="form-partner">
+                <option value="" default selected>Partner článku</option>
+                {{#each partners}}
+                <option value="{{_id}}">{{name}}</option>
+                {{/each}}
+            </select>
+            <button id="form-save">Uložit</button>
+            <br>
+            <input type="checkbox" id="form-publish" checked="true" />&nbsp;
+            <label for="form-publish">publikovat</label>
+            <input type="checkbox" id="form-publish-for-partner" />&nbsp;
+            <label for="form-publish-for-partner">regionplzen</label>
+            <span class="hidden" id="form-save-success">✓ Uloženo</span>
+        </form>
+    </section>
 </template>

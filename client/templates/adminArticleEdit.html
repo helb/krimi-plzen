@@ -1,22 +1,23 @@
 <template name="adminArticleEdit">
-<section id="admin-article-add">
-<form>
-{{#with article}}
-<input type="text" id="form-title" placeholder="Název" value="{{title}}" required />
-<textarea id="form-intro" placeholder="Úvodní text" required>{{intro}}</textarea>
-{{/with}}
-<div id="editor">{{#with article}}{{#markdown}}{{text}}{{/markdown}}{{/with}}</div>
-{{#with article}}
-<select id="form-partner" data-articlepartner="{{partner_id}}">
-<option>Partner článku</option>
-{{#each partners}}
-	<option value="{{_id}}">{{name}}</option>
-{{/each}}
-</select>
-{{/with}}
-<span class="hidden" id="form-save-success">✓ Uloženo</span>
-{{#with article}}<button id="form-save" data-article="{{_id}}">Uložit</button>{{/with}}
-</form>
+	<section id="admin-article-add">
+		<form>
+			{{#with article}}
+			<input type="text" id="form-title" placeholder="Název" value="{{title}}" required />
+			<textarea id="form-intro" placeholder="Úvodní text" required>{{intro}}</textarea>
+			{{/with}}
+			<div id="editor">{{#with article}}{{#markdown}}{{text}}{{/markdown}}{{/with}}</div>
+			{{#with article}}
+			<select id="form-partner" data-articlepartner="{{partner_id}}">
+				<option>Partner článku</option>
+				{{#each partners}}
+				<option value="{{_id}}">{{name}}</option>
+				{{/each}}
+			</select>
+			{{/with}}
+			<span class="hidden" id="form-save-success">✓ Uloženo</span>
+			{{#with article}}
+			<button id="form-save" data-article="{{_id}}">Uložit</button>{{/with}}
+		</form>
 
-</section>
+	</section>
 </template>
