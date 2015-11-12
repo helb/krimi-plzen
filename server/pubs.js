@@ -10,7 +10,7 @@ Meteor.publishAuth = function(name, fn) {
 Meteor.publish("newArticles", function(limit) {
   var dateOffset = (24 * 60 * 60 * 1000) * limit;
   var daysAgo = new Date();
-  daysAgo.setTime(daysAgo.getTime() - dateOffset)
+  daysAgo.setTime(daysAgo.getTime() - dateOffset);
   daysAgo.setHours(0, 0, 0, 0);
 
   return Articles.find({
