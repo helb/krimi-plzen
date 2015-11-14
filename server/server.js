@@ -6,9 +6,9 @@ Accounts.config({
 Meteor.methods({
   articleExists: function(slug) {
     article = Articles.findOne({
-      'slug': slug
+      "slug": slug
     });
-    if (typeof article == 'undefined') {
+    if (typeof article == "undefined") {
       return false;
     } else {
       return true;
@@ -18,8 +18,8 @@ Meteor.methods({
 
 Meteor.startup(function() {
   Articles._ensureIndex({
-    'slug': 1,
-    'category':  1,
-    'timestamp': -1
+    "slug": 1,
+    "category":  1,
+    "timestamp": -1
   });
 });
