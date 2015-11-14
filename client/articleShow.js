@@ -136,7 +136,6 @@ Template.articleShow.helpers({
     }
   },
   partnerDetail: function(id){
-    console.log(id);
     Meteor.subscribe("partnerDetail", id);
     var partner = Partners.find({_id: id}).fetch()[0];
     return partner;
