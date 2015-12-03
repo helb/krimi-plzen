@@ -62,7 +62,7 @@ logging@1.0.8
 manuelschoebel:wait-on-lib@0.3.0
 meteor@1.1.10
 meteor-base@1.0.1
-meteorhacks:fast-render@2.10.0
+meteorhacks:fast-render@2.11.0
 meteorhacks:inject-data@1.4.1
 meteorhacks:picker@1.0.3
 meteorhacks:subs-manager@1.6.2
