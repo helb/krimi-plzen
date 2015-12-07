@@ -1,5 +1,12 @@
 <template name="shelterDogs">
     <section id="dogs">
-        <h2>Psi přijatí do útulku</h2>
+        {{#each dogs}}
+        <article class="dog">
+            <a href="{{link}}" target="_blank" class="grow" style="background-image:url('{{image}}')"></a>
+            <p>
+                <a target="_blank" href="{{link}}">{{description}}</a>
+            </p>
+        </article>
+        {{/each}}
     </section>
 </template>

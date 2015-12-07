@@ -11,7 +11,6 @@ dburles:collection-helpers
 accounts-ui
 accounts-password
 gadicohen:sitemaps
-meteorhacks:fast-render
 meteorhacks:subs-manager
 yasinuslu:blaze-meta
 
@@ -35,3 +34,6 @@ ejson
 spacebars
 check
 spiderable
+meteorhacks:fast-render
+peerlibrary:xml2js
+http
