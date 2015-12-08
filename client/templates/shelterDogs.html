@@ -1,5 +1,6 @@
 <template name="shelterDogs">
     <section id="dogs">
+        <h2>Psi přijatí do útulku</h2>
         {{#each dogs}}
         <article class="dog">
             <a href="{{link}}" target="_blank" class="grow" style="background-image:url('{{image}}')"></a>
@@ -8,5 +9,6 @@
             </p>
         </article>
         {{/each}}
+        <a href="http://utulekplzen.cz/category/aktualne-prijati-psi/" id="shelter-link" target="_blank">Další psy najdete na utulekplzen.cz &raquo;</a>
     </section>
 </template>
