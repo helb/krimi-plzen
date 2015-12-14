@@ -75,8 +75,6 @@
 #currentImage img{
   z-index: 9999;
   display: block;
-  max-height: calc(100vh - 6rem);
-  max-width: 100vw;
   margin: auto;
 }
 

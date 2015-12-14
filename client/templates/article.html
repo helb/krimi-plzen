@@ -19,7 +19,12 @@
       </a>
     {{/with}}
   {{/if}}
+
+  {{#if photos}}
+    <div id="photos">{{{localFlickrGallery photos}}}</div>
+  {{else}}
 	{{#if photoset}}<div id="photos">{{flickrGallery photoset}}</div>{{/if}}
+  {{/if}}
 </article>
 <div id='photoViewer'>
   <figure id='currentImage'>

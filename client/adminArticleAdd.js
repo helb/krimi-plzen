@@ -1,109 +1,140 @@
-Template.adminArticleAdd.rendered = function () {
-  var editor = new MediumEditor('#editor', {
-    anchorInputPlaceholder: 'adresa odkazu',
-    buttons: ['bold', 'italic', 'underline', 'strikethrough', 'header1', 'unorderedlist', 'orderedlist', 'quote', 'anchor'],
-    checkLinkFormat: true,
-    cleanPastedHTML: true,
-    forcePlainText: true,
-    firstHeader: 'h2',
-    secondHeader: 'h3',
-    placeholder: ''
-  });
+Template.adminArticleAdd.rendered = function() {
+    var editor = new MediumEditor('#editor', {
+        anchorInputPlaceholder: 'adresa odkazu',
+        buttons: ['bold', 'italic', 'underline', 'strikethrough', 'header1', 'unorderedlist', 'orderedlist', 'quote', 'anchor'],
+        checkLinkFormat: true,
+        cleanPastedHTML:  true,
+        forcePlainText: true,
+        firstHeader: 'h2',
+        secondHeader: 'h3',
+        placeholder: ''
+    });
 
-  getFlickrSets();
+    getFlickrSets();
 
 };
 
 Template.adminArticleAdd.helpers({
-  partners: function(){
-    Meteor.subscribe("partnerList");
-    return Partners.find();
-  }
+    partners: function() {
+        Meteor.subscribe("partnerList");
+        return Partners.find();
+    }
 });
 
 Template.adminArticleAdd.events({
-  'click button#form-save': function (event) {
-    event.preventDefault();
-    title = document.getElementById("form-title").value;
-    slug = titleToSlug(document.getElementById("form-title").value);
-    intro = document.getElementById("form-intro").value;
-    text = cleanHTML(document.getElementById("editor").innerHTML);
-    partner = document.getElementById("form-partner").value;
-    // text = document.getElementById("editor").innerHTML;
-    setselect = document.getElementById("form-set");
-    photoset = setselect.value;
-    photo_url = setselect.options[setselect.selectedIndex].dataset.photo;
-    photoset_placement = document.getElementById("form-set-placement").value;
+    'click button#form-save': function(event) {
+        event.preventDefault();
+        var title = document.getElementById("form-title").value;
+        var slug = titleToSlug(document.getElementById("form-title").value);
+        var intro = document.getElementById("form-intro").value;
+        var text = cleanHTML(document.getElementById("editor").innerHTML);
+        var partner = document.getElementById("form-partner").value;
+        // text = document.getElementById("editor").innerHTML;
+        var setselect = document.getElementById("form-set");
+        var photoset = setselect.value;
+        var photo_url = setselect.options[setselect.selectedIndex].dataset.photo;
+        var photoset_placement = document.getElementById("form-set-placement").value;
+        var photos = [];
 
-    if(document.getElementById("form-category").value.length > 0){
-      category = document.getElementById("form-category").value;
-    } else {
-      category = null;
-    }
+        var photosFetched = false;
 
-    if (document.getElementById("form-youtube").value) {
-      youtube_url  = getIdFromYoutube(document.getElementById("form-youtube").value);
-    } else {
-      youtube_url =  null;
-    }
+        $.ajax({
+            url: (window.location.protocol === 'https:' ?
+                    'https://secure' : 'https://api') +
+                '.flickr.com/services/rest/',
+            data: {
+                format: 'json',
+                method: 'flickr.photosets.getPhotos',
+                photoset_id: photoset,
+                api_key: '7617adae70159d09ba78cfec73c13be3'
+            },
+            dataType: 'jsonp',
+            jsonp: 'jsoncallback'
+        }).done(function(result) {
+            if (result.photoset) {
+                $.each(result.photoset.photo, function(index, photo) {
+                    var baseUrl = '//farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret;
+                    photos.push(baseUrl);
+                });
+                photosFetched = true;
+            }
+        });
 
-    if (document.getElementById("form-publish").checked) {
-      is_published = true;
-    } else {
-      is_published = false;
-    }
 
-    if (document.getElementById("form-publish-for-partner").checked) {
-      publish_for_partner = true;
-    } else {
-      publish_for_partner = false;
-    }
-
-    Meteor.call('articleExists', slug, function(err, exists) {
-        if(err){
-          console.log(err);
-        }
-        if(exists == true){
-          timestamp = new Date()
-          day = timestamp.getDate();
-          month = timestamp.getMonth() + 1;
-          year = timestamp.getFullYear();
-          finalSlug = slug + "-" + year + "-" + month + "-" + day + "-" + timestamp.getHours() + (timestamp.getMinutes() < 10 ? '0' : '') + timestamp.getMinutes();
+        if (document.getElementById("form-category").value.length >  0) {
+            category = document.getElementById("form-category").value;
         } else {
-          finalSlug = slug;
+            category = null;
         }
-        if(Articles.insert({
-          author_id:  Meteor.userId(),
-          timestamp: new Date(),
-          title: title,
-          slug: finalSlug,
-          intro: intro,
-          text: text,
-          photo_url:  photo_url,
-          photoset:  photoset,
-          photoset_placement:  photoset_placement,
-          youtube_url:  youtube_url,
-          category: category,
-          is_published: is_published,
-          publish_for_partner: publish_for_partner,
-          partner_id: partner
-        })){
-          $("#form-save-success").removeClass("hidden");
+
+        if (document.getElementById("form-youtube").value) {
+            youtube_url  = getIdFromYoutube(document.getElementById("form-youtube").value);
+        } else {
+            youtube_url =  null;
         }
-      })
 
-  },
+        if (document.getElementById("form-publish").checked) {
+            is_published = true;
+        } else {
+            is_published = false;
+        }
 
-  'click button#form-flickr-reload': function (event) {
-    event.preventDefault();
-    photosets = document.getElementById("form-set");
-    while (photosets.firstChild) {
-      photosets.removeChild(photosets.firstChild);
+        Meteor.call('articleExists', slug, function(err, exists) {
+            if (err) {
+                console.log(err);
+            }
+            if (exists == true) {
+                timestamp = new Date()
+                day = timestamp.getDate();
+                month = timestamp.getMonth() + 1;
+                year = timestamp.getFullYear();
+                finalSlug = slug + "-" + year + "-" + month + "-" + day + "-" + timestamp.getHours() + (timestamp.getMinutes() < 10 ? '0' : '') + timestamp.getMinutes();
+            } else {
+                finalSlug = slug;
+            }
+
+            var insertArticle = function() {
+                if (Articles.insert({
+                        author_id:  Meteor.userId(),
+                        timestamp: new Date(),
+                        title: title,
+                        slug: finalSlug,
+                        intro: intro,
+                        text: text,
+                        photo_url:  photo_url,
+                        photoset:  photoset,
+                        photoset_placement:  photoset_placement,
+                        youtube_url:  youtube_url,
+                        category: category,
+                        is_published: is_published,
+                        partner_id: partner,
+                        photos: photos
+                    })) {
+                    $("#form-save-success").removeClass("hidden");
+                }
+            };
+
+            var waitForPhotos = function(){
+                if(photosFetched === true){
+                    Meteor.clearInterval(insertTimeout);
+                    insertArticle();
+                }
+            };
+
+            var insertTimeout = Meteor.setInterval(waitForPhotos, 250);
+        });
+    },
+
+    'click button#form-flickr-reload': function(event) {
+        event.preventDefault();
+        photosets = document.getElementById("form-set");
+        while (photosets.firstChild) {
+            photosets.removeChild(photosets.firstChild);
+        }
+        getFlickrSets();
+    },
+
+    'click input': function(event) {
+        $("#form-save-success").addClass("hidden");
     }
-    getFlickrSets();
-  },
-
-  'click input': function (event) {
-    $("#form-save-success").addClass("hidden");
-  }
 });

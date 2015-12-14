@@ -118,15 +118,17 @@ Template.articleShow.helpers({
             .append($('<img>').prop('src', baseUrl + '_q.jpg').prop(
               'alt', photo.title))
             .prop('href', baseUrl + '_b.jpg')
-            .appendTo(thumbContainer)
-            .click(function(e) {
-              e.preventDefault();
-              openViewer($(this));
-              $(this).addClass("current");
-            });
+            .appendTo(thumbContainer);
         });
       }
     });
+  },
+  localFlickrGallery: function(photos) {
+      var htmlstring = "";
+      $.each(photos, function(index, photo) {
+          htmlstring += "<a class='grow' href='" + photo + "_b.jpg'><img src='" + photo + "_q.jpg'></a>";
+      });
+      return htmlstring;
   },
   notPartner: function(name){
     if (name === "PARTNER") {
@@ -159,6 +161,26 @@ Template.articleShow.rendered = function() {
     $("#navPrev").click(function(e) {
       e.preventDefault();
       switchPhoto($("#photos a.current").index(), -1);
+    });
+
+    $("#photos a").click(function(e) {
+      e.preventDefault();
+      openViewer($(this));
+      $(this).addClass("current");
+    });
+
+    $("#photoViewer").click(function(e) {
+        e.preventDefault();
+        closeViewer();
+    }).children().click(function(e) {
+        return false;
+    });
+
+    $("#photoViewer picture").click(function(e) {
+        e.preventDefault();
+        closeViewer();
+    }).children().click(function(e) {
+        return false;
     });
 
     $("#currentImage img").load(function() {

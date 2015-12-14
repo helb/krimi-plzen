@@ -50,7 +50,8 @@ getFlickrSets = function () {
       method: 'flickr.photosets.getList',
       user_id:   '124879138@N07',
       primary_photo_extras:   'url_q',
-      // per_page: '1',
+      per_page: 10,
+      page: 1,
       api_key: '7617adae70159d09ba78cfec73c13be3'
     },
     dataType: 'jsonp',

@@ -3,6 +3,7 @@
 		<form>
 			{{#with article}}
 			<input type="text" id="form-title" placeholder="Název" value="{{title}}" required />
+			<input type="hidden" id="form-photoset" value="{{photoset}}" />
 			<textarea id="form-intro" placeholder="Úvodní text" required>{{intro}}</textarea>
 			{{/with}}
 			<div id="editor">{{#with article}}{{#markdown}}{{text}}{{/markdown}}{{/with}}</div>
