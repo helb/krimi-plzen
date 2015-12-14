@@ -118,6 +118,11 @@ Template.articleShow.helpers({
             .append($('<img>').prop('src', baseUrl + '_q.jpg').prop(
               'alt', photo.title))
             .prop('href', baseUrl + '_b.jpg')
+            .click(function(e) {
+              e.preventDefault();
+              openViewer($(this));
+              $(this).addClass("current");
+            })
             .appendTo(thumbContainer);
         });
       }
