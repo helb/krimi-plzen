@@ -34,6 +34,7 @@ Template.adminArticleEdit.events({
         var intro = document.getElementById("form-intro").value;
         var partner = document.getElementById("form-partner").value;
         var text = cleanHTML(document.getElementById("editor").innerHTML);
+        var photo_url = "";
 
         var photos = [];
 
@@ -56,6 +57,9 @@ Template.adminArticleEdit.events({
                 $.each(result.photoset.photo, function(index, photo) {
                     var baseUrl = '//farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret;
                     photos.push(baseUrl);
+                    if (index === 0) {
+                        photo_url = baseUrl + "_q.jpg";
+                    }
                 });
                 photosFetched = true;
             }
@@ -70,7 +74,8 @@ Template.adminArticleEdit.events({
                         intro: intro,
                         text: text,
                         partner_id: partner,
-                        photos: photos
+                        photos: photos,
+                        photo_url: photo_url
                     }
                 })) {
                 $("#form-save-success").removeClass("hidden");

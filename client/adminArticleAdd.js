@@ -29,10 +29,9 @@ Template.adminArticleAdd.events({
         var intro = document.getElementById("form-intro").value;
         var text = cleanHTML(document.getElementById("editor").innerHTML);
         var partner = document.getElementById("form-partner").value;
-        // text = document.getElementById("editor").innerHTML;
         var setselect = document.getElementById("form-set");
         var photoset = setselect.value;
-        var photo_url = setselect.options[setselect.selectedIndex].dataset.photo;
+        var photo_url = "";
         var photoset_placement = document.getElementById("form-set-placement").value;
         var photos = [];
 
@@ -52,9 +51,13 @@ Template.adminArticleAdd.events({
             jsonp: 'jsoncallback'
         }).done(function(result) {
             if (result.photoset) {
+                photo_url = result.photoset.photo[0] + "_q.jpg";
                 $.each(result.photoset.photo, function(index, photo) {
                     var baseUrl = '//farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret;
                     photos.push(baseUrl);
+                    if (index === 0) {
+                        photo_url = baseUrl + "_q.jpg";
+                    }
                 });
                 photosFetched = true;
             }
@@ -101,10 +104,10 @@ Template.adminArticleAdd.events({
                         slug: finalSlug,
                         intro: intro,
                         text: text,
-                        photo_url:  photo_url,
-                        photoset:  photoset,
+                        photo_url: photo_url,
+                        photoset: photoset,
                         photoset_placement:  photoset_placement,
-                        youtube_url:  youtube_url,
+                        youtube_url: youtube_url,
                         category: category,
                         is_published: is_published,
                         partner_id: partner,

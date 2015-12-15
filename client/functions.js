@@ -49,7 +49,6 @@ getFlickrSets = function () {
       format: 'json',
       method: 'flickr.photosets.getList',
       user_id:   '124879138@N07',
-      primary_photo_extras:   'url_q',
       per_page: 10,
       page: 1,
       api_key: '7617adae70159d09ba78cfec73c13be3'
@@ -64,7 +63,6 @@ getFlickrSets = function () {
     $.each(result.photosets.photoset, function (index, photoset) {
       $('<option/>')
         .prop('label', photoset.title._content)
-        .attr('data-photo', photoset.primary_photo_extras.url_q)
         .prop('value', photoset.id)
         .appendTo(setsContainer);
 
