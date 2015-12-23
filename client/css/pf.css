@@ -1,0 +1,104 @@
+.pf {
+    margin-bottom: 2em;
+}
+
+.pf-text,
+.pf-partners {
+    font-style: italic;
+    font-size: 0.85em;
+    line-height: 1.2em;
+    padding: 1em;
+    background-color: #ddd;
+    /*background-image: url("//static.krimi-plzen.cz/partner/pf/vlocky.png");*/
+    background-image: url("//localhost:9000/vlocky.png"), linear-gradient(to bottom, #ddd 0%, #ccc 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 0.1em solid #ddd;
+    border-radius: 0.25em;
+    color: #333;
+    box-shadow: inset 0px 0px 0.5em 0px rgba(0,0,0,0.25);
+    margin: 0 0 0.25em 1em;
+}
+
+.pf-text p {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+.pf h3 {
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin: 0.5em 0;
+}
+
+.pf-signature {
+    font-weight: bold;
+    text-align: right;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.pf-partners {
+    height: 22em;
+    overflow: hidden;
+    padding-top: 0;
+}
+
+.pf-partners-slider {
+    display: flex;
+    height: 22em;
+    width: 500%;
+    animation: pfSlide 40s infinite ease-in-out;
+}
+
+.pf-slider-item {
+    height: 20em;
+    line-height: 20em;
+    width: 20%;
+    text-align: center;
+    margin: 0;
+    padding: 0 1em;
+}
+
+.pf-slider-item h4 {
+    line-height: 1em;
+    display: block;
+    height: 1em;
+}
+
+.pf-slider-item img {
+    display: inline-block;
+    max-height: 18em;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+@keyframes pfSlide {
+    0%,
+    20%{
+        margin-left: 0;
+    }
+
+    22%,
+    42% {
+        margin-left: -100%;
+    }
+
+    44%,
+    64% {
+        margin-left: -200%;
+    }
+
+    66%,
+    86% {
+        margin-left: -300%;
+    }
+
+    88%,
+    98% {
+        margin-left: -400%;
+    }
+}
