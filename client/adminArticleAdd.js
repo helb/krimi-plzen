@@ -86,8 +86,8 @@ Template.adminArticleAdd.events({
             if (err) {
                 console.log(err);
             }
-            if (exists == true) {
-                timestamp = new Date()
+            if (exists === true) {
+                timestamp = new Date();
                 day = timestamp.getDate();
                 month = timestamp.getMonth() + 1;
                 year = timestamp.getFullYear();
@@ -114,6 +114,9 @@ Template.adminArticleAdd.events({
                         photos: photos
                     })) {
                     $("#form-save-success").removeClass("hidden");
+                    setTimeout(function() {
+                        Router.go("/admin/article");
+                    }, 500);
                 }
             };
 
