@@ -9,8 +9,7 @@
     line-height: 1.2em;
     padding: 1em;
     background-color: #ddd;
-    /*background-image: url("//static.krimi-plzen.cz/partner/pf/vlocky.png");*/
-    background-image: url("//localhost:9000/vlocky.png"), linear-gradient(to bottom, #ddd 0%, #ccc 100%);
+    background-image: url("//static.krimi-plzen.cz/partner/pf/vlocky.png"), linear-gradient(to bottom, #ddd 0%, #ccc 100%);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
