@@ -1,6 +1,6 @@
 Template.partnerArticles.rendered = function () {
   Meteor.subscribe('partnerArticles');
-}
+};
 
 Template.partnerArticles.helpers({
   articles: function () {
