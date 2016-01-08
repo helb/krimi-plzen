@@ -38,3 +38,4 @@ meteorhacks:fast-render
 peerlibrary:xml2js
 http
 makalu:better-dateinput-polyfill
+meteorhacks:kadira
