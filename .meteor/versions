@@ -64,7 +64,7 @@ localstorage@1.0.5
 logging@1.0.8
 makalu:better-dateinput-polyfill@0.0.2
 manuelschoebel:wait-on-lib@0.3.0
-mdg:validation-error@0.2.0
+mdg:validation-error@0.3.0
 meteor@1.1.10
 meteor-base@1.0.1
 meteorhacks:fast-render@2.11.0
