@@ -1,3 +1,4 @@
-krimiplzen.sublime-workspace
-krimiplzen.sublime-project
+*.sublime-workspace
+*.sublime-project
 smart.lock
+settings.json
