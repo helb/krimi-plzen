@@ -28,7 +28,7 @@ var fetchDogs = function() {
                 image: item["content:encoded"].toString().replace(/(\r\n|\n|\r)/gm, "").replace(/^.*src="/, "").replace(/" alt.*/, ""),
                 date: new Date(item.pubDate[0])
             };
-            if(!Dogs.findOne({link: dog.link})) {
+            if(!Dogs.findOne({link: dog.link}) && !Dogs.findOne({image: dog.image})) {
                 Dogs.insert(dog);
             }
         });
