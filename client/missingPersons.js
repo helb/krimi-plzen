@@ -3,7 +3,7 @@ Template.missingPersons.rendered = function() {
 }
 
 var threeMonthsAgo = new Date();
-threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 3);
+threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 2);
 
 var missingPersonFilter = {
   'category': 'o',
