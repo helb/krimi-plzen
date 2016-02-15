@@ -46,7 +46,9 @@ Template.adminArticleList.events({
     }else if (current_category == "hasici"){
       Articles.update({_id: article_id}, {$set: {category: "recruitment"}});
     }else if (current_category == "recruitment"){
-      Articles.update({_id: article_id}, {$set: {category: null}});
+        Articles.update({_id: article_id}, {$set: {category: "mountains"}});
+    }else if (current_category == "mountains"){
+        Articles.update({_id: article_id}, {$set: {category: null}});
     } else {
       Articles.update({_id: article_id}, {$set: {category: "z"}});
     }

@@ -130,6 +130,11 @@ table#admin-article-list td.category.recruitment{
 	background-image: url("/images/style/recruitment.svg");
 }
 
+table#admin-article-list td.category.mountains{
+	background-size:   75%;
+	background-image: url("/images/style/hs.svg");
+}
+
 table#admin-article-list td.buttons{
 	text-align: center;
 	width: 8rem;
