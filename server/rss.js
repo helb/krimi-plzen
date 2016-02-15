@@ -6,7 +6,6 @@ RssFeed.publish('clanky', function (query) {
   self.setValue('lastBuildDate', new Date());
   self.setValue('pubDate', new Date());
   self.setValue('ttl', 1);
-  // managingEditor, webMaster, language, docs, generator
 
   Articles.find({}, {
     sort: {
@@ -15,12 +14,12 @@ RssFeed.publish('clanky', function (query) {
     limit: 30
   }).forEach(function (article) {
     self.addItem({
-      title: article.title,
-      description: article.intro,
-      link: 'http://www.krimi-plzen.cz/a/' + article.slug,
-      pubDate: article.timestamp,
-      image: article.photo_url
-        // title, description, link, guid, pubDate
+      "title": article.title,
+      "description": article.intro,
+      "link": 'http://www.krimi-plzen.cz/a/' + article.slug,
+      "pubDate": article.timestamp,
+      "image": article.photo_url,
+      "media:content": article.photo_url
     });
   });
 });
@@ -44,12 +43,12 @@ RssFeed.publish('zbrane', function (query) {
     limit: 30
   }).forEach(function (article) {
     self.addItem({
-      title: article.title,
-      description: article.intro,
-      link: 'http://www.krimi-plzen.cz/a/' + article.slug,
-      pubDate: article.timestamp,
-      image: article.photo_url
-        // title, description, link, guid, pubDate
+        "title": article.title,
+        "description": article.intro,
+        "link": 'http://www.krimi-plzen.cz/a/' + article.slug,
+        "pubDate": article.timestamp,
+        "image": article.photo_url,
+        "media:content": article.photo_url
     });
   });
 });
@@ -73,12 +72,12 @@ RssFeed.publish('pravni-minimum-ulice', function (query) {
     limit: 30
   }).forEach(function (article) {
     self.addItem({
-      title: article.title,
-      description: article.intro,
-      link: 'http://www.krimi-plzen.cz/a/' + article.slug,
-      pubDate: article.timestamp,
-      image: article.photo_url
-        // title, description, link, guid, pubDate
+        "title": article.title,
+        "description": article.intro,
+        "link": 'http://www.krimi-plzen.cz/a/' + article.slug,
+        "pubDate": article.timestamp,
+        "image": article.photo_url,
+        "media:content": article.photo_url
     });
   });
 });
@@ -102,12 +101,12 @@ RssFeed.publish('zachranari', function (query) {
     limit: 30
   }).forEach(function (article) {
     self.addItem({
-      title: article.title,
-      description: article.intro,
-      link: 'http://www.krimi-plzen.cz/a/' + article.slug,
-      pubDate: article.timestamp,
-      image: article.photo_url
-        // title, description, link, guid, pubDate
+        "title": article.title,
+        "description": article.intro,
+        "link": 'http://www.krimi-plzen.cz/a/' + article.slug,
+        "pubDate": article.timestamp,
+        "image": article.photo_url,
+        "media:content": article.photo_url
     });
   });
 });
@@ -133,12 +132,12 @@ RssFeed.publish('hasici', function (query) {
     limit: 30
   }).forEach(function (article) {
     self.addItem({
-      title: article.title,
-      description: article.intro,
-      link: 'http://www.krimi-plzen.cz/a/' + article.slug,
-      pubDate: article.timestamp,
-      image: article.photo_url
-        // title, description, link, guid, pubDate
+        "title": article.title,
+        "description": article.intro,
+        "link": 'http://www.krimi-plzen.cz/a/' + article.slug,
+        "pubDate": article.timestamp,
+        "image": article.photo_url,
+        "media:content": article.photo_url
     });
   });
 });
@@ -163,12 +162,12 @@ RssFeed.publish('osoby', function (query) {
     limit: 30
   }).forEach(function (article) {
     self.addItem({
-      title: article.title,
-      description: article.intro,
-      link: 'http://www.krimi-plzen.cz/a/' + article.slug,
-      pubDate: article.timestamp,
-      image: article.photo_url
-        // title, description, link, guid, pubDate
+        "title": article.title,
+        "description": article.intro,
+        "link": 'http://www.krimi-plzen.cz/a/' + article.slug,
+        "pubDate": article.timestamp,
+        "image": article.photo_url,
+        "media:content": article.photo_url
     });
   });
 });
@@ -181,32 +180,3 @@ function escapeHtml(text) {
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#039;");
 }
-
-RssFeed.publish('partner-feed', function (query) {
-  var self = this;
-  self.setValue('title', self.cdata('Krimi Plzeň '));
-  self.setValue('description', self.cdata('Sledujeme veškeré dění v oblasti bezpečnostní situace, práce policistů, strážníků, záchranářů, hasičů nebo prostě jen lidí, kteří se nebojí pomoci jiným v nouzi.'));
-  self.setValue('link', 'http://www.krimi-plzen.cz/');
-  self.setValue('lastBuildDate', new Date());
-  self.setValue('pubDate', new Date());
-  self.setValue('ttl', 1);
-  // managingEditor, webMaster, language, docs, generator
-
-  Articles.find({
-    'publish_for_partner': true
-  }, {
-    sort: {
-      timestamp: -1
-    },
-    limit: 30
-  }).forEach(function (article) {
-    self.addItem({
-      title: article.title,
-      description: escapeHtml(article.intro + "<!-- /intro -->" + article.text),
-      link: 'https://www.flickr.com/photos/124879138@N07/albums/' + article.photoset,
-      pubDate: article.timestamp,
-      image: article.photo_url
-        // title, description, link, guid, pubDate
-    });
-  });
-});
