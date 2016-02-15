@@ -5,7 +5,6 @@
 
 aldeed:collection2
 iron:router
-lampe:rssfeed
 reywood:iron-router-ga
 dburles:collection-helpers
 accounts-ui
@@ -38,3 +37,4 @@ peerlibrary:xml2js
 http
 meteorhacks:kadira
 ongoworks:spiderable
+raix:rssfeed
