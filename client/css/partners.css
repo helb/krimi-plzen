@@ -48,6 +48,7 @@
 
 #partners {
     width: 100%;
+    min-height: 350px;
     margin-bottom: 2em;
     overflow: hidden;
 }
@@ -69,8 +70,8 @@
     cursor: pointer;
     padding: 0.5em;
     margin: 0;
-    width: 6rem;
-    height: 6rem;
+    width: 5rem;
+    height: 5rem;
     border-radius: 0 0 0.33em 0.33em;
     overflow: hidden;
     background: rgba(0, 0, 0, 0.1);
@@ -91,8 +92,8 @@
 .partner-label-fakebg {
     display: inline-block;
     margin: 0;
-    width: 6rem;
-    height: 6rem;
+    width: 5rem;
+    height: 5rem;
     border-radius: 0 0 0.33em 0.33em;
     background: rgba(0, 0, 0, 0.1);
     position: relative;
@@ -109,8 +110,8 @@
     float: right;
     font-size: 0.8em;
     color: #999;
-    line-height: 6rem;
-    height: 6rem;
+    line-height: 5rem;
+    height: 5rem;
 }
 
 @keyframes logo-animation {
@@ -139,7 +140,7 @@
     .partner-text {
         width: 100%;
         padding-right: 0.5em;
-        padding-bottom: 2em;
+        padding-bottom: 1em;
     }
 
     .partner-logo {
@@ -148,6 +149,6 @@
     }
 
     .partner-logo img {
-        max-width: 12em;
+        max-width: 10em;
     }
 }
