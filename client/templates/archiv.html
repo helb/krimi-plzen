@@ -1,10 +1,54 @@
 <template name="archiv">
     <form id="form-archive">
         <h2>Archiv článků</h2>
-        <label for="form-archive-since">Od</label>
-        <input type="date" id="form-archive-since" />
-        <label for="form-archive-until">do</label>
-        <input type="date" id="form-archive-until" />
+        <div style="padding: 0.5em 0"><label style="display: inline-block; width: 3em;">Od:</label>
+        <span>
+            <input type="number" style="width: 5em; text-align: right;" min="1" max="31" id="form-archive-since-d" />.
+            <select id="form-archive-since-m">
+                <option value="01">ledna</option>
+                <option value="02">února</option>
+                <option value="03">března</option>
+                <option value="04">dubna</option>
+                <option value="05">května</option>
+                <option value="06">června</option>
+                <option value="07">července</option>
+                <option value="08">srpna</option>
+                <option value="09">září</option>
+                <option value="10">října</option>
+                <option value="11">listopadu</option>
+                <option value="12">prosince</option>
+            </select>
+            <select id="form-archive-since-y">
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+            </select>
+        </span></div>
+        <div style="padding: 0.5em 0">
+        <label style="display: inline-block; width: 3em;">Do:</label>
+        <span>
+            <input type="number" style="width: 5em; text-align: right;" min="1" max="31" id="form-archive-until-d" />.
+            <select id="form-archive-until-m">
+                <option value="01">ledna</option>
+                <option value="02">února</option>
+                <option value="03">března</option>
+                <option value="04">dubna</option>
+                <option value="05">května</option>
+                <option value="06">června</option>
+                <option value="07">července</option>
+                <option value="08">srpna</option>
+                <option value="09">září</option>
+                <option value="10">října</option>
+                <option value="11">listopadu</option>
+                <option value="12">prosince</option>
+            </select>
+            <select id="form-archive-until-y">
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+            </select>
+        </span>
+        </div>
         <button id="form-archive-submit">Zobrazit</button>
     </form>
     <section id="archive-articles">
