@@ -1,4 +1,16 @@
+<template name="redakce">
+    <article class="article">
+        <h1>Redakce Krimi Plzeň</h1>
+        <ul>
+        {{#each staff}}
+            <li><strong>{{name}}</strong>, {{role}}</li>
+        {{/each}}
+        </ul>
+    </article>
+</template>
+
 <template name="kontakt">
+    {{>redakce}}
     <article class="article">
         <h1>Kontakt</h1>
         <p>
