@@ -49,8 +49,6 @@ getFlickrSets = function () {
       format: 'json',
       method: 'flickr.photosets.getList',
       user_id:   '124879138@N07',
-      per_page: 10,
-      page: 1,
       api_key: '7617adae70159d09ba78cfec73c13be3'
     },
     dataType: 'jsonp',
