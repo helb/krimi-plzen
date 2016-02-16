@@ -56,7 +56,7 @@ RssFeed.publish('partner', function(query) {
       "link": partner.link,
       "pubDate": new Date(),
       "guid": partner.link,
-      "description": "<![CDATA[<a href='" + partner.link + "'><img src='//static.krimi-plzen.cz/partner/" + partner.logo + "'></a><a href='" + partner.link + "'>" + partner.name + "</a><p>" + partner.intro + "</p>]]>"
+      "description": "<![CDATA[<a href='" + partner.link + "'><img src='http://static.krimi-plzen.cz/partner/" + partner.lo  go + "'></a><a href='" + partner.link + "'>" + partner.name + "</a><p>" + partner.intro + "</p>]]>"
     });
   });
 });
