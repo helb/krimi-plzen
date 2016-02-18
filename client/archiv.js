@@ -1,14 +1,4 @@
-function dateToString(date) {
-    return date.toISOString().slice(0, 10);
-}
-
 function setArchiveSession(since, until) {
-    console.log("since " + since);
-    console.log("until " + until);
-
-    var since = new Date(since);
-    since.setHours(0, 0, 0, 0);
-    var until = new Date(until);
     until.setHours(23, 59, 59, 999);
 
     if (since > until) {
@@ -22,10 +12,9 @@ function setArchiveSession(since, until) {
 Template.archiv.events({
     'click button#form-archive-submit': function(event) {
         event.preventDefault();
-        // setArchiveSession($('#form-archive-since').val(), $('#form-archive-until').val());
-        var since = new Date($('#form-archive-since-d').val() + "-" + $('#form-archive-since-m').val() + "-" + $('#form-archive-since-y').val());
-        var until = new Date($('#form-archive-until-d').val() + "-" + $('#form-archive-until-m').val() + "-" + $('#form-archive-until-y').val());
-        setArchiveSession(since, until);
+        var sinceString = $('#form-archive-since-y').val() + "-" + $('#form-archive-since-m').val() + "-" + $('#form-archive-since-d').val();
+        var untilString = $('#form-archive-until-y').val() + "-" + $('#form-archive-until-m').val() + "-" + $('#form-archive-until-d').val();
+        setArchiveSession(new Date(sinceString), new Date(untilString));
     },
 });
 
@@ -41,10 +30,10 @@ Template.archiv.rendered = function() {
     }
 
     $('#form-archive-since-d').val(since.getDate());
-    $('#form-archive-since-m').val(('0' + (since.getMonth()+1)).slice(-2));
+    $('#form-archive-since-m').val(('0' + (since.getMonth() + 1)).slice(-2));
     $('#form-archive-since-y').val(since.getFullYear());
 
     $('#form-archive-until-d').val(until.getDate());
-    $('#form-archive-until-m').val(('0' + (until.getMonth()+1)).slice(-2));
+    $('#form-archive-until-m').val(('0' + (until.getMonth() + 1)).slice(-2));
     $('#form-archive-until-y').val(until.getFullYear());
 }
