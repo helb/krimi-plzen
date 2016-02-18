@@ -1,8 +1,6 @@
 function setArchiveSession(since, until) {
     since.setHours(0, 0, 0, 0);
     until.setHours(23, 59, 59, 999);
-    console.log("since " + since);
-    console.log("until " + until);
 
     if (since > until) {
         since = [until, until = since][0]; //swap variables
@@ -15,10 +13,8 @@ function setArchiveSession(since, until) {
 Template.archiv.events({
     'click button#form-archive-submit': function(event) {
         event.preventDefault();
-
         var sinceString = $('#form-archive-since-y').val() + "-" + $('#form-archive-since-m').val() + "-" + ('0' + ($('#form-archive-since-d').val())).slice(-2);
         var untilString = $('#form-archive-until-y').val() + "-" + $('#form-archive-until-m').val() + "-" + ('0' + ($('#form-archive-until-d').val())).slice(-2);
-        console.log(sinceString + " - " + untilString);
         setArchiveSession(new Date(sinceString), new Date(untilString));
     },
 });
