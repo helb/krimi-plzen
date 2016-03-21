@@ -8,11 +8,11 @@
 </template>
 
 <template name="featuredArticle">
-	<a class="featured-article grow" href="/a/krimi-plzen-hleda-partnery">
-		<img src="http://farm1.staticflickr.com/419/20118803765_582f1647bc_q.jpg" />
+	<a class="featured-article grow" href="/a/{{articleProps.slug}}">
+		<img src="{{articleProps.image}}" />
 		<div>
-			<h2>Hledáme partnery</h2>
-			<p>Chceme oslovit firmy podnikající v&nbsp;oblasti bezpečnosti nebo v&nbsp;jiné tématicky shodné s naší náplní.</p>
+			<h2>{{articleProps.linkHeader}}</h2>
+			<p>{{articleProps.linkText}}</p>
 		</div>
 	</a>
 </template>
@@ -22,6 +22,7 @@
 		{{>logo}}
 		<p class="motto">Sledujeme veškeré dění v&nbsp;oblasti bezpečnostní situace, práce policistů, strážníků, záchranářů, hasičů nebo prostě jen lidí, kteří se nebojí pomoci jiným v nouzi.</p>
 		{{>login}}
+		{{>featuredArticle}}
 	</header>
 	{{>nav}}
 </template>
