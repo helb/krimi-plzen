@@ -7,14 +7,16 @@
 	</a>
 </template>
 
-<template name="featuredArticle">
-	<a class="featured-article grow" href="/a/{{articleProps.slug}}">
-		<img src="{{articleProps.image}}" />
+<template name="featuredArticles">
+	{{#each featuredArticles}}
+	<a class="featured-article grow" href="/a/{{slug}}">
+		<img src="{{image}}" />
 		<div>
-			<h2>{{articleProps.linkHeader}}</h2>
-			<p>{{articleProps.linkText}}</p>
+			<h2>{{linkHeader}}</h2>
+			<p>{{linkText}}</p>
 		</div>
 	</a>
+	{{/each}}
 </template>
 
 <template name="header">
@@ -22,7 +24,7 @@
 		{{>logo}}
 		<p class="motto">Sledujeme veškeré dění v&nbsp;oblasti bezpečnostní situace, práce policistů, strážníků, záchranářů, hasičů nebo prostě jen lidí, kteří se nebojí pomoci jiným v nouzi.</p>
 		{{>login}}
-		{{>featuredArticle}}
+		{{>featuredArticles}}
 	</header>
 	{{>nav}}
 </template>

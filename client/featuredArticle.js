@@ -1,5 +1,5 @@
-Template.featuredArticle.helpers({
-    articleProps: function() {
-        return Meteor.settings.public.featuredArticle;
+Template.featuredArticles.helpers({
+    featuredArticles: function() {
+        return Meteor.settings.public.featuredArticles;
     },
 });
