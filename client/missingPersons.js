@@ -19,7 +19,7 @@ Template.missingPersons.helpers({
       sort: {
         timestamp: -1
       }
-    });
+    }).fetch();
   },
 
   thereArePersons: function() {

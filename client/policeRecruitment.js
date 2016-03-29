@@ -11,7 +11,7 @@ Template.policeRecruitment.helpers({
       sort: {
         timestamp: -1
       }
-    });
+    }).fetch();
   },
 
   thereAreRecruitments: function () {
