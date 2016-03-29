@@ -1,5 +1,5 @@
 Template.newArticles.events({
-  'click a#load-more-link': function (event) {
+  "click a#load-more-link": function (event) {
       event.preventDefault();
 
       Session.set("currentLimit", Session.get("currentLimit") + 2);
@@ -16,7 +16,7 @@ Template.newArticles.events({
       since.setTime(since.getTime() - dateOffset);
       Session.set("archiveSince", since);
 
-      $("html, body").animate({ scrollTop: $('#new-articles .article-slug').last().offset().top - 20 }, 600);
-      return Meteor.subscribe(Router.current().route.name, daysAgo);
+      $("html, body").animate({ scrollTop: $("#new-articles .article-slug").last().offset().top - 20 }, 600);
+      return listSubs.subscribe(Router.current().route.name, daysAgo);
   }
 });

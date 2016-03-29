@@ -16,7 +16,7 @@ Template.adminArticleAdd.rendered = function() {
 
 Template.adminArticleAdd.helpers({
     partners: function() {
-        Meteor.subscribe("partnerList");
+        listSubs.subscribe("partnerList");
         return Partners.find();
     }
 });

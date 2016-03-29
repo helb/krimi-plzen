@@ -20,7 +20,7 @@ Template.adminArticleEdit.rendered = function() {
 
 Template.adminArticleEdit.helpers({
   partners: function(){
-    Meteor.subscribe("partnerList");
+    listSubs.subscribe("partnerList");
     return Partners.find();
   }
 });

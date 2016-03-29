@@ -1,5 +1,5 @@
 Template.policeRecruitment.rendered = function () {
-  Meteor.subscribe('recruitmentArticles');
+  listSubs.subscribe('recruitmentArticles');
 }
 
 Template.policeRecruitment.helpers({

@@ -1,5 +1,5 @@
 Template.missingPersons.rendered = function() {
-  Meteor.subscribe('personArticles');
+  listSubs.subscribe('personArticles');
 }
 
 var threeMonthsAgo = new Date();

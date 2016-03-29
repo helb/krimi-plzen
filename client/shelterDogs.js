@@ -1,7 +1,7 @@
 Template.shelterDogs.onCreated(function() {
     var self = this;
     self.autorun(function() {
-        self.subscribe("dogs");
+        listSubs.subscribe("dogs");
     });
 });
 

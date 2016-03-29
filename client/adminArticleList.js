@@ -61,6 +61,6 @@ Template.adminArticleList.events({
 
   'click button.admin-list-load-more': function (event)  {
     event.preventDefault();
-    return Meteor.subscribe("adminArticleList", $("tr").length + 10);
+    return listSubs.subscribe("adminArticleList", $("tr").length + 10);
   }
 })

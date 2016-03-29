@@ -94,7 +94,7 @@ function switchPhoto(currentIndex, direction) {
     var nextThumb = document.querySelector("#photos a:nth-child(" + nextIndex + ")");
     $("#currentImage")
       .transition({
-        marginLeft: direction * -200 + 'vw'
+        marginLeft: direction * -200 + "vw"
       }, 500, function() {
         loadFlickrSizes($("#currentImage"), nextThumb);
         $("#photos a").removeClass("current");
@@ -103,7 +103,7 @@ function switchPhoto(currentIndex, direction) {
         $("#currentImage").children().attr("src", "");
       })
       .transition({
-        marginLeft: direction * 100 + 'vw'
+        marginLeft: direction * 100 + "vw"
       }, 0);
   }
 }
@@ -111,28 +111,28 @@ function switchPhoto(currentIndex, direction) {
 Template.articleShow.helpers({
   flickrGallery: function(set) {
     $.ajax({
-      url: (window.location.protocol === 'https:' ?
-          'https://secure' : 'https://api') +
-        '.flickr.com/services/rest/',
+      url: (window.location.protocol === "https:" ?
+          "https://secure" : "https://api") +
+        ".flickr.com/services/rest/",
       data: {
-        format: 'json',
-        method: 'flickr.photosets.getPhotos',
+        format: "json",
+        method: "flickr.photosets.getPhotos",
         photoset_id: set,
-        api_key: '7617adae70159d09ba78cfec73c13be3'
+        api_key: "7617adae70159d09ba78cfec73c13be3"
       },
-      dataType: 'jsonp',
-      jsonp: 'jsoncallback'
+      dataType: "jsonp",
+      jsonp: "jsoncallback"
     }).done(function(result) {
       if (result.photoset) {
         var thumbContainer = $("#photos"),
           baseUrl;
         thumbContainer.empty();
         $.each(result.photoset.photo, function(index, photo) {
-          baseUrl = '//farm' + photo.farm + '.staticflickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret;
-          $('<a/>').addClass('grow')
-            .append($('<img>').prop('src', baseUrl + '_q.jpg').prop(
-              'alt', photo.title))
-            .prop('href', baseUrl + '_b.jpg')
+          baseUrl = "//farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret;
+          $("<a/>").addClass("grow")
+            .append($("<img>").prop("src", baseUrl + "_q.jpg").prop(
+              "alt", photo.title))
+            .prop("href", baseUrl + "_b.jpg")
             .click(function(e) {
               e.preventDefault();
               openViewer($(this));
@@ -158,7 +158,7 @@ Template.articleShow.helpers({
     }
   },
   partnerDetail: function(id){
-    Meteor.subscribe("partnerDetail", id);
+    articleSubs.subscribe("partnerDetail", id);
     var partner = Partners.find({_id: id}).fetch()[0];
     return partner;
   }
@@ -178,7 +178,7 @@ Template.articleShow.rendered = function() {
       });
     });
 
-    $(document).unbind('keyup').keyup(function(e) {
+    $(document).unbind("keyup").keyup(function(e) {
       if ($("#photoViewer").is(":visible")) {
         if (e.keyCode == 27) { // esc
           closeViewer();
