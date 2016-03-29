@@ -33,3 +33,4 @@ http
 ongoworks:spiderable
 standard-minifier-css
 standard-minifier-js
+kadira:debug
