@@ -9,15 +9,12 @@ reywood:iron-router-ga
 dburles:collection-helpers
 accounts-ui
 accounts-password
-gadicohen:sitemaps
 meteorhacks:subs-manager
 yasinuslu:blaze-meta
 
 hedcet:touch-swipe
-clode:transit
 chuangbo:marked
 citizenkevin:medium-editor
-manuelschoebel:wait-on-lib
 meteor-base
 mobile-experience
 mongo
@@ -26,7 +23,6 @@ session
 jquery
 tracker
 logging
-reload
 random
 ejson
 spacebars
@@ -34,7 +30,6 @@ check
 meteorhacks:fast-render
 peerlibrary:xml2js
 http
-meteorhacks:kadira
 ongoworks:spiderable
 standard-minifier-css
 standard-minifier-js
