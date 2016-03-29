@@ -12,7 +12,7 @@ Template.partnerArticles.helpers({
       sort: {
         timestamp: -1
       }
-    });
+    }).fetch();
   }
 });
 
