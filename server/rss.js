@@ -28,7 +28,7 @@ RssFeed.publish('clanky', function(query) {
       timestamp: -1
     },
     limit: 30
-  }).forEach(function(article) {
+  }).fetch().forEach(function(article) {
     self.addItem({
       "title": article.title,
       "link": 'http://www.krimi-plzen.cz/a/' + article.slug,
