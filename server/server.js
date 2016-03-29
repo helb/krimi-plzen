@@ -25,7 +25,7 @@ var fetchDogs = function() {
             var dog = {
                 description: item.description[0].replace(/(, přijat| Přijat).*/, ""),
                 link: item.link[0],
-                image: item["content:encoded"].toString().replace(/(\r\n|\n|\r)/gm, "").replace(/^.*src="/, "").replace(/" alt.*/, ""),
+                image: item["content:encoded"].toString().replace(/(\r\n|\n|\r)/gm, "").replace(/^.*src="/, "").replace(/" alt.*/, "").replace(/[0-9]+x[0-9]+\.jpg/, "–-kopie.jpg"),
                 date: new Date(item.pubDate[0])
             };
             if(!Dogs.findOne({link: dog.link}) && !Dogs.findOne({image: dog.image})) {
