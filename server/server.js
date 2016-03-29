@@ -28,7 +28,11 @@ var fetchDogs = function() {
                 image: item["content:encoded"].toString().replace(/(\r\n|\n|\r)/gm, "").replace(/^.*src="/, "").replace(/" alt.*/, "").replace(/[0-9]+x[0-9]+\.jpg/, "–-kopie.jpg"),
                 date: new Date(item.pubDate[0])
             };
-            if(!Dogs.findOne({link: dog.link}) && !Dogs.findOne({image: dog.image})) {
+            if (!Dogs.findOne({
+                    link: dog.link
+                }) &&  !Dogs.findOne({
+                    image: dog.image
+                })) {
                 Dogs.insert(dog);
             }
         });
@@ -38,8 +42,17 @@ var fetchDogs = function() {
 Meteor.startup(function() {
     Articles._ensureIndex({
         "slug": 1,
-        "category":  1,
-        "timestamp": -1
+        "is_published": 1
+    });
+
+    Articles._ensureIndex({
+        "category": 1,
+        "is_published": 1
+    });
+
+    Articles._ensureIndex({
+        "timestamp": -1,
+        "is_published": 1
     });
 
     Meteor.setInterval(fetchDogs, 3600000);
