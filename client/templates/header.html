@@ -8,6 +8,7 @@
 </template>
 
 <template name="featuredArticles">
+	<div class="featured-articles">
 	{{#each featuredArticles}}
 	<a class="featured-article grow" href="/a/{{slug}}">
 		<img src="{{image}}" />
@@ -17,6 +18,7 @@
 		</div>
 	</a>
 	{{/each}}
+	</div>
 </template>
 
 <template name="header">
