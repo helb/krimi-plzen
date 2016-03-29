@@ -36,6 +36,5 @@ peerlibrary:xml2js
 http
 meteorhacks:kadira
 ongoworks:spiderable
-raix:rssfeed
 standard-minifier-css
 standard-minifier-js
