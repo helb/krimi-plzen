@@ -128,6 +128,7 @@ Meteor.publish("mountainArticles", function(limit) {
 });
 
 Meteor.publish("personArticles", function() {
+    this.unblock();
     return Articles.find({
         "category": "o",
         "is_published":  true
@@ -142,6 +143,7 @@ Meteor.publish("personArticles", function() {
 });
 
 Meteor.publish("recruitmentArticles", function() {
+    this.unblock();
     return Articles.find({
         "category": "recruitment",
         "is_published":  true
@@ -157,6 +159,7 @@ Meteor.publish("recruitmentArticles", function() {
 
 
 Meteor.publish("recommendedArticles", function() {
+    this.unblock();
     return Articles.find({
         "is_recommended":  true,
         "is_published":  true
@@ -171,6 +174,7 @@ Meteor.publish("recommendedArticles", function() {
 });
 
 Meteor.publish("partnerArticles", function() {
+    this.unblock();
     return Articles.find({
         "author_name": "PARTNER",
         "is_published":  true
@@ -202,6 +206,7 @@ Meteor.publish("adminArticleList", function(limit) {
 });
 
 Meteor.publish("partnerList", function() {
+    this.unblock();
     return Partners.find({}, {
         sort: {
             order: 1
@@ -210,6 +215,7 @@ Meteor.publish("partnerList", function() {
 });
 
 Meteor.publish("partnerDetail", function(id) {
+    this.unblock();
     return Partners.find({
         "_id": id
     });
@@ -228,6 +234,7 @@ Meteor.publish("article", function(slug) {
 });
 
 Meteor.publish("dogs", function(slug) {
+    this.unblock();
     return Dogs.find({}, {
         limit:  5,
         sort: {

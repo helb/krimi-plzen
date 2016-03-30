@@ -69,6 +69,7 @@ meteorhacks:kadira@2.23.6
 meteorhacks:meteorx@1.4.1
 meteorhacks:picker@1.0.3
 meteorhacks:subs-manager@1.6.4
+meteorhacks:unblock@1.1.0
 minifier-css@1.1.9
 minifier-js@1.1.9
 minimongo@1.0.12
