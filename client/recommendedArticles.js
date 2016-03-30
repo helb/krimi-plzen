@@ -11,7 +11,8 @@ Template.recommendedArticles.helpers({
             limit: 10,
             sort: {
                 timestamp: -1
-            }
+            },
+            reactive: false
         }).fetch();
     }
 });

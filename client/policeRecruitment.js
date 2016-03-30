@@ -10,7 +10,8 @@ Template.policeRecruitment.helpers({
     }, {
       sort: {
         timestamp: -1
-      }
+    },
+    reactive: false
     }).fetch();
   },
 

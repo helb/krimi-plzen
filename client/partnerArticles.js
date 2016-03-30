@@ -11,7 +11,8 @@ Template.partnerArticles.helpers({
       limit: 10,
       sort: {
         timestamp: -1
-      }
+    },
+    reactive: false
     }).fetch();
   }
 });

@@ -18,12 +18,13 @@ Template.missingPersons.helpers({
     return Articles.find(missingPersonFilter, {
       sort: {
         timestamp: -1
-      }
+    },
+    reactive: false
     }).fetch();
   },
 
   thereArePersons: function() {
-    if (Articles.find(missingPersonFilter).count() > 0) {
+    if (Articles.find(missingPersonFilter, {reactive: false}).count() > 0) {
       return true;
     } else {
       return false;

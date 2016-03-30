@@ -7,7 +7,7 @@ Template.shelterDogs.onCreated(function() {
 
 Template.shelterDogs.helpers({
     dogs: function() {
-        return Dogs.find().fetch();
+        return Dogs.find({}, {reactive: false}).fetch();
     }
 });
 
