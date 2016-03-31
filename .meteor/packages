@@ -35,3 +35,5 @@ standard-minifier-css
 standard-minifier-js
 kadira:debug
 meteorhacks:unblock
+clode:transit
+appcache

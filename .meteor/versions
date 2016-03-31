@@ -8,6 +8,7 @@ aldeed:schema-deny@1.0.1
 aldeed:schema-index@1.0.1
 aldeed:simple-schema@1.5.3
 allow-deny@1.0.2
+appcache@1.0.8
 autoupdate@1.2.6
 babel-compiler@6.5.2
 babel-runtime@0.1.6
@@ -24,6 +25,7 @@ check@1.1.2
 chuangbo:cookie@1.1.0
 chuangbo:marked@0.3.5_1
 citizenkevin:medium-editor@1.0.1
+clode:transit@0.9.12
 dburles:collection-helpers@1.0.4
 ddp@1.2.3
 ddp-client@1.2.3
