@@ -31,6 +31,7 @@ meteorhacks:fast-render
 peerlibrary:xml2js
 http
 ongoworks:spiderable
+raix:rssfeed
 standard-minifier-css
 standard-minifier-js
 meteorhacks:unblock
