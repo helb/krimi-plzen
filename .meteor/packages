@@ -36,3 +36,5 @@ standard-minifier-css
 standard-minifier-js
 meteorhacks:unblock
 clode:transit
+meteorhacks:kadira
+raix:rssfeed
