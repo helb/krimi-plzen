@@ -1,2 +1,6 @@
 django
 sorl-thumbnail
+react
+django-taggit
+django-webpack-loader
+django-guardian
