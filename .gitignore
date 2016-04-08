@@ -2,3 +2,6 @@
 *.sublime-project
 smart.lock
 settings.json
+venv
+*.sqlite3
+*.pyc
