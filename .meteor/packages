@@ -7,7 +7,6 @@ aldeed:collection2
 iron:router
 reywood:iron-router-ga
 dburles:collection-helpers
-accounts-ui
 accounts-password
 meteorhacks:subs-manager
 yasinuslu:blaze-meta
@@ -15,7 +14,6 @@ yasinuslu:blaze-meta
 hedcet:touch-swipe
 chuangbo:marked
 citizenkevin:medium-editor
-meteor-base
 mobile-experience
 mongo
 blaze-html-templates
@@ -37,3 +35,8 @@ standard-minifier-js
 meteorhacks:unblock
 clode:transit
 meteorhacks:kadira
+webapp
+underscore
+ddp
+meteor
+art:accounts-ui-unstyled

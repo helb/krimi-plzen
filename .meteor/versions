@@ -1,14 +1,12 @@
 accounts-base@1.2.7
 accounts-password@1.1.8
-accounts-ui@1.1.9
-accounts-ui-unstyled@1.1.12
 aldeed:collection2@2.9.1
 aldeed:collection2-core@1.1.1
 aldeed:schema-deny@1.0.1
 aldeed:schema-index@1.0.1
 aldeed:simple-schema@1.5.3
 allow-deny@1.0.4
-autoupdate@1.2.9
+art:accounts-ui-unstyled@1.1.7
 babel-compiler@6.6.4
 babel-runtime@0.1.8
 base64@1.0.8
@@ -40,7 +38,6 @@ email@1.0.12
 fastclick@1.0.11
 geojson-utils@1.0.8
 hedcet:touch-swipe@1.6.6
-hot-code-push@1.0.4
 html-tools@1.0.9
 htmljs@1.0.9
 http@1.1.5
@@ -55,13 +52,11 @@ iron:router@1.0.12
 iron:url@1.0.11
 jquery@1.11.8
 launch-screen@1.0.11
-less@2.6.0
 livedata@1.0.18
 localstorage@1.0.9
 logging@1.0.12
 mdg:validation-error@0.5.1
 meteor@1.1.14
-meteor-base@1.0.4
 meteorhacks:fast-render@2.13.0
 meteorhacks:inject-data@2.0.0
 meteorhacks:kadira@2.28.5
@@ -93,7 +88,6 @@ random@1.0.9
 rate-limit@1.0.4
 reactive-dict@1.1.7
 reactive-var@1.0.9
-reload@1.1.8
 retry@1.0.7
 reywood:iron-router-ga@0.7.1
 routepolicy@1.0.10
