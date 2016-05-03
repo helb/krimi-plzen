@@ -1,1 +1,2 @@
 django-silk
+django-debug-toolbar
