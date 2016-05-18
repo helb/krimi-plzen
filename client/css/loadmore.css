@@ -29,3 +29,11 @@ nav#load-more a:hover, nav#under-article-links a:hover{
   color: #fff;
   z-index: 9990;
 }
+
+@media all and (max-width: 65em){
+    nav#load-more a, nav#under-article-links a{
+        display: block;
+        width: 100%;
+        margin-bottom: 0.5em;
+    }
+}
