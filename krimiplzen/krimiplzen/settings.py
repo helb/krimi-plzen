@@ -162,7 +162,7 @@ HTML_MINIFY = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_BASE = "http://static2.krimi-plzen.cz/"
+STATIC_BASE = "https://static2.krimi-plzen.cz/"
 # STATIC_BASE = "http://localhost:8002/"
 STATIC_URL = STATIC_BASE + "static/"
 MEDIA_URL = STATIC_BASE + "media/"
@@ -170,7 +170,7 @@ MEDIA_URL = STATIC_BASE + "media/"
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "assets"),
 )
-STATIC_BASE_DIR = "/home/helb/tmp/kp-static/"
+STATIC_BASE_DIR = "/home/helb/www/static2.krimi-plzen.cz/htdocs/"
 STATIC_ROOT = os.path.join(STATIC_BASE_DIR, "static")
 MEDIA_ROOT = os.path.join(STATIC_BASE_DIR, "media")
 
