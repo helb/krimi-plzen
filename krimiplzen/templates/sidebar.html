@@ -1,0 +1,75 @@
+{% load thumbnail %}
+
+{% if adverts.sidebar_top.all %}
+{% for advert in adverts.sidebar_top %}
+<div class="sidebar-partner-box-top">
+    <a href="{{advert.link}}" target="_blank" style="background-image: url('http://static2.krimi-plzen.cz/media/{{advert.image_desktop}}');" alt=""></a>
+</div>
+{% endfor %}
+{% endif %}
+{% if sidebar.similar.all %}
+    <div class="sidebar-articles">
+        <h2 class="withimages">Další články</h2>
+        {% for article in sidebar.similar %}
+            {% thumbnail article.cover_photo "400x200" crop="center" as cover_s %}
+            {% thumbnail article.cover_photo "600x300" crop="center" as cover_l %}
+            <a href="/a/{{ article.slug }}" class="sidebar-articles-image-card" style="background-image: url('{{cover_s.url}}'); background-image: image-set(url('{{cover_s.url}}') 1x, url('{{cover_l.url}}') 2x); background-image: -webkit-image-set(url('{{cover_s.url}}') 1x, url('{{cover_l.url}}') 2x);">
+                {% endthumbnail %}
+                {% endthumbnail %}
+                <div class="sidebar-articles-image-card-text">
+                    <div class="title">{{ article.title }}</div>
+                    <div class="meta">{{ article.time_created|date:"j. E Y H:i" }}</div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% if sidebar.dogs.all %}
+    <div class="sidebar-animals">
+        <h2>Psi přijatí do útulku</h2>
+        {% for animal in sidebar.dogs %}
+            <a target="_blank" href="{{ animal.link }}" class="sidebar-animals-card">
+                <div class="sidebar-animals-card-image">
+                    {% thumbnail animal.photo "60x60" crop="center" as thumb_s %}
+                    {% thumbnail animal.photo "90x90" crop="center" as thumb_l %}
+                        <img src="{{ thumb_s.url }}" srcset="{{ thumb_s.url }} 60w, {{ thumb_l.url }} 90w" alt="{{ animal.text }}" />
+                    {% endthumbnail %}
+                    {% endthumbnail %}
+                </div>
+                <div class="sidebar-animals-card-text">
+                    {{ animal.text }}
+                </div>
+            </a>
+        {% endfor %}
+        <a target="_blank" href="http://utulekplzen.cz/category/aktualne-prijati-psi/" class="shelter-link">Další psy najdete na utulekplzen.cz&nbsp;&rarr;</a>
+    </div>
+{% endif %}
+
+{% if adverts.sidebar_middle.all %}
+{% for advert in adverts.sidebar_middle %}
+<div class="sidebar-partner-box-middle">
+    <a href="{{advert.link}}" target="_blank" style="background-image: url('http://static2.krimi-plzen.cz/media/{{advert.image_desktop}}');" alt=""></a>
+</div>
+{% endfor %}
+{% endif %}
+
+{% if sidebar.missing.all %}
+    <div class="sidebar-articles">
+        <h2>Pátrání</h2>
+        {% for article in sidebar.missing %}
+            <a href="/a/{{ article.slug }}" class="sidebar-articles-card">
+                <div class="sidebar-articles-card-image">
+                    {% thumbnail article.cover_photo "60x60" crop="center" as thumb_s %}
+                    {% thumbnail article.cover_photo "90x90" crop="center" as thumb_l %}
+                        <img src="{{ thumb_s.url }}" srcset="{{ thumb_s.url }} 60w, {{ thumb_l.url }} 90w" alt="{{ article.title }}" />
+                    {% endthumbnail %}
+                    {% endthumbnail %}
+                </div>
+                <div class="sidebar-articles-card-text">
+                    {{ article.title }}
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+{% endif %}

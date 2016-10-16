@@ -1,0 +1,6 @@
+bpython
+green
+coverage
+sampledata
+django-debug-toolbar
+nplusone

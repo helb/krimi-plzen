@@ -1,0 +1,52 @@
+.partner-box-main {
+    border-top: 0.1em solid darken($base-bg, 5%);
+    margin: $spacing 0;
+    padding: $spacing 0;
+    width: 100%;
+
+    &-content {
+        margin: 0 auto;
+        max-width: 800px;
+
+        &::before {
+            color: lighten($base-fg, 65%);
+            content: "REKLAMA";
+            display: block;
+            font-size: 0.5em;
+            height: 0;
+            position: relative;
+            top: -1.85em;
+        }
+
+        &-link {
+            border: 0.1em solid darken($base-bg, 5%);
+            box-shadow: 0 0.1em 0.25em darken($base-bg, 20%);
+            display: block;
+            object-fit: cover;
+            overflow-y: hidden;
+            padding-top: 20%; // 5:1
+            position: relative;
+            width: 100%;
+
+            @media all and (max-width: $narrow-screen) {
+                padding-top: 20%;
+            }
+
+            img {
+                bottom: 0;
+                left: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.article-detail {
+    .partner-box-main {
+        margin: $spacing $content-padding;
+        width: auto;
+    }
+}

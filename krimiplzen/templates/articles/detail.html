@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% load humanize %}
+{% load static %}
+{% block title %}{{ article.title }}{% endblock %}
+{% load thumbnail %}
+{% load app_filters %}
+
+{% block head-js %}
+    <script type="text/javascript" src="{% static "js/article.js" %}"></script>
+{% endblock %}
+
+
+{% block head-meta %}
+{% thumbnail article.cover_photo "960" crop="center" as cover_l %}
+    <meta property="og:title" content="{{ article.title }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://www.krimi-plzen.cz/a/{{article.slug}}/" />
+    <meta property="og:image" content="{{cover_l.url}}" />
+    {% endthumbnail %}
+{% endblock %}
+
+
+{% block content %}
+    <article aria-role="main" class="article-detail">
+    {% if article.photo_cover %}
+        {% thumbnail article.cover_photo "500" crop="center" as cover_s %}
+        {% thumbnail article.cover_photo "960" crop="center" as cover_l %}
+        <header class="article-header with-photo-cover" style="background-image: url('{{cover_s.url}}'); background-image: image-set(url('{{cover_s.url}}') 1x, url('{{cover_l.url}}') 2x); background-image: -webkit-image-set(url('{{cover_s.url}}') 1x, url('{{cover_l.url}}') 2x);">
+        {% endthumbnail %}
+        {% endthumbnail %}
+    {% else %}
+        <header class="article-header">
+    {% endif %}
+
+        {% if article.stickers.all %}
+        <div class="stickers">
+            {% for sticker in article.stickers.all %}
+            <span class="sticker" style="background-color: #{{sticker.color}}">{{sticker}}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+            {% if perms.articles.can_change_article %}
+                <div class="edit-buttons">
+                    <a href="/admin/articles/article/{{article.slug}}/change/">✐ Editovat</a>
+                </div>
+            {% endif %}
+        {% endif %}
+
+        <h1>{{ article.title }}</h1>
+
+        {% if article.intro %}
+        <p class="perex">{{ article.intro }}</p>
+        {% endif %}
+        <div class="meta">
+            <p class="meta-text">
+                {% if article.author_name %}
+                    <span class="author-name">{{ article.author_name }}</span>
+                {% endif %}
+                {% if current_year == article.time_created|date:"Y" %}{{ article.time_created|date:"l j. E H:i" }}{% else %}{{ article.time_created|date:"j. E Y H:i" }}{% endif %}{% if article.time_created < article.time_updated %}, aktualizace
+                {% now "Y-m-d" as today %}
+                {% if today == article.time_updated|date:"Y-m-d" %}
+                <span class="with-tooltip" title="{{ article.time_updated }}">{{ article.time_updated|naturaltime }}</span>
+                {% else %}
+                <span>{{ article.time_updated|date:"l j. E H:i" }}</span>
+                {% endif %}
+                {% endif %}
+            </p>
+            {% if article.tags.all %}
+                <p class="tags">
+                    {% for tag in article.tags.all %}
+                    <a href="/a/tag/{{tag.slug}}/" class="tag">{{tag}}</a>
+                    {% endfor %}
+                </p>
+            {% endif %}
+        </div>
+
+    </header>
+    <div class="article-content">
+        {{ article.content | insert_photo_thumbs | safe }}
+    </div>
+
+    {% if article.tags.all %}
+        <div class="article-tags">
+            <p class="tags">
+                {% for tag in article.tags.all %}
+                <a href="/a/tag/{{tag.slug}}/" class="tag">{{tag}}</a>
+                {% endfor %}
+            </p>
+        </div>
+    {% endif %}
+
+    {% if article.allow_ads %}
+    {% if adverts.article_partner_box_bottom.all %}
+    {% for advert in adverts.article_partner_box_bottom %}
+        <div class="partner-box-main">
+            <div class="partner-box-main-content">
+                    <a class="partner-box-main-content-link" href="{{advert.link}}" target="_blank">
+                        <img src="http://static2.krimi-plzen.cz/media/{{advert.image_desktop}}" />
+                    </a>
+            </div>
+        </div>
+    {% endfor %}
+    {% endif %}
+    {% endif %}
+
+    {% if similar.all %}
+    <div class="horiz-cards">
+        <h2>Další články</h2>
+        <div class="horiz-cards-inner">
+        {% for article in similar %}
+            <a href="/a/{{ article.slug }}" class="horiz-cards-card">
+                <p class="meta">
+                    {{ article.time_created|date:"j. E Y" }}
+                </p>
+                <div class="horiz-cards-card-image">
+                    {% thumbnail article.cover_photo "90x90" crop="center" as thumb_s %}
+                    {% thumbnail article.cover_photo "160x160" crop="center" as thumb_l %}
+                        <img src="{{ thumb_s.url }}" srcset="{{ thumb_s.url }} 90w, {{ thumb_l.url }} 160w" alt="{{ article.title }}" />
+                    {% endthumbnail %}
+                    {% endthumbnail %}
+                </div>
+                <div class="horiz-cards-card-text">
+                    {{ article.title }}
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+    </div>
+    {% endif %}
+
+    </article>
+{% endblock %}

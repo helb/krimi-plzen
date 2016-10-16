@@ -1,0 +1,10 @@
+.article-list {
+    display: flex;
+    flex-direction: column;
+    padding: $spacing * 2 $content-padding;
+    width: 100%;
+
+    &-partnerbox {
+        padding: $spacing;
+    }
+}

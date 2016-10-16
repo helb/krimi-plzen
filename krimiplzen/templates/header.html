@@ -1,0 +1,23 @@
+{% load static %}
+<header class="site-header">
+    <a class="site-logo" href="/">
+        <span>Krimi Plzeň</span>
+        <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#krimi-logo"></use>
+            <img src="{% static "img/krimi-logo.png" %}"/>
+        </svg>
+    </a>
+    <nav class="main-nav">
+        {% if header.tags.all %}
+                {% for tag in header.tags %}
+                    {% if tag.title == title %}
+                        <a href="/a/tag/{{ tag.slug }}" class="active">{{ tag.title }}</a>
+                    {% else %}
+                        <a href="/a/tag/{{ tag.slug }}">{{ tag.title }}</a>
+                    {% endif %}
+                {% endfor %}
+        {% endif %}
+    </nav>
+    <a class="main-nav-toggle"><img src="{% static "img/icon-nav-toggle.svg" %}"/></a>
+    <a class="sidebar-toggle"><img src="{% static "img/icon-sidebar-toggle.svg" %}"/></a>
+</header>

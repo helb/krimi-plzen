@@ -1,0 +1,28 @@
+@import "settings/colors";
+@import "settings/sizes";
+@import "settings/breakpoints";
+
+.note-editable {
+    font-size: 20px;
+
+    .gallery {
+        border: 0.25em dashed darken($base-bg, 20%);
+        border-radius: 0.5em;
+        color: $base-bg;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 1em;
+        min-height: 10em;
+        padding: 0 0.5em 0.5em 0;
+        width: 1005;
+
+        img {
+            border: 0.1em solid darken($base-bg, 20%);
+            height: 9em;
+            margin: 0.5em 0 0 0.5em;
+            max-width: 13.5em;
+            object-fit: cover;
+            overflow: hidden;
+        }
+    }
+}

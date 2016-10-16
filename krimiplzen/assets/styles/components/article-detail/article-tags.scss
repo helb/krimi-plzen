@@ -1,0 +1,33 @@
+.article-tags {
+    margin: 0 $content-padding $spacing;
+}
+
+.tags {
+    margin-top: -0.15em;
+
+    @media all and (max-width: $narrow-screen) {
+        margin-top: $spacing;
+    }
+
+    .tag {
+        background-color: darken($base-bg, 10%);
+        border-radius: 0.25em;
+        color: $base-fg;
+        font-size: 0.8em;
+        margin-right: $spacing / 4;
+        padding: $spacing / 4;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: background-color 0.33s;
+
+        &:hover {
+            background-color: darken($base-bg, 20%);
+        }
+
+        &::before {
+            color: lighten($base-fg, 40%);
+            content: "#";
+            padding-right: 0.15em;
+        }
+    }
+}

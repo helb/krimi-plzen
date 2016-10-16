@@ -1,0 +1,62 @@
+.main-footer {
+    background: $base-fg;
+    color: lighten($base-fg, 40%);
+    display: flex;
+    flex: 0;
+    font-size: 0.8em;
+    min-height: 10em;
+    padding: $spacing $content-padding;
+
+    .footer-left {
+        flex: 1;
+    }
+
+    .footer-right {
+        align-items: flex-end;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 2 * $spacing + 1.5rem;
+    }
+
+    .footer-logo {
+        display: block;
+        height: 28px;
+        transition: transform 0.33s;
+        width: 178px;
+
+        &:focus,
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        svg {
+            height: 28px;
+            width: 178px;
+
+            use {
+                fill: lighten($base-fg, 40%);
+            }
+        }
+    }
+
+    .back-to-top {
+        background: $dark-shadow;
+        color: lighten($base-fg, 40%);
+        cursor: pointer;
+        display: block;
+        font-size: 2em;
+        height: 2 * $spacing + 1.5rem;
+        line-height: 2 * $spacing + 1.5rem;
+        margin-bottom: -1 * $spacing;
+        margin-right: -1 * $content-padding;
+        padding-top: 0.4rem;
+        text-align: center;
+        text-decoration: none;
+        width: 2 * $spacing + 1.5rem;
+
+        img {
+            width: 2.5rem;
+        }
+    }
+}

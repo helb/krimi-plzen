@@ -1,0 +1,31 @@
+.sidebar-articles-image-card {
+    background-position: center;
+    background-size: cover;
+    border-bottom: 0.2em solid $base-fg;
+    box-shadow: inset 0 -4em 5em transparentize($dark-shadow, 0.2);
+    margin: 0 #{-1 * $spacing};
+    min-height: 5em;
+    text-decoration: none;
+    transition: transform 0.33s;
+
+    &:hover,
+    &:focus {
+        // transform: translateX(-0.75vw);
+    }
+
+    &-text {
+        line-height: 1.25em;
+        padding: $spacing;
+        text-shadow: 0 0 0.5em $dark-shadow, 0.05em 0.05em 0.1em $dark-shadow;
+
+        .title {
+            color: $base-bg;
+            font-weight: bold;
+        }
+
+        .meta {
+            color: darken($base-bg, 20%);
+            font-size: 0.8em;
+        }
+    }
+}

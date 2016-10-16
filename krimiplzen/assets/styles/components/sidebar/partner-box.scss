@@ -1,0 +1,49 @@
+.sidebar-partner-box-top {
+    a {
+        align-items: center;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: contain;;
+        display: block;
+        height: 100px;
+        margin: $spacing auto;
+        max-width: 100%;
+        text-decoration: none;
+        width: 300px;
+
+        &::before {
+            color: lighten($base-fg, 55%);
+            content: "REKLAMA";
+            display: block;
+            font-size: 0.6em;
+            height: 0;
+            position: relative;
+            top: -1.4rem;
+        }
+    }
+}
+
+.sidebar-partner-box-middle {
+    a {
+        align-items: center;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: block;
+        height: 250px;
+        margin: 0 auto $spacing;
+        max-width: 100%;
+        width: 300px;
+        text-decoration: none;
+
+        &::before {
+            color: lighten($base-fg, 55%);
+            content: "REKLAMA";
+            display: block;
+            font-size: 0.6em;
+            height: 0;
+            position: relative;
+            top: -1.4rem;
+        }
+    }
+}

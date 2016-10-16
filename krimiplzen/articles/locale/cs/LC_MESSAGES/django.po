@@ -1,0 +1,177 @@
+msgid ""
+msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-15 23:18+0200\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: articles/admin.py:33
+msgid "Basic info"
+msgstr "Základní informace"
+
+#: articles/admin.py:36
+msgid "Tags and stickers"
+msgstr "Štítky a samolepky"
+
+#: articles/admin.py:40
+msgid "Publication"
+msgstr "Publikace"
+
+#: articles/admin.py:44
+msgid "Advanced"
+msgstr "Pokročilé"
+
+#: articles/admin.py:59
+msgid "Share"
+msgstr "Sdílet"
+
+#: articles/admin.py:64
+msgid "Web"
+msgstr "Web"
+
+#: articles/admin.py:68
+msgid "Publish selected articles"
+msgstr "Publikovat vybrané články"
+
+#: articles/admin.py:72
+msgid "Unpublish selected articles"
+msgstr "Skrýt vybrané články"
+
+#: articles/apps.py:7 articles/models.py:189
+msgid "Articles"
+msgstr "Články"
+
+#: articles/models.py:21 articles/models.py:168
+msgid "Published"
+msgstr "Publikovaný"
+
+#: articles/models.py:22 articles/models.py:176
+msgid "Accessible"
+msgstr "Přístupný"
+
+#: articles/models.py:23
+msgid "Inacessible"
+msgstr "Nepřístupný"
+
+#: articles/models.py:35 articles/models.py:68
+msgid "Title"
+msgstr "Název"
+
+#: articles/models.py:41
+msgid "Color"
+msgstr "Barva"
+
+#: articles/models.py:47
+msgid "Hide after"
+msgstr "Schovat za"
+
+#: articles/models.py:50
+msgid ""
+"Number of hours from the latest article update whenthe sticker is visible."
+msgstr ""
+"Počet hodin od poslední aktualizace článku, kdy bude samolepka viditelná."
+
+#: articles/models.py:56
+msgid "Display on website"
+msgstr "Zobrazit na webu"
+
+#: articles/models.py:62
+msgid "Sticker"
+msgstr "Nálepka"
+
+#: articles/models.py:63 articles/models.py:151
+msgid "Stickers"
+msgstr "Nálepky"
+
+#: articles/models.py:75
+msgid "Introduction"
+msgstr "Úvod"
+
+#: articles/models.py:82
+msgid "Content"
+msgstr "Obsah"
+
+#: articles/models.py:94
+msgid "Author"
+msgstr "Autor"
+
+#: articles/models.py:99
+msgid "Author name"
+msgstr "Jméno autora"
+
+#: articles/models.py:103
+msgid "Displayed author name"
+msgstr "Zobrazené jméno autora"
+
+#: articles/models.py:105
+msgid "Updated at"
+msgstr "Čas aktualizace"
+
+#: articles/models.py:109
+msgid "Created at"
+msgstr "Čas vytvoření"
+
+#: articles/models.py:112
+msgid "Status"
+msgstr "Stav"
+
+#: articles/models.py:116
+msgid ""
+"<b>Published</b> – appears on website<br><b>Accessible</b> – does not appear "
+"on website, but can beopened with URL or link<br><b>Inaccessible</b> – can't "
+"be opened, links result in 'Page not found'"
+msgstr ""
+"<b>Publikovaný</b> – zobrazuje se na webu<br><b>Přístupný</b> – nezobrazuje "
+"se na webu, ale lze ho otevřít s adresou nebo odkazem<br><b>Nepřístupný</b> "
+"– nelze otevřít, odkazy končí na „Stránka nenalezena“"
+
+#: articles/models.py:123
+msgid "Live updates"
+msgstr "Automatické aktualizace"
+
+#: articles/models.py:125
+msgid "Automatically push article updates to visitors."
+msgstr "Automaticky aktualizovat čtenářům otevřený článek."
+
+#: articles/models.py:128
+msgid "Photo cover"
+msgstr "Fotka na pozadí nadpisu"
+
+#: articles/models.py:131
+msgid "Dark text on a light photo"
+msgstr "Tmavý text na světlé fotce"
+
+#: articles/models.py:134
+msgid "Allow ad before video"
+msgstr "Povolit reklamu před videem"
+
+#: articles/models.py:137
+msgid "Show ads"
+msgstr "Zobrazit reklamy"
+
+#: articles/models.py:141
+msgid "Article partner"
+msgstr "Partner článku"
+
+#: articles/models.py:147
+msgid "Tags"
+msgstr "Štítky"
+
+#: articles/models.py:155
+msgid "Related articles"
+msgstr "Související články"
+
+#: articles/models.py:157
+msgid "Cover photo"
+msgstr "Úvodní fotka"
+
+#: articles/models.py:188
+msgid "Article"
+msgstr "Článek"
+
+#~ msgid "Photos on top"
+#~ msgstr "Fotky nahoře"
+
+#~ msgid "Tag"
+#~ msgstr "Štítek"

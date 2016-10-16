@@ -1,0 +1,23 @@
+.article-partner-box-bottom {
+    border: 0.1em solid darken($base-bg, 5%);
+    border-left: 0;
+    border-right: 0;
+    margin: 0 $content-padding $spacing;
+    padding: $spacing 0;
+
+    a {
+        align-items: center;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: block;
+        margin: 0 auto;
+        max-width: 800px;
+        width: 100%;
+
+        // @media all and (max-width: $narrow-screen) {
+        //     height: calc(40vw - 2 * #{$content-padding});
+        //     width: 100%;
+        // }
+    }
+}

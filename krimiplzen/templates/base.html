@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %} | Krimi Plzeň</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&subset=latin-ext">
+    <link rel="stylesheet" href="{% static "css/base.css" %}">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raven.js/3.7.0/raven.min.js"></script>
+    <script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <script type="text/javascript" src="{% static "js/base.js" %}"></script>
+    {% block head-js %}{% endblock %}
+    <link rel="apple-touch-icon" sizes="180x180" href="https://static2.krimi-plzen.cz/static/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="https://static2.krimi-plzen.cz/static/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://static2.krimi-plzen.cz/static/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="https://static2.krimi-plzen.cz/static/img/favicons/manifest.json">
+    <link rel="shortcut icon" href="https://static2.krimi-plzen.cz/static/img/favicons/favicon.ico">
+    <meta name="msapplication-config" content="https://static2.krimi-plzen.cz/static/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    {% block head-meta %}{% endblock %}
+</head>
+
+{% now "Y" as current_year %}
+
+<body>
+    <a name="top"/>
+    {% include "header.html" %}
+    <div class="page-wrapper">
+        <div class="page">
+            <section class="content">
+                {% block content %}{% endblock %}
+            </section>
+            <section class="sidebar">
+                {% include "sidebar.html" %}
+            </section>
+        </div>
+    </div>
+    <footer class="main-footer">
+        <div class="footer-left">
+            <a class="footer-logo" href="/"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#krimi-logo"></use></svg></a>
+            <p>&copy; 2014 – {{ current_year }}</p>
+        </div>
+        <div class="footer-right">
+            <a title="nahoru" class="back-to-top" href="#top"><img src="{% static "img/icon-uparrow.svg" %}"/></a>
+        </div>
+    </footer>
+    <div class="svg-symbols">{% include "krimi-logo.svg" %}</div>
+</body>
+
+</html>

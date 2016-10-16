@@ -1,8 +1,11 @@
-*.sublime-workspace
-*.sublime-project
-smart.lock
-settings.json
+celerybeat-schedule
+celerybeat.pid
+node_modules
 venv
-*.sqlite3
-*.pyc
 __pycache__
+migrations
+tmp
+*.mo
+*.py[cod]
+*.log
+*.pot

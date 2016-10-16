@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 28 28" style="enable-background:new 0 0 28 28;" xml:space="preserve">
+    <style type="text/css">
+        .st1 {
+            fill: none;
+            stroke: #ffffff;
+            stroke-width: 2;
+            stroke-miterlimit: 10;
+        }
+    </style>
+    <g>
+        <polyline class="st1" points="20,9.2 20,9.2 15.2,14 20,18.8"/>
+        <line class="st1" x1="10.9" y1="5" x2="10.9" y2="24"/>
+        <rect x="4" y="5" class="st1" width="21" height="19"/>
+    </g>
+</svg>

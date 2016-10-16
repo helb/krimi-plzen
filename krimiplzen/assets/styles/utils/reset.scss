@@ -1,0 +1,12 @@
+* {
+    &,
+    &::after,
+    &::before {
+        background: transparent;
+        border: 0;
+        box-sizing: border-box;
+        margin: 0;
+        outline: none;
+        padding: 0;
+    }
+}

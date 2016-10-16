@@ -1,0 +1,19 @@
+.sidebar {
+    background-color: lighten($base-fg, 80%);
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8em;
+    max-width: 30em;
+    width: 25%;
+
+    @media all and (max-width: $narrow-screen) {
+        max-width: none;
+        width: 45%;
+    }
+}
+
+.shifted {
+    .sidebar {
+        box-shadow: 0 0 1em transparentize($dark-shadow, 0.5);
+    }
+}

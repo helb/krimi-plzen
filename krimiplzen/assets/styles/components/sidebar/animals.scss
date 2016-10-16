@@ -1,0 +1,63 @@
+.sidebar-animals,
+.sidebar-articles {
+    display: flex;
+    flex-direction: column;
+    padding: $spacing;
+
+    h2 {
+        background: $base-fg;
+        color: $base-bg;
+        font-size: 1em;
+        margin: -1 * $spacing;
+        margin-bottom: $spacing;
+        padding: $spacing / 2 $spacing;
+
+        &.withimages {
+            margin-bottom: 0;
+        }
+    }
+
+    &-card {
+        display: flex;
+        height: 4em;
+        margin-bottom: $spacing;
+        text-decoration: none;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &-image {
+            border: 0.1em solid darken($base-bg, 40%);
+            box-shadow: 0 0.1em 0.25em darken($base-bg, 60%);
+            object-fit: cover;
+            width: 4em;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &-text {
+            color: $base-fg;
+            flex: 1;
+            // font-size: 0.8em;
+            line-height: 1.25em;
+            overflow-y: hidden;
+            padding: 0 0 0 $spacing;
+            text-overflow: ellipsis;
+        }
+    }
+}
+
+.sidebar-animals {
+    .shelter-link {
+        font-weight: bold;
+        background: lighten($base-fg, 60%);
+        box-shadow: 0 0.1em 0.25em darken($base-bg, 60%);
+        text-decoration: none;
+        text-align: center;
+        color: $base-fg;
+        padding: $spacing /2 $spacing;
+    }
+}

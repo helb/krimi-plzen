@@ -1,0 +1,143 @@
+.site-header {
+    background: $base-fg;
+    color: $base-bg;
+    display: flex;
+    flex: 0;
+    flex-direction: row;
+    min-height: 2 * $spacing + 1.5rem;
+    min-width: $min-width;
+    padding: 0 $content-padding;
+
+    @media all and (max-width: $narrow-screen) {
+        flex-direction: column;
+    }
+
+    .site-logo {
+        color: $logo-color;
+        flex: 0;
+        height: 28px;
+        margin-top: 0.75rem;
+        text-decoration: none;
+        transition: transform 0.33s;
+        width: 178px;
+
+        &:focus,
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        span {
+            display: none;
+        }
+
+        svg {
+            height: 28px;
+            width: 178px;
+
+            use {
+                fill: $logo-color;
+            }
+        }
+
+        img {
+            display: none;
+            height: 28px;
+            margin-top: -2em;
+            width: 178px;
+        }
+    }
+
+    .main-nav {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        font-weight: normal;
+        height: 2 * $spacing + 1.5rem;
+        line-height: 2 * $spacing + 1.5rem;
+        margin-left: 5em;
+        overflow: hidden;
+        text-align: left;
+
+        a {
+            color: darken($base-bg, 20%);
+            margin-right: $spacing;
+            text-decoration: none;
+            white-space: nowrap;
+
+            &:focus,
+            &:hover {
+                color: $base-bg;
+            }
+
+            &.active {
+                color: $logo-color;
+            }
+        }
+
+        @media all and (max-width: $narrow-screen) {
+            box-shadow: 0 0 1em $dark-shadow;
+            flex-direction: column;
+            height: auto;
+            margin: 0;
+            opacity: 0;
+            overflow: visible;
+            position: absolute;
+            right: 0;
+            top: 2 * $spacing + 1.5rem;
+            transform: translateY(-33vh);
+            transition: transform 0.5s, opacity 0.5s;
+            visibility: hidden;
+            width: 50%;
+            z-index: 9999;
+
+            &.opened {
+                opacity: 1;
+                transform: translateY(0);
+                visibility: visible;
+            }
+
+            a {
+                background-color: transparentize($base-fg, 0.1);
+                margin-right: 0;
+                padding: 0 $content-padding;
+                text-align: center;
+
+                &:not(:last-child) {
+                    border-bottom: 0.1em solid transparentize($base-bg, 0.9);
+                }
+            }
+        }
+    }
+
+    .sidebar-toggle,
+    .main-nav-toggle {
+        background: transparentize($base-fg, 0.5);
+        color: $base-bg;
+        cursor: pointer;
+        display: block;
+        font-size: 2em;
+        height: 2 * $spacing + 1.5rem;
+        line-height: 2 * $spacing + 1.5rem;
+        padding-top: 0.4rem;
+        position: fixed;
+        right: 0;
+        text-align: center;
+        top: 0;
+        width: 2 * $spacing + 1.5rem;
+        z-index: 9999;
+
+        @media all and (min-width: $narrow-screen) {
+            display: none;
+        }
+
+        img {
+            width: 2.5rem;
+        }
+    }
+
+    .main-nav-toggle {
+        padding-top: 0.45rem;
+        position: absolute;
+        right: 2 * $spacing + 1.5rem;
+    }
+}

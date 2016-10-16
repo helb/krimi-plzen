@@ -1,0 +1,84 @@
+.horiz-cards {
+    border: 0.1em solid darken($base-bg, 5%);
+    border-left: 0;
+    border-right: 0;
+    padding: $spacing 0;
+    width: 100%;
+
+    h2 {
+        display: inline-block;
+        font-size: 1rem;
+        left: -1.5em;
+        padding: $spacing / 4 $spacing / 2;
+        position: relative;
+        transform: rotate(-2deg);
+
+        @media all and (max-width: $narrow-screen) {
+            left: -0.5em;
+        }
+    }
+
+    &-inner {
+        display: flex;
+        justify-content: center;
+    }
+
+
+    &-card {
+        align-self: flex-start;
+        background: $base-bg;
+        border: 0.1em solid darken($base-bg, 5%);
+        box-shadow: 0 0.1em 0.25em darken($base-bg, 20%);
+        display: flex;
+        flex-direction: column;
+        font-size: 0.8em;
+        font-weight: bold;
+        line-height: 1.33em;
+        max-width: 12em;
+        min-width: 8em;
+        padding: $spacing / 2;
+        text-decoration: none;
+        transition: 0.33s transform;
+
+        &:hover,
+        &:focus {
+            transform: translateY(-0.5em);
+        }
+
+        &:nth-child(n+3) {
+            @media all and (max-width: $narrow-screen) {
+                display: none;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-right: $spacing;
+        }
+
+        .meta {
+            color: lighten($base-fg, 20%);
+            font-size: 0.8em;
+            font-weight: normal;
+            text-align: right;
+        }
+
+        &-image {
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &-text {
+            color: $base-fg;
+        }
+    }
+}
+
+.article-detail {
+    .horiz-cards {
+        margin: $spacing $content-padding;
+        width: auto;
+    }
+}

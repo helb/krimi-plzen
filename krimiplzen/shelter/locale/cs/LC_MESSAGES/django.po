@@ -1,0 +1,55 @@
+msgid ""
+msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-15 23:18+0200\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: shelter/apps.py:7
+msgid "Animal shelter"
+msgstr "Útulek"
+
+#: shelter/models.py:7
+msgid "Dogs"
+msgstr "Psi"
+
+#: shelter/models.py:8
+msgid "Cats"
+msgstr "Kočky"
+
+#: shelter/models.py:14
+msgid "Text"
+msgstr "Text"
+
+#: shelter/models.py:15
+msgid "Link"
+msgstr "Odkaz"
+
+#: shelter/models.py:16
+#| msgid "Animal shelter"
+msgid "Animal photo"
+msgstr "Fotka zvířete"
+
+#: shelter/models.py:17
+msgid "Created at"
+msgstr "Vytvořeno v"
+
+#: shelter/models.py:20
+msgid "Category"
+msgstr "Kategorie"
+
+#: shelter/models.py:23
+msgid "Visible"
+msgstr "Viditelné"
+
+#: shelter/models.py:30
+msgid "Shelter animal"
+msgstr "Zvíře"
+
+#: shelter/models.py:31
+msgid "Shelter animals"
+msgstr "Zvířata"
+
+#~ msgid "Active"
+#~ msgstr "Aktivní"

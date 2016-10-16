@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load humanize %}
+{% load thumbnail %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block head-js %}
+    <script type="text/javascript" src="{% static "js/index.js" %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="article-list">
+    {% for article in articles %}
+    <div class="article-list-card">
+        <div class="article-list-card-image">
+            {% if article.stickers.all %}
+            <div class="stickers">
+                {% for sticker in article.stickers.all %}
+                <span class="sticker" style="background-color: #{{sticker.color}}">{{sticker}}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+        {% if article.cover_photo %}
+            {% thumbnail article.cover_photo "400x200" crop="center" as thumb_mobile_s %}
+            {% thumbnail article.cover_photo "600x300" crop="center" as thumb_mobile_l %}
+            {% thumbnail article.cover_photo "90x90" crop="center" as thumb_s %}
+            {% thumbnail article.cover_photo "160x160" crop="center" as thumb_m %}
+                <a href="/a/{{ article.slug }}/">
+                    <img class="desktop-only" src="{{ thumb_m.url }}" srcset="{{ thumb_s.url }} 90w, {{ thumb_m.url }} 160w" alt="{{ article.title }}" />
+                    <img class="mobile-only" src="{{ thumb_mobile.url }}" srcset="{{ thumb_mobile_s.url }} 400w, {{ thumb_mobile_l.url }} 600w" alt="article.title" />
+                </a>
+            {% endthumbnail %}
+            {% endthumbnail %}
+            {% endthumbnail %}
+            {% endthumbnail %}
+        {% else %}
+            <a href="/a/{{ article.slug }}/">
+                <img src="http://placehold.it/90" srcset="http://placehold.it/90 90w, http://placehold.it/160 160w" alt="{{ article.title }}"/>
+            </a>
+        {% endif %}
+        </div>
+        <div class="article-list-card-text">
+            <h2><a href="/a/{{ article.slug }}/">{{ article.title }}</a></h2>
+            <p class="meta">
+                {% if article.author_name %}
+                    <span class="author-name">{{ article.author_name }}</span>
+                {% endif %}
+                {% if current_year == article.time_created|date:"Y" %}{{ article.time_created|date:"l j. E H:i" }}{% else %}{{ article.time_created|date:"j. E Y H:i" }}{% endif %}{% if article.time_created < article.time_updated %}, aktualizace
+            {% now "Y-m-d" as today %}
+            {% if today == article.time_updated|date:"Y-m-d" %}
+            <span class="with-tooltip" title="{{ article.time_updated }}">{{ article.time_updated|naturaltime }}</span>
+            {% else %}
+            <span>{{ article.time_updated|date:"l j. E H:i" }}</span>
+            {% endif %}
+            {% endif %}
+            </p>
+            {% if article.intro %}
+                <p>{{article.intro}}</p>
+            {% endif %}
+        </div>
+    </div>
+    {% if forloop.counter == 2 %}
+    {% if adverts.article_list_partner_box_middle.all %}
+    {% for advert in adverts.article_list_partner_box_middle %}
+        <div class="partner-box-main">
+            <div class="partner-box-main-content">
+                    <a class="partner-box-main-content-link" href="{{advert.link}}" target="_blank">
+                        <img src="http://static2.krimi-plzen.cz/media/{{advert.image_desktop}}" />
+                    </a>
+            </div>
+        </div>
+    {% endfor %}
+    {% endif %}
+    {% endif %}
+    {% if forloop.counter == 4 %}
+    {% if adverts.article_list_partner_box_middle2.all %}
+    {% for advert in adverts.article_list_partner_box_middle2 %}
+        <div class="partner-box-main">
+            <div class="partner-box-main-content">
+                <a class="partner-box-main-content-link" href="{{advert.link}}" target="_blank">
+                    <img src="http://static2.krimi-plzen.cz/media/{{advert.image_desktop}}" />
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+    {% endif %}
+    {% endif %}
+
+    {% if forloop.counter == 7 %}
+        {% if year_ago.all %}
+            <div class="horiz-cards">
+                <h2>Před rokem…</h2>
+                <div class="horiz-cards-inner">
+                {% for article in year_ago %}
+                    <a href="/a/{{ article.slug }}" class="horiz-cards-card">
+                        <p class="meta">
+                            {{ article.time_created|date:"j. E Y" }}
+                        </p>
+                        <div class="horiz-cards-card-image">
+                            {% thumbnail article.cover_photo "60x60" crop="center" as thumb_s %}
+                            {% thumbnail article.cover_photo "90x90" crop="center" as thumb_l %}
+                                <img src="{{ thumb_s.url }}" srcset="{{ thumb_s.url }} 60w, {{ thumb_l.url }} 90w" alt="{{ article.title }}" />
+                            {% endthumbnail %}
+                            {% endthumbnail %}
+                        </div>
+                        <div class="horiz-cards-card-text">
+                            {{ article.title }}
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+            </div>
+        {% endif %}
+    {% endif %}
+
+    {% empty %}
+        <p>:(</p>
+    {% endfor %}
+    </div>
+        {% if articles.has_next %}
+            <div class="article-list-pagination">
+            <a name="p"/>
+        {% else %}
+            <div class="article-list-pagination last-page">
+        {% endif %}
+        {% if articles.has_previous %}
+            <a class="article-list-pagination-link prev" href="?p={{ articles.previous_page_number }}#p">&larr; novější</a>
+        {% endif %}
+
+        {% if articles.has_next %}
+            <a class="article-list-pagination-link next" href="?p={{ articles.next_page_number }}">starší &rarr;</a>
+        {% endif %}
+</div>
+{% endblock %}
