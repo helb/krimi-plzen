@@ -92,7 +92,7 @@
     {% if forloop.counter == 7 %}
         {% if year_ago.all %}
             <div class="horiz-cards">
-                <h2>Před rokem…</h2>
+                <h2>Tyto dny před rokem…</h2>
                 <div class="horiz-cards-inner">
                 {% for article in year_ago %}
                     <a href="/a/{{ article.slug }}" class="horiz-cards-card">

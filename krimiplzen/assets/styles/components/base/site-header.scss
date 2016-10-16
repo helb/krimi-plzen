@@ -1,25 +1,34 @@
 .site-header {
-    background: $base-fg;
+    background-color: $base-fg;
+    background-image: url("../img/krimi-header.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: contain;
     color: $base-bg;
     display: flex;
     flex: 0;
     flex-direction: row;
-    min-height: 2 * $spacing + 1.5rem;
+    min-height: 2 * $spacing + 2.5rem;
     min-width: $min-width;
     padding: 0 $content-padding;
 
     @media all and (max-width: $narrow-screen) {
         flex-direction: column;
+        min-height: 2 * $spacing + 1.5rem;
     }
 
     .site-logo {
         color: $logo-color;
         flex: 0;
-        height: 28px;
+        height: 45px;
         margin-top: 0.75rem;
         text-decoration: none;
         transition: transform 0.33s;
-        width: 178px;
+        width: 187px;
+
+        @media all and (max-width: $narrow-screen) {
+            margin-top: 0.25rem;
+        }
 
         &:focus,
         &:hover {
@@ -30,20 +39,9 @@
             display: none;
         }
 
-        svg {
-            height: 28px;
-            width: 178px;
-
-            use {
-                fill: $logo-color;
-            }
-        }
-
         img {
-            display: none;
-            height: 28px;
-            margin-top: -2em;
-            width: 178px;
+            height: 45px;
+            width: 187px;
         }
     }
 
@@ -52,8 +50,8 @@
         flex: 1;
         flex-direction: row;
         font-weight: normal;
-        height: 2 * $spacing + 1.5rem;
-        line-height: 2 * $spacing + 1.5rem;
+        height: 2 * $spacing + 2.5rem;
+        line-height: 2 * $spacing + 2.5rem;
         margin-left: 5em;
         overflow: hidden;
         text-align: left;
