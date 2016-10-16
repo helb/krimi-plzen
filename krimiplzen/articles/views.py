@@ -49,6 +49,8 @@ def newest_articles(request):
                                          .order_by("?")[:1],
             "sidebar_middle": Advert.objects.filter(position__slug="sidebar-middle")
                                          .order_by("?")[:1],
+            "sidebar_bottom": Advert.objects.filter(position__slug="sidebar-bottom")
+                                         .order_by("?")[:1],
         }
     }
     return render(request, "articles/list.html", context)
@@ -91,6 +93,8 @@ def tagged_articles(request, tag_slug):
                                          .order_by("?")[:1],
             "sidebar_middle": Advert.objects.filter(position__slug="sidebar-middle")
                                          .order_by("?")[:1],
+            "sidebar_bottom": Advert.objects.filter(position__slug="sidebar-bottom")
+                                         .order_by("?")[:1],
         }
     }
     return render(request, "articles/list.html", context)
@@ -124,6 +128,8 @@ def article_detail(request, article_slug):
                 "sidebar_top": Advert.objects.filter(position__slug="sidebar-top")
                                              .order_by("?")[:1],
                 "sidebar_middle": Advert.objects.filter(position__slug="sidebar-middle")
+                                             .order_by("?")[:1],
+                "sidebar_bottom": Advert.objects.filter(position__slug="sidebar-bottom")
                                              .order_by("?")[:1],
             }
         }
