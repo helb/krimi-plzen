@@ -29,13 +29,13 @@ gulp.task("sass", () => {
         .pipe(mode.development(browserSync.stream({
             match: "**/*.css"
         })))
-        .pipe(gulp.dest("/home/helb/www/static2.krimi-plzen.cz/static/css/"));
+        .pipe(gulp.dest("/home/helb/www/static2.krimi-plzen.cz/htdocs/static/css/"));
 });
 
 gulp.task("images", () => {
     gulp.src(["assets/img/**/*"])
         .pipe(mode.production(imagemin()))
-        .pipe(gulp.dest("/home/helb/www/static2.krimi-plzen.cz/static/img/"))
+        .pipe(gulp.dest("/home/helb/www/static2.krimi-plzen.cz/htdocs/static/img/"))
         .pipe(mode.development(browserSync.reload({
             stream: true
         })));
@@ -45,7 +45,7 @@ gulp.task("js", () => {
     gulp.src("")
         .pipe(webpack(require("./webpack.config.js")))
         // .pipe(mode.production(uglify()))
-        .pipe(gulp.dest("/home/helb/www/static2.krimi-plzen.cz/static/js/"))
+        .pipe(gulp.dest("/home/helb/www/static2.krimi-plzen.cz/htdocs/static/js/"))
         .pipe(mode.development(browserSync.reload({
             stream: true
         })));
@@ -53,15 +53,15 @@ gulp.task("js", () => {
 
 gulp.task("copy-js", () => gulp
     .src("assets/js/summernote-gallery-plugin.js")
-    .pipe(gulp.dest("/home/helb/www/static2.krimi-plzen.cz/static/js/")));
+    .pipe(gulp.dest("/home/helb/www/static2.krimi-plzen.cz/htdocs/static/js/")));
 
 gulp.task("robots", () => gulp
     .src("assets/robots.txt")
-    .pipe(gulp.dest("/home/helb/www/static2.krimi-plzen.cz/static/")));
+    .pipe(gulp.dest("/home/helb/www/static2.krimi-plzen.cz/htdocs/static/")));
 
 gulp.task("devserver", ["watch"], () => {
     browserSync.init({
-        server: "/home/helb/www/static2.krimi-plzen.cz/static/"
+        server: "/home/helb/www/static2.krimi-plzen.cz/htdocs/static/"
     });
 });
 
