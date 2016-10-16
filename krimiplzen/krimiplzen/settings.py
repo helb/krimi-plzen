@@ -9,7 +9,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "!m0k^lhkzhg-re+#u3(_en_zhwf+p(48xm76z86h&xqc6%j-!%"
 SITE_ID = 2
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS = ["www.krimi-plzen.cz"]
 ALLOWED_HOSTS = ["*"]
@@ -152,7 +152,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 ARTICLES_PER_PAGE = 10
 MISSING_PERSONS_DAYS = 90
