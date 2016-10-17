@@ -8,10 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&subset=latin-ext">
     <link rel="stylesheet" href="{% static "css/base.css" %}">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raven.js/3.7.0/raven.min.js"></script>
-    <script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.from|always"></script>
-    <script type="text/javascript" src="{% static "js/base.js" %}"></script>
-    {% block head-js %}{% endblock %}
     <link rel="apple-touch-icon" sizes="180x180" href="https://static2.krimi-plzen.cz/static/img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="https://static2.krimi-plzen.cz/static/img/favicons/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://static2.krimi-plzen.cz/static/img/favicons/favicon-16x16.png" sizes="16x16">
@@ -45,6 +41,9 @@
             <a title="nahoru" class="back-to-top" href="#top"><img src="{% static "img/icon-uparrow.svg" %}"/></a>
         </div>
     </footer>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raven.js/3.7.0/raven.min.js"></script>
+    <script type="text/javascript" src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.from|always" async></script>
+    <script type="text/javascript" src="{% static "js/base.js" %}"></script>
+    {% block foot-js %}{% endblock %}
 </body>
-
 </html>

@@ -12,17 +12,20 @@ import Raven from "raven-js";
     m.parentNode.insertBefore(a, m);
 })(window, document, "script", "https://www.google-analytics.com/analytics.js", "ga");
 
-Raven.config("https://cd567997671c4ed1a08e6c6ad040b3ce@sentry.helb.cz/3").install();
-ga("create", "UA-52320835-1", "auto");
-ga("send", "pageview");
+ga("create", "UA-52320835-1", "auto", {
+    "siteSpeedSampleRate": 20
+});
 
 document.addEventListener("DOMContentLoaded", function (event) {
+    ga("send", "pageview");
+    Raven.config("https://cd567997671c4ed1a08e6c6ad040b3ce@sentry.helb.cz/3").install();
+
     if (typeof SVGUseElement !== "function") {
         document.querySelector(".site-logo img").style.display = "block";
     };
 
     const pageEl = document.querySelector(".page");
-    const navEl =document.querySelector(".main-nav");
+    const navEl = document.querySelector(".main-nav");
 
     document.querySelector(".sidebar-toggle").addEventListener("click", function (event) {
         pageEl.classList.toggle("shifted");
