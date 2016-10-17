@@ -249,13 +249,13 @@ def before_article_save(sender, instance, **kwargs):
     instance.full_clean()
 
 
-# @receiver(models.signals.post_save, sender=Article)
-# def after_article_save(sender, instance, created, **kwargs):
-#     if created:
-#         instance.send_creation_notification()
-#     else:
-#         instance.send_update_notification()
-#         task_invalidate_cf.delay([instance.get_absolute_url()])
+@receiver(models.signals.post_save, sender=Article)
+def after_article_save(sender, instance, created, **kwargs):
+    if created:
+        instance.send_creation_notification()
+    else:
+        instance.send_update_notification()
+        task_invalidate_cf.delay([instance.get_absolute_url()])
 
 
 @receiver(models.signals.post_delete, sender=Article)
