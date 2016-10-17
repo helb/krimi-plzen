@@ -58,8 +58,9 @@
         text-align: left;
 
         a {
+            background-color: transparentize($base-fg, 0.25);
             color: darken($base-bg, 20%);
-            margin-right: $spacing;
+            padding: 0 $spacing / 2;
             text-decoration: none;
             white-space: nowrap;
 
