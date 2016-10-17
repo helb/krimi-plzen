@@ -64,6 +64,11 @@ MIDDLEWARE_CLASSES = [
     "htmlmin.middleware.MarkRequestMiddleware"
 ]
 
+CSRF_COOKIE_SECURE = True                                                                                                                                       │·····································
+CSRF_COOKIE_NAME = "krimi_csrf"                                                                                                                                 │·····································
+CSRF_COOKIE_DOMAIN = "www.krimi-plzen.cz"                                                                                                                       │·····································
+CSRF_TRUSTED_ORIGINS = ["www.krimi-plzen.cz"]
+
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 
 ROOT_URLCONF = "krimiplzen.urls"
