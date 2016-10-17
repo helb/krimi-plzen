@@ -49,17 +49,15 @@ INSTALLED_APPS = [
 MIDDLEWARE_CLASSES = [
     "raven.contrib.django.raven_compat.middleware.Sentry404CatchMiddleware",
     "django.middleware.cache.UpdateCacheMiddleware",
-    # "htmlmin.middleware.HtmlMinifyMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
-    # "django.middleware.csrf.CsrfViewMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.redirects.middleware.RedirectFallbackMiddleware",
     "django.contrib.auth.middleware.SessionAuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    # "htmlmin.middleware.HtmlMinifyMiddleware",
     "django.middleware.cache.FetchFromCacheMiddleware",
     "htmlmin.middleware.MarkRequestMiddleware"
 ]
