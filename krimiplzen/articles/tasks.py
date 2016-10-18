@@ -10,9 +10,10 @@ logger = get_task_logger(__name__)
 
 @task
 def task_invalidate_cf(urls):
+    full_urls = [re.sub("^", re.sub("/$", "", settings.BASE_URL), item) for item in urls]
+    logger.info("Invalidating on CloudFlare:\n" + "\n".join(full_urls))
     cf = CloudFlare(settings.CF_EMAIL, settings.CF_KEY, settings.DEBUG)
     zone_id = cf.zones.get(params={"name": settings.CF_DOMAIN})[0]["id"]
-    full_urls = [re.sub("^", re.sub("/$", "", settings.BASE_URL), item) for item in urls]
     logger.info(cf.zones.purge_cache.delete(zone_id, data={"files": full_urls}))
 
 

@@ -12,6 +12,7 @@ from tags.models import Tag
 from adverts.models import Advertiser
 from django.dispatch import receiver
 from .tasks import task_invalidate_cf
+import dumper
 
 slug_date_format = "-%Y-%m-%d-%H%M%S"
 
@@ -179,7 +180,18 @@ class Article(ModelDiffMixin, models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return "/a/" + self.slug
+        return "/a/" + self.slug + "/"
+
+    def dependent_paths(self):
+        outdated_urls = []
+        outdated_urls.append(self.get_absolute_url())
+        outdated_urls.append("/")
+        outdated_urls.append("/a/")
+        outdated_urls.append("/rss/")
+        for tag in self.tags.all():
+            outdated_urls.append("/a/tag/" + tag.slug + "/")
+            outdated_urls.append("/rss/" + tag.slug + "/")
+        return outdated_urls
 
     def get_edit_url(self):
         return "/admin/articles/article/" + self.slug + "/change/"
@@ -251,18 +263,15 @@ def before_article_save(sender, instance, **kwargs):
 
 @receiver(models.signals.post_save, sender=Article)
 def after_article_save(sender, instance, created, **kwargs):
-    if created:
-        instance.send_creation_notification()
-        outdated_urls = [settings.BASE_URL, settings.BASE_URL + "a/", settings.BASE_URL + "rss/"]
-        for tag in instance.tags:
-            outdated_urls.append(settings.BASE_URL + "/a/tag/" + tag.slug + "/")
-            outdated_urls.append(settings.BASE_URL + "/rss/" + tag.slug + "/")
-        task_invalidate_cf.delay(outdated_urls)
-    else:
-        instance.send_update_notification()
-        task_invalidate_cf.delay([instance.get_absolute_url()])
+    # if created:
+    #     instance.send_creation_notification()
+    # else:
+    #     instance.send_update_notification()
+    task_invalidate_cf.delay(instance.dependent_paths())
 
 
 @receiver(models.signals.post_delete, sender=Article)
 def after_article_delete(sender, instance, **kwargs):
     instance.send_delete_notification()
+
+dumper.register(Article)

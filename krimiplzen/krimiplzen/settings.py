@@ -48,7 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE_CLASSES = [
     "raven.contrib.django.raven_compat.middleware.Sentry404CatchMiddleware",
-    "django.middleware.cache.UpdateCacheMiddleware",
+    "dumper.middleware.UpdateCacheMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -58,7 +58,7 @@ MIDDLEWARE_CLASSES = [
     "django.contrib.auth.middleware.SessionAuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "django.middleware.cache.FetchFromCacheMiddleware",
+    "dumper.middleware.FetchFromCacheMiddleware",
     "htmlmin.middleware.MarkRequestMiddleware"
 ]
 
@@ -189,6 +189,8 @@ CACHES = {
         }
     }
 }
+
+DUMPER_PATH_IGNORE_REGEX = r"^/(?:(?:admin)|(?:summernote))/"
 
 TEST_RUNNER = "krimiplzen.testing.TestRunner"
 
