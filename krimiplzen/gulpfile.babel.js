@@ -2,13 +2,17 @@ import gulp from "gulp";
 import webpack from "webpack-stream";
 import gutil from "gulp-util";
 import sass from "gulp-sass";
-import autoprefixer from "gulp-autoprefixer";
+import autoprefixer from "autoprefixer";
 import concat from "gulp-concat";
 import imagemin from "gulp-imagemin";
 import uglify from "gulp-uglify";
-import csso from "gulp-csso";
 import sourcemaps from "gulp-sourcemaps";
 import rename from "gulp-rename";
+import postcss from "gulp-postcss";
+import cssnano from "cssnano";
+import flexibility from "postcss-flexibility";
+import flexbugs from "postcss-flexbugs-fixes";
+import mqpacker from "css-mqpacker";
 
 const mode = require("gulp-mode")({
     modes: ["production", "development"],
@@ -18,17 +22,18 @@ const mode = require("gulp-mode")({
 const browserSync = require("browser-sync").create();
 
 gulp.task("sass", () => {
+    const processors = [
+        autoprefixer({browsers: ["> 2%"]}),
+        flexbugs(),
+        flexibility(),
+        mqpacker(),
+        cssnano()
+    ];
     gulp.src(["assets/styles/base.scss", "assets/styles/summernote.scss"])
-        .pipe(mode.development(sourcemaps.init()))
+        .pipe(sourcemaps.init())
         .pipe(sass().on("error", sass.logError))
-        .pipe(autoprefixer({
-            browsers: ["> 5%"]
-        }))
-        .pipe(mode.production(csso()))
-        .pipe(mode.development(sourcemaps.write("./")))
-        .pipe(mode.development(browserSync.stream({
-            match: "**/*.css"
-        })))
+        .pipe(postcss(processors))
+        .pipe(sourcemaps.write("./"))
         .pipe(gulp.dest("/home/helb/www/static2.krimi-plzen.cz/htdocs/static/css/"));
 });
 
@@ -54,6 +59,9 @@ gulp.task("js", () => {
 gulp.task("copy-js", () => {
     gulp
     .src("assets/js/summernote-gallery-plugin.js")
+    .pipe(gulp.dest("/home/helb/www/static2.krimi-plzen.cz/htdocs/static/js/"));
+    gulp
+    .src("assets/js/flexibility.js")
     .pipe(gulp.dest("/home/helb/www/static2.krimi-plzen.cz/htdocs/static/js/"));
     gulp
     .src("assets/js/polyfill.min.js")
