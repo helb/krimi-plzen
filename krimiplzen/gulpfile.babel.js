@@ -51,9 +51,14 @@ gulp.task("js", () => {
         })));
 });
 
-gulp.task("copy-js", () => gulp
+gulp.task("copy-js", () => {
+    gulp
     .src("assets/js/summernote-gallery-plugin.js")
-    .pipe(gulp.dest("/home/helb/www/static2.krimi-plzen.cz/htdocs/static/js/")));
+    .pipe(gulp.dest("/home/helb/www/static2.krimi-plzen.cz/htdocs/static/js/"));
+    gulp
+    .src("assets/js/polyfill.min.js")
+    .pipe(gulp.dest("/home/helb/www/static2.krimi-plzen.cz/htdocs/static/js/"));
+});
 
 gulp.task("robots", () => gulp
     .src("assets/robots.txt")
