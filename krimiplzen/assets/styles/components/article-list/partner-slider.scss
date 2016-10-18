@@ -1,0 +1,101 @@
+$partner-count: 7;
+
+.article-list-partner-slider {
+    background: darken($base-bg, 5%);
+    border: 0.1em solid darken($base-bg, 20%);
+    box-shadow: 0 0.1em 0.25em darken($base-bg, 20%);
+    height: 8em;
+    margin-bottom: $spacing;
+    overflow: hidden;
+
+    &-inner {
+        display: flex;
+        height: 8em;
+        margin-bottom: $spacing;
+        transition: transform 0.5s;
+        width: $partner-count * 100%;
+    }
+
+    &-inner-item {
+        color: $base-fg;
+        display: flex;
+        height: 8em;
+        text-decoration: none;
+        width: calc(100% / #{$partner-count});
+
+        &-logo {
+            object-fit: contain;
+            padding: $spacing;
+            width: 8em;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &-text {
+            flex: 1;
+            font-size: 0.8em;
+            padding: $spacing / 2 $spacing;
+            width: calc(100% - 8em);
+
+            h3 {
+                font-size: 1.25em;
+                margin-bottom: 0.5em;
+            }
+
+            p {
+                line-height: 1.4em;
+            }
+        }
+    }
+}
+
+.article-list-partner-slider-controls {
+    border-bottom: 0.1em solid darken($base-bg, 5%);
+    display: flex;
+    justify-content: center;
+    margin-bottom: $spacing;
+    padding-bottom: $spacing;
+
+    &-item {
+        background: $base-bg;
+        border: 0.1em solid darken($base-bg, 20%);
+        box-shadow: 0 0.1em 0.25em darken($base-bg, 20%);
+        cursor: pointer;
+        margin: 0 $spacing / 2;
+        padding: $spacing / 2;
+        width: 4em;
+
+        &.current {
+            border-color: darken($base-bg, 60%);
+            box-shadow: 0 0.1em 0.25em darken($base-bg, 60%);
+
+            &::before {
+                background: $base-bg;
+                border: 0.1em solid darken($base-bg, 60%);
+                border-bottom: 0;
+                border-right: 0;
+                content: "";
+                display: block;
+                height: 0.5em;
+                left: 1.25em;
+                margin-bottom: -0.5em;
+                position: relative;
+                top: -0.7em;
+                transform: rotate(45deg);
+                width: 0.5em;
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.article-list-partner-slider-label {
+    color: lighten($base-fg, 20%);
+    font-size: 0.8em;
+    margin-top: -1rem;
+}

@@ -9,17 +9,18 @@
 @import "components/base/site-header";
 @import "components/base/site-footer";
 
-@import "components/article-list/article-list";
-@import "components/article-list/article-card";
-@import "components/article-list/pagination";
-@import "components/article-list/horiz-cards";
-@import "components/article-list/partner-box";
-
 @import "components/article-detail/article-tags";
 @import "components/article-detail/article-header";
 @import "components/article-detail/article-content";
 @import "components/article-detail/article-gallery";
 @import "components/article-detail/partner-box";
+
+@import "components/article-list/partner-slider";
+@import "components/article-list/article-list";
+@import "components/article-list/article-card";
+@import "components/article-list/pagination";
+@import "components/article-list/horiz-cards";
+@import "components/article-list/partner-box";
 
 @import "components/sidebar/sidebar";
 @import "components/sidebar/animals";
