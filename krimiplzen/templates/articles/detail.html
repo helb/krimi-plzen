@@ -13,7 +13,9 @@
 {% block head-meta %}
 {% thumbnail article.cover_photo "960" crop="center" as cover_l %}
     <meta property="og:title" content="{{ article.title }}" />
+    <meta property="og:description" content="{{ article.intro }}" />
     <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Krimi Plzeň" />
     <meta property="og:url" content="http://www.krimi-plzen.cz/a/{{article.slug}}/" />
     <meta property="og:image" content="{{cover_l.url}}" />
     {% endthumbnail %}
