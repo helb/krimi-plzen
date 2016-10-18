@@ -24,9 +24,17 @@ $partner-count: 7;
         width: calc(100% / #{$partner-count});
 
         &-logo {
+            align-items: center;
+            display: flex;
+            justify-content: center;
             object-fit: contain;
             padding: $spacing;
             width: 8em;
+
+            @media all and (max-width: $narrow-screen) {
+                padding: $spacing / 2;
+                width: 5em;
+            }
 
             img {
                 width: 100%;
@@ -39,13 +47,26 @@ $partner-count: 7;
             padding: $spacing / 2 $spacing;
             width: calc(100% - 8em);
 
+            @media all and (max-width: $narrow-screen) {
+                font-size: 0.6em;
+                padding: $spacing / 2;
+                padding-left: 0;
+                width: calc(100% - 5em);
+            }
+
             h3 {
-                font-size: 1.25em;
+                font-size: 1em;
                 margin-bottom: 0.5em;
+
+                @media all and (max-width: $narrow-screen) {
+                    line-height: 1.25em;
+                }
             }
 
             p {
                 line-height: 1.4em;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
     }
@@ -57,6 +78,10 @@ $partner-count: 7;
     justify-content: center;
     margin-bottom: $spacing;
     padding-bottom: $spacing;
+
+    @media all and (max-width: $narrow-screen) {
+        display: none;
+    }
 
     &-item {
         background: $base-bg;
@@ -97,5 +122,10 @@ $partner-count: 7;
 .article-list-partner-slider-label {
     color: lighten($base-fg, 20%);
     font-size: 0.8em;
+    line-height: 1.25em;
     margin-top: -1rem;
+
+    @media all and (max-width: $narrow-screen) {
+        display: none;
+    }
 }
