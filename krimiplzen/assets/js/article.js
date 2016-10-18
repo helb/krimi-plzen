@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             galleryControls.appendChild(controlThumb);
             if (controlThumb.dataset.src === current.dataset.src) {
                 controlThumb.classList.add("current");
+                controlThumb.parentNode.scrollLeft = controlThumb.offsetLeft - 30;
             }
             controlThumb.addEventListener("click", function (event) {
                 event.stopPropagation();
