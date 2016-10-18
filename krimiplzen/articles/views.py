@@ -14,15 +14,21 @@ def newest_articles(request):
     article_list = Article.objects.filter(status="p")
     paginator = Paginator(article_list, settings.ARTICLES_PER_PAGE)
     page = request.GET.get("p")
+    title = "Nejnovější články";
 
     try:
         articles = paginator.page(page)
+        title = "Články – strana " + page;
+        if page == "1":
+            title = "Nejnovější články";
     except PageNotAnInteger:
         # If page is not an integer, deliver first page.
         articles = paginator.page(1)
+        title = "Nejnovější články";
     except EmptyPage:
         # If page is out of range (e.g. 9999), deliver last page of results.
         articles = paginator.page(paginator.num_pages)
+        title = "Články – strana " + paginator.num_pages;
 
     context = {
         "articles": articles,
@@ -39,7 +45,7 @@ def newest_articles(request):
         "header": {
             "tags": Tag.objects.filter(display_in_menu=True).annotate(article_count=Count("article")).order_by("-article_count")
         },
-        "title": "Nejnovější články",
+        "title": title,
         "adverts": {
             "article_list_partner_box_middle": Advert.objects.filter(position__slug="article-list-partner-box-middle")
                                                              .order_by("?")[:1],
@@ -61,15 +67,22 @@ def tagged_articles(request, tag_slug):
         status="p", tags__slug__contains=tag_slug)
     paginator = Paginator(article_list, settings.ARTICLES_PER_PAGE)
     page = request.GET.get("p")
+    tag_title = Tag.objects.get(pk=tag_slug).title
+    title = tag_title
 
     try:
         articles = paginator.page(page)
+        title = tag_title + " – strana " + page
+        if page == "1":
+            title = tag_title
     except PageNotAnInteger:
         # If page is not an integer, deliver first page.
         articles = paginator.page(1)
+        title = tag_title
     except EmptyPage:
         # If page is out of range (e.g. 9999), deliver last page of results.
         articles = paginator.page(paginator.num_pages)
+        title = tag_title + " – strana " + paginator.num_pages
     context = {
         "articles": articles,
         "sidebar": {
@@ -83,7 +96,7 @@ def tagged_articles(request, tag_slug):
         "header": {
             "tags": Tag.objects.filter(display_in_menu=True).annotate(article_count=Count("article")).order_by("-article_count")
         },
-        "title": Tag.objects.get(pk=tag_slug).title,
+        "title": title,
         "adverts": {
             "article_list_partner_box_middle": Advert.objects.filter(position__slug="article-list-partner-box-middle")
                                                              .order_by("?")[:1],
