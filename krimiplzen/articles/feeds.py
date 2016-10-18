@@ -22,7 +22,7 @@ class LatestArticlesFeed(Feed):
         return item.time_updated
 
     def item_description(self, item):
-        return "<img alt='" + item.title + "' src='" + item.get_cover_thumbnail_url() + "'/> " + item.intro
+        return "<img alt='" + item.title + "' src='" + item.get_cover_thumbnail_url() + "'/><span>" + item.intro + "</span>"
 
 class TaggedArticlesFeed(Feed):
     def get_object(self, request, tag_slug):
@@ -51,4 +51,4 @@ class TaggedArticlesFeed(Feed):
 
     def item_description(self, item):
         def item_description(self, item):
-            return "<img alt='" + item.title + "' src='" + item.get_cover_thumbnail_url() + "'/> " + item.intro
+            return "<img alt='" + item.title + "' src='" + item.get_cover_thumbnail_url() + "'/><span>" + item.intro + "</span>"
