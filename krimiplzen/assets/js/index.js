@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             sliderPosition = 0;
         }
         slidePartners(sliderPosition);
-    }, 3000);
+    }, 4500);
 
     Array.from(partnerSliderControls.children).forEach((item, index) => {
         item.dataset.position = index;
