@@ -49,24 +49,24 @@
     z-index: 9999;
 
     &-close {
-        position: absolute;
-        top: 0;
-        right: 0;
         background: $dark-shadow;
         color: $base-bg;
-        width: 2.5rem;
-        height: 2.5rem;
         cursor: pointer;
+        height: 2.5rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 2.5rem;
         z-index: 9999;
 
         &::after {
-            width: 2.5rem;
-            height: 2.5rem;
-            text-align: center;
-            line-height: 2.5rem;
+            content: "\00D7";
             display: block;
             font-size: 2em;
-            content: "\00D7";
+            height: 2.5rem;
+            line-height: 2.5rem;
+            text-align: center;
+            width: 2.5rem;
         }
     }
 
@@ -95,10 +95,18 @@
             cursor: pointer;
             display: block;
             height: calc(100vh - 5em - #{4 * $spacing});
+            line-height: calc(100vh - 5em - #{4 * $spacing});
             position: absolute;
             top: $spacing;
-            width: 20vw;
+            width: 40vw;
             z-index: 9999;
+
+            img {
+                display: inline-block;
+                height: 2.5rem;
+                margin: $spacing;
+                width: 2.5rem;
+            }
 
             @media all and (max-width: $narrow-screen) {
                 height: calc(100vh - 3em - #{4 * $spacing});
@@ -108,32 +116,44 @@
         &-prev {
             cursor: w-resize;
             left: 0;
+            text-align: left;
+
+            img {
+                transform: rotate(-90deg);
+            }
         }
 
         &-next {
             cursor: e-resize;
             right: 0;
+            text-align: right;
+
+            img {
+                transform: rotate(90deg);
+            }
         }
     }
 
     &-controls {
-        align-items: center;
-        display: flex;
         height: 5em + #{2 * $spacing};
-        justify-content: center;
-        overflow-x: scroll;
+        overflow-x: auto;
         overflow-y: hidden;
         padding: $spacing;
+        text-align: center;
+        white-space: nowrap;
 
         @media all and (max-width: $narrow-screen) {
             height: 3em + #{2 * $spacing};
         }
 
         img {
+            border: 0.2em solid $base-fg;
             cursor: pointer;
+            display: inline-block;
             height: 5em;
             margin-right: $spacing;
-            transition: transform 0.33s;
+            opacity: 0.75;
+            transition: transform 0.33s, opacity 0.33s;
             width: 5em;
 
             @media all and (max-width: $narrow-screen) {
@@ -143,12 +163,15 @@
 
             &:hover,
             &:focus {
+                opacity: 1;
                 transform: scale(1.05);
             }
         }
 
         .current {
-            border: 0.2em solid $base-bg;
+            border-color: $base-bg;
+            opacity: 1;
+            transform: scale(1.05);
         }
     }
 }
