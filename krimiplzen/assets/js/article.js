@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     function removeGallery(galleryView) {
         galleryView.parentNode.removeChild(galleryView);
+        document.onkeydown = null;
     }
 
     function switchToNext(galleryImageImg) {
@@ -36,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         galleryView.addEventListener("click", function () {
             removeGallery(galleryView);
-            document.onkeydown = null;
         });
 
         const galleryImage = document.createElement("div");
