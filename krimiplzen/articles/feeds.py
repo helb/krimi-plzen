@@ -1,6 +1,22 @@
 from django.contrib.syndication.views import Feed
 from .models import Article
 from tags.models import Tag
+from datetime import date
+
+class TodayArticlesFeed(Feed):
+    title = "Krimi Plzeň – dnešní články"
+    link = "/"
+    description = title
+
+    def items(self):
+        today = date.today()
+        return Article.objects.filter(time_created__year=today.year, time_created__month=today.month, time_created__day=today.day)
+
+    def item_title(self, item):
+        return item.title
+
+    def item_description(self, item):
+        return "<img alt='" + item.title + "' src='" + item.get_cover_thumbnail_url() + "'/> " + item.intro
 
 class LatestArticlesFeed(Feed):
     title = "Krimi Plzeň – nejnovější články"
@@ -14,7 +30,7 @@ class LatestArticlesFeed(Feed):
         return item.title
 
     def item_description(self, item):
-        return item.intro
+        return "<img alt='" + item.title + "' src='" + item.get_cover_thumbnail_url() + "'/> " + item.intro
 
 class TaggedArticlesFeed(Feed):
     def get_object(self, request, tag_slug):
@@ -36,4 +52,5 @@ class TaggedArticlesFeed(Feed):
         return item.title
 
     def item_description(self, item):
-        return item.intro
+        def item_description(self, item):
+            return "<img alt='" + item.title + "' src='" + item.get_cover_thumbnail_url() + "'/> " + item.intro

@@ -13,6 +13,7 @@ from adverts.models import Advertiser
 from django.dispatch import receiver
 from .tasks import task_invalidate_cf
 import dumper
+from sorl.thumbnail import get_thumbnail
 
 slug_date_format = "-%Y-%m-%d-%H%M%S"
 
@@ -248,6 +249,10 @@ class Article(ModelDiffMixin, models.Model):
         })
         if settings.DEBUG:
             print(notification)
+
+    def get_cover_thumbnail_url(self):
+        thumb = get_thumbnail(self.cover_photo.url, "200x200", crop="center", quality=90)
+        return thumb.url
 
 
 @receiver(models.signals.pre_save, sender=Article)
