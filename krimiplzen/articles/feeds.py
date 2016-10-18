@@ -3,20 +3,6 @@ from .models import Article
 from tags.models import Tag
 from datetime import date
 
-class TodayArticlesFeed(Feed):
-    title = "Krimi Plzeň – dnešní články"
-    link = "/"
-    description = title
-
-    def items(self):
-        today = date.today()
-        return Article.objects.filter(time_created__year=today.year, time_created__month=today.month, time_created__day=today.day)
-
-    def item_title(self, item):
-        return item.title
-
-    def item_description(self, item):
-        return "<img alt='" + item.title + "' src='" + item.get_cover_thumbnail_url() + "'/> " + item.intro
 
 class LatestArticlesFeed(Feed):
     title = "Krimi Plzeň – nejnovější články"
@@ -24,10 +10,16 @@ class LatestArticlesFeed(Feed):
     description = title
 
     def items(self):
-        return Article.objects.filter(status="p")[:20]
+        return Article.objects.filter(status="p")[:30]
 
     def item_title(self, item):
         return item.title
+
+    def item_pubdate(self, item):
+        return item.time_created
+
+    def item_updateddate(self, item):
+        return item.time_updated
 
     def item_description(self, item):
         return "<img alt='" + item.title + "' src='" + item.get_cover_thumbnail_url() + "'/> " + item.intro
@@ -44,6 +36,12 @@ class TaggedArticlesFeed(Feed):
 
     def link(self, obj):
         return "/a/tag/" + obj.slug + "/"
+
+    def item_pubdate(self, item):
+        return item.time_created
+
+    def item_updateddate(self, item):
+        return item.time_updated
 
     def items(self, obj):
         return Article.objects.filter(status="p", tags__slug__contains=obj.slug)[:20]
