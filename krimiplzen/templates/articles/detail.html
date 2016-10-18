@@ -41,7 +41,7 @@
         {% endif %}
 
         {% if user.is_authenticated %}
-            {% if perms.articles.can_change_article %}
+            {% if perms.articles.change_article %}
                 <div class="edit-buttons">
                     <a href="/admin/articles/article/{{article.slug}}/change/">✐ Editovat</a>
                 </div>
