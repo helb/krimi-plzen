@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     const galleryLinks = document.querySelectorAll(".article-content .gallery a img");
+    const arrowIcon = document.querySelector(".back-to-top img").src;
 
     function switchImage(thumb, img) {
         Array.from(document.querySelectorAll(".gallery-view-controls img")).forEach((thumb) => {
@@ -8,6 +9,25 @@ document.addEventListener("DOMContentLoaded", function (event) {
         img.setAttribute("src", thumb.dataset.src);
         img.setAttribute("srcset", thumb.dataset.srcset);
         thumb.classList.add("current");
+        thumb.parentNode.scrollLeft = thumb.offsetLeft - 30;
+    }
+
+    function removeGallery(galleryView) {
+        galleryView.parentNode.removeChild(galleryView);
+    }
+
+    function switchToNext(galleryImageImg) {
+        const thumb = document.querySelector(".gallery-view-controls .current");
+        if (thumb.nextSibling) {
+            switchImage(thumb.nextSibling, galleryImageImg);
+        }
+    }
+
+    function switchToPrev(galleryImageImg) {
+        const thumb = document.querySelector(".gallery-view-controls .current");
+        if (thumb.previousSibling) {
+            switchImage(thumb.previousSibling, galleryImageImg);
+        }
     }
 
     function createGallery(thumbnails, current) {
@@ -15,7 +35,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         galleryView.classList.add("gallery-view");
 
         galleryView.addEventListener("click", function () {
-            galleryView.remove();
+            removeGallery(galleryView);
+            document.onkeydown = null;
         });
 
         const galleryImage = document.createElement("div");
@@ -29,23 +50,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         const galleryImagePrev = document.createElement("div");
         galleryImagePrev.classList.add("gallery-view-image-prev");
+        const galleryImagePrevImg = document.createElement("img");
+        galleryImagePrevImg.setAttribute("src", arrowIcon);
+        galleryImagePrev.appendChild(galleryImagePrevImg);
         galleryImagePrev.addEventListener("click", function (event) {
             event.stopPropagation();
-            const thumb = document.querySelector(".gallery-view-controls .current");
-            if (thumb.previousSibling) {
-                switchImage(thumb.previousSibling, galleryImageImg);
-            }
+            switchToPrev(galleryImageImg);
         });
         galleryImage.appendChild(galleryImagePrev);
 
         const galleryImageNext = document.createElement("div");
         galleryImageNext.classList.add("gallery-view-image-next");
+        const galleryImageNextImg = document.createElement("img");
+        galleryImageNextImg.setAttribute("src", arrowIcon);
+        galleryImageNext.appendChild(galleryImageNextImg);
         galleryImageNext.addEventListener("click", function (event) {
             event.stopPropagation();
-            const thumb = document.querySelector(".gallery-view-controls .current");
-            if (thumb.nextSibling) {
-                switchImage(thumb.nextSibling, galleryImageImg);
-            }
+            switchToNext(galleryImageImg);
         });
         galleryImage.appendChild(galleryImageNext);
 
@@ -71,6 +92,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 switchImage(event.target, galleryImageImg);
             });
         });
+
+        document.onkeydown = function (event) {
+            switch (event.keyCode) {
+            case 37:
+                // left
+                switchToPrev(galleryImageImg);
+                break;
+            case 39:
+                // right
+                switchToNext(galleryImageImg);
+                break;
+            case 27:
+                // Esc
+                removeGallery(galleryView);
+                break;
+            }
+        };
 
         document.body.appendChild(galleryView);
     }
