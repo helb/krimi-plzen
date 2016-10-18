@@ -253,6 +253,11 @@ def before_article_save(sender, instance, **kwargs):
 def after_article_save(sender, instance, created, **kwargs):
     if created:
         instance.send_creation_notification()
+        outdated_urls = [settings.BASE_URL, settings.BASE_URL + "a/", settings.BASE_URL + "rss/"]
+        for tag in instance.tags:
+            outdated_urls.append(settings.BASE_URL + "/a/tag/" + tag.slug + "/")
+            outdated_urls.append(settings.BASE_URL + "/rss/" + tag.slug + "/")
+        task_invalidate_cf.delay(outdated_urls)
     else:
         instance.send_update_notification()
         task_invalidate_cf.delay([instance.get_absolute_url()])
