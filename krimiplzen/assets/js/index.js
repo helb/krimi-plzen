@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     const partnerSliderControls = document.querySelector(".article-list-partner-slider-controls");
     const partnerCount = partnerSliderInner.children.length;
     const slidePartners = function (position) {
-        console.log(position);
         Array.from(partnerSliderControls.children).forEach((item) => {
             item.classList.remove("current");
         });
@@ -17,10 +16,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         partnerSliderControls.appendChild(partnerSliderControls.children[position]);
     }
 
-    // for (let i = partnerCount; i >= 0; i--) {
-    //     console.log(partnerSliderControls.children[i]);
-    //     partnerSliderControls.children[i].setAttribute("data-position", i - 1); // .dataset.position = i;
-    // }
     partnerSliderControls.children[0].classList.add("current");
 
     let sliderPosition = 0;
