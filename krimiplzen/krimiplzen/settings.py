@@ -51,7 +51,9 @@ MIDDLEWARE_CLASSES = [
     "raven.contrib.django.raven_compat.middleware.Sentry404CatchMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.cache.UpdateCacheMiddleware",
     "django.middleware.common.CommonMiddleware",
+    "django.middleware.cache.FetchFromCacheMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.redirects.middleware.RedirectFallbackMiddleware",
@@ -60,6 +62,8 @@ MIDDLEWARE_CLASSES = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "htmlmin.middleware.MarkRequestMiddleware"
 ]
+
+CACHE_MIDDLEWARE_SECONDS = 60
 
 CSRF_COOKIE_SECURE = True
 CSRF_COOKIE_NAME = "krimi_csrf"
@@ -186,7 +190,7 @@ CACHES = {
         "TIMEOUT": None,
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
-            "MAX_ENTRIES": 1000
+            "MAX_ENTRIES": 2000
         }
     }
 }
