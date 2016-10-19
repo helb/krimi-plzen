@@ -8,7 +8,7 @@ requests
 rq
 sorl-thumbnail
 django-htmlmin
-django-dumper
+django-cachalot
 django-redis
 django-meta
 django-gulp

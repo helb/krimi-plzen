@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     "django.contrib.humanize",
     "django_gulp",
     "django.contrib.staticfiles",
+    "cachalot",
     "channels",
     # "guardian",
     "tags",
@@ -48,7 +49,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE_CLASSES = [
     "raven.contrib.django.raven_compat.middleware.Sentry404CatchMiddleware",
-    "dumper.middleware.UpdateCacheMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -58,7 +58,6 @@ MIDDLEWARE_CLASSES = [
     "django.contrib.auth.middleware.SessionAuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "dumper.middleware.FetchFromCacheMiddleware",
     "htmlmin.middleware.MarkRequestMiddleware"
 ]
 
@@ -184,8 +183,10 @@ CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": "redis://localhost:6379/1",
+        "TIMEOUT": None,
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            "MAX_ENTRIES": 1000
         }
     }
 }

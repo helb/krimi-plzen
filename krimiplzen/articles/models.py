@@ -12,7 +12,6 @@ from tags.models import Tag
 from adverts.models import Advertiser
 from django.dispatch import receiver
 from .tasks import task_invalidate_cf
-import dumper
 from sorl.thumbnail import get_thumbnail
 
 slug_date_format = "-%Y-%m-%d-%H%M%S"
@@ -278,5 +277,3 @@ def after_article_save(sender, instance, created, **kwargs):
 @receiver(models.signals.post_delete, sender=Article)
 def after_article_delete(sender, instance, **kwargs):
     instance.send_delete_notification()
-
-dumper.register(Article)
