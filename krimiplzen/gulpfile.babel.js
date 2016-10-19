@@ -24,7 +24,7 @@ const browserSync = require("browser-sync").create();
 gulp.task("sass", () => {
     const processors = [
         autoprefixer({browsers: ["> 2%"]}),
-        flexbugs(),
+        // flexbugs(),
         flexibility(),
         mqpacker(),
         cssnano()
