@@ -15,5 +15,6 @@ django-gulp
 python-cloudflare-v4
 django-daterange-filter
 django_summernote
+django-newsletter
 Pillow
 raven
