@@ -168,8 +168,8 @@ HTML_MINIFY = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_BASE = "https://static2.krimi-plzen.cz/"
-# STATIC_BASE = "http://localhost:8002/"
+STATIC_BASE = "//static2.krimi-plzen.cz/"
+#STATIC_BASE = "http://localhost:8002/"
 STATIC_URL = STATIC_BASE + "static/"
 MEDIA_URL = STATIC_BASE + "media/"
 
@@ -187,7 +187,7 @@ CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": "redis://localhost:6379/1",
-        "TIMEOUT": None,
+        "TIMEOUT": 300,
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
             "MAX_ENTRIES": 2000
@@ -209,7 +209,7 @@ CELERY_TIMEZONE = TIME_ZONE
 
 
 RAVEN_CONFIG = {
-    "dsn": "https://fa59989c0f1d4dc384288f171a272199:cabc6ca77d9646d8bcabd5c7799995be@sentry.helb.cz/2",
+    "dsn": "http://fa59989c0f1d4dc384288f171a272199:cabc6ca77d9646d8bcabd5c7799995be@sentry.helb.cz/2",
     # If you are using git, you can also automatically configure the
     # release based on the git info.
     "release": raven.fetch_git_sha(os.path.dirname(__file__) + "/../../")
@@ -218,7 +218,7 @@ RAVEN_CONFIG = {
 CF_EMAIL = "helb@helb.cz"
 CF_KEY = "ca800a364971005da10eac7ef622e8078b78b"
 CF_DOMAIN = "krimi-plzen.cz"
-BASE_URL = "https://www.krimi-plzen.cz/"
+BASE_URL = "//www.krimi-plzen.cz/"
 TEMPDIR = "/tmp/"
 
 

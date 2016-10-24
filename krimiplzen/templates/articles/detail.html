@@ -42,14 +42,6 @@
         </div>
         {% endif %}
 
-        {% if user.is_authenticated %}
-            {% if perms.articles.change_article %}
-                <div class="edit-buttons">
-                    <a href="/admin/articles/article/{{article.slug}}/change/">✐ Editovat</a>
-                </div>
-            {% endif %}
-        {% endif %}
-
         <h1>{{ article.title }}</h1>
 
         {% if article.intro %}
@@ -99,7 +91,7 @@
         <div class="partner-box-main">
             <div class="partner-box-main-content">
                     <a class="partner-box-main-content-link" href="{{advert.link}}" target="_blank">
-                        <img src="https://static2.krimi-plzen.cz/media/{{advert.image_desktop}}" />
+                        <img src="//static2.krimi-plzen.cz/media/{{advert.image_desktop}}" />
                     </a>
             </div>
         </div>
