@@ -1,5 +1,4 @@
-celerybeat-schedule
-celerybeat.pid
+celerybeat*
 node_modules
 venv
 __pycache__
