@@ -14,13 +14,14 @@
     }
 
     &-image {
-        flex-grow: 0;
+        flex: 0 0 15%;
         max-width: 15em;
         min-width: 9em;
         object-fit: cover;
         width: 15%;
 
         @media all and (max-width: $narrow-screen) {
+            flex: 0 0 auto;
             margin-bottom: $spacing;
             max-width: none;
             min-width: 100%;
@@ -82,11 +83,12 @@
     }
 
     &-text {
-        flex-grow: 1;
+        flex: 1 0 85%;
         padding: 0 $spacing;
-        width: 88%;
+        width: 85%;
 
         @media all and (max-width: $narrow-screen) {
+            flex: 1 0 auto;
             padding: 0;
             width: 100%;
         }

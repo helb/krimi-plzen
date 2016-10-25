@@ -6,7 +6,7 @@
     background-size: contain;
     color: $base-bg;
     display: flex;
-    flex-grow: 0;
+    flex: 0 0 #{2 * $spacing + 2.5rem};
     flex-direction: row;
     min-height: 2 * $spacing + 2.5rem;
     min-width: $min-width;
@@ -14,13 +14,14 @@
 
     @media all and (max-width: $narrow-screen) {
         background-image: none;
+        flex: 0 0 #{2 * $spacing + 1.5rem};
         flex-direction: column;
         min-height: 2 * $spacing + 1.5rem;
     }
 
     .site-logo {
         color: $logo-color;
-        flex-grow: 0;
+        flex: 0 0 187px;
         height: 45px;
         margin-top: 0.75rem;
         text-decoration: none;
@@ -48,7 +49,7 @@
 
     .main-nav {
         display: flex;
-        flex-grow: 1;
+        flex: 1 0 auto;
         flex-direction: row;
         font-weight: normal;
         height: 2 * $spacing + 2.5rem;

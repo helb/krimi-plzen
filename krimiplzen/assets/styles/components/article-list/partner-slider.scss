@@ -42,7 +42,7 @@ $partner-count: 7;
         }
 
         &-text {
-            flex-grow: 1;
+            flex: 1 0 auto;
             font-size: 0.8em;
             padding: $spacing / 2 $spacing;
             width: calc(100% - 8em);

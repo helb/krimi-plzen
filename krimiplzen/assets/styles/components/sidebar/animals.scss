@@ -40,7 +40,7 @@
 
         &-text {
             color: $base-fg;
-            flex-grow: 1;
+            flex: 1 0 auto;
             line-height: 1.25em;
             overflow-y: hidden;
             padding: 0 0 0 $spacing;
@@ -51,12 +51,12 @@
 
 .sidebar-animals {
     .shelter-link {
-        font-weight: bold;
         background: lighten($base-fg, 60%);
         box-shadow: 0 0.1em 0.25em darken($base-bg, 60%);
-        text-decoration: none;
-        text-align: center;
         color: $base-fg;
-        padding: $spacing /2 $spacing;
+        font-weight: bold;
+        padding: $spacing / 2 $spacing;
+        text-align: center;
+        text-decoration: none;
     }
 }
