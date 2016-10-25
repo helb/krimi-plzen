@@ -81,7 +81,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
         galleryControls.classList.add("gallery-view-controls");
         galleryView.appendChild(galleryControls);
 
-        Array.from(thumbnails.children).forEach((thumb, index) => {
+        console.log(thumbnails);
+
+        Array.from(thumbnails.getElementsByTagName("a")).forEach((thumb, index) => {
             const controlThumb = thumb.children[0].cloneNode();
             galleryControls.appendChild(controlThumb);
             if (controlThumb.dataset.src === current.dataset.src) {
