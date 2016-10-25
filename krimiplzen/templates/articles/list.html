@@ -107,7 +107,7 @@
             {% thumbnail article.cover_photo "160x160" crop="center" as thumb_m %}
                 <a href="/a/{{ article.slug }}/">
                     <img class="desktop-only" src="{{ thumb_m.url }}" srcset="{{ thumb_s.url }} 90w, {{ thumb_m.url }} 160w" alt="{{ article.title }}" />
-                    <img class="mobile-only" src="{{ thumb_mobile.url }}" srcset="{{ thumb_mobile_s.url }} 400w, {{ thumb_mobile_l.url }} 600w" alt="article.title" />
+                    <img class="mobile-only" src="{{ thumb_mobile_l.url }}" srcset="{{ thumb_mobile_s.url }} 400w, {{ thumb_mobile_l.url }} 600w" alt="article.title" />
                 </a>
             {% endthumbnail %}
             {% endthumbnail %}
