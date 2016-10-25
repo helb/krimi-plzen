@@ -29,6 +29,7 @@ class Animal(models.Model):
     class Meta:
         verbose_name = _("Shelter animal")
         verbose_name_plural = _("Shelter animals")
+        ordering = ["-time_created"]
         unique_together = ("id", "category")
 
 
