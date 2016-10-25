@@ -19,6 +19,7 @@
         text-decoration: none;
         text-transform: uppercase;
         transition: background-color 0.33s;
+        white-space: nowrap;
 
         &:hover {
             background-color: darken($base-bg, 20%);
