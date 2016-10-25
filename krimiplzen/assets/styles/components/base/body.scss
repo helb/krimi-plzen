@@ -18,7 +18,7 @@ body {
 }
 
 .page-wrapper {
-    flex: 1;
+    flex: 1 0 0%;
     width: 100%;
 
     @media all and (max-width: $narrow-screen) {
@@ -46,7 +46,6 @@ body {
         width: 75%;
 
         @media all and (max-width: $narrow-screen) {
-            // padding-top: 3 * $spacing;
             flex-grow: 0;
             width: 50%;
         }

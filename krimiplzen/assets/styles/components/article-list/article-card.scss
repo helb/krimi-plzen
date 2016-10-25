@@ -14,7 +14,7 @@
     }
 
     &-image {
-        flex: 0;
+        flex: 0 0 0%;
         max-width: 15em;
         min-width: 9em;
         object-fit: cover;
@@ -82,7 +82,7 @@
     }
 
     &-text {
-        flex: 1;
+        flex: 1 0 0%;
         padding: 0 $spacing;
         width: 88%;
 

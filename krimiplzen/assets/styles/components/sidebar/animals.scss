@@ -40,8 +40,7 @@
 
         &-text {
             color: $base-fg;
-            flex: 1;
-            // font-size: 0.8em;
+            flex: 1 0 0%;
             line-height: 1.25em;
             overflow-y: hidden;
             padding: 0 0 0 $spacing;

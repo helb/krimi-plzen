@@ -2,13 +2,13 @@
     background: $base-fg;
     color: lighten($base-fg, 40%);
     display: flex;
-    flex: 0;
+    flex: 0 0 0%;
     font-size: 0.8em;
     min-height: 10em;
     padding: $spacing $content-padding;
 
     .footer-left {
-        flex: 1;
+        flex: 1 0 0%;
     }
 
     .footer-right {

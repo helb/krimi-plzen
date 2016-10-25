@@ -8,11 +8,6 @@
     text-decoration: none;
     transition: transform 0.33s;
 
-    &:hover,
-    &:focus {
-        // transform: translateX(-0.75vw);
-    }
-
     &-text {
         line-height: 1.25em;
         padding: $spacing;
