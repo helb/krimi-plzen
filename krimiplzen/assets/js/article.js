@@ -13,6 +13,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
 
     function removeGallery(galleryView) {
+        if (!galleryView.parentNode) {
+            galleryView = document.querySelector(".gallery-view");
+        }
         galleryView.parentNode.removeChild(galleryView);
         document.onkeydown = null;
     }
@@ -73,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         const galleryViewClose = document.createElement("div");
         galleryViewClose.classList.add("gallery-view-close");
         galleryViewClose.addEventListener("click", function () {
-            galleryView.remove();
+            removeGallery(galleryView);
         });
         galleryView.appendChild(galleryViewClose);
 
