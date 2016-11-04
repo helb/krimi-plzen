@@ -25,10 +25,12 @@ def newest_articles(request):
         # If page is not an integer, deliver first page.
         articles = paginator.page(1)
         title = "Nejnovější články";
+        page = 1
     except EmptyPage:
         # If page is out of range (e.g. 9999), deliver last page of results.
         articles = paginator.page(paginator.num_pages)
         title = "Články – strana " + paginator.num_pages;
+        page = paginator.num_pages
 
     context = {
         "articles": articles,
@@ -47,6 +49,7 @@ def newest_articles(request):
             "tags": Tag.objects.filter(display_in_menu=True).annotate(article_count=Count("article")).order_by("-article_count")
         },
         "title": title,
+        "page": page,
         "adverts": {
             "article_list_partner_box_middle": Advert.objects.filter(position__slug="article-list-partner-box-middle")
                                                              .order_by("?")[:1],
