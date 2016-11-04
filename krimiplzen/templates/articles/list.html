@@ -12,6 +12,7 @@
 
 {% block content %}
     <div class="article-list">
+    {% if page == 1 %}
     {% if partners.all %}
     <span class="article-list-partner-slider-label">Partneři, které Vám můžeme doporučit. Děkujeme za podporu.</span>
     <div class="article-list-partner-slider">
@@ -34,6 +35,7 @@
           <div class="article-list-partner-slider-controls-item"><img src="//static2.krimi-plzen.cz/media/{{partner.logo}}" /></div>
         {% endfor %}
     </div>
+    {% endif %}
     {% endif %}
 
     {% for article in articles %}
@@ -113,6 +115,7 @@
     {% endif %}
     {% endif %}
 
+    {% if page == 1 %}
     {% if forloop.counter == 7 %}
         {% if year_ago.all %}
             <div class="horiz-cards">
@@ -138,6 +141,7 @@
             </div>
             </div>
         {% endif %}
+    {% endif %}
     {% endif %}
 
     {% empty %}
