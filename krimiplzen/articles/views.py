@@ -8,7 +8,7 @@ from django.http import Http404
 from django.db.models import Count
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from datetime import datetime, timedelta
-
+from adverts.models import Advertiser
 
 def newest_articles(request):
     article_list = Article.objects.filter(status="p")
@@ -36,6 +36,7 @@ def newest_articles(request):
                                    .filter(time_created__lte=datetime.now() - timedelta(days=363))
                                    .filter(status="p")
                                    .order_by("?")[:5],
+        "partners": Advertiser.objects.filter(display_on_frontpage=True),
         "sidebar": {
             "dogs": Animal.objects.filter(category="dog")[:5],
             "missing": Article.objects.filter(time_created__gte=datetime.now() - timedelta(days=settings.MISSING_PERSONS_DAYS))
@@ -144,6 +145,7 @@ def article_detail(request, article_slug):
                                              .order_by("?")[:1],
                 "sidebar_bottom": Advert.objects.filter(position__slug="sidebar-bottom")
                                              .order_by("?")[:1],
+                "article_attached_partner": Advert.objects.filter(position__slug="article-partner", advertiser=article.advertiser)[:1],
             }
         }
     except Article.DoesNotExist:

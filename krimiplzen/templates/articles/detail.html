@@ -71,32 +71,45 @@
         </div>
 
     </header>
-    <div class="article-content">
-        {{ article.content | insert_photo_thumbs | safe }}
-    </div>
 
-    {% if article.tags.all %}
-        <div class="article-tags">
-            <p class="tags">
-                {% for tag in article.tags.all %}
-                <a href="/a/tag/{{tag.slug}}/" class="tag">{{tag}}</a>
-                {% endfor %}
-            </p>
-        </div>
-    {% endif %}
-
-    {% if article.allow_ads %}
-    {% if adverts.article_partner_box_bottom.all %}
-    {% for advert in adverts.article_partner_box_bottom %}
-        <div class="partner-box-main">
-            <div class="partner-box-main-content">
-                    <a class="partner-box-main-content-link" href="{{advert.link}}" target="_blank">
+    {% if adverts.article_attached_partner.all %}
+    {% for advert in adverts.article_attached_partner %}
+        <div class="partner-box-attached">
+            <div class="partner-box-attached-content">
+                    <div class="partner-box-attached-content-title">
+                      Partner článku – {{article.advertiser.title}}
+                    </div>
+                    <a class="partner-box-attached-content-link" href="{{advert.link}}" target="_blank">
                         <img src="//static2.krimi-plzen.cz/media/{{advert.image_desktop}}" />
                     </a>
             </div>
         </div>
     {% endfor %}
     {% endif %}
+
+    <div class="article-content">
+        {{ article.content | insert_photo_thumbs | safe }}
+    </div>
+
+    {% if article.tags.all %}
+        <div class="article-tags">
+          {% if article.advertiser %}
+          <a class="article-partner-box" href="{{article.advertiser.link}}">
+            <div class="article-partner-box-logo">
+              <img src="//static2.krimi-plzen.cz/media/{{article.advertiser.logo}}" alt="{{article.advertiser.title}}" />
+            </div>
+            <div class="article-partner-box-text">
+              <h3>{{article.advertiser.title}}</h3>
+              <p>{{article.advertiser.text}}</p>
+            </div>
+          </a>
+          {% endif %}
+            <p class="tags">
+                {% for tag in article.tags.all %}
+                <a href="/a/tag/{{tag.slug}}/" class="tag">{{tag}}</a>
+                {% endfor %}
+            </p>
+        </div>
     {% endif %}
 
     {% if similar.all %}
@@ -122,6 +135,20 @@
         {% endfor %}
     </div>
     </div>
+    {% endif %}
+
+    {% if article.allow_ads %}
+    {% if adverts.article_partner_box_bottom.all %}
+    {% for advert in adverts.article_partner_box_bottom %}
+        <div class="partner-box-main">
+            <div class="partner-box-main-content">
+                    <a class="partner-box-main-content-link" href="{{advert.link}}" target="_blank">
+                        <img src="//static2.krimi-plzen.cz/media/{{advert.image_desktop}}" />
+                    </a>
+            </div>
+        </div>
+    {% endfor %}
+    {% endif %}
     {% endif %}
 
     </article>

@@ -1,18 +1,80 @@
-.article-partner-box-bottom {
+.article-partner-box {
+    background: darken($base-bg, 5%);
     border: 0.1em solid darken($base-bg, 5%);
-    border-left: 0;
-    border-right: 0;
-    margin: 0 $content-padding $spacing;
-    padding: $spacing 0;
+    box-shadow: 0 0.1em 0.25em darken($base-bg, 20%);
+    color: $base-fg;
+    display: flex;
+    height: 8em;
+    margin: $spacing * 2 auto $spacing * 2;
+    text-decoration: none;
 
-    a {
-        align-items: center;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+    &::before {
+        color: lighten($base-fg, 65%);
+        content: "PARTNER ČLÁNKU";
         display: block;
-        margin: 0 auto;
-        max-width: 800px;
-        width: 100%;
+        font-size: 0.8em;
+        height: 0;
+        overflow: visible;
+        position: relative;
+        top: -1.95em;
+        white-space: nowrap;
+        width: 0;
+    }
+
+    &-logo {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        object-fit: contain;
+        padding: $spacing;
+        width: 8em;
+
+        @media all and (max-width: $narrow-screen) {
+            padding: $spacing / 2;
+            width: 5em;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &-text {
+        flex: 1 0;
+        font-size: 0.8em;
+        padding: $spacing / 2 $spacing;
+        width: calc(100% - 8em);
+        @media all and (max-width: $narrow-screen) {
+            font-size: 0.6em;
+            padding: $spacing / 2 0;
+            width: calc(100% - 5em);
+        }
+
+        h3 {
+            font-size: 1em;
+            margin-bottom: 0.5em;
+            @media all and (max-width: $narrow-screen) {
+                line-height: 1.25em;
+            }
+        }
+
+        p {
+            line-height: 1.4em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}
+
+.partner-box-attached {
+    &-content {
+        &::before {
+            display: none;
+        }
+
+        &-title {
+            color: lighten($base-fg, 40%);
+            font-size: 0.8em;
+        }
     }
 }

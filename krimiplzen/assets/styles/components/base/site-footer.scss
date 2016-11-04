@@ -7,6 +7,16 @@
     min-height: 10em;
     padding: $spacing $content-padding;
 
+    a {
+        color: $link-color;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+
     .footer-left {
         flex: 1 0 50%;
     }

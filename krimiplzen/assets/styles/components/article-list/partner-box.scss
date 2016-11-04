@@ -1,4 +1,5 @@
-.partner-box-main {
+.partner-box-main,
+.partner-box-attached {
     border-top: 0.1em solid darken($base-bg, 5%);
     margin: $spacing 0;
     padding: $spacing 0;
@@ -45,7 +46,9 @@
 }
 
 .article-detail {
-    .partner-box-main {
+    .partner-box-main,
+    .partner-box-attached {
+        border: 0;
         margin: $spacing $content-padding;
         width: auto;
     }

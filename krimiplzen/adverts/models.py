@@ -16,6 +16,25 @@ class Advertiser(models.Model):
         validators.MinLengthValidator(3)
     ])
 
+    link = models.CharField(_("Link"),
+                             max_length=600,
+                             blank=True,
+                             validators=[
+        validators.MinLengthValidator(3)
+    ])
+
+    text = models.TextField(_("Text"),
+                             max_length=300,
+                             blank=True,
+                             validators=[
+        validators.MinLengthValidator(10)
+    ])
+
+    display_on_frontpage = models.BooleanField(_("Display on front page"), default=False)
+    logo = ImageField(_("Logo"), blank=True, upload_to="partners")
+
+
+
     def __str__(self):
         return self.title
 
