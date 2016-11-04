@@ -19,7 +19,7 @@
           {% for partner in partners %}
             <a target="_blank" class="article-list-partner-slider-inner-item" href="{{partner.link}}">
                 <div class="article-list-partner-slider-inner-item-logo">
-                    <img src="//static2.krimi-plzen.cz/static/img/{{partner.logo}}" />
+                    <img src="//static2.krimi-plzen.cz/media/{{partner.logo}}" />
                 </div>
                 <div class="article-list-partner-slider-inner-item-text">
                     <h3>{{partner.title}}</h3>
@@ -31,7 +31,7 @@
     </div>
     <div class="article-list-partner-slider-controls">
         {% for partner in partners %}
-          <div class="article-list-partner-slider-controls-item"><img src="//static2.krimi-plzen.cz/static/img/{{partner.logo}}" /></div>
+          <div class="article-list-partner-slider-controls-item"><img src="//static2.krimi-plzen.cz/media/{{partner.logo}}" /></div>
         {% endfor %}
     </div>
     {% endif %}
