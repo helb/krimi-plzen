@@ -10,6 +10,7 @@ from django.utils.html import format_html
 from django.forms import TextInput, Textarea
 from django.db import models
 
+
 class ArticleAdmin(SummernoteModelAdmin):
     list_per_page = 20
     list_display = ("title", "share_field", "link_field", "time_created", "is_published")
@@ -23,28 +24,28 @@ class ArticleAdmin(SummernoteModelAdmin):
         "status",
         "tags",
         "stickers"
-        )
+    )
     filter_horizontal = ("tags", "stickers", "related_articles")
     save_on_top = True
     search_fields = ["title", "intro"]
     ordering = ("-time_created"),
     actions = ["make_published", "make_inaccessible"]
     fieldsets = (
-      (_("Basic info"), {
-          "fields": ["title", "intro", "content", "cover_photo"]
-      }),
-      (_("Tags and stickers"), {
-      #   "classes": ["collapse"],
-      "fields": ["tags", "stickers"]
-      }),
-      (_("Publication"), {
-          "classes": ["collapse"],
-          "fields": ["status"]
-      }),
-      (_("Advanced"), {
-          "classes": ["collapse"],
-          "fields": ["related_articles", "photo_cover", "advertiser", "allow_ads", "video_ad", "author_name", "liveupdates"]
-      }),
+        (_("Basic info"), {
+            "fields": ["title", "intro", "content", "cover_photo"]
+        }),
+        (_("Tags and stickers"), {
+            #   "classes": ["collapse"],
+            "fields": ["tags", "stickers"]
+        }),
+        (_("Publication"), {
+            "classes": ["collapse"],
+            "fields": ["status"]
+        }),
+        (_("Advanced"), {
+            "classes": ["collapse"],
+            "fields": ["related_articles", "photo_cover", "advertiser", "allow_ads", "video_ad", "author_name", "liveupdates"]
+        }),
     )
 
     def formfield_for_dbfield(self, db_field, **kwargs):

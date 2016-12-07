@@ -4,14 +4,14 @@ from daterange_filter.filter import DateRangeFilter
 
 admin.site.register(
     Advert,
-    list_display=["title", "time_created", "time_updated", "active_from" ,"active_until"],
+    list_display=["title", "time_created", "time_updated", "active_from", "active_until"],
     list_display_links=["title"],
     ordering=["-time_created"],
     list_filter=(
         ("time_created", DateRangeFilter),
         "time_updated",
         "tags"
-        )
+    )
 )
 
 
@@ -28,5 +28,5 @@ admin.site.register(
     list_display=["title"],
     list_display_links=["title"],
     ordering=["slug"],
-    prepopulated_fields = {"slug": ("title",)}
+    prepopulated_fields={"slug": ("title",)}
 )

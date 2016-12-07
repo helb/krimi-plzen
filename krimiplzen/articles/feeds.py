@@ -24,7 +24,9 @@ class LatestArticlesFeed(Feed):
     def item_description(self, item):
         return "<img alt='" + item.title + "' src='" + item.get_cover_thumbnail_url() + "'/><span>" + item.intro + "</span>"
 
+
 class TaggedArticlesFeed(Feed):
+
     def get_object(self, request, tag_slug):
         return Tag.objects.get(pk=tag_slug)
 

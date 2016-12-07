@@ -237,8 +237,9 @@ def summernote_upload_to(instance, filename):
     today = datetime.now().strftime("%Y-%m-%d")
     return os.path.join("foto", today, filename)
 
+
 def static_url(path):
-    return STATIC_URL + path;
+    return STATIC_URL + path
 
 SUMMERNOTE_CONFIG = {
     # Using SummernoteWidget - iframe mode
@@ -294,9 +295,9 @@ SUMMERNOTE_CONFIG = {
     #     "//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css",
     # ),
     # "external_js": (
-        # "//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/lang/summernote-cs-CZ.min.js",
-        # "//code.jquery.com/jquery-1.9.1.min.js",
-        # "//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js",
+    # "//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/lang/summernote-cs-CZ.min.js",
+    # "//code.jquery.com/jquery-1.9.1.min.js",
+    # "//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js",
     # ),
     # "internal_css": (
     #     static_url("django_summernote/summernote.css"),

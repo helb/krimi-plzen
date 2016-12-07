@@ -43,8 +43,8 @@ class Sticker(models.Model):
                              max_length=6,
                              blank=False,
                              validators=[
-                                validators.RegexValidator(color_regex)
-                            ])
+        validators.RegexValidator(color_regex)
+    ])
     hide_after = models.IntegerField(_("Hide after"),
                                      blank=True,
                                      null=True,
@@ -52,8 +52,8 @@ class Sticker(models.Model):
                                                  "latest article update when"
                                                  "the sticker is visible."),
                                      validators=[
-                                        validators.MinValueValidator(1)
-                                    ])
+        validators.MinValueValidator(1)
+    ])
     is_public = models.BooleanField(_("Display on website"), default=True)
 
     def __str__(self):
@@ -127,21 +127,21 @@ class Article(ModelDiffMixin, models.Model):
                                                   "updates to visitors."))
 
     photo_cover = models.BooleanField(_("Photo cover"),
-                                  default=False)
+                                      default=False)
 
     photo_cover_light = models.BooleanField(_("Dark text on a light photo"),
-                                  default=False)
+                                            default=False)
 
     video_ad = models.BooleanField(_("Allow ad before video"),
-                                  default=True)
+                                   default=True)
 
     allow_ads = models.BooleanField(_("Show ads"),
-                                  default=True)
+                                    default=True)
 
     advertiser = models.ForeignKey(Advertiser,
-                               verbose_name=_("Article partner"),
-                               null=True,
-                               blank=True)
+                                   verbose_name=_("Article partner"),
+                                   null=True,
+                                   blank=True)
 
     tags = models.ManyToManyField(Tag,
                                   blank=True,

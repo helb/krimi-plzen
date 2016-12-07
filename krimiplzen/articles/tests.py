@@ -9,6 +9,7 @@ sd = SampleData(seed=str(datetime.datetime.now()))
 
 
 class ArticleTestCase(TestCase):
+
     def setUp(self):
         self.article1 = Article.objects.create(
             title="Test article",

@@ -17,23 +17,21 @@ class Advertiser(models.Model):
     ])
 
     link = models.CharField(_("Link"),
-                             max_length=600,
-                             blank=True,
-                             validators=[
+                            max_length=600,
+                            blank=True,
+                            validators=[
         validators.MinLengthValidator(3)
     ])
 
     text = models.TextField(_("Text"),
-                             max_length=300,
-                             blank=True,
-                             validators=[
+                            max_length=300,
+                            blank=True,
+                            validators=[
         validators.MinLengthValidator(10)
     ])
 
     display_on_frontpage = models.BooleanField(_("Display on front page"), default=False)
     logo = ImageField(_("Logo"), blank=True, upload_to="partners")
-
-
 
     def __str__(self):
         return self.title
@@ -83,7 +81,7 @@ class Advert(models.Model):
     ])
 
     link = models.URLField(_("Link"),
-                             blank=False)
+                           blank=False)
 
     time_updated = models.DateTimeField(_("Updated at"),
                                         auto_now=True,
@@ -94,7 +92,8 @@ class Advert(models.Model):
                                         auto_now_add=True)
     active_from = models.DateTimeField(_("Active from"), blank=False)
     active_until = models.DateTimeField(_("Active until"), blank=False)
-    advertiser = models.ForeignKey(Advertiser, on_delete=models.CASCADE, verbose_name=_("Advertiser"))
+    advertiser = models.ForeignKey(
+        Advertiser, on_delete=models.CASCADE, verbose_name=_("Advertiser"))
     position = models.ManyToManyField(Position, verbose_name=_("Position"), blank=False)
     tags = models.ManyToManyField(Tag,
                                   blank=True,
