@@ -10,6 +10,13 @@
     <script type="text/javascript" src="{% static "js/index.js" %}"></script>
 {% endblock %}
 
+
+{% block head-meta %}
+    {% if tag_slug %}
+    <link rel="alternate" type="application/rss+xml" title="Krimi Plzeň – {{title}}" href="/rss/{{tag_slug}}/" />
+    {% endif %}
+{% endblock %}
+
 {% block content %}
     <div class="article-list">
     {% if page == 1 %}

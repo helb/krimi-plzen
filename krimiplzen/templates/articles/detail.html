@@ -6,7 +6,7 @@
 {% load app_filters %}
 
 {% block foot-js %}
-    <script type="text/javascript" src="{% static "js/article.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/article.js" %}?v=2"></script>
 {% endblock %}
 
 
@@ -16,8 +16,8 @@
     <meta property="og:description" content="{{ article.intro }}" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Krimi Plzeň" />
-    <meta property="og:url" content="http://www.krimi-plzen.cz/a/{{article.slug}}/" />
-    <meta property="og:image" content="{{cover_l.url}}" />
+    <meta property="og:url" content="https://www.krimi-plzen.cz/a/{{article.slug}}/" />
+    <meta property="og:image" content="https:{{cover_l.url}}" />
     {% endthumbnail %}
 {% endblock %}
 

@@ -250,7 +250,7 @@ class Article(ModelDiffMixin, models.Model):
             print(notification)
 
     def get_cover_thumbnail_url(self):
-        thumb = get_thumbnail(self.cover_photo.url, "200x200", crop="center", quality=90)
+        thumb = get_thumbnail("https:" + self.cover_photo.url, "200x200", crop="center", quality=90)
         return thumb.url
 
 
