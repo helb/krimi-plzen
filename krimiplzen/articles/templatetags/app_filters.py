@@ -8,7 +8,7 @@ register = template.Library()
 @register.filter(name="insert_photo_thumbs")
 def insert_photo_thumbs(content):
     urls = re.findall(
-        r"<img src=[\"']((?:https?:)?//[a-z0-9\-_/\.]+jpe?g)[\"'] ?(?:style=\"[^\"]*\")? ?/?>",
+        r"<img src=[\"']((?:https?:)?//[a-z0-9\-_/\.]+(?:jpe?g|png|gif))[\"'] ?(?:style=\"[^\"]*\")? ?/?>",
         content, re.IGNORECASE)
     thumb_urls = []
     for url in urls:
