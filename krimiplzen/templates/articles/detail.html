@@ -12,13 +12,16 @@
 
 {% block head-meta %}
 {% thumbnail article.cover_photo "960" crop="center" as cover_l %}
+{% thumbnail article.cover_photo "90x90" crop="center" as cover_thumb %}
     <meta property="og:title" content="{{ article.title }}" />
     <meta property="og:description" content="{{ article.intro }}" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Krimi Plzeň" />
     <meta property="og:url" content="https://www.krimi-plzen.cz/a/{{article.slug}}/" />
     <meta property="og:image" content="https:{{cover_l.url}}" />
-    {% endthumbnail %}
+    <meta property="og:thumbnail" content="https:{{cover_thumb.url}}" />
+{% endthumbnail %}
+{% endthumbnail %}
 {% endblock %}
 
 
@@ -88,7 +91,7 @@
     {% endif %}
 
     <div class="article-content">
-        {{ article.content | insert_photo_thumbs | safe }}
+        {{ article.content | insert_photo_thumbs | insert_article_links | safe }}
     </div>
 
     {% if article.tags.all %}

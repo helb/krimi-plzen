@@ -14,6 +14,8 @@ import flexibility from "postcss-flexibility";
 import flexbugs from "postcss-flexbugs-fixes";
 import mqpacker from "css-mqpacker";
 
+const staticDir = "/home/helb/tmp/krimi_static/static/";
+
 const mode = require("gulp-mode")({
     modes: ["production", "development"],
     default: "development"
@@ -34,13 +36,13 @@ gulp.task("sass", () => {
         .pipe(sass().on("error", sass.logError))
         .pipe(postcss(processors))
         .pipe(sourcemaps.write("./"))
-        .pipe(gulp.dest("/home/helb/www/static2.krimi-plzen.cz/htdocs/static/css/"));
+        .pipe(gulp.dest(staticDir + "css/"));
 });
 
 gulp.task("images", () => {
     gulp.src(["assets/img/**/*"])
         .pipe(mode.production(imagemin()))
-        .pipe(gulp.dest("/home/helb/www/static2.krimi-plzen.cz/htdocs/static/img/"))
+        .pipe(gulp.dest(staticDir + "img/"))
         .pipe(mode.development(browserSync.reload({
             stream: true
         })));
@@ -50,7 +52,7 @@ gulp.task("js", () => {
     gulp.src("")
         .pipe(webpack(require("./webpack.config.js")))
         // .pipe(mode.production(uglify()))
-        .pipe(gulp.dest("/home/helb/www/static2.krimi-plzen.cz/htdocs/static/js/"))
+        .pipe(gulp.dest(staticDir + "js/"))
         .pipe(mode.development(browserSync.reload({
             stream: true
         })));
@@ -59,22 +61,25 @@ gulp.task("js", () => {
 gulp.task("copy-js", () => {
     gulp
     .src("assets/js/summernote-gallery-plugin.js")
-    .pipe(gulp.dest("/home/helb/www/static2.krimi-plzen.cz/htdocs/static/js/"));
+    .pipe(gulp.dest(staticDir + "js/"));
+    gulp
+    .src("assets/js/summernote-krimilink-plugin.js")
+    .pipe(gulp.dest(staticDir + "js/"));
     gulp
     .src("assets/js/flexibility.js")
-    .pipe(gulp.dest("/home/helb/www/static2.krimi-plzen.cz/htdocs/static/js/"));
+    .pipe(gulp.dest(staticDir + "js/"));
     gulp
     .src("assets/js/polyfill.min.js")
-    .pipe(gulp.dest("/home/helb/www/static2.krimi-plzen.cz/htdocs/static/js/"));
+    .pipe(gulp.dest(staticDir + "js/"));
 });
 
 gulp.task("robots", () => gulp
     .src("assets/robots.txt")
-    .pipe(gulp.dest("/home/helb/www/static2.krimi-plzen.cz/htdocs/static/")));
+    .pipe(gulp.dest(staticDir + "")));
 
 gulp.task("devserver", ["watch"], () => {
     browserSync.init({
-        server: "/home/helb/www/static2.krimi-plzen.cz/htdocs/static/"
+        server: staticDir + ""
     });
 });
 

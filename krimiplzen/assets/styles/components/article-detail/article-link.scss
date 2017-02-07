@@ -1,0 +1,46 @@
+.article-content {
+    .article-link {
+        background: $base-bg;
+        border: 0.1em solid darken($base-bg, 5%);
+        box-shadow: 0 0.1em 0.25em darken($base-bg, 20%);
+        color: $base-fg;
+        display: flex;
+        flex-direction: row;
+        font-size: 1rem;
+        padding: $spacing;
+        text-decoration: none;
+        text-shadow: none;
+
+        &-image {
+            border: 0.1em solid darken($base-bg, 20%);
+            height: 7vw;
+            margin: 0 $spacing 0 0;
+            width: 7vw;
+
+            @media all and (max-width: $narrow-screen) {
+                height: 15vw;
+                width: 15vw;
+            }
+        }
+
+        &-text {
+            background: $base-bg;
+            color: $base-fg;
+            text-shadow: none;
+
+            &-title {
+                font-size: 1.33em;
+                font-weight: bold;
+                margin: 0 0 $spacing / 2;
+
+                @media all and (max-width: $narrow-screen) {
+                    font-size: 1em;
+                }
+            }
+
+            &-description {
+                font-size: 1em;
+            }
+        }
+    }
+}

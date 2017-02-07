@@ -25,4 +25,39 @@
             overflow: hidden;
         }
     }
+
+    .article-link {
+        background: $base-bg;
+        border: 0.1em solid darken($base-bg, 5%);
+        box-shadow: 0 0.1em 0.25em darken($base-bg, 20%);
+        color: $base-fg;
+        display: flex;
+        flex-direction: row;
+        font-size: 1rem;
+        min-height: 14em;
+        padding: $spacing;
+        text-decoration: none;
+
+        &-image {
+            border: 0.1em solid darken($base-bg, 20%);
+            height: 10vw;
+            margin: 0 $spacing 0 0;
+            object-fit: cover;
+            width: 10vw;
+        }
+
+        &-text {
+            user-select: none;
+
+            &-title {
+                font-size: 2em;
+                font-weight: bold;
+                margin: 0 0 $spacing;
+            }
+
+            &-description {
+                font-size: 1.5em;
+            }
+        }
+    }
 }

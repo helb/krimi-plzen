@@ -25,8 +25,8 @@
             context.memo("button.gallery", function () {
                 // create button
                 var button = ui.button({
-                    contents: "▦ Galerie",
-                    tooltip: "Galerie",
+                    contents: "Galerie",
+                    tooltip: "Galerie fotek",
                     click: function() {
                         var node = document.createElement("div");
                         node.classList.add("gallery");

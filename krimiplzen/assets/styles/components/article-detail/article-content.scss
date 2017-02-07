@@ -2,19 +2,21 @@
     padding: $spacing $content-padding;
 
     a {
-        &,
-        &:link,
-        &:visited {
-            background: linear-gradient(to bottom, $base-bg 0, $base-bg 1.1em, $link-color 1.2em, $link-color 1.225em, $base-bg 1.225em);
-            color: $link-color;
-            text-decoration: none;
-            text-shadow: 0.05em 0 0 $base-bg, -0.05em 0 0 $base-bg, 0.1em 0 0 $base-bg, -0.1em 0 0 $base-bg;
-        }
+        &:not(.article-link) {
+            &,
+            &:link,
+            &:visited {
+                background: linear-gradient(to bottom, $base-bg 0, $base-bg 1.1em, $link-color 1.2em, $link-color 1.225em, $base-bg 1.225em);
+                color: $link-color;
+                text-decoration: none;
+                text-shadow: 0.05em 0 0 $base-bg, -0.05em 0 0 $base-bg, 0.1em 0 0 $base-bg, -0.1em 0 0 $base-bg;
+            }
 
-        &:hover,
-        &:focus {
-            background: linear-gradient(to bottom, $base-bg 0, $base-bg 1.1em, saturate($link-color, 50%) 1.2em, $base-bg 1.225em);
-            color: saturate($link-color, 50%);
+            &:focus,
+            &:hover {
+                background: linear-gradient(to bottom, $base-bg 0, $base-bg 1.1em, saturate($link-color, 50%) 1.2em, $base-bg 1.225em);
+                color: saturate($link-color, 50%);
+            }
         }
     }
 

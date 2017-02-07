@@ -7,9 +7,9 @@ from datetime import datetime
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "!m0k^lhkzhg-re+#u3(_en_zhwf+p(48xm76z86h&xqc6%j-!%"
+SECRET_KEY = "!m0k^lhkzhg-re+#u3(_HAHAenNOPE_zhwf+pJEZEVEC(JEZEVEC4TRI8KUNYxm76z86h&xqc6%j-!%"
 SITE_ID = 2
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS = ["www.krimi-plzen.cz"]
 ALLOWED_HOSTS = ["*"]
@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     "django_gulp",
     "django.contrib.staticfiles",
     "cachalot",
-    "channels",
+    #"channels",
     # "guardian",
     "tags",
     "articles",
@@ -53,7 +53,7 @@ MIDDLEWARE_CLASSES = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.cache.UpdateCacheMiddleware",
     "django.middleware.common.CommonMiddleware",
-    "django.middleware.cache.FetchFromCacheMiddleware",
+    # "django.middleware.cache.FetchFromCacheMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.redirects.middleware.RedirectFallbackMiddleware",
@@ -65,10 +65,12 @@ MIDDLEWARE_CLASSES = [
 
 CACHE_MIDDLEWARE_SECONDS = 30
 
-CSRF_COOKIE_SECURE = True
-CSRF_COOKIE_NAME = "krimi_csrf"
-CSRF_COOKIE_DOMAIN = "www.krimi-plzen.cz"
-CSRF_TRUSTED_ORIGINS = ["www.krimi-plzen.cz"]
+CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_NAME = "krimi_csrf2"
+#CSRF_COOKIE_DOMAIN = "www.krimi-plzen.cz"
+#CSRF_COOKIE_DOMAIN = "localhost:8000"
+#CSRF_TRUSTED_ORIGINS = ["www.krimi-plzen.cz"]
+#CSRF_TRUSTED_ORIGINS = ["*"]
 
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 
@@ -101,7 +103,9 @@ DATABASES = {
         # "ENGINE": "django.db.backends.sqlite3",
         # "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "kp-dev2",
+        "NAME": "krimi2",
+        "USER": "krimi",
+        "PASSWORD": "0KrimiPlzen0",
         "CONN_MAX_AGE": None
     }
 }
@@ -168,15 +172,15 @@ HTML_MINIFY = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_BASE = "//static2.krimi-plzen.cz/"
-# STATIC_BASE = "http://localhost:8002/"
+# STATIC_BASE = "//static2.krimi-plzen.cz/"
+STATIC_BASE = "http://localhost:8002/"
 STATIC_URL = STATIC_BASE + "static/"
 MEDIA_URL = STATIC_BASE + "media/"
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "assets"),
 )
-STATIC_BASE_DIR = "/home/helb/www/static2.krimi-plzen.cz/htdocs/"
+STATIC_BASE_DIR = "/home/helb/tmp/krimi_static/"
 STATIC_ROOT = os.path.join(STATIC_BASE_DIR, "static")
 MEDIA_ROOT = os.path.join(STATIC_BASE_DIR, "media")
 
@@ -273,7 +277,7 @@ SUMMERNOTE_CONFIG = {
         ["style", ["bold", "italic", "strikethrough", "clear"]],
         ["para", ["ul", "ol", "paragraph"]],
         ["insert", ["hr", "table"]],
-        ["insert", ["link", "picture", "video", "gallery"]]
+        ["insert", ["link", "picture", "video", "article-link", "gallery"]]
     ],
 
     # Need authentication while uploading attachments.
@@ -317,6 +321,7 @@ SUMMERNOTE_CONFIG = {
     ),
     "js": (
         static_url("js/summernote-gallery-plugin.js"),
+        static_url("js/summernote-krimilink-plugin.js"),
     ),
 
     # And also for SummernoteInplaceWidget.
