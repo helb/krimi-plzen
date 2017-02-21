@@ -43,7 +43,11 @@ def newest_articles(request):
             "dogs": Animal.objects.filter(category="dog")[:5],
             "missing": Article.objects.filter(time_created__gte=datetime.now() - timedelta(days=settings.MISSING_PERSONS_DAYS))
                                       .filter(status="p")
-                                      .filter(tags__slug__contains="patrani")[:10]
+                                      .filter(tags__slug__contains="patrani")[:5],
+            "police": Article.objects.filter(status="p")
+                                      .filter(tags__slug__contains="predstavujeme-polici"),
+            "specials": Article.objects.filter(status="p")
+                                      .filter(tags__slug__contains="special")
         },
         "header": {
             "tags": Tag.objects.filter(display_in_menu=True).annotate(article_count=Count("article")).order_by("-article_count")
@@ -92,10 +96,14 @@ def tagged_articles(request, tag_slug):
         "sidebar": {
             "missing": Article.objects.filter(time_created__gte=datetime.now() - timedelta(days=settings.MISSING_PERSONS_DAYS))
                                       .filter(status="p")
-                                      .filter(tags__slug__contains="patrani")[:10],
+                                      .filter(tags__slug__contains="patrani")[:5],
             "similar": Article.objects.filter(time_created__gte=datetime.now() - timedelta(days=10))
                                       .filter(status="p")
                                       .order_by("?")[:5],
+            "police": Article.objects.filter(status="p")
+                                      .filter(tags__slug__contains="predstavujeme-polici"),
+            "specials": Article.objects.filter(status="p")
+                                      .filter(tags__slug__contains="special")
         },
         "header": {
             "tags": Tag.objects.filter(display_in_menu=True).annotate(article_count=Count("article")).order_by("-article_count")
@@ -135,7 +143,11 @@ def article_detail(request, article_slug):
                                           .order_by("?")[:5],
                 "missing": Article.objects.filter(time_created__gte=datetime.now() - timedelta(days=settings.MISSING_PERSONS_DAYS))
                                           .filter(status="p")
-                                          .filter(tags__slug__contains="patrani")[:10]
+                                          .filter(tags__slug__contains="patrani")[:5],
+                "police": Article.objects.filter(status="p")
+                                          .filter(tags__slug__contains="predstavujeme-polici"),
+                "specials": Article.objects.filter(status="p")
+                                           .filter(tags__slug__contains="special")
             },
             "header": {
                 "tags": Tag.objects.filter(display_in_menu=True).annotate(article_count=Count("article")).order_by("-article_count")
