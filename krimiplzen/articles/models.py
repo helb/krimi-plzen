@@ -16,6 +16,7 @@ from sorl.thumbnail import get_thumbnail
 
 slug_date_format = "-%Y-%m-%d-%H%M%S"
 
+title_regex = "^(?:(?!FOTO|FOTKY|VIDEO|AKTU).)*$"
 color_regex = "^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
 
 article_states = (
@@ -70,7 +71,8 @@ class Article(ModelDiffMixin, models.Model):
                              max_length=200,
                              blank=False,
                              validators=[
-        validators.MinLengthValidator(3)
+        validators.MinLengthValidator(3),
+        validators.RegexValidator(title_regex)
     ])
 
     intro = models.CharField(_("Introduction"),
@@ -250,7 +252,8 @@ class Article(ModelDiffMixin, models.Model):
             print(notification)
 
     def get_cover_thumbnail_url(self):
-        thumb = get_thumbnail("https:" + self.cover_photo.url, "200x200", crop="center", quality=90)
+        thumb = get_thumbnail("https:" + self.cover_photo.url,
+                              "200x200", crop="center", quality=90)
         return thumb.url
 
 
