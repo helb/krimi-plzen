@@ -1,4 +1,5 @@
-(function(factory) {
+/* eslint no-var: 0, object-shorthand: 0 */
+(function (factory) {
     /* global define */
     if (typeof define === "function" && define.amd) {
         // AMD. Register as an anonymous module.
@@ -10,33 +11,35 @@
         // Browser globals
         factory(window.jQuery);
     }
-}(function($) {
+}(function ($) {
 
     $.extend($.summernote.plugins, {
         /**
          * @param {Object} context - context object has status of editor.
          */
-        "article-link": function(context) {
+        "article-link": function (context) {
             var self = this;
 
             var ui = $.summernote.ui;
 
             // add gallery button
-            context.memo("button.article-link", function() {
+            context.memo("button.article-link", function () {
                 // create button
                 var button = ui.button({
                     contents: "Článek",
                     tooltip: "Odkaz na článek",
-                    click: function() {
+                    click: function () {
                         var articleURL = window.prompt("Adresa článku");
                         // if (articleURL.match(/^https:\/\/www\.krimi-plzen\.cz/)) {
                         if (articleURL.match(/^http:\/\/localhost:8000/)) {
-                            $.get(articleURL, function(data) {
+                            $.get(articleURL, function (data) {
                                 var ogTitle = data.match(/<meta property="og:title" content="([^"]*)" \/>/m)[1];
                                 var ogDescription = data.match(/<meta property="og:description" content="([^"]*)" \/>/m)[1];
                                 var ogThumbnail = data.match(/<meta property="og:thumbnail" content="([^"]*)" \/>/m)[1];
                                 var ogUrl = data.match(/<meta property="og:url" content="([^"]*)" \/>/m)[1];
                                 var node = document.createElement("aside");
+                                var paragraph = document.createElement("p");
+                                node.contentEditable = false;
                                 node.dataset.href = ogUrl;
                                 node.classList.add("article-link");
                                 var linkImage = document.createElement("img");
@@ -55,10 +58,10 @@
                                 node.appendChild(linkImage);
                                 node.appendChild(linkText);
                                 context.invoke("editor.insertNode", node);
-                                context.invoke("editor.disable");
+                                context.invoke("editor.insertNode", paragraph);
                             });
                         } else {
-                            alert("Špatný formát adresy.")
+                            alert("Špatný formát adresy.");
                         }
                     }
                 });

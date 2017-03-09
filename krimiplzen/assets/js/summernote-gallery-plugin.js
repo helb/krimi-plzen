@@ -1,3 +1,4 @@
+/* eslint no-var: 0, object-shorthand: 0 */
 (function (factory) {
     /* global define */
     if (typeof define === "function" && define.amd) {
@@ -27,7 +28,7 @@
                 var button = ui.button({
                     contents: "Galerie",
                     tooltip: "Galerie fotek",
-                    click: function() {
+                    click: function () {
                         var node = document.createElement("div");
                         node.classList.add("gallery");
                         context.invoke("editor.insertNode", node);
