@@ -74,6 +74,50 @@
     </div>
 {% endif %}
 
+{% if sidebar.specials.all %}
+    <div class="sidebar-articles">
+        <h2>Speciály</h2>
+        {% for article in sidebar.specials %}
+            <a href="/a/{{ article.slug }}" class="sidebar-articles-card">
+                <div class="sidebar-articles-card-image">
+                    {% thumbnail article.cover_photo "60x60" crop="center" as thumb_s %}
+                    {% thumbnail article.cover_photo "90x90" crop="center" as thumb_l %}
+                        <img src="{{ thumb_s.url }}" srcset="{{ thumb_s.url }} 60w, {{ thumb_l.url }} 90w" alt="{{ article.title }}" />
+                    {% endthumbnail %}
+                    {% endthumbnail %}
+                </div>
+                <div class="sidebar-articles-card-text">
+                    {{ article.title }}
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% if sidebar.police.all %}
+    <div class="sidebar-articles">
+        <h2>Představujeme Policii</h2>
+        {% for article in sidebar.police %}
+            <a href="/a/{{ article.slug }}" class="sidebar-articles-card">
+                <div class="sidebar-articles-card-image">
+                    {% thumbnail article.cover_photo "60x60" crop="center" as thumb_s %}
+                    {% thumbnail article.cover_photo "90x90" crop="center" as thumb_l %}
+                        <img src="{{ thumb_s.url }}" srcset="{{ thumb_s.url }} 60w, {{ thumb_l.url }} 90w" alt="{{ article.title }}" />
+                    {% endthumbnail %}
+                    {% endthumbnail %}
+                </div>
+                <div class="sidebar-articles-card-text">
+                    {{ article.title }}
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+{% endif %}
+
+
+
+
+
 {% if adverts.sidebar_bottom.all %}
 {% for advert in adverts.sidebar_bottom %}
 <div class="sidebar-partner-box-middle">
