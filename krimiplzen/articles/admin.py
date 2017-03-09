@@ -55,7 +55,7 @@ class ArticleAdmin(SummernoteModelAdmin):
         return field
 
     def share_field(self, obj):
-        return format_html("<a href='%s%s' target='_blank'><img src='https://www.facebook.com/rsrc.php/v3/yv/r/Iie2_IVxtfF.png' style='width:1.25em; height: 1.25em;'/></a>" % ("https://www.facebook.com/dialog/share?app_id=966242223397117&display=popup&href=http%3A%2F%2Fwww.krimi-plzen.cz%2Fa%2F", obj.slug))
+        return format_html("<a href='%s%s' target='_blank'><img src='https://www.facebook.com/rsrc.php/v3/yv/r/Iie2_IVxtfF.png' style='width:1.25em; height: 1.25em;'/></a>" % ("https://www.facebook.com/dialog/share?app_id=966242223397117&display=popup&href=https%3A%2F%2Fwww.krimi-plzen.cz%2Fa%2F", obj.slug))
 
     share_field.short_description = _("Share")
 
