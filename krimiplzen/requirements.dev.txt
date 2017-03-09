@@ -1,5 +1,6 @@
 bpython
 green
+colour-runner
 coverage
 sampledata
 django-debug-toolbar
