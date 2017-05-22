@@ -1,5 +1,4 @@
 from django.conf.urls import include, url
-from django.conf import settings
 from django.contrib import admin
 from articles import views as articles_views
 from articles.models import Article

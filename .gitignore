@@ -8,3 +8,5 @@ tmp
 *.py[cod]
 *.log
 *.pot
+*.sqlite3
+.venv

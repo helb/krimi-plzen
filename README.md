@@ -2,7 +2,7 @@
 
 Local news website. Live @ [krimi-plzen.cz](https://www.krimi-plzen.cz/).
 
-> **This is version 2.x, rewritten from scratch**, based on Django/Python/PostgreSQL.
+> **This is a new version of KP site, rewritten from scratch**, based on Django/Python. For the old Meteor-based site, see [this note](#old-version).
 
 ## Architecture
 
@@ -103,8 +103,6 @@ $ celery -A krimiplzen worker -l info
 ## Old version
 
 Original website was built with [Node.js](https://nodejs.org/)/[Meteor](https://www.meteor.com/)/[MongoDB](https://www.mongodb.com/). It was great for prototyping – most of the core functionality was created practically overnight – but once the site gained some traction (~50k+ visitors a day), the performance went to hell due to large websocket count (Meteor uses ws for _everything_).
-
-> One does not cache websocket easily.
 
 Another issue was rendering HTML server-side for search engines, Facebook previews etc. Meteor has handy [spiderable package](https://atmospherejs.com/meteor/spiderable) for rendering using PhantomJS. It's really easy to setup, but it didn't work all that well under some load (`spiderable: phantomjs failed`). So, for the new version, I wanted a solid HTML renderer. There is currently no server-side renderer for Blaze (Meteor's default view layer).
 

@@ -1,6 +1,5 @@
 from django.test import TestCase
 from .models import Article, slug_date_format
-from django.utils import timezone
 from sampledata.helper import SampleData
 import datetime
 import json
@@ -9,7 +8,6 @@ sd = SampleData(seed=str(datetime.datetime.now()))
 
 
 class ArticleTestCase(TestCase):
-
     def setUp(self):
         self.article1 = Article.objects.create(
             title="Test article",
@@ -39,8 +37,7 @@ class ArticleTestCase(TestCase):
         """Unique slug is created from the title. Timestamp is added when a slug already exists."""
         self.assertEqual(self.article1.slug, "test-article")
         self.assertEqual(self.article2.slug,
-                         "test-article" + self.article2.time_created
-                         .astimezone().strftime(slug_date_format))
+                         "test-article" + self.article2.time_created.strftime(slug_date_format))
 
     def test_new_article_is_published(self):
         """Article is published after creation."""

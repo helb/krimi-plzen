@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="{% static "css/base.css" %}?v=12">
     <title>{% block title %}{% endblock %} | Krimi Plzeň</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" sizes="180x180" href="//static2.krimi-plzen.cz/static/img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="//static2.krimi-plzen.cz/static/img/favicons/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="//static2.krimi-plzen.cz/static/img/favicons/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="//static2.krimi-plzen.cz/static/img/favicons/manifest.json">
-    <link rel="shortcut icon" href="//static2.krimi-plzen.cz/static/img/favicons/favicon.ico">
-    <meta name="msapplication-config" content="//static2.krimi-plzen.cz/static/img/favicons/browserconfig.xml">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static "img/favicons/apple-touch-icon.png" %}">
+    <link rel="icon" type="image/png" href="{% static "img/favicons/favicon-32x32.png" %}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{% static "img/favicons/favicon-16x16.png" %}" sizes="16x16">
+    <link rel="manifest" href="{% static "img/favicons/manifest.json" %}">
+    <link rel="shortcut icon" href="{% static "img/favicons/favicon.ico" %}">
+    <meta name="msapplication-config" content="{% static "img/favicons/browserconfig.xml" %}">
     <meta name="theme-color" content="#ffffff">
     <link rel="alternate" type="application/rss+xml" title="Krimi Plzeň – nejnovější články" href="/rss/">
     {% block head-meta %}{% endblock %}
@@ -20,8 +20,7 @@
 
 {% now "Y" as current_year %}
 
-<body>
-    <a name="top"></a>
+<body id="krimi">
     {% include "header.html" %}
     <div class="page-wrapper">
         <div class="page">
@@ -40,13 +39,10 @@
             <p><a href="https://www.facebook.com/krimiplzen" target="_blank">Krimi Plzeň na Facebooku</a></p>
         </div>
         <div class="footer-right">
-            <a title="nahoru" class="back-to-top" href="#top"><img src="{% static "img/icon-uparrow.svg" %}"/></a>
+            <a title="nahoru" class="back-to-top" href="#krimi"><img src="{% static "img/icon-uparrow.svg" %}"/></a>
         </div>
     </footer>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&subset=latin-ext">
-    <script type="text/javascript" src="{% static "js/flexibility.js" %}"></script>
-    <script type="text/javascript" src="{% static "js/polyfill.min.js" %}"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raven.js/3.7.0/raven.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raven.js/3.14.2/raven.min.js"></script>
     <script type="text/javascript" src="{% static "js/base.js" %}"></script>
     {% block foot-js %}{% endblock %}
 </body>

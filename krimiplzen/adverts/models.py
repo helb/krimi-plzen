@@ -1,11 +1,18 @@
 from django.db import models
+from django.conf import settings
 from tags.models import Tag
 from django.utils.translation import ugettext_lazy as _
 from datetime import datetime
 from django.core import validators
-from django.template.defaultfilters import slugify
-from django.dispatch import receiver
 from sorl.thumbnail import ImageField
+from django.template.defaultfilters import slugify
+
+
+def get_banner_filename(instance, filename):
+    ext = filename.split(".")[-1]
+    partner_slug = slugify(instance.advertiser.title)
+    date_slug = datetime.now().strftime(settings.SLUG_DATE_FORMAT)
+    return f"partners/{partner_slug}/{partner_slug}-{date_slug}.{ext}"
 
 
 class Advertiser(models.Model):
@@ -64,12 +71,6 @@ class Position(models.Model):
         verbose_name = _("Advertisement position")
         verbose_name_plural = _("Advertisement positions")
         ordering = ["title"]
-#
-# @receiver(models.signals.pre_save, sender=Position)
-# def before_position_save(sender, instance, **kwargs):
-#     if not instance.slug:
-#         slug = slugify(instance.title)
-#     instance.full_clean()
 
 
 class Advert(models.Model):
@@ -98,8 +99,8 @@ class Advert(models.Model):
     tags = models.ManyToManyField(Tag,
                                   blank=True,
                                   verbose_name=_("Tags"))
-    image_desktop = ImageField(_("Image – desktop"), blank=True, upload_to="partners")
-    image_mobile = ImageField(_("Image – mobile"), blank=True, upload_to="partners")
+    image_desktop = ImageField(_("Image – desktop"), blank=True, upload_to=get_banner_filename)
+    image_mobile = ImageField(_("Image – mobile"), blank=True, upload_to=get_banner_filename)
     content = models.TextField(_("Content"), blank=True)
 
     def __str__(self):

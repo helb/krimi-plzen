@@ -3,17 +3,16 @@ import raven
 import uuid
 from datetime import datetime
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "!m0k^lhkzhg-re+#u3(_HAHAenNOPE_zhwf+pJEZEVEC(JEZEVEC4TRI8KUNYxm76z86h&xqc6%j-!%"
 SITE_ID = 2
 DEBUG = True
 
-# ALLOWED_HOSTS = ["www.krimi-plzen.cz"]
-ALLOWED_HOSTS = ["*"]
-
+if not DEBUG:
+    ALLOWED_HOSTS = ["www.krimi-plzen.cz"]
+else:
+    ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -30,20 +29,14 @@ INSTALLED_APPS = [
     "django_gulp",
     "django.contrib.staticfiles",
     "cachalot",
-    #"channels",
-    # "guardian",
     "tags",
     "articles",
-    # "photos",
     "shelter",
-    # "partners",
-    # "shortnews",
     "adverts",
     "django_summernote",
     "daterange_filter",
     "raven.contrib.django.raven_compat",
     "sorl.thumbnail",
-
 ]
 
 
@@ -53,7 +46,7 @@ MIDDLEWARE_CLASSES = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.cache.UpdateCacheMiddleware",
     "django.middleware.common.CommonMiddleware",
-    # "django.middleware.cache.FetchFromCacheMiddleware",
+    "django.middleware.cache.FetchFromCacheMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.redirects.middleware.RedirectFallbackMiddleware",
@@ -65,12 +58,12 @@ MIDDLEWARE_CLASSES = [
 
 CACHE_MIDDLEWARE_SECONDS = 30
 
-CSRF_COOKIE_SECURE = False
-CSRF_COOKIE_NAME = "krimi_csrf2"
-#CSRF_COOKIE_DOMAIN = "www.krimi-plzen.cz"
-#CSRF_COOKIE_DOMAIN = "localhost:8000"
-#CSRF_TRUSTED_ORIGINS = ["www.krimi-plzen.cz"]
-#CSRF_TRUSTED_ORIGINS = ["*"]
+if not DEBUG:
+    CSRF_COOKIE_SECURE = True
+    CSRF_COOKIE_NAME = "krimi_csrf2"
+    CSRF_COOKIE_DOMAIN = "www.krimi-plzen.cz"
+    CSRF_COOKIE_DOMAIN = "localhost:8000"
+    CSRF_TRUSTED_ORIGINS = ["www.krimi-plzen.cz"]
 
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 
@@ -100,13 +93,13 @@ WSGI_APPLICATION = "krimiplzen.wsgi.application"
 
 DATABASES = {
     "default": {
-        # "ENGINE": "django.db.backends.sqlite3",
-        # "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "krimi2",
-        "USER": "krimi",
-        "PASSWORD": "0KrimiPlzen0",
-        "CONN_MAX_AGE": None
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        # "ENGINE": "django.db.backends.postgresql",
+        # "NAME": "krimi2",
+        # "USER": "krimi",
+        # "PASSWORD": "0KrimiPlzen0",
+        # "CONN_MAX_AGE": None
     }
 }
 
@@ -132,28 +125,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# AUTHENTICATION_BACKENDS = (
-#     "django.contrib.auth.backends.ModelBackend",
-#     "guardian.backends.ObjectPermissionBackend"
-# )
-
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "asgi_redis.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [("localhost", 6379)],
-        },
-        "ROUTING": "krimiplzen.routing.channel_routing",
-    },
-}
-
-CHANNEL_NAMES = {
-    "articles": "articles"
-}
-
-# Internationalization
-# https://docs.djangoproject.com/en/1.9/topics/i18n/
-
 LANGUAGE_CODE = "cs-cz"
 
 TIME_ZONE = "Europe/Prague"
@@ -164,16 +135,19 @@ USE_L10N = True
 
 USE_TZ = False
 
+SLUG_DATE_FORMAT = "-%Y-%m-%d-%H%M%S"
+
 ARTICLES_PER_PAGE = 10
 MISSING_PERSONS_DAYS = 90
 
-HTML_MINIFY = True
+HTML_MINIFY = not DEBUG
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-# STATIC_BASE = "//static2.krimi-plzen.cz/"
-STATIC_BASE = "http://localhost:8002/"
+if not DEBUG:
+    STATIC_BASE = "//static2.krimi-plzen.cz/"
+else:
+    STATIC_BASE = "http://localhost:8002/"
+
 STATIC_URL = STATIC_BASE + "static/"
 MEDIA_URL = STATIC_BASE + "media/"
 
@@ -186,7 +160,6 @@ MEDIA_ROOT = os.path.join(STATIC_BASE_DIR, "media")
 
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 5000
 
-# if not DEBUG:
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
@@ -212,12 +185,13 @@ CELERY_RESULT_SERIALIZER = "json"
 CELERY_TIMEZONE = TIME_ZONE
 
 
-RAVEN_CONFIG = {
-    # "dsn": "http://fa59989c0f1d4dc384288f171a272199:cabc6ca77d9646d8bcabd5c7799995be@sentry.helb.cz/2",
-    # If you are using git, you can also automatically configure the
-    # release based on the git info.
-    "release": raven.fetch_git_sha(os.path.dirname(__file__) + "/../../")
-}
+if not DEBUG:
+    RAVEN_CONFIG = {
+        "dsn": "http://fa59989c0f1d4dc384288f171a272199:cabc6ca77d9646d8bcabd5c7799995be@sentry.helb.cz/2",
+        # If you are using git, you can also automatically configure the
+        # release based on the git info.
+        "release": raven.fetch_git_sha(os.path.dirname(__file__) + "/../../")
+    }
 
 CF_EMAIL = "helb@helb.cz"
 CF_KEY = "ca800a364971005da10eac7ef622e8078b78b"
@@ -244,6 +218,7 @@ def summernote_upload_to(instance, filename):
 
 def static_url(path):
     return STATIC_URL + path
+
 
 SUMMERNOTE_CONFIG = {
     # Using SummernoteWidget - iframe mode

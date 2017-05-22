@@ -11,7 +11,6 @@ import tempfile
 import re
 import requests
 import xml.etree.ElementTree as ET
-import os
 
 logger = get_task_logger(__name__)
 
@@ -61,7 +60,6 @@ def task_save_animal(rssitem, category):
     ignore_result=True
 )
 def task_update_shelter_animals():
-    saved_count = 0
     for category in settings.SHELTER_URLS:
         try:
             r = requests.get(settings.SHELTER_URLS[category])

@@ -44,6 +44,7 @@
         font-size: 0.8em;
         padding: $spacing / 2 $spacing;
         width: calc(100% - 8em);
+
         @media all and (max-width: $narrow-screen) {
             font-size: 0.6em;
             padding: $spacing / 2 0;
@@ -53,6 +54,7 @@
         h3 {
             font-size: 1em;
             margin-bottom: 0.5em;
+
             @media all and (max-width: $narrow-screen) {
                 line-height: 1.25em;
             }

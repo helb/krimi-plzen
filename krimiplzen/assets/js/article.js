@@ -101,18 +101,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         document.onkeydown = function (event) {
             switch (event.keyCode) {
-            case 37:
-                // left
-                switchToPrev(galleryImageImg);
-                break;
-            case 39:
-                // right
-                switchToNext(galleryImageImg);
-                break;
-            case 27:
-                // Esc
-                removeGallery(galleryView);
-                break;
+                case 37:
+                    // left
+                    switchToPrev(galleryImageImg);
+                    break;
+                case 39:
+                    // right
+                    switchToNext(galleryImageImg);
+                    break;
+                case 27:
+                    // Esc
+                    removeGallery(galleryView);
+                    break;
             }
         };
 

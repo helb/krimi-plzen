@@ -1,10 +1,8 @@
 from django.db import models
 from django.conf import settings
-from channels import Group
 from django.utils.translation import ugettext_lazy as _
 from sorl.thumbnail import ImageField
 from django.template.defaultfilters import slugify
-import json
 from datetime import datetime
 from django.core import validators
 from krimiplzen.mixins import ModelDiffMixin
@@ -14,7 +12,7 @@ from django.dispatch import receiver
 from .tasks import task_invalidate_cf
 from sorl.thumbnail import get_thumbnail
 
-slug_date_format = "-%Y-%m-%d-%H%M%S"
+slug_date_format = settings.SLUG_DATE_FORMAT
 
 title_regex = "^(?:(?!FOTO|FOTKY|VIDEO|AKTU).)*$"
 color_regex = "^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
@@ -222,35 +220,6 @@ class Article(ModelDiffMixin, models.Model):
             serialized[field] = getattr(self, field)
             return serialized
 
-    def send_creation_notification(self):
-        notification = {"event": "add"}
-        notification.update({"article": self.serialize_teaser_fields()})
-        Group(settings.CHANNEL_NAMES["articles"]).send({
-            "text": json.dumps(notification),
-        })
-        if settings.DEBUG:
-            print(settings.CHANNEL_NAMES["articles"])
-            print(notification)
-
-    def send_update_notification(self):
-        if self.liveupdates and len(self.changed_fields) > 0:
-            notification = self.serialize_updated_fields()
-            Group(self.slug).send({
-                "text": json.dumps(notification),
-            })
-            if settings.DEBUG:
-                print(self.slug)
-                print(notification)
-
-    def send_delete_notification(self):
-        notification = {"event": "del"}
-        notification.update({"article": {"slug": self.slug}})
-        Group(settings.CHANNEL_NAMES["articles"]).send({
-            "text": json.dumps(notification)
-        })
-        if settings.DEBUG:
-            print(notification)
-
     def get_cover_thumbnail_url(self):
         thumb = get_thumbnail("https:" + self.cover_photo.url,
                               "200x200", crop="center", quality=90)
@@ -270,13 +239,4 @@ def before_article_save(sender, instance, **kwargs):
 
 @receiver(models.signals.post_save, sender=Article)
 def after_article_save(sender, instance, created, **kwargs):
-    # if created:
-    #     instance.send_creation_notification()
-    # else:
-    #     instance.send_update_notification()
     task_invalidate_cf.delay(instance.dependent_paths())
-
-
-@receiver(models.signals.post_delete, sender=Article)
-def after_article_delete(sender, instance, **kwargs):
-    instance.send_delete_notification()
