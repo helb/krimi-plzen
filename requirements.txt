@@ -1,11 +1,8 @@
 django
 psycopg2
-channels
-asgi_redis
 celery
 gunicorn
 requests
-rq
 sorl-thumbnail
 django-htmlmin
 django-cachalot
@@ -14,8 +11,6 @@ django-meta
 django-gulp
 python-cloudflare-v4
 django-daterange-filter
-django-webpack-loader
 django_summernote
-django-newsletter
 Pillow
 raven
