@@ -5,6 +5,10 @@ from django.utils.translation import ugettext_lazy as _
 from django_summernote.admin import SummernoteModelAdmin
 from django.utils.html import format_html
 
+small_button_style = """color: #fff; width:1.25em; height: 1.25em; padding: 0.15em;
+                        margin-top: -0.1em; display: inline-block; font-size: 0.7em;
+                        border-radius: 0.15em;"""
+
 
 class ArticleAdmin(SummernoteModelAdmin):
     list_per_page = 20
@@ -50,10 +54,6 @@ class ArticleAdmin(SummernoteModelAdmin):
         if db_field.name in ["title", "intro"]:
             field.widget.attrs["style"] = "width: 79%"
         return field
-
-    small_button_style = """color: #fff; width:1.25em; height: 1.25em; padding: 0.15em;
-                            margin-top: -0.1em; display: inline-block; font-size: 0.7em;
-                            border-radius: 0.15em;"""
 
     def share_field(self, obj):
         fb_url = "https://www.facebook.com/dialog/share?&href=https%3A%2F%2Fwww.krimi-plzen.cz%2Fa%2F"

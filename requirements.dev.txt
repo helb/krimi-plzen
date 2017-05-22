@@ -5,3 +5,4 @@ coverage
 sampledata
 django-debug-toolbar
 nplusone
+flake8

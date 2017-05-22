@@ -59,10 +59,12 @@ def newest_articles(request):
         "title": title,
         "page": page,
         "adverts": {
-            "article_list_partner_box_middle": Advert.objects.filter(position__slug="article-list-partner-box-middle")
-                                                             .order_by("?")[:1],
-            "article_list_partner_box_middle2": Advert.objects.filter(position__slug="article-list-partner-box-middle2")
-                                                             .order_by("?")[:1],
+            "article_list_partner_box_middle": Advert.objects
+                                                     .filter(position__slug="article-list-partner-box-middle")
+                                                     .order_by("?")[:1],
+            "article_list_partner_box_middle2": Advert.objects
+                                                      .filter(position__slug="article-list-partner-box-middle2")
+                                                      .order_by("?")[:1],
             "sidebar_top": Advert.objects.filter(position__slug="sidebar-top")
                                          .order_by("?")[:1],
             "sidebar_middle": Advert.objects.filter(position__slug="sidebar-middle")
@@ -111,15 +113,19 @@ def tagged_articles(request, tag_slug):
                                       .filter(tags__slug__contains="special")
         },
         "header": {
-            "tags": Tag.objects.filter(display_in_menu=True).annotate(article_count=Count("article")).order_by("-article_count")
+            "tags": Tag.objects.filter(display_in_menu=True)
+                               .annotate(article_count=Count("article"))
+                               .order_by("-article_count")
         },
         "title": title,
         "tag_slug": tag_slug,
         "adverts": {
-            "article_list_partner_box_middle": Advert.objects.filter(position__slug="article-list-partner-box-middle")
-                                                             .order_by("?")[:1],
-            "article_list_partner_box_middle2": Advert.objects.filter(position__slug="article-list-partner-box-middle2")
-                                                             .order_by("?")[:1],
+            "article_list_partner_box_middle": Advert.objects
+                                                     .filter(position__slug="article-list-partner-box-middle")
+                                                     .order_by("?")[:1],
+            "article_list_partner_box_middle2": Advert.objects
+                                                      .filter(position__slug="article-list-partner-box-middle2")
+                                                      .order_by("?")[:1],
             "sidebar_top": Advert.objects.filter(position__slug="sidebar-top")
                                          .order_by("?")[:1],
             "sidebar_middle": Advert.objects.filter(position__slug="sidebar-middle")
@@ -157,11 +163,14 @@ def article_detail(request, article_slug):
                                            .filter(tags__slug__contains="special")
             },
             "header": {
-                "tags": Tag.objects.filter(display_in_menu=True).annotate(article_count=Count("article")).order_by("-article_count")
+                "tags": Tag.objects.filter(display_in_menu=True)
+                                   .annotate(article_count=Count("article"))
+                                   .order_by("-article_count")
             },
             "adverts": {
-                "article_partner_box_bottom": Advert.objects.filter(position__slug="article-partner-box-bottom")
-                                                            .order_by("?")[:1],
+                "article_partner_box_bottom": Advert.objects
+                                                    .filter(position__slug="article-partner-box-bottom")
+                                                    .order_by("?")[:1],
                 "sidebar_top": Advert.objects.filter(position__slug="sidebar-top")
                                              .order_by("?")[:1],
                 "sidebar_middle": Advert.objects.filter(position__slug="sidebar-middle")
