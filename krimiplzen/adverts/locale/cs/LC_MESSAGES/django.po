@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-15 23:18+0200\n"
+"POT-Creation-Date: 2017-05-22 16:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,71 +21,87 @@ msgstr ""
 msgid "Advertisements"
 msgstr "Reklamy"
 
-#: adverts/models.py:12 adverts/models.py:36 adverts/models.py:59
+#: adverts/models.py:19 adverts/models.py:60 adverts/models.py:77
 msgid "Title"
 msgstr "Název"
 
-#: adverts/models.py:23 adverts/models.py:75
+#: adverts/models.py:26 adverts/models.py:84
+msgid "Link"
+msgstr "Odkaz"
+
+#: adverts/models.py:33
+msgid "Text"
+msgstr ""
+
+#: adverts/models.py:40
+msgid "Display on front page"
+msgstr "Zobrazit na úvodní stránce"
+
+#: adverts/models.py:41
+msgid "Logo"
+msgstr ""
+
+#: adverts/models.py:47 adverts/models.py:97
 msgid "Advertiser"
 msgstr "Inzerent"
 
-#: adverts/models.py:24
+#: adverts/models.py:48
 msgid "Advertisers"
 msgstr "Inzerenti"
 
-#: adverts/models.py:47
+#: adverts/models.py:71
 msgid "Advertisement position"
 msgstr "Reklamní pozice"
 
-#: adverts/models.py:48
+#: adverts/models.py:72
 msgid "Advertisement positions"
 msgstr "Reklamní pozice"
 
-#: adverts/models.py:66
+#: adverts/models.py:87
 msgid "Updated at"
 msgstr "Poslední aktualizace"
 
-#: adverts/models.py:70
+#: adverts/models.py:91
 msgid "Created at"
 msgstr "Vytvořeno"
 
-#: adverts/models.py:73
+#: adverts/models.py:94
 msgid "Active from"
 msgstr "Aktivní od"
 
-#: adverts/models.py:74
+#: adverts/models.py:95
 msgid "Active until"
 msgstr "Aktivní do"
 
-#: adverts/models.py:76
+#: adverts/models.py:98
 msgid "Position"
 msgstr "Pozice"
 
-#: adverts/models.py:79
+#: adverts/models.py:101
 msgid "Tags"
 msgstr "Štítky"
 
-#: adverts/models.py:80
+#: adverts/models.py:102
 msgid "Image – desktop"
 msgstr "Obrázek - PC"
 
-#: adverts/models.py:81
+#: adverts/models.py:103
 msgid "Image – mobile"
 msgstr "Obrázek – mobil"
 
-#: adverts/models.py:82
+#: adverts/models.py:104
 msgid "Content"
 msgstr "Obsah"
 
-#: adverts/models.py:93
+#: adverts/models.py:115
 msgid "Active"
 msgstr "Aktivní"
 
-#: adverts/models.py:96
+#: adverts/models.py:118
 msgid "Advert"
 msgstr "Reklama"
 
-#: adverts/models.py:97
+#: adverts/models.py:119
 msgid "Adverts"
 msgstr "Reklamy"
 

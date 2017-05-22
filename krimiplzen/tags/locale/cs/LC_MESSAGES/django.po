@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-15 23:18+0200\n"
+"POT-Creation-Date: 2017-05-22 16:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,18 +17,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: tags/apps.py:7 tags/models.py:24
+#: tags/apps.py:7 tags/models.py:25
 msgid "Tags"
 msgstr "Štítky"
 
-#: tags/models.py:11
+#: tags/models.py:12
 msgid "Title"
 msgstr "Název"
 
-#: tags/models.py:17
+#: tags/models.py:18
 msgid "Display in top bar"
 msgstr "Zobrazit v horní liště"
 
-#: tags/models.py:23
+#: tags/models.py:24
 msgid "Tag"
 msgstr "Štítek"
