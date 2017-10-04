@@ -4,6 +4,7 @@ celery
 gunicorn
 requests
 sorl-thumbnail
+optisorl
 django-htmlmin
 django-cachalot
 django-redis

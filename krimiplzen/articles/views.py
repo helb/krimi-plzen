@@ -41,6 +41,7 @@ def newest_articles(request):
                                    .order_by("?")[:5],
         "partners": Advertiser.objects.filter(display_on_frontpage=True),
         "sidebar": {
+            "newsletter_form": settings.NEWSLETTER_FORM,
             "dogs": Animal.objects.filter(category="dog")[:5],
             "missing": Article.objects.filter(time_created__gte=datetime.now() -
                                               timedelta(days=settings.MISSING_PERSONS_DAYS))
@@ -100,6 +101,7 @@ def tagged_articles(request, tag_slug):
     context = {
         "articles": articles,
         "sidebar": {
+            "newsletter_form": settings.NEWSLETTER_FORM,
             "missing": Article.objects.filter(time_created__gte=datetime.now() -
                                               timedelta(days=settings.MISSING_PERSONS_DAYS))
                                       .filter(status="p")
@@ -148,6 +150,7 @@ def article_detail(request, article_slug):
                                       .exclude(tags__slug__contains="nehoda")
                                       .order_by("?")[:5],
             "sidebar": {
+                "newsletter_form": settings.NEWSLETTER_FORM,
                 "similar": Article.objects.filter(time_created__gte=datetime.now() -
                                                   timedelta(days=10))
                                           .filter(status="p")

@@ -8,12 +8,18 @@ import sourcemaps from "gulp-sourcemaps";
 import autoprefixer from "gulp-autoprefixer";
 import cssmin from "gulp-cssmin";
 
-const staticDir = gutil.env.static_dir || "/tmp/kp-static/";
+const staticDir = gutil.env.static_dir || "./static/";
 
 const production = !!gutil.env.production;
 
 gulp.task("sass", () => {
-    gulp.src(["assets/styles/base.scss", "assets/styles/summernote.scss"])
+    gulp.src([
+        "assets/styles/base.scss",
+        "assets/styles/sidebar.scss",
+        "assets/styles/article-list.scss",
+        "assets/styles/article.scss",
+        "assets/styles/summernote.scss"
+    ])
         .pipe(sourcemaps.init())
         .pipe(sass().on("error", sass.logError))
         .pipe(autoprefixer({
@@ -46,11 +52,13 @@ gulp.task("build-js", () => {
 
 
 gulp.task("copy-js", () => {
+    const files = [
+        "assets/js/summernote-gallery-plugin.js",
+        "assets/js/summernote-krimilink-plugin.js",
+        "assets/js/siema.min.js"
+    ];
     gulp
-        .src("assets/js/summernote-gallery-plugin.js")
-        .pipe(gulp.dest(staticDir + "js/"));
-    gulp
-        .src("assets/js/summernote-krimilink-plugin.js")
+        .src(files)
         .pipe(gulp.dest(staticDir + "js/"));
 });
 
@@ -65,7 +73,6 @@ gulp.task("build", ["sass", "optimize-images", "build-js", "copy-js", "robots"])
 gulp.task("watch", ["build"], () => {
     gulp.watch("./assets/js/*.js", ["build-js", "copy-js"]);
     gulp.watch("./assets/styles/**/*.scss", ["sass"]);
-    // gulp.watch("./krimiplzen/assets/**/*.{ttf,eot,woff}", ["copy-fonts"]);
     gulp.watch("./assets/img/*.{svg,png,gif,jpg,jpeg}", ["optimize-images"]);
 });
 

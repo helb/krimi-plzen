@@ -18,6 +18,20 @@
                 color: saturate($link-color, 50%);
             }
         }
+
+        h1,
+        h2,
+        h3 {
+            font-size: 1em;
+        }
+    }
+
+    h1,
+    h2,
+    h3 {
+        a {
+            font-size: 1em;
+        }
     }
 
     h2 {
@@ -37,6 +51,22 @@
         font-size: 1em;
         line-height: 1.5em;
         margin-bottom: $spacing;
+    }
+
+    blockquote {
+        margin: $spacing 0;
+        padding: $spacing;
+        border-left: 0.5em solid darken($base-bg, 20%);
+
+        h1,
+        h2,
+        h3 {
+            margin-top: 0;
+        }
+
+        p:empty {
+            display: none;
+        }
     }
 
     ol,

@@ -4,7 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{% static "css/base.css" %}?v=12">
+    <link rel="stylesheet" href="{% static "css/base.css" %}">
+    <link rel="stylesheet" href="{% static "css/article-list.css" %}">
+    <link rel="stylesheet" href="{% static "css/sidebar.css" %}">
+    <link rel="preload" href="{% static "js/base.js" %}" as="script">
+    <link rel="preload" href="{% static "js/article.js" %}" as="script">
+    <link rel="preload" href="{% static "js/siema.min.js" %}" as="script">
+    <link rel="preload" href="{% static "css/article.css" %}" as="style">
+    <link rel="preload" href="https://cdn.polyfill.io/v2/polyfill.min.js" as="script">
     <title>{% block title %}{% endblock %} | Krimi Plzeň</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" sizes="180x180" href="{% static "img/favicons/apple-touch-icon.png" %}">
@@ -42,8 +49,12 @@
             <a title="nahoru" class="back-to-top" href="#krimi"><img src="{% static "img/icon-uparrow.svg" %}"/></a>
         </div>
     </footer>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raven.js/3.16.0/raven.min.js"></script>
-    <script type="text/javascript" src="{% static "js/base.js" %}"></script>
-    {% block foot-js %}{% endblock %}
+    {% block foot-css %}
+    {% endblock %}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raven.js/3.17.0/raven.min.js" async></script>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <script type="text/javascript" src="{% static "js/base.js" %}" async></script>
+    {% block foot-js %}
+    {% endblock %}
 </body>
 </html>

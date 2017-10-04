@@ -36,6 +36,7 @@ body {
         width: 200%;
 
         &.shifted {
+            will-change: transform;
             transform: translateX(-45%);
         }
     }

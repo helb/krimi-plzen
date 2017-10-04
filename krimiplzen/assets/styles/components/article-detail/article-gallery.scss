@@ -77,12 +77,13 @@
         text-align: center;
         white-space: nowrap;
         width: 100%;
+        display: flex;
 
         img {
-            display: inline-block;
+            object-fit: contain;
             margin: $spacing 0;
             max-height: calc(100vh - 5em - #{4 * $spacing});
-            max-width: 100%;
+            max-width: calc(100% - #{2 * $spacing});
             z-index: 9998;
 
             @media all and (max-width: $narrow-screen) {

@@ -30,6 +30,7 @@
                     tooltip: "Galerie fotek",
                     click: function () {
                         var node = document.createElement("div");
+                        node.innerHTML = "<br>";
                         node.classList.add("gallery");
                         context.invoke("editor.insertNode", node);
                     }

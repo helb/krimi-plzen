@@ -57,22 +57,28 @@
             {% endif %}
 
         {% if article.cover_photo %}
-            {% thumbnail article.cover_photo "400x200" crop="center" as thumb_mobile_s %}
-            {% thumbnail article.cover_photo "600x300" crop="center" as thumb_mobile_l %}
-            {% thumbnail article.cover_photo "90x90" crop="center" as thumb_s %}
-            {% thumbnail article.cover_photo "160x160" crop="center" as thumb_m %}
-                <a href="/a/{{ article.slug }}/">
-                    <img class="desktop-only" src="{{ thumb_m.url }}" srcset="{{ thumb_s.url }} 90w, {{ thumb_m.url }} 160w" alt="{{ article.title }}" />
-                    <img class="mobile-only" src="{{ thumb_mobile_l.url }}" srcset="{{ thumb_mobile_s.url }} 400w, {{ thumb_mobile_l.url }} 600w" alt="article.title" />
-                </a>
-            {% endthumbnail %}
-            {% endthumbnail %}
-            {% endthumbnail %}
-            {% endthumbnail %}
+        <a href="/a/{{ article.slug }}/">
+            <picture>
+                {% thumbnail article.cover_photo "300x150" format="WEBP" crop="center" as im %}
+                    <source srcset="{{ im.url }} 300w" media="(max-width: 960px)" type="image/webp">
+                {% endthumbnail %}
+
+                {% thumbnail article.cover_photo "300x150" crop="center" as im %}
+                    <source srcset="{{ im.url }} 300w" media="(max-width: 960px)" type="image/jpeg">
+                {% endthumbnail %}
+
+                {% thumbnail article.cover_photo "180x180" format="WEBP" crop="center" as im %}
+                    <source srcset="{{ im.url }} 160w" media="(min-width: 960px)" type="image/webp">
+                {% endthumbnail %}
+
+                {% thumbnail article.cover_photo "180x180" crop="center" as im %}
+                    <source srcset="{{ im.url }} 180w" media="(min-width: 960px)" type="image/jpeg">
+                    <img src="{{ im.url }}" alt="{{ article.title }}">
+                {% endthumbnail %}
+            </picture>
+        </a>
         {% else %}
-            <a href="/a/{{ article.slug }}/">
-                <img src="http://placehold.it/90" srcset="http://placehold.it/90 90w, http://placehold.it/160 160w" alt="{{ article.title }}"/>
-            </a>
+            <a href="/a/{{ article.slug }}/">{{ article.title }}</a>
         {% endif %}
         </div>
         <div class="article-list-card-text">
@@ -134,11 +140,16 @@
                             {{ article.time_created|date:"j. E Y" }}
                         </p>
                         <div class="horiz-cards-card-image">
-                            {% thumbnail article.cover_photo "60x60" crop="center" as thumb_s %}
-                            {% thumbnail article.cover_photo "90x90" crop="center" as thumb_l %}
-                                <img src="{{ thumb_s.url }}" srcset="{{ thumb_s.url }} 60w, {{ thumb_l.url }} 90w" alt="{{ article.title }}" />
-                            {% endthumbnail %}
-                            {% endthumbnail %}
+                            <picture>
+                                {% thumbnail article.cover_photo "90x90" format="WEBP" crop="center" as im %}
+                                    <source srcset="{{ im.url }} 90w" type="image/webp">
+                                {% endthumbnail %}
+
+                                {% thumbnail article.cover_photo "90x90" crop="center" as im %}
+                                    <source srcset="{{ im.url }} 90w" type="image/jpeg">
+                                    <img src="{{ im.url }}" alt="{{ article.title }}">
+                                {% endthumbnail %}
+                            </picture>
                         </div>
                         <div class="horiz-cards-card-text">
                             {{ article.title }}

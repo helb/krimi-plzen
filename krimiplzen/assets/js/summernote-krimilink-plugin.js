@@ -30,36 +30,13 @@
                     tooltip: "Odkaz na článek",
                     click: function () {
                         var articleURL = window.prompt("Adresa článku");
-                        // if (articleURL.match(/^https:\/\/www\.krimi-plzen\.cz/)) {
-                        if (articleURL.match(/^http:\/\/localhost:8000/)) {
-                            $.get(articleURL, function (data) {
-                                var ogTitle = data.match(/<meta property="og:title" content="([^"]*)" \/>/m)[1];
-                                var ogDescription = data.match(/<meta property="og:description" content="([^"]*)" \/>/m)[1];
-                                var ogThumbnail = data.match(/<meta property="og:thumbnail" content="([^"]*)" \/>/m)[1];
-                                var ogUrl = data.match(/<meta property="og:url" content="([^"]*)" \/>/m)[1];
-                                var node = document.createElement("aside");
-                                var paragraph = document.createElement("p");
-                                node.contentEditable = false;
-                                node.dataset.href = ogUrl;
-                                node.classList.add("article-link");
-                                var linkImage = document.createElement("img");
-                                linkImage.classList.add("article-link-image");
-                                linkImage.src = ogThumbnail;
-                                var linkText = document.createElement("div");
-                                linkText.classList.add("article-link-text");
-                                var linkHeading = document.createElement("h3");
-                                linkHeading.classList.add("article-link-text-title");
-                                linkHeading.innerText = ogTitle;
-                                linkText.appendChild(linkHeading);
-                                var linkDescription = document.createElement("p");
-                                linkDescription.classList.add("article-link-text-description");
-                                linkDescription.innerText = ogDescription;
-                                linkText.appendChild(linkDescription);
-                                node.appendChild(linkImage);
-                                node.appendChild(linkText);
-                                context.invoke("editor.insertNode", node);
-                                context.invoke("editor.insertNode", paragraph);
-                            });
+                        var urlFormat = new RegExp("^" + document.location.origin + "/a/[a-z0-9-]+/$");
+                        if (articleURL.match(urlFormat)) {
+                            var node = document.createElement("hr");
+                            node.dataset.href = articleURL.replace(new RegExp("^" + document.location.origin + "/a/"), "").replace(/\/$/, "");
+                            node.contentEditable = false;
+                            node.classList.add("editor-article-link");
+                            context.invoke("editor.insertNode", node);
                         } else {
                             alert("Špatný formát adresy.");
                         }

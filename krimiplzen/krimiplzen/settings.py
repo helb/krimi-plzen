@@ -5,12 +5,14 @@ from datetime import datetime
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = "!m0k^lhkzhg-re+#u3(_HAHAenNOPE_zhwf+pJEZEVEC(JEZEVEC4TRI8KUNYxm76z86h&xqc6%j-!%"
+SECRET_KEY = "DEBUG"
 SITE_ID = 2
 DEBUG = True
+THUMBNAIL_DEBUG = DEBUG
 
 if not DEBUG:
     ALLOWED_HOSTS = ["www.krimi-plzen.cz"]
+    ALLOWED_HOSTS = ["*"]
 else:
     ALLOWED_HOSTS = ["*"]
 
@@ -26,7 +28,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.humanize",
-    "django_gulp",
     "django.contrib.staticfiles",
     "cachalot",
     "tags",
@@ -56,13 +57,13 @@ MIDDLEWARE_CLASSES = [
     "htmlmin.middleware.MarkRequestMiddleware"
 ]
 
-CACHE_MIDDLEWARE_SECONDS = 30
+CACHE_MIDDLEWARE_SECONDS = 60
+
+CSRF_COOKIE_NAME = "krimi_csrf2"
 
 if not DEBUG:
     CSRF_COOKIE_SECURE = True
-    CSRF_COOKIE_NAME = "krimi_csrf2"
     CSRF_COOKIE_DOMAIN = "www.krimi-plzen.cz"
-    CSRF_COOKIE_DOMAIN = "localhost:8000"
     CSRF_TRUSTED_ORIGINS = ["www.krimi-plzen.cz"]
 
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
@@ -87,25 +88,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "krimiplzen.wsgi.application"
 
-
-# Database
-# https://docs.djangoproject.com/en/1.9/ref/settings/#databases
-
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-        # "ENGINE": "django.db.backends.postgresql",
-        # "NAME": "krimi2",
-        # "USER": "krimi",
-        # "PASSWORD": "0KrimiPlzen0",
-        # "CONN_MAX_AGE": None
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "krimi2",
+        "USER": "krimi",
+        "PASSWORD": "0KrimiPlzen0",
+        "CONN_MAX_AGE": None
     }
 }
-
-
-# Password validation
-# https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -144,7 +135,7 @@ HTML_MINIFY = not DEBUG
 
 
 if not DEBUG:
-    STATIC_BASE = "//static2.krimi-plzen.cz/"
+    STATIC_BASE = "https://static2.krimi-plzen.cz/"
 else:
     STATIC_BASE = "http://localhost:8002/"
 
@@ -152,9 +143,11 @@ STATIC_URL = STATIC_BASE + "static/"
 MEDIA_URL = STATIC_BASE + "media/"
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "assets"),
+    os.path.join(BASE_DIR, "static"),
 )
-STATIC_BASE_DIR = "/home/helb/tmp/krimi_static/"
+
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
+STATIC_BASE_DIR = "/tmp/kp-static/"
 STATIC_ROOT = os.path.join(STATIC_BASE_DIR, "static")
 MEDIA_ROOT = os.path.join(STATIC_BASE_DIR, "media")
 
@@ -185,23 +178,16 @@ CELERY_RESULT_SERIALIZER = "json"
 CELERY_TIMEZONE = TIME_ZONE
 
 
-if not DEBUG:
-    RAVEN_CONFIG = {
-        "dsn": "http://fa59989c0f1d4dc384288f171a272199:cabc6ca77d9646d8bcabd5c7799995be@sentry.helb.cz/2",
-        # If you are using git, you can also automatically configure the
-        # release based on the git info.
-        "release": raven.fetch_git_sha(os.path.dirname(__file__) + "/../../")
-    }
-
 CF_EMAIL = "helb@helb.cz"
-CF_KEY = "ca800a364971005da10eac7ef622e8078b78b"
+CF_KEY = "…"
 CF_DOMAIN = "krimi-plzen.cz"
-BASE_URL = "//www.krimi-plzen.cz/"
+BASE_URL = "https://www.krimi-plzen.cz/"
 TEMPDIR = "/tmp/"
 
 
-THUMBNAIL_KVSTORE = "sorl.thumbnail.kvstores.redis_kvstore.KVStore"
+THUMBNAIL_KVSTORE = "sorl.thumbnail.kvstores.cached_db_kvstore.KVStore"
 THUMBNAIL_BACKEND = "optisorl.backend.OptimizingThumbnailBackend"
+THUMBNAIL_ALTERNATIVE_RESOLUTIONS = [1.5, 2]
 
 SHELTER_URLS = {
     "dog": "http://utulekplzen.cz/category/aktualne-prijati-psi/feed/",
@@ -219,6 +205,8 @@ def summernote_upload_to(instance, filename):
 def static_url(path):
     return STATIC_URL + path
 
+
+NEWSLETTER_FORM = "https://landing.mailerlite.com/webforms/landing/u7h3r9"
 
 SUMMERNOTE_CONFIG = {
     # Using SummernoteWidget - iframe mode
@@ -271,12 +259,12 @@ SUMMERNOTE_CONFIG = {
 
     # Set common css/js media files
     # "external_css": (
-    #     "//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css",
+    #     "https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css",
     # ),
     # "external_js": (
-    # "//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/lang/summernote-cs-CZ.min.js",
-    # "//code.jquery.com/jquery-1.9.1.min.js",
-    # "//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js",
+    # "https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/lang/summernote-cs-CZ.min.js",
+    # "https://code.jquery.com/jquery-1.9.1.min.js",
+    # "https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js",
     # ),
     # "internal_css": (
     #     static_url("django_summernote/summernote.css"),
@@ -308,7 +296,7 @@ SUMMERNOTE_CONFIG = {
 
     # You can disable file upload feature.
     "disable_upload": False,
-    "attachment_filesize_limit": 3 * 1024 * 1024
+    "attachment_filesize_limit": 6 * 1024 * 1024
 
     # Codemirror as codeview
     # "codemirror": {

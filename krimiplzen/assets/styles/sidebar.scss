@@ -1,0 +1,10 @@
+// SCSS variables:
+@import "settings/colors";
+@import "settings/sizes";
+@import "settings/breakpoints";
+
+// sidebar components:
+@import "components/sidebar/sidebar";
+@import "components/sidebar/animals";
+@import "components/sidebar/partner-box";
+@import "components/sidebar/article-card";

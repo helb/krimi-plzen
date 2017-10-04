@@ -1,0 +1,12 @@
+// SCSS variables:
+@import "settings/colors";
+@import "settings/sizes";
+@import "settings/breakpoints";
+
+// article list view:
+@import "components/article-list/partner-slider";
+@import "components/article-list/article-list";
+@import "components/article-list/article-card";
+@import "components/article-list/pagination";
+@import "components/article-list/horiz-cards";
+@import "components/article-list/partner-box";

@@ -8,5 +8,7 @@ tmp
 *.py[cod]
 *.log
 *.pot
-*.sqlite3
+*.sqlite3*
 .venv
+krimiplzen/static
+krimiplzen/media

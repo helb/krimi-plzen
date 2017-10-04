@@ -230,7 +230,9 @@ class Article(ModelDiffMixin, models.Model):
 def before_article_save(sender, instance, **kwargs):
     if not instance.slug:
         slug = slugify(instance.title)
-        if not Article.objects.filter(slug=slug).exists():
+        try:
+            Article.objects.get(slug=slug)
+        except Article.DoesNotExist:
             instance.slug = slug
         else:
             instance.slug = slug + datetime.now().strftime(slug_date_format)
@@ -239,4 +241,5 @@ def before_article_save(sender, instance, **kwargs):
 
 @receiver(models.signals.post_save, sender=Article)
 def after_article_save(sender, instance, created, **kwargs):
-    task_invalidate_cf.delay(instance.dependent_paths())
+    if not settings.DEBUG:
+        task_invalidate_cf.delay(instance.dependent_paths())

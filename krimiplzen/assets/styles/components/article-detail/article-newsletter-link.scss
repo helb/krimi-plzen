@@ -1,0 +1,11 @@
+.article-newsletter-link {
+    padding: $spacing $content-padding;
+    display: flex;
+    align-items: flex-start;
+
+    .newsletter-link {
+        padding: $spacing/2 $spacing;
+        color: $base-fg;
+        border-color: $base-fg;
+    }
+}

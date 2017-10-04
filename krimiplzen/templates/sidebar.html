@@ -7,9 +7,9 @@
 </div>
 {% endfor %}
 {% endif %}
+
 {% if sidebar.similar.all %}
     <div class="sidebar-articles">
-        <h2 class="withimages">Další články</h2>
         {% for article in sidebar.similar %}
             {% thumbnail article.cover_photo "400x200" crop="center" as cover_s %}
             {% thumbnail article.cover_photo "600x300" crop="center" as cover_l %}
@@ -31,11 +31,16 @@
         {% for animal in sidebar.dogs %}
             <a target="_blank" href="{{ animal.link }}" class="sidebar-animals-card">
                 <div class="sidebar-animals-card-image">
-                    {% thumbnail animal.photo "60x60" crop="center" as thumb_s %}
-                    {% thumbnail animal.photo "90x90" crop="center" as thumb_l %}
-                        <img src="{{ thumb_s.url }}" srcset="{{ thumb_s.url }} 60w, {{ thumb_l.url }} 90w" alt="{{ animal.text }}" />
-                    {% endthumbnail %}
-                    {% endthumbnail %}
+                    <picture>
+                        {% thumbnail article.cover_photo "90x90" format="WEBP" crop="center" as im %}
+                            <source srcset="{{ im.url }} 90w" type="image/webp">
+                        {% endthumbnail %}
+
+                        {% thumbnail article.cover_photo "90x90" crop="center" as im %}
+                            <source srcset="{{ im.url }} 90w" type="image/jpeg">
+                            <img src="{{ im.url }}" alt="{{ article.title }}">
+                        {% endthumbnail %}
+                    </picture>
                 </div>
                 <div class="sidebar-animals-card-text">
                     {{ animal.text }}
@@ -60,11 +65,16 @@
         {% for article in sidebar.missing %}
             <a href="/a/{{ article.slug }}" class="sidebar-articles-card">
                 <div class="sidebar-articles-card-image">
-                    {% thumbnail article.cover_photo "60x60" crop="center" as thumb_s %}
-                    {% thumbnail article.cover_photo "90x90" crop="center" as thumb_l %}
-                        <img src="{{ thumb_s.url }}" srcset="{{ thumb_s.url }} 60w, {{ thumb_l.url }} 90w" alt="{{ article.title }}" />
-                    {% endthumbnail %}
-                    {% endthumbnail %}
+                    <picture>
+                        {% thumbnail article.cover_photo "90x90" format="WEBP" crop="center" as im %}
+                            <source srcset="{{ im.url }} 90w" type="image/webp">
+                        {% endthumbnail %}
+
+                        {% thumbnail article.cover_photo "90x90" crop="center" as im %}
+                            <source srcset="{{ im.url }} 90w" type="image/jpeg">
+                            <img src="{{ im.url }}" alt="{{ article.title }}">
+                        {% endthumbnail %}
+                    </picture>
                 </div>
                 <div class="sidebar-articles-card-text">
                     {{ article.title }}
@@ -80,11 +90,16 @@
         {% for article in sidebar.specials %}
             <a href="/a/{{ article.slug }}" class="sidebar-articles-card">
                 <div class="sidebar-articles-card-image">
-                    {% thumbnail article.cover_photo "60x60" crop="center" as thumb_s %}
-                    {% thumbnail article.cover_photo "90x90" crop="center" as thumb_l %}
-                        <img src="{{ thumb_s.url }}" srcset="{{ thumb_s.url }} 60w, {{ thumb_l.url }} 90w" alt="{{ article.title }}" />
-                    {% endthumbnail %}
-                    {% endthumbnail %}
+                    <picture>
+                        {% thumbnail article.cover_photo "90x90" format="WEBP" crop="center" as im %}
+                            <source srcset="{{ im.url }} 90w" type="image/webp">
+                        {% endthumbnail %}
+
+                        {% thumbnail article.cover_photo "90x90" crop="center" as im %}
+                            <source srcset="{{ im.url }} 90w" type="image/jpeg">
+                            <img src="{{ im.url }}" alt="{{ article.title }}">
+                        {% endthumbnail %}
+                    </picture>
                 </div>
                 <div class="sidebar-articles-card-text">
                     {{ article.title }}
@@ -93,29 +108,6 @@
         {% endfor %}
     </div>
 {% endif %}
-
-{% if sidebar.police.all %}
-    <div class="sidebar-articles">
-        <h2>Představujeme Policii</h2>
-        {% for article in sidebar.police %}
-            <a href="/a/{{ article.slug }}" class="sidebar-articles-card">
-                <div class="sidebar-articles-card-image">
-                    {% thumbnail article.cover_photo "60x60" crop="center" as thumb_s %}
-                    {% thumbnail article.cover_photo "90x90" crop="center" as thumb_l %}
-                        <img src="{{ thumb_s.url }}" srcset="{{ thumb_s.url }} 60w, {{ thumb_l.url }} 90w" alt="{{ article.title }}" />
-                    {% endthumbnail %}
-                    {% endthumbnail %}
-                </div>
-                <div class="sidebar-articles-card-text">
-                    {{ article.title }}
-                </div>
-            </a>
-        {% endfor %}
-    </div>
-{% endif %}
-
-
-
 
 
 {% if adverts.sidebar_bottom.all %}
@@ -124,4 +116,30 @@
     <a href="{{advert.link}}" target="_blank" style="background-image: url('//static2.krimi-plzen.cz/media/{{advert.image_desktop}}');" alt=""></a>
 </div>
 {% endfor %}
+{% endif %}
+
+
+{% if sidebar.police.all %}
+    <div class="sidebar-articles">
+        <h2>Představujeme Policii</h2>
+        {% for article in sidebar.police %}
+            <a href="/a/{{ article.slug }}" class="sidebar-articles-card">
+                <div class="sidebar-articles-card-image">
+                    <picture>
+                        {% thumbnail article.cover_photo "90x90" format="WEBP" crop="center" as im %}
+                            <source srcset="{{ im.url }} 90w" type="image/webp">
+                        {% endthumbnail %}
+
+                        {% thumbnail article.cover_photo "90x90" crop="center" as im %}
+                            <source srcset="{{ im.url }} 90w" type="image/jpeg">
+                            <img src="{{ im.url }}" alt="{{ article.title }}">
+                        {% endthumbnail %}
+                    </picture>
+                </div>
+                <div class="sidebar-articles-card-text">
+                    {{ article.title }}
+                </div>
+            </a>
+        {% endfor %}
+    </div>
 {% endif %}

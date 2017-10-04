@@ -10,7 +10,7 @@
     flex-direction: row;
     min-height: 2 * $spacing + 2.5rem;
     min-width: $min-width;
-    padding: 0 $content-padding;
+    padding: 0 0 0 $content-padding;
 
     @media all and (max-width: $narrow-screen) {
         background-image: none;
@@ -141,5 +141,21 @@
         padding-top: 0.45rem;
         position: absolute;
         right: 2 * $spacing + 1.5rem;
+    }
+
+    .header-newsletter-link {
+        padding: $spacing;
+        display: flex;
+        justify-content: center;
+
+        @media all and (max-width: $narrow-screen) {
+            display: none;
+        }
+
+        .newsletter-link {
+            background-color: transparentize($base-fg, 0.25);
+            color: $base-bg;
+            border-color: $base-bg;
+        }
     }
 }

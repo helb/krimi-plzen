@@ -1,14 +1,20 @@
 {% extends "base.html" %}
+
 {% load humanize %}
 {% load static %}
-{% block title %}{{ article.title }}{% endblock %}
 {% load thumbnail %}
 {% load app_filters %}
 
+{% block title %}{{ article.title }}{% endblock %}
+
 {% block foot-js %}
-    <script type="text/javascript" src="{% static "js/article.js" %}?v=2"></script>
+    <script type="text/javascript" src="{% static "js/siema.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/article.js" %}"></script>
 {% endblock %}
 
+{% block foot-css %}
+    <link rel="stylesheet" href="{% static "css/article.css" %}">
+{% endblock %}
 
 {% block head-meta %}
 {% thumbnail article.cover_photo "960" crop="center" as cover_l %}
@@ -17,9 +23,9 @@
     <meta property="og:description" content="{{ article.intro }}" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Krimi Plzeň" />
-    <meta property="og:url" content="https://www.krimi-plzen.cz/a/{{article.slug}}/" />
-    <meta property="og:image" content="https:{{cover_l.url}}" />
-    <meta property="og:thumbnail" content="https:{{cover_thumb.url}}" />
+    <meta property="og:url" content="www.krimi-plzen.cz/a/{{article.slug}}/" />
+    <meta property="og:image" content="{{cover_l.url}}" />
+    <meta property="og:thumbnail" content="{{cover_thumb.url}}" />
 {% endthumbnail %}
 {% endthumbnail %}
 {% endblock %}
@@ -94,19 +100,27 @@
         {{ article.content | insert_photo_thumbs | insert_article_links | safe }}
     </div>
 
+    <div class="article-newsletter-link">
+        <a class="newsletter-link" href="{{sidebar.newsletter_form}}" target="_blank">
+            <span class="newsletter-link-icon">📧</span>
+            <span class="newsletter-link-text">Nové články denně e-mailem</span>
+        </a>
+    </div>
+
+    {% if article.advertiser %}
+        <a class="article-partner-box" href="{{article.advertiser.link}}">
+          <div class="article-partner-box-logo">
+            <img src="//static2.krimi-plzen.cz/media/{{article.advertiser.logo}}" alt="{{article.advertiser.title}}" />
+          </div>
+          <div class="article-partner-box-text">
+            <h3>{{article.advertiser.title}}</h3>
+            <p>{{article.advertiser.text}}</p>
+          </div>
+        </a>
+    {% endif %}
+
     {% if article.tags.all %}
         <div class="article-tags">
-          {% if article.advertiser %}
-          <a class="article-partner-box" href="{{article.advertiser.link}}">
-            <div class="article-partner-box-logo">
-              <img src="//static2.krimi-plzen.cz/media/{{article.advertiser.logo}}" alt="{{article.advertiser.title}}" />
-            </div>
-            <div class="article-partner-box-text">
-              <h3>{{article.advertiser.title}}</h3>
-              <p>{{article.advertiser.text}}</p>
-            </div>
-          </a>
-          {% endif %}
             <p class="tags">
                 {% for tag in article.tags.all %}
                 <a href="/a/tag/{{tag.slug}}/" class="tag">{{tag}}</a>
@@ -117,7 +131,6 @@
 
     {% if similar.all %}
     <div class="horiz-cards">
-        <h2>Další články</h2>
         <div class="horiz-cards-inner">
         {% for article in similar %}
             <a href="/a/{{ article.slug }}" class="horiz-cards-card">
@@ -125,11 +138,16 @@
                     {{ article.time_created|date:"j. E Y" }}
                 </p>
                 <div class="horiz-cards-card-image">
-                    {% thumbnail article.cover_photo "90x90" crop="center" as thumb_s %}
-                    {% thumbnail article.cover_photo "160x160" crop="center" as thumb_l %}
-                        <img src="{{ thumb_s.url }}" srcset="{{ thumb_s.url }} 90w, {{ thumb_l.url }} 160w" alt="{{ article.title }}" />
-                    {% endthumbnail %}
-                    {% endthumbnail %}
+                    <picture>
+                        {% thumbnail article.cover_photo "160x160" format="WEBP" crop="center" as im %}
+                            <source srcset="{{ im.url }} 160w" type="image/webp">
+                        {% endthumbnail %}
+
+                        {% thumbnail article.cover_photo "160x160" crop="center" as im %}
+                            <source srcset="{{ im.url }} 160w" type="image/jpeg">
+                            <img src="{{ im.url }}" alt="{{ article.title }}">
+                        {% endthumbnail %}
+                    </picture>
                 </div>
                 <div class="horiz-cards-card-text">
                     {{ article.title }}

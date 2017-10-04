@@ -2,7 +2,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from articles import views as articles_views
 from articles.models import Article
-from articles.feeds import LatestArticlesFeed, TaggedArticlesFeed
+from articles.feeds import LatestArticlesFeed, TaggedArticlesFeed, TodayArticlesFeed
 from django.contrib.sitemaps.views import sitemap
 from django.contrib.sitemaps import GenericSitemap
 
@@ -24,6 +24,7 @@ urlpatterns = [
         {"sitemaps": {"articles": GenericSitemap(sitemap_dict)}},
         name="django.contrib.sitemaps.views.sitemap"),
     url(r"^rss/$", LatestArticlesFeed()),
+    url(r"^rss/today/$", TodayArticlesFeed()), 
     url(r"^rss/(?P<tag_slug>[a-z0-9-]+)/$", TaggedArticlesFeed()),
 
 ]

@@ -1,6 +1,7 @@
 from django.contrib.syndication.views import Feed
 from .models import Article
 from tags.models import Tag
+import datetime
 
 
 class LatestArticlesFeed(Feed):
@@ -55,3 +56,21 @@ class TaggedArticlesFeed(Feed):
         def item_description(self, item):
             return f"""<img alt='{item.title}' src='https:{item.get_cover_thumbnail_url()}'/>
                        <span>{item.intro}</span>"""
+
+
+class TodayArticlesFeed(Feed):
+    title = "Krimi Plzeň – dnešní články"
+    link = "/"
+    description = title
+
+    def items(self):
+        return Article.objects.filter(status="p", time_created__gte=(datetime.datetime.now() - datetime.timedelta(days=1)))
+
+    def item_title(self, item):
+        return item.title
+
+    def item_pubdate(self, item):
+        return item.time_created
+
+    def item_updateddate(self, item):
+        return item.time_updated

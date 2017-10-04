@@ -1,0 +1,26 @@
+.newsletter-link {
+    padding: 0 $spacing;
+    border: 0.1em solid $link-color;
+    color: $link-color;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    // overflow: hidden;
+    max-width: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-icon {
+        font-size: 1.75em;
+        font-weight: normal;
+        margin-right: 0.25em;
+    }
+
+    &:hover,
+    &:focus {
+        color: saturate($link-color, 50%);
+        border-color: saturate($link-color, 50%);
+    }
+}

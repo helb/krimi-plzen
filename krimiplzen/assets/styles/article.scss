@@ -1,0 +1,13 @@
+// SCSS variables:
+@import "settings/colors";
+@import "settings/sizes";
+@import "settings/breakpoints";
+
+// article detail view:
+@import "components/article-detail/article-tags";
+@import "components/article-detail/article-header";
+@import "components/article-detail/article-content";
+@import "components/article-detail/article-link";
+@import "components/article-detail/article-gallery";
+@import "components/article-detail/article-newsletter-link";
+@import "components/article-detail/partner-box";
