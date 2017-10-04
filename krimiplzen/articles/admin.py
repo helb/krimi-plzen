@@ -4,6 +4,7 @@ from daterange_filter.filter import DateRangeFilter
 from django.utils.translation import ugettext_lazy as _
 from django_summernote.admin import SummernoteModelAdmin
 from django.utils.html import format_html
+from datetime import datetime
 
 small_button_style = """color: #fff; width:1.25em; height: 1.25em; padding: 0.15em;
                         margin-top: -0.1em; display: inline-block; font-size: 0.7em;
@@ -25,7 +26,7 @@ class ArticleAdmin(SummernoteModelAdmin):
     save_on_top = True
     search_fields = ["title", "intro"]
     ordering = ("-time_created"),
-    actions = ["make_published", "make_inaccessible"]
+    actions = ["make_published", "make_inaccessible", "move_to_top"]
     fieldsets = (
         (_("Basic info"), {
             "fields": ["title", "intro", "content", "cover_photo"]
@@ -74,6 +75,10 @@ class ArticleAdmin(SummernoteModelAdmin):
     def make_inaccessible(modeladmin, request, queryset):
         queryset.update(status="x")
     make_inaccessible.short_description = _("Unpublish selected articles")
+
+    def move_to_top(modeladmin, request, queryset):
+        queryset.update(time_created=datetime.now())
+    move_to_top.short_description = _("Move selected articles to top")
 
     def save_model(self, request, obj, form, change):
         obj.author = request.user

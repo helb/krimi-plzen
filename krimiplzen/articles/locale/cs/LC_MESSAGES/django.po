@@ -1,42 +1,46 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-22 16:21+0200\n"
+"POT-Creation-Date: 2017-10-05 00:03+0200\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: articles/admin.py:30
+#: articles/admin.py:31
 msgid "Basic info"
 msgstr "Základní informace"
 
-#: articles/admin.py:33
+#: articles/admin.py:34
 msgid "Tags and stickers"
 msgstr "Štítky a samolepky"
 
-#: articles/admin.py:36
+#: articles/admin.py:37
 msgid "Publication"
 msgstr "Publikace"
 
-#: articles/admin.py:40
+#: articles/admin.py:41
 msgid "Advanced"
 msgstr "Pokročilé"
 
-#: articles/admin.py:67
+#: articles/admin.py:68
 msgid "Share"
 msgstr "Sdílet"
 
-#: articles/admin.py:68
+#: articles/admin.py:69
 msgid "Web"
 msgstr "Web"
 
-#: articles/admin.py:72
+#: articles/admin.py:73
 msgid "Publish selected articles"
 msgstr "Publikovat vybrané články"
 
-#: articles/admin.py:76
+#: articles/admin.py:77
 msgid "Unpublish selected articles"
 msgstr "Skrýt vybrané články"
+
+#: articles/admin.py:81
+msgid "Move selected articles to top"
+msgstr "Posunout vybrané články nahoru"
 
 #: articles/apps.py:7 articles/models.py:201
 msgid "Articles"
