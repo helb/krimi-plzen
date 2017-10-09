@@ -1,7 +1,7 @@
 .article-content {
     padding: $spacing $content-padding;
 
-    a {
+    p a {
         &:not(.article-link) {
             &,
             &:link,

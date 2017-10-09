@@ -3,15 +3,16 @@
         display: flex;
         flex-wrap: wrap;
 
-        a {
-            border: 0.1em solid darken($base-bg, 20%);
-            box-shadow: 0 0.1em 0.25em darken($base-bg, 20%);
+        .thumb {
+            background: transparent;
+            border: 0.1em solid rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0.1em 0.25em rgba(0, 0, 0, 0.3);
             display: block;
             margin: 0 1em 1em 0;
             max-width: 10em;
             padding: 0;
             transition: transform 0.33s;
-            width: 17%;
+            cursor: zoom-in;
 
             &:hover {
                 transform: scale(1.05);
@@ -40,7 +41,7 @@
 .gallery-view {
     background: $dark-shadow;
     bottom: 0;
-    display: flex;
+    display: none;
     flex-direction: column;
     left: 0;
     position: fixed;
@@ -48,6 +49,10 @@
     top: 0;
     user-select: none;
     z-index: 9999;
+
+    &.visible {
+        display: flex;
+    }
 
     &-close {
         background: $dark-shadow;
@@ -71,108 +76,102 @@
         }
     }
 
-    &-image {
-        height: calc(100vh - 5em);
-        justify-content: center;
-        text-align: center;
-        white-space: nowrap;
-        width: 100%;
-        display: flex;
+    &-images {
+        flex-grow: 1;
 
-        img {
+        &-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: $spacing;
+        }
+
+        img,
+        picture {
+            margin: 0;
             object-fit: contain;
-            margin: $spacing 0;
-            max-height: calc(100vh - 5em - #{4 * $spacing});
-            max-width: calc(100% - #{2 * $spacing});
-            z-index: 9998;
-
+            object-position: center;
+            height: calc(100vh - 5em - #{3 * $spacing});
             @media all and (max-width: $narrow-screen) {
-                max-height: calc(100vh - 3em - #{4 * $spacing});
-            }
-        }
-
-        &-prev,
-        &-next {
-            cursor: pointer;
-            display: block;
-            height: calc(100vh - 5em - #{4 * $spacing});
-            line-height: calc(100vh - 5em - #{4 * $spacing});
-            position: absolute;
-            top: $spacing;
-            width: 40vw;
-            z-index: 9999;
-
-            img {
-                display: inline-block;
-                height: 2.5rem;
-                margin: $spacing;
-                width: 2.5rem;
-            }
-
-            @media all and (max-width: $narrow-screen) {
-                height: calc(100vh - 3em - #{4 * $spacing});
-            }
-        }
-
-        &-prev {
-            cursor: w-resize;
-            left: 0;
-            text-align: left;
-
-            img {
-                transform: rotate(-90deg);
-            }
-        }
-
-        &-next {
-            cursor: e-resize;
-            right: 0;
-            text-align: right;
-
-            img {
-                transform: rotate(90deg);
+                height: calc(100vh - 3em - #{3 * $spacing});
             }
         }
     }
 
-    &-controls {
-        height: 5em + #{2 * $spacing};
-        overflow-x: auto;
-        overflow-y: hidden;
-        padding: $spacing;
-        text-align: center;
-        white-space: nowrap;
+    &-prev,
+    &-next {
+        cursor: pointer;
+        display: block;
+        height: calc(100vh - 5em - #{3 * $spacing});
+        line-height: calc(100vh - 5em - #{3 * $spacing});
+        position: absolute;
+        top: $spacing;
+        width: 20vw;
+        z-index: 9998;
 
         @media all and (max-width: $narrow-screen) {
-            height: 3em + #{2 * $spacing};
+            display: none;
         }
+    }
 
-        img {
-            border: 0.2em solid $base-fg;
-            cursor: pointer;
-            display: inline-block;
+    &-prev {
+        cursor: w-resize;
+        left: 0;
+    }
+
+    &-next {
+        cursor: e-resize;
+        right: 0;
+    }
+
+    &-controls {
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 0 $spacing $spacing;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a {
+            background: transparent;
             height: 5em;
+            width: 5em;
+            transition: transform 0.33s, opacity 0.33s;
+            box-shadow: 0;
+            text-shadow: 0;
             margin-right: $spacing;
             opacity: 0.75;
-            transition: transform 0.33s, opacity 0.33s;
-            width: 5em;
-
-            @media all and (max-width: $narrow-screen) {
-                height: 3em;
-                width: 3em;
-            }
 
             &:hover,
             &:focus {
                 opacity: 1;
                 transform: scale(1.05);
             }
-        }
 
-        .current {
-            border-color: $base-bg;
-            opacity: 1;
-            transform: scale(1.05);
+            @media all and (max-width: $narrow-screen) {
+                height: 3em;
+                width: 3em;
+            }
+
+            img {
+                border: 0.2em solid $base-fg;
+                height: 5em;
+                width: 5em;
+                margin: 0;
+
+                @media all and (max-width: $narrow-screen) {
+                    height: 3em;
+                    width: 3em;
+                }
+            }
+
+            &.current {
+                opacity: 1;
+
+                img {
+                    border-color: $base-bg;
+                }
+            }
         }
     }
 }

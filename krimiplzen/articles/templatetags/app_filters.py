@@ -14,15 +14,20 @@ def insert_photo_thumbs(content):
         r"<img ?(?:style=\"[^\"]*\")? src=[\"']((?:https?:)?//[a-z0-9\-_/:\.]+(?:jpe?g|png|gif))[\"'] ?(?:style=\"[^\"]*\")? ?/?>",
         content, re.IGNORECASE)
     for url in urls:
-        thumb_s = get_thumbnail(url, "100x100", crop="center", quality=95)
         thumb_l = get_thumbnail(url, "200x200", crop="center", quality=95)
+        thumb_WEBP_l = get_thumbnail(url, "200x200", crop="center", quality=95, format="WEBP")
         img_s = get_thumbnail(url, "640", quality=95)
         img_l = get_thumbnail(url, "1440", quality=95)
+        img_WEBP_s = get_thumbnail(url, "640", quality=95, format="WEBP")
+        img_WEBP_l = get_thumbnail(url, "1440", quality=95, format="WEBP")
         content = re.sub("<img ?(?:style=\"[^\"]*\")? src=[\"']" + url + "[\"'] ?(?:style=\"[^\"]*\")? ?/?>",
-                         f"""<a href='{url}'><img src='{thumb_s.url}' data-src='{img_l.url}'
-                             srcset='{thumb_s.url} 100w, {thumb_l.url} 200w'
-                             data-srcset='{img_s.url} 640w, {img_l.url} 1440w'
-                             /></a>""", content, re.IGNORECASE)
+                         f"""<a class='thumb' href='{img_l.url}'><picture data-src='{img_l.url}'
+                          data-jpeg='{img_s.url} 640w, {img_l.url} 1440w'
+                          data-webp='{img_WEBP_l.url} 640w, {img_WEBP_s.url} 1440w'>
+                            <source type="image/webp" srcset='{thumb_WEBP_l.url} 200w' />
+                            <source type="image/jpeg" srcset='{thumb_l.url} 200w' />
+                            <img src='{thumb_l.url}'></picture>
+                         </a>""", content, re.IGNORECASE)
     return content
 
 
@@ -35,6 +40,7 @@ def insert_article_links(content):
         slug = re.sub(r"\".*", "", slug)
         article = Article.objects.get(slug=slug)
         thumb = get_thumbnail(article.cover_photo.url, "100x100", crop="center", quality=95)
+        updated = ""
         if article.time_updated > article.time_created:
             updated = f", aktualizace {naturaltime(article.time_updated)}"
         content = re.sub(link_regex, f"""<a class='article-link' href='{article.get_url()}'>
