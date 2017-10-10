@@ -16,7 +16,6 @@ ga("create", "UA-52320835-1", "auto", {
 
 document.addEventListener("DOMContentLoaded", function (event) {
     ga("send", "pageview");
-    Raven.config("https://cd567997671c4ed1a08e6c6ad040b3ce@sentry.helb.cz/3").install();
 
     if (typeof SVGUseElement !== "function") {
         document.querySelector(".site-logo img").style.display = "block";
