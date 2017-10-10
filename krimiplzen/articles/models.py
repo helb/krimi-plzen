@@ -221,8 +221,7 @@ class Article(ModelDiffMixin, models.Model):
             return serialized
 
     def get_cover_thumbnail_url(self):
-        thumb = get_thumbnail("https:" + self.cover_photo.url,
-                              "200x200", crop="center", quality=95)
+        thumb = get_thumbnail(re.sub(r"^//", "https://", self.cover_photo.url),             
         return thumb.url
 
 
@@ -239,7 +238,7 @@ def before_article_save(sender, instance, **kwargs):
     instance.full_clean()
 
 
-@receiver(models.signals.post_save, sender=Article)
-def after_article_save(sender, instance, created, **kwargs):
-    if not settings.DEBUG:
-        task_invalidate_cf.delay(instance.dependent_paths())
+# @receiver(models.signals.post_save, sender=Article)
+# def after_article_save(sender, instance, created, **kwargs):
+#     if not settings.DEBUG:
+#         task_invalidate_cf.delay(instance.dependent_paths())
