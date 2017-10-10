@@ -23,7 +23,7 @@ class LatestArticlesFeed(Feed):
 
     def item_description(self, item):
         return f"""<span class='item-img'>
-                   <img alt='{item.title}' src='{item.get_cover_thumbnail_url()}'/></span>
+                   <img alt='{item.title}' src='https:{item.get_cover_thumbnail_url()}'/></span>
                    <span class='item-text'>{item.intro}</span>"""
 
 
