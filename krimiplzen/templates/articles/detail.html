@@ -23,7 +23,7 @@
     <meta property="og:description" content="{{ article.intro }}" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Krimi Plzeň" />
-    <meta property="og:url" content="www.krimi-plzen.cz/a/{{article.slug}}/" />
+    <meta property="og:url" content="https://www.krimi-plzen.cz/a/{{article.slug}}/" />
     <meta property="og:image" content="{{cover_l.url}}" />
     <meta property="og:thumbnail" content="{{cover_thumb.url}}" />
 {% endthumbnail %}
@@ -139,10 +139,6 @@
                 </p>
                 <div class="horiz-cards-card-image">
                     <picture>
-                        {% thumbnail article.cover_photo "160x160" format="WEBP" crop="center" as im %}
-                            <source srcset="{{ im.url }} 160w" type="image/webp">
-                        {% endthumbnail %}
-
                         {% thumbnail article.cover_photo "160x160" crop="center" as im %}
                             <source srcset="{{ im.url }} 160w" type="image/jpeg">
                             <img src="{{ im.url }}" alt="{{ article.title }}">
