@@ -221,7 +221,7 @@ class Article(ModelDiffMixin, models.Model):
             return serialized
 
     def get_cover_thumbnail_url(self):
-        thumb = get_thumbnail(re.sub(r"^//", "https://", self.cover_photo.url),             
+        thumb = get_thumbnail(re.sub(r"^//", "https://", self.cover_photo.url))
         return thumb.url
 
 
