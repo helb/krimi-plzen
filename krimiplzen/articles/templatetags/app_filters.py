@@ -14,13 +14,13 @@ def insert_photo_thumbs(content):
         r"<img ?(?:style=\"[^\"]*\")? src=[\"']((?:https?:)?//[a-z0-9\-_/:\.]+(?:jpe?g|png|gif))[\"'] ?(?:style=\"[^\"]*\")? ?/?>",
         content, re.IGNORECASE)
     for url in urls:
-        url = re.sub(r"//", "https://", url)
-        thumb_l = get_thumbnail(url, "200x200", crop="center", quality=95)
-        thumb_WEBP_l = get_thumbnail(url, "200x200", crop="center", quality=95, format="WEBP")
-        img_s = get_thumbnail(url, "640", quality=95)
-        img_l = get_thumbnail(url, "1440", quality=95)
-        img_WEBP_s = get_thumbnail(url, "640", quality=95, format="WEBP")
-        img_WEBP_l = get_thumbnail(url, "1440", quality=95, format="WEBP")
+        ssl_url = re.sub(r"//", "https://", url)
+        thumb_l = get_thumbnail(ssl_url, "200x200", crop="center", quality=95)
+        thumb_WEBP_l = get_thumbnail(ssl_url, "200x200", crop="center", quality=95, format="WEBP")
+        img_s = get_thumbnail(ssl_url, "640", quality=95)
+        img_l = get_thumbnail(ssl_url, "1440", quality=95)
+        img_WEBP_s = get_thumbnail(ssl_url, "640", quality=95, format="WEBP")
+        img_WEBP_l = get_thumbnail(ssl_url, "1440", quality=95, format="WEBP")
         content = re.sub("<img ?(?:style=\"[^\"]*\")? src=[\"']" + url + "[\"'] ?(?:style=\"[^\"]*\")? ?/?>",
                          f"""<a class='thumb' href='{img_l.url}'><picture data-src='{img_l.url}'
                           data-jpeg='{img_s.url} 640w, {img_l.url} 1440w'
