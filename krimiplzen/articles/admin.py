@@ -59,7 +59,7 @@ class ArticleAdmin(SummernoteModelAdmin):
     def share_field(self, obj):
         fb_url = "https://www.facebook.com/dialog/share?&href=https%3A%2F%2Fwww.krimi-plzen.cz%2Fa%2F"
         return format_html(f"""<a style='{small_button_style}; background: #0e72da;'
-                               href='/a/{fb_url}{obj.slug}' target='_blank'>f</a>""")
+                               href='{fb_url}{obj.slug}' target='_blank'>f</a>""")
 
     def link_field(self, obj):
         return format_html(f"""<a style='{small_button_style}; background: #7ada0e;'
