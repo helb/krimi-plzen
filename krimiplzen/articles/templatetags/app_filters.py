@@ -14,7 +14,7 @@ def insert_photo_thumbs(content):
         r"<img ?(?:style=\"[^\"]*\")? src=[\"']((?:https?:)?//[a-z0-9\-_/:\.]+(?:jpe?g|png|gif))[\"'] ?(?:style=\"[^\"]*\")? ?/?>",
         content, re.IGNORECASE)
     for url in urls:
-        ssl_url = re.sub(r"//", "https://", url)
+        ssl_url = re.sub(r"^//", "https://", url)
         thumb_l = get_thumbnail(ssl_url, "200x200", crop="center", quality=95)
         thumb_WEBP_l = get_thumbnail(ssl_url, "200x200", crop="center", quality=95, format="WEBP")
         img_s = get_thumbnail(ssl_url, "640", quality=95)
