@@ -54,9 +54,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
             slide.classList.add("gallery-view-images-slide");
             slide.style.width = document.documentElement.clientWidth;
             const pict = document.createElement("picture");
-            data.webp.split(", ").forEach(source => {
-                pict.innerHTML += `<source type="image/webp" data-srcset="${source}">`;
-            });
             data.jpeg.split(", ").forEach(source => {
                 pict.innerHTML += `<source type="image/jpeg" data-srcset="${source}">`;
             });
