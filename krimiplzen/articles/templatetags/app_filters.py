@@ -40,12 +40,13 @@ def insert_article_links(content):
         slug = re.sub(r"<hr data-href=\"", "", link)
         slug = re.sub(r"\".*", "", slug)
         article = Article.objects.get(slug=slug)
-        thumb = get_thumbnail(article.cover_photo.url, "100x100", crop="center", quality=95)
+        thumb = article.get_cover_thumbnail_url()
         updated = ""
         if article.time_updated > article.time_created:
             updated = f", aktualizace {naturaltime(article.time_updated)}"
-        content = re.sub(link_regex, f"""<a class='article-link' href='{article.get_url()}'>
-        <img class='article-link-image' src='{thumb.url}' alt='{article.title}' />
+        link_with_slug = r"<hr data-href=\"" + slug + "\" contenteditable=\"false\" class=\"editor-article-link\">"
+        content = re.sub(link_with_slug, f"""<a class='article-link' href='{article.get_url()}'>
+        <img class='article-link-image' src='{thumb}' alt='{article.title}' />
         <div class='article-link-text'>
         <h3 class='article-link-text-title'>{article.title}</h3>
         <p class='article-link-text-meta'>
