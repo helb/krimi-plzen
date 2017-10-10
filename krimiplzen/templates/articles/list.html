@@ -68,7 +68,7 @@
                 {% endthumbnail %}
 
                 {% thumbnail article.cover_photo "180x180" format="WEBP" crop="center" as im %}
-                    <source srcset="{{ im.url }} 160w" media="(min-width: 960px)" type="image/webp">
+                    <source srcset="{{ im.url }} 180w" media="(min-width: 960px)" type="image/webp">
                 {% endthumbnail %}
 
                 {% thumbnail article.cover_photo "180x180" crop="center" as im %}
