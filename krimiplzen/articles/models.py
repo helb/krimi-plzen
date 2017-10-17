@@ -95,6 +95,7 @@ class Article(ModelDiffMixin, models.Model):
                                verbose_name=_("Author"),
                                null=True,
                                blank=True,
+                               on_delete=models.SET_NULL,
                                editable=False)
 
     author_name = models.CharField(_("Author name"),
@@ -141,6 +142,7 @@ class Article(ModelDiffMixin, models.Model):
     advertiser = models.ForeignKey(Advertiser,
                                    verbose_name=_("Article partner"),
                                    null=True,
+                                   on_delete=models.SET_NULL,
                                    blank=True)
 
     tags = models.ManyToManyField(Tag,
