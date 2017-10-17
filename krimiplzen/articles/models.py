@@ -11,6 +11,7 @@ from adverts.models import Advertiser
 from django.dispatch import receiver
 from .tasks import task_invalidate_cf
 from sorl.thumbnail import get_thumbnail
+import re
 
 slug_date_format = settings.SLUG_DATE_FORMAT
 
