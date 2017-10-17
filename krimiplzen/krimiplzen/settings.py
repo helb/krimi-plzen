@@ -29,32 +29,28 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.humanize",
     "django.contrib.staticfiles",
-    "cachalot",
+    # "cachalot",
     "tags",
     "articles",
     "shelter",
     "adverts",
     "django_summernote",
     "daterange_filter",
-    "raven.contrib.django.raven_compat",
+    # "raven.contrib.django.raven_compat",
     "sorl.thumbnail",
 ]
 
-
-MIDDLEWARE_CLASSES = [
-    "raven.contrib.django.raven_compat.middleware.Sentry404CatchMiddleware",
-    "django.middleware.security.SecurityMiddleware",
-    "django.contrib.sessions.middleware.SessionMiddleware",
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     "django.middleware.cache.UpdateCacheMiddleware",
-    "django.middleware.common.CommonMiddleware",
+    'django.middleware.common.CommonMiddleware',
     "django.middleware.cache.FetchFromCacheMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
-    "django.contrib.auth.middleware.AuthenticationMiddleware",
-    "django.contrib.redirects.middleware.RedirectFallbackMiddleware",
-    "django.contrib.auth.middleware.SessionAuthenticationMiddleware",
-    "django.contrib.messages.middleware.MessageMiddleware",
-    "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "htmlmin.middleware.MarkRequestMiddleware"
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "htmlmin.middleware.MarkRequestMiddleware",
 ]
 
 CACHE_MIDDLEWARE_SECONDS = 60
