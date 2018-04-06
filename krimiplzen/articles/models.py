@@ -243,7 +243,7 @@ def before_article_save(sender, instance, **kwargs):
     instance.full_clean()
 
 
-# @receiver(models.signals.post_save, sender=Article)
-# def after_article_save(sender, instance, created, **kwargs):
-#     if not settings.DEBUG:
-#         task_invalidate_cf.delay(instance.dependent_paths())
+@receiver(models.signals.post_save, sender=Article)
+def after_article_save(sender, instance, created, **kwargs):
+    if not settings.DEBUG:
+        task_invalidate_cf.delay(instance.dependent_paths())
