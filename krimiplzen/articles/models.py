@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from krimiplzen.settings import summernote_upload_to
 from django.utils.translation import ugettext_lazy as _
 from sorl.thumbnail import ImageField
 from django.template.defaultfilters import slugify
@@ -158,7 +159,7 @@ class Article(ModelDiffMixin, models.Model):
                                               blank=True,
                                               verbose_name=_("Related articles"))
 
-    cover_photo = ImageField(_("Cover photo"), blank=True, upload_to="foto/covers/")
+    cover_photo = ImageField(_("Cover photo"), blank=False, upload_to=summernote_upload_to)
 
     def get_url(self):
         return "/a/" + self.slug
