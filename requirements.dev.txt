@@ -6,3 +6,4 @@ sampledata
 django-debug-toolbar
 nplusone
 flake8
+pgcli
