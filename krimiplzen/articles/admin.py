@@ -22,7 +22,7 @@ class ArticleAdmin(SummernoteModelAdmin):
         "tags",
         "stickers"
     )
-    filter_horizontal = ("tags", "stickers", "related_articles")
+    filter_horizontal = ("tags", "stickers")
     save_on_top = True
     search_fields = ["title", "intro"]
     ordering = ("-time_created"),

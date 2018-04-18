@@ -113,6 +113,11 @@ class Article(ModelDiffMixin, models.Model):
     time_created = models.DateTimeField(_("Created at"),
                                         auto_now=False,
                                         auto_now_add=True)
+
+    time_published = models.DateTimeField(_("Created at"),
+                                          editable=False,
+                                          null=True)
+
     status = models.CharField(_("Status"),
                               max_length=1,
                               choices=article_states,
@@ -124,22 +129,8 @@ class Article(ModelDiffMixin, models.Model):
                                           "Inaccessible</b> – can't be opened,"
                                           " links result in 'Page not found'"))
 
-    liveupdates = models.BooleanField(_("Live updates"),
-                                      default=True,
-                                      help_text=_("Automatically push article "
-                                                  "updates to visitors."))
-
     photo_cover = models.BooleanField(_("Photo cover"),
                                       default=False)
-
-    photo_cover_light = models.BooleanField(_("Dark text on a light photo"),
-                                            default=False)
-
-    video_ad = models.BooleanField(_("Allow ad before video"),
-                                   default=True)
-
-    allow_ads = models.BooleanField(_("Show ads"),
-                                    default=True)
 
     advertiser = models.ForeignKey(Advertiser,
                                    verbose_name=_("Article partner"),
@@ -154,10 +145,6 @@ class Article(ModelDiffMixin, models.Model):
     stickers = models.ManyToManyField(Sticker,
                                       blank=True,
                                       verbose_name=_("Stickers"))
-
-    related_articles = models.ManyToManyField("self",
-                                              blank=True,
-                                              verbose_name=_("Related articles"))
 
     cover_photo = ImageField(_("Cover photo"), blank=False, upload_to=summernote_upload_to)
 
@@ -184,7 +171,7 @@ class Article(ModelDiffMixin, models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return "/a/" + self.slug + "/"
+        return f"{settings.BASE_URL}/a/{self.get_url()}/"
 
     def dependent_paths(self):
         outdated_urls = []
@@ -196,9 +183,6 @@ class Article(ModelDiffMixin, models.Model):
             outdated_urls.append("/a/tag/" + tag.slug + "/")
             outdated_urls.append("/rss/" + tag.slug + "/")
         return outdated_urls
-
-    def get_edit_url(self):
-        return "/admin/articles/article/" + self.slug + "/change/"
 
     class Meta:
         verbose_name = _("Article")
@@ -240,6 +224,8 @@ def before_article_save(sender, instance, **kwargs):
             instance.slug = slug
         else:
             instance.slug = slug + datetime.now().strftime(slug_date_format)
+    if not instance.time_published and instance.status is "p":
+        instance.time_published = datetime.now()
     instance.full_clean()
 
 
