@@ -2,7 +2,6 @@ celerybeat*
 node_modules
 venv
 __pycache__
-migrations
 tmp
 *.mo
 *.py[cod]
