@@ -16,13 +16,17 @@ admin.site.site_title = admin.site.site_header
 
 urlpatterns = [
     path("", articles_views.newest_articles, name="newest_articles"),
-    path("a/tag/<slug:tag_slug>/", articles_views.tagged_articles, name="tagged_articles"),
-    path("a/<slug:article_slug>/", articles_views.article_detail, name="article_detail"),
+    path("a/tag/<slug:tag_slug>/",
+         articles_views.tagged_articles, name="tagged_articles"),
+    path("archiv/<int:year>-<int:month>-<int:day>/",
+         articles_views.archive_articles, name="archive_articles"),
+    path("a/<slug:article_slug>/",
+         articles_views.article_detail, name="article_detail"),
     path("summernote/", include("django_summernote.urls")),
     path("admin/", admin.site.urls),
     path("sitemap.xml", sitemap,
-        {"sitemaps": {"articles": GenericSitemap(sitemap_dict)}},
-        name="django.contrib.sitemaps.views.sitemap"),
+         {"sitemaps": {"articles": GenericSitemap(sitemap_dict)}},
+         name="django.contrib.sitemaps.views.sitemap"),
     path("rss/", LatestArticlesFeed()),
     path("rss/today/", TodayArticlesFeed()),
     path("rss/<slug:tag_slug>/", TaggedArticlesFeed())

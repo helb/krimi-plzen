@@ -45,6 +45,10 @@
     {% endif %}
     {% endif %}
 
+    {% if archive_days.current %}
+        <h3>Archiv – {{ archive_days.current|date:'j. E Y' }}</h3>
+    {% endif %}
+
     {% for article in articles %}
     <div class="article-list-card">
         <div class="article-list-card-image">
@@ -154,18 +158,25 @@
         <p>:(</p>
     {% endfor %}
     </div>
-        {% if articles.has_next %}
-            <div class="article-list-pagination">
-            <a name="p"/>
-        {% else %}
-            <div class="article-list-pagination last-page">
-        {% endif %}
+    {% if page or archive_days %}
+    <div class="article-list-pagination">
+        <a name="p"/>
+
         {% if articles.has_previous %}
             <a class="article-list-pagination-link prev" href="?p={{ articles.previous_page_number }}#p">&larr; novější</a>
+        {% endif %}
+
+        {% if archive_days.previous %}
+            <a class="article-list-pagination-link prev" href="/archiv/{{ archive_days.previous|date:'Y-m-d' }}/">&larr; {{ archive_days.previous|date:'j. n. Y' }}</a>
         {% endif %}
 
         {% if articles.has_next %}
             <a class="article-list-pagination-link next" href="?p={{ articles.next_page_number }}">starší &rarr;</a>
         {% endif %}
-</div>
+
+        {% if archive_days.next %}
+            <a class="article-list-pagination-link next" href="/archiv/{{ archive_days.next|date:'Y-m-d' }}/">{{ archive_days.next|date:'j. n. Y' }} &rarr;</a>
+        {% endif %}
+            </div>
+    {% endif %}
 {% endblock %}
