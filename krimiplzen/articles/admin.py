@@ -40,13 +40,9 @@ class ArticleAdmin(SummernoteModelAdmin):
         }),
         (_("Advanced"), {
             "classes": ["collapse"],
-            "fields": ["related_articles",
-                       "photo_cover",
+            "fields": ["photo_cover",
                        "advertiser",
-                       "allow_ads",
-                       "video_ad",
-                       "author_name",
-                       "liveupdates"]
+                       "author_name"]
         }),
     )
 
