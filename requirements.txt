@@ -13,5 +13,6 @@ django-gulp
 python-cloudflare-v4
 django-daterange-filter
 django_summernote
-Pillow
+Pillow==4.1.1
+gevent
 raven

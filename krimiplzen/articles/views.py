@@ -87,7 +87,7 @@ def newest_articles(request):
     except EmptyPage:
         # If page is out of range (e.g. 9999), deliver last page of results.
         articles = paginator.page(paginator.num_pages)
-        title = "Články – strana " + paginator.num_pages
+        title = "Články – strana " + str(paginator.num_pages)
         page = paginator.num_pages
 
     context = dict({
@@ -142,7 +142,7 @@ def tagged_articles(request, tag_slug):
     except EmptyPage:
         # If page is out of range (e.g. 9999), deliver last page of results.
         articles = paginator.page(paginator.num_pages)
-        title = tag_title + " – strana " + paginator.num_pages
+        title = tag_title + " – strana " + str(paginator.num_pages)
     context = dict({
         "articles": articles,
         "title": title,

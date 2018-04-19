@@ -53,9 +53,9 @@ class TaggedArticlesFeed(Feed):
         return item.title
 
     def item_description(self, item):
-        def item_description(self, item):
-            return f"""<img alt='{item.title}' src='{item.get_cover_thumbnail_url()}'/>
-                       <span>{item.intro}</span>"""
+        return f"""<span class='item-img'>
+            <img alt='{item.title}' src='{item.get_cover_thumbnail_url()}'/></span>
+            <span class='item-text'>{item.intro}</span>"""
 
 
 class TodayArticlesFeed(Feed):
@@ -76,6 +76,6 @@ class TodayArticlesFeed(Feed):
         return item.time_updated
 
     def item_description(self, item):
-        def item_description(self, item):
-            return f"""<img alt='{item.title}' src='{item.get_cover_thumbnail_url()}'/>
-                       <span>{item.intro}</span>"""
+        return f"""<span class='item-img'>
+           <img alt='{item.title}' src='{item.get_cover_thumbnail_url()}'/></span>
+           <span class='item-text'>{item.intro}</span>"""

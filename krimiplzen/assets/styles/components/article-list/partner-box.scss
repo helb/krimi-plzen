@@ -24,7 +24,7 @@
             box-shadow: 0 0.1em 0.25em darken($base-bg, 20%);
             display: block;
             object-fit: cover;
-            overflow-y: hidden;
+            overflow: hidden;
             padding-top: 20%; // 5:1
             position: relative;
             width: 100%;

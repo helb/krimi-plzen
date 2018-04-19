@@ -12,8 +12,8 @@
     <div class="sidebar-articles">
         {% for article in sidebar.similar %}
             {% thumbnail article.cover_photo "400x200" crop="center" as cover_s %}
-            {% thumbnail article.cover_photo "600x300" crop="center" as cover_l %}
-            <a href="/a/{{ article.slug }}" class="sidebar-articles-image-card" style="background-image: url('{{cover_s.url}}'); background-image: image-set(url('{{cover_s.url}}') 1x, url('{{cover_l.url}}') 2x); background-image: -webkit-image-set(url('{{cover_s.url}}') 1x, url('{{cover_l.url}}') 2x);">
+            {% thumbnail article.cover_photo "400x200" crop="center" format="WEBP" as cover_webp %}
+            <a href="/a/{{ article.slug }}" class="sidebar-articles-image-card" style="background-image: url('{{cover_s.url}}'); background-image: image-set(url('{{cover_webp.url}}') 1x, url('{{cover_s.url}}') 1x); background-image: -webkit-image-set(url('{{cover_webp.url}}') 1x, url('{{cover_s.url}}') 1x);">
                 {% endthumbnail %}
                 {% endthumbnail %}
                 <div class="sidebar-articles-image-card-text">
@@ -32,6 +32,9 @@
             <a target="_blank" href="{{ animal.link }}" class="sidebar-animals-card">
                 <div class="sidebar-animals-card-image">
                     <picture>
+                        {% thumbnail animal.photo "90x90" crop="center" format="WEBP" as im %}
+                            <source srcset="{{ im.url }} 90w" type="image/webp">
+                        {% endthumbnail %}
                         {% thumbnail animal.photo "90x90" crop="center" as im %}
                             <source srcset="{{ im.url }} 90w" type="image/jpeg">
                             <img src="{{ im.url }}" alt="{{ article.title }}">
@@ -106,6 +109,10 @@
             <a href="/a/{{ article.slug }}" class="sidebar-articles-card">
                 <div class="sidebar-articles-card-image">
                     <picture>
+                         {% thumbnail article.cover_photo "90x90" crop="center" format="WEBP" as im %}
+                           <source srcset="{{ im.url }} 90w" type="image/webp">
+                         {% endthumbnail %}
+
                         {% thumbnail article.cover_photo "90x90" crop="center" as im %}
                             <source srcset="{{ im.url }} 90w" type="image/jpeg">
                             <img src="{{ im.url }}" alt="{{ article.title }}">
@@ -127,6 +134,9 @@
             <a href="/a/{{ article.slug }}" class="sidebar-articles-card">
                 <div class="sidebar-articles-card-image">
                     <picture>
+                        {% thumbnail article.cover_photo "90x90" crop="center" format="WEBP" as im %}
+                          <source srcset="{{ im.url }} 90w" type="image/webp">
+                        {% endthumbnail %}
                         {% thumbnail article.cover_photo "90x90" crop="center" as im %}
                             <source srcset="{{ im.url }} 90w" type="image/jpeg">
                             <img src="{{ im.url }}" alt="{{ article.title }}">
@@ -158,6 +168,9 @@
             <a href="/a/{{ article.slug }}" class="sidebar-articles-card">
                 <div class="sidebar-articles-card-image">
                     <picture>
+                        {% thumbnail article.cover_photo "90x90" crop="center" format="WEBP" as im %}
+                          <source srcset="{{ im.url }} 90w" type="image/webp">
+                        {% endthumbnail %}
                         {% thumbnail article.cover_photo "90x90" crop="center" as im %}
                             <source srcset="{{ im.url }} 90w" type="image/jpeg">
                             <img src="{{ im.url }}" alt="{{ article.title }}">

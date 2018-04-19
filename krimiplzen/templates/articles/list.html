@@ -71,6 +71,14 @@
         {% if article.cover_photo %}
         <a href="/a/{{ article.slug }}/">
             <picture>
+                {% thumbnail article.cover_photo "300x150" crop="center" format="WEBP" as im %}
+                    <source srcset="{{ im.url }} 300w" media="(max-width: 960px)" type="image/webp">
+                {% endthumbnail %}
+
+                {% thumbnail article.cover_photo "180x180" crop="center" format="WEBP" as im %}
+                    <source srcset="{{ im.url }} 180w" media="(min-width: 960px)" type="image/webp">
+                {% endthumbnail %}
+
                 {% thumbnail article.cover_photo "300x150" crop="center" as im %}
                     <source srcset="{{ im.url }} 300w" media="(max-width: 960px)" type="image/jpeg">
                 {% endthumbnail %}
@@ -145,6 +153,9 @@
                         </p>
                         <div class="horiz-cards-card-image">
                             <picture>
+                                {% thumbnail article.cover_photo "90x90" crop="center" format="WEBP" as im %}
+                                    <source srcset="{{ im.url }} 90w" type="image/webp">
+                                {% endthumbnail %}
                                 {% thumbnail article.cover_photo "90x90" crop="center" as im %}
                                     <source srcset="{{ im.url }} 90w" type="image/jpeg">
                                     <img src="{{ im.url }}" alt="{{ article.title }}">

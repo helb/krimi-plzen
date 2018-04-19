@@ -29,6 +29,7 @@
 
             a {
                 object-fit: contain;
+                width: 100%;
                 height: calc(0.5 * (100vw - 2 * #{$spacing}));
             }
         }

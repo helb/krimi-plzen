@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static "css/article-list.css" %}">
     <link rel="stylesheet" href="{% static "css/sidebar.css" %}">
     <link rel="preload" href="{% static "js/base.js" %}" as="script">
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
     <title>{% block title %}{% endblock %} | Krimi Plzeň</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" sizes="180x180" href="{% static "img/favicons/apple-touch-icon.png" %}">
@@ -47,7 +48,6 @@
     </footer>
     {% block foot-css %}
     {% endblock %}
-    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
     <script type="text/javascript" src="{% static "js/base.js" %}" async></script>
     {% block foot-js %}
     {% endblock %}
