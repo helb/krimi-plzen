@@ -45,8 +45,16 @@
     {% endif %}
     {% endif %}
 
+    {% if tag_slug %}
+        <div class="article-list-section-header">
+            <h3>{{title}}</h3>
+        </div>
+    {% endif %}
+
     {% if archive_days.current %}
-        <h3>Archiv – {{ archive_days.current|date:'j. E Y' }}</h3>
+        <div class="article-list-section-header">
+            <h3>Archiv – {{ archive_days.current|date:'j. E Y' }}</h3>
+        </div>
     {% endif %}
 
     {% for article in articles %}

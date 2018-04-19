@@ -7,4 +7,26 @@
     &-partnerbox {
         padding: $spacing;
     }
+
+    &-section-header {
+        margin: #{-2 * $spacing} #{-1 * $content-padding} $spacing;
+        padding: 1em $content-padding;
+        background: darken($base-bg, 5%);
+        display: flex;
+        align-items: center;
+
+        h3 {
+            flex: 1;
+            padding: 0.5rem 0;
+        }
+
+        .article-list-pagination {
+            margin: 0;
+            font-size: 0.9em;
+
+            &-link {
+                padding: 0.5rem 1rem;
+            }
+        }
+    }
 }
