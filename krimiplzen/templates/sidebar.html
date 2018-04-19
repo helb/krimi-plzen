@@ -25,7 +25,7 @@
     </div>
 {% endif %}
 
-{% if sidebar.dogs.all %}
+{% if show.dogs and sidebar.dogs.all %}
     <div class="sidebar-animals">
         <h2>Psi přijatí do útulku</h2>
         {% for animal in sidebar.dogs %}
@@ -53,6 +53,50 @@
     <a href="{{advert.link}}" target="_blank" style="background-image: url('//static2.krimi-plzen.cz/media/{{advert.image_desktop}}');" alt=""></a>
 </div>
 {% endfor %}
+{% endif %}
+
+{% if calendar %}
+    <div class="sidebar-articles sidebar-calendar">
+        <h2>Archiv</h2>
+        <header class="sidebar-calendar-header">
+            {% if calendar.prev %}
+                <a class="sidebar-calendar-button" href="/archiv/{{calendar.prev|date:'Y-m-d'}}/">&larr;</a>
+            {% endif %}
+            <h3 class="sidebar-calendar-month">
+                {% if archive_days %}
+                    {{ archive_days.current|date:'F Y' }}
+                {% else %}
+                    {% now 'F Y' %}
+                {% endif %}
+            </h3>
+            {% if calendar.next %}
+                <a class="sidebar-calendar-button" href="/archiv/{{calendar.next|date:'Y-m-d'}}/">&rarr;</a>
+            {% endif %}
+        </header>
+        <div class="sidebar-calendar-week">
+            <span class="sidebar-calendar-dayname">Po</span>
+            <span class="sidebar-calendar-dayname">Út</span>
+            <span class="sidebar-calendar-dayname">St</span>
+            <span class="sidebar-calendar-dayname">Čt</span>
+            <span class="sidebar-calendar-dayname">Pá</span>
+            <span class="sidebar-calendar-dayname">So</span>
+            <span class="sidebar-calendar-dayname">Ne</span>
+        </div>
+        <div class="sidebar-calendar-days">
+            {% for day in calendar.days %}
+                {% if day.is_past %}
+                    <a class="sidebar-calendar-day{% if forloop.counter == 1 %} day-{{calendar.first_weekday}}{% endif %}"
+                     href="/archiv/{{day.date|date:'Y-m-d'}}/">
+                        {{ day.date|date:'j' }}
+                    </a>
+                {% else %}
+                    <span class="sidebar-calendar-day{% if forloop.counter == 1 %} day-{{calendar.first_weekday}}{% endif %}">
+                        {{ day.date|date:'j' }}
+                    </span>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
 {% endif %}
 
 {% if sidebar.missing.all %}

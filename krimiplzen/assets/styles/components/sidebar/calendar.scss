@@ -1,0 +1,111 @@
+.sidebar-calendar {
+    $daywidth: 100% / 7;
+
+    &-header {
+        display: flex;
+        align-items: center;
+    }
+
+    &-month {
+        flex: 1;
+        text-align: center;
+
+        &:last-child {
+            margin-right: 3em;
+        }
+    }
+
+    &-button {
+        text-align: center;
+        background-color: lighten($base-fg, 85%);
+        text-decoration: none;
+        background-position: center center;
+        background-repeat: no-repeat;
+        font-weight: bold;
+        color: transparent;
+        width: 3em;
+        height: 3em;
+        border: 1px solid lighten($base-fg, 70%);
+        border-radius: 0.15em;
+        user-select: none;
+
+        &:first-child {
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBkPSJNMjYuMDI1IDE0LjQ5NmwtMTQuMjg2LS4wMDEgNi4zNjYtNi4zNjZMMTUuOTc5IDYgNS45NzUgMTYuMDAzIDE1Ljk3MSAyNmwyLjEyOS0yLjEyOS02LjM2Ny02LjM2NmgxNC4yOXoiLz48L3N2Zz4=");
+        }
+
+        &:last-child {
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBkPSJNNS45NzUgMTcuNTA0bDE0LjI4Ny4wMDEtNi4zNjcgNi4zNjZMMTYuMDIxIDI2bDEwLjAwNC0xMC4wMDNMMTYuMDI5IDZsLTIuMTI4IDIuMTI5IDYuMzY3IDYuMzY2SDUuOTc3eiIvPjwvc3ZnPg==");
+        }
+
+        &:focus,
+        &:hover {
+            background-color: lighten($base-fg, 95%);
+        }
+    }
+
+    &-week {
+        display: flex;
+    }
+
+    &-dayname {
+        font-weight: bold;
+        flex: 1;
+        text-align: center;
+        height: 3em;
+        line-height: 3em;
+    }
+
+    &-days {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &-day {
+        width: $daywidth;
+        text-align: center;
+        height: 3em;
+        line-height: 3em;
+        text-decoration: none;
+        color: lighten($base-fg, 50%);
+        background: lighten($base-fg, 75%);
+        border: 0.5px solid lighten($base-fg, 70%);
+
+        &[href] {
+            background: lighten($base-fg, 85%);
+            color: $base-fg;
+
+            &:focus,
+            &:hover {
+                background: lighten($base-fg, 95%);
+            }
+        }
+
+        &.day-mon {
+            margin-left: $daywidth * 0;
+        }
+
+        &.day-tue {
+            margin-left: $daywidth * 1;
+        }
+
+        &.day-wed {
+            margin-left: $daywidth * 2;
+        }
+
+        &.day-thu {
+            margin-left: $daywidth * 3;
+        }
+
+        &.day-fri {
+            margin-left: $daywidth * 4;
+        }
+
+        &.day-sat {
+            margin-left: $daywidth * 5;
+        }
+
+        &.day-sun {
+            margin-left: $daywidth * 6;
+        }
+    }
+}

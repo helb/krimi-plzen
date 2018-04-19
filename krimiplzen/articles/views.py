@@ -7,8 +7,9 @@ from django.shortcuts import render
 from django.http import Http404
 from django.db.models import Count
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 from adverts.models import Advertiser
+import calendar
 
 header = {
     "header": {
@@ -17,6 +18,36 @@ header = {
                            .order_by("-article_count")
     }
 }
+
+
+def get_calendar(d=date.today()):
+    cal = calendar.Calendar()
+    first_of_month = date(d.year, d.month, 1)
+    last_of_month = calendar.monthrange(d.year, d.month)[1]
+    days = []
+    today = date.today()
+
+    def get_next_month():
+        if d.year > today.year:
+            return None
+        if d.year == today.year and d.month >= today.month:
+            return None
+        return date(d.year, d.month, last_of_month) + timedelta(days=1)
+
+    for day in cal.itermonthdays(d.year, d.month):
+        if day > 0:
+            ds = date(d.year, d.month, day)
+            days.append({
+                "date": ds,
+                "is_past": ds <= today
+            })
+    return {
+        "days": days,
+        "first_weekday": first_of_month.strftime("%a").lower(),
+        "prev": first_of_month - timedelta(days=1),
+        "next": get_next_month()
+    }
+
 
 sidebar = {
     "sidebar": {
@@ -60,6 +91,9 @@ def newest_articles(request):
         page = paginator.num_pages
 
     context = dict({
+        "show": {
+            "dogs": True
+        },
         "articles": articles,
         "year_ago": Article.objects.filter(time_created__gte=datetime.now() - timedelta(days=368))
         .filter(time_created__lte=datetime.now() - timedelta(days=363))
@@ -68,6 +102,7 @@ def newest_articles(request):
         "partners": Advertiser.objects.filter(display_on_frontpage=True),
         "title": title,
         "page": page,
+        "calendar": get_calendar(),
         "adverts": {
             "article_list_partner_box_middle": Advert.objects
                                                      .filter(position__slug="article-list-partner-box-middle")
@@ -111,6 +146,7 @@ def tagged_articles(request, tag_slug):
         "articles": articles,
         "title": title,
         "tag_slug": tag_slug,
+        "calendar": get_calendar(),
         "adverts": {
             "article_list_partner_box_middle": Advert.objects
                                                      .filter(position__slug="article-list-partner-box-middle")
@@ -134,6 +170,7 @@ def article_detail(request, article_slug):
         article = Article.objects.get(pk=article_slug, status__in=["p", "a"])
         context = dict({
             "article": article,
+            "calendar": get_calendar(),
             "similar": Article.objects.filter(time_created__gte=datetime.now() - timedelta(days=30))
             .filter(status="p")
             .exclude(pk=article_slug)
@@ -159,19 +196,31 @@ def article_detail(request, article_slug):
 
 
 def archive_articles(request, year, month, day):
+    try:
+        ds = date(year, month, day)
+    except ValueError:
+        raise Http404("No archived articles from the future.")
+
+    def get_next_day():
+        if ds >= date.today():
+            return None
+        else:
+            return ds + timedelta(days=+1)
+
     articles = Article.objects.filter(status="p",
                                       time_published__year=year,
                                       time_published__month=month,
                                       time_published__day=day)
+
     title = f"Archiv {day}. {month}. {year}"
 
     context = dict({
         "articles": articles,
         "title": title,
         "archive_days": {
-            "current": datetime(year, month, day),
-            "previous": datetime(year, month, day) + timedelta(days=-1),
-            "next": datetime(year, month, day) + timedelta(days=+1)
+            "current": ds,
+            "previous": ds + timedelta(days=-1),
+            "next": get_next_day()
         },
         "adverts": {
             "article_list_partner_box_middle": Advert.objects
@@ -186,6 +235,7 @@ def archive_articles(request, year, month, day):
                                          .order_by("?")[:1],
             "sidebar_bottom": Advert.objects.filter(position__slug="sidebar-bottom")
                                          .order_by("?")[:1],
-        }
+        },
+        "calendar": get_calendar(date(year, month, day))
     }, **sidebar, **header)
     return render(request, "articles/list.html", context)

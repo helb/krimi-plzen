@@ -155,11 +155,11 @@
     {% endif %}
 
     {% empty %}
-        <p>:(</p>
+        <p>Nebyly nalezeny žádné články. <a href="/">Hlavní strana &rarr;</a></p>
     {% endfor %}
     </div>
     {% if page or archive_days %}
-    <div class="article-list-pagination">
+    <div class="article-list-pagination{% if not archive_days.next and archive_days %} last-page{% endif %}">
         <a name="p"/>
 
         {% if articles.has_previous %}
