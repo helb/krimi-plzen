@@ -8,7 +8,7 @@
 {% endfor %}
 {% endif %}
 
-{% if sidebar.similar.all %}
+{% if show.similar and sidebar.similar.all %}
     <div class="sidebar-articles">
         {% for article in sidebar.similar %}
             {% thumbnail article.cover_photo "400x200" crop="center" as cover_s %}

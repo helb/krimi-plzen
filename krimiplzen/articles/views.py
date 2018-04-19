@@ -144,6 +144,9 @@ def tagged_articles(request, tag_slug):
         articles = paginator.page(paginator.num_pages)
         title = tag_title + " – strana " + str(paginator.num_pages)
     context = dict({
+        "show": {
+            "similar": True
+        },
         "articles": articles,
         "title": title,
         "tag_slug": tag_slug,
@@ -171,6 +174,9 @@ def article_detail(request, article_slug):
     try:
         article = Article.objects.get(pk=article_slug, status__in=["p", "a"])
         context = dict({
+            "show": {
+                "similar": True
+            },
             "article": article,
             "calendar": get_calendar(),
             "similar": Article.objects.filter(time_created__gte=datetime.now() - timedelta(days=30))
@@ -217,6 +223,9 @@ def archive_articles(request, year, month, day):
     title = f"Archiv {day}. {month}. {year}"
 
     context = dict({
+        "show": {
+            "similar": True
+        },
         "articles": articles,
         "title": title,
         "archive_days": {
