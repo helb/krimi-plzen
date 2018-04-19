@@ -95,10 +95,10 @@ def newest_articles(request):
             "dogs": True
         },
         "articles": articles,
-        "year_ago": Article.objects.filter(time_created__gte=datetime.now() - timedelta(days=368))
-        .filter(time_created__lte=datetime.now() - timedelta(days=363))
-        .filter(status="p")
-        .order_by("?")[:5],
+        # "year_ago": Article.objects.filter(time_created__gte=datetime.now() - timedelta(days=368))
+        # .filter(time_created__lte=datetime.now() - timedelta(days=363))
+        # .filter(status="p")
+        # .order_by("?")[:5],
         "partners": Advertiser.objects.filter(display_on_frontpage=True),
         "title": title,
         "page": page,
@@ -138,6 +138,7 @@ def tagged_articles(request, tag_slug):
         # If page is not an integer, deliver first page.
         articles = paginator.page(1)
         title = tag_title
+        page = 1
     except EmptyPage:
         # If page is out of range (e.g. 9999), deliver last page of results.
         articles = paginator.page(paginator.num_pages)
@@ -147,6 +148,7 @@ def tagged_articles(request, tag_slug):
         "title": title,
         "tag_slug": tag_slug,
         "calendar": get_calendar(),
+        "page": page,
         "adverts": {
             "article_list_partner_box_middle": Advert.objects
                                                      .filter(position__slug="article-list-partner-box-middle")
