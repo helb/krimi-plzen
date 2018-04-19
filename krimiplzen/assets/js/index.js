@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function (event) {
-    [9 / 1949]
     const partnerSliderInner = document.querySelector(".article-list-partner-slider-inner");
+    if (!partnerSliderInner) {
+        return false;
+    }
     const partnerSliderControls = document.querySelector(".article-list-partner-slider-controls");
     const partnerCount = partnerSliderInner.children.length;
     const slidePartners = function (position) {
@@ -32,13 +34,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         Array.from(partnerSliderControls.children).forEach((item, index) => {
             item.dataset.position = index;
-            item.addEventListener("click", function(event) {
+            item.addEventListener("click", function (event) {
                 clearInterval(slideTimer);
                 event.stopPropagation();
                 slidePartners(parseInt(event.target.parentNode.dataset.position));
             });
         });
-    }
+    };
 
     if (partnerSliderInner) {
         startSlider();

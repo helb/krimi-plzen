@@ -1,9 +1,9 @@
-(function() {
+(() =>{
     if (typeof NodeList.prototype.forEach === "function") return false;
     NodeList.prototype.forEach = Array.prototype.forEach;
 })();
 
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function () {
     if (typeof SVGUseElement !== "function") {
         document.querySelector(".site-logo img").style.display = "block";
     }
@@ -11,18 +11,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
     const pageEl = document.querySelector(".page");
     const navEl = document.querySelector(".main-nav");
 
-    document.querySelector(".sidebar-toggle").addEventListener("click", () => {
+    document.querySelector(".sidebar-toggle").addEventListener("click", function () {
         pageEl.classList.toggle("shifted");
         if (navEl.classList.contains("opened")) {
             navEl.classList.remove("opened");
         }
     });
 
-    document.querySelector(".main-nav-toggle").addEventListener("click", () => {
+    document.querySelector(".main-nav-toggle").addEventListener("click", function () {
         navEl.classList.toggle("opened");
     });
 
-    setTimeout(() => {
+    setTimeout(function () {
         document
             .querySelectorAll(
                 "a[href]:not([href*='krimi-plzen.cz']):not([href^='/']):not([href^='#']):not([href^='?'])"

@@ -5,7 +5,7 @@
     color: $base-fg;
     display: flex;
     height: 8em;
-    margin: $spacing * 2 auto $spacing * 2;
+    margin: $spacing * 2 $content-padding;
     text-decoration: none;
 
     &::before {
