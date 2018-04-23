@@ -171,7 +171,8 @@ class Article(ModelDiffMixin, models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return f"{settings.BASE_URL}/a/{self.get_url()}/"
+        base_url_noslash = re.sub(r"/$", "", settings.BASE_URL)
+        return f"{base_url_noslash}{self.get_url()}/"
 
     def dependent_paths(self):
         outdated_urls = []
