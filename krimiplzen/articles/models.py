@@ -233,4 +233,5 @@ def before_article_save(sender, instance, **kwargs):
 @receiver(models.signals.post_save, sender=Article)
 def after_article_save(sender, instance, created, **kwargs):
     if not settings.DEBUG:
-        task_invalidate_cf.delay(instance.dependent_paths())
+        pass
+        # task_invalidate_cf.delay(instance.dependent_paths())

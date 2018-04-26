@@ -39,7 +39,7 @@ def get_calendar(d=date.today()):
             ds = date(d.year, d.month, day)
             days.append({
                 "date": ds,
-                "is_past": ds <= today
+                "is_past": ds < today
             })
     return {
         "days": days,

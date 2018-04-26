@@ -1,9 +1,7 @@
-(() =>{
-    if (typeof NodeList.prototype.forEach === "function") return false;
-    NodeList.prototype.forEach = Array.prototype.forEach;
-})();
-
 document.addEventListener("DOMContentLoaded", function () {
+    NodeList.prototype.forEach = Array.prototype.forEach;
+    HTMLCollection.prototype.forEach = Array.prototype.forEach;
+
     if (typeof SVGUseElement !== "function") {
         document.querySelector(".site-logo img").style.display = "block";
     }
