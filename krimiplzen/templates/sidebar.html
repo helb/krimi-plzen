@@ -59,11 +59,11 @@
 {% endif %}
 
 {% if calendar %}
-    <div class="sidebar-articles sidebar-calendar">
+    <div id="cal" class="sidebar-articles sidebar-calendar">
         <h2>Archiv</h2>
         <header class="sidebar-calendar-header">
             {% if calendar.prev %}
-                <a class="sidebar-calendar-button" href="/archiv/{{calendar.prev|date:'Y-m-d'}}/">&larr;</a>
+                <a class="sidebar-calendar-button" href="/archiv/{{calendar.prev|date:'Y-m-d'}}/#cal">&larr;</a>
             {% endif %}
             <h3 class="sidebar-calendar-month">
                 {% if archive_days %}
@@ -73,7 +73,7 @@
                 {% endif %}
             </h3>
             {% if calendar.next %}
-                <a class="sidebar-calendar-button" href="/archiv/{{calendar.next|date:'Y-m-d'}}/">&rarr;</a>
+                <a class="sidebar-calendar-button" href="/archiv/{{calendar.next|date:'Y-m-d'}}//#cal">&rarr;</a>
             {% endif %}
         </header>
         <div class="sidebar-calendar-week">
@@ -89,7 +89,7 @@
             {% for day in calendar.days %}
                 {% if day.is_past %}
                     <a class="sidebar-calendar-day{% if forloop.counter == 1 %} day-{{calendar.first_weekday}}{% endif %}"
-                     href="/archiv/{{day.date|date:'Y-m-d'}}/">
+                     href="/archiv/{{day.date|date:'Y-m-d'}}//#cal">
                         {{ day.date|date:'j' }}
                     </a>
                 {% else %}
