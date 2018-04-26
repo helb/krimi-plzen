@@ -178,9 +178,7 @@
     {% endfor %}
     </div>
     {% if page or archive_days %}
-    <div class="article-list-pagination{% if not archive_days.next and archive_days %} last-page{% endif %}">
-        <a name="p"/>
-
+    <div class="article-list-pagination{% if not archive_days.next and archive_days %} last-page{% endif %}" id="p">
         {% if articles.has_previous %}
             <a class="article-list-pagination-link prev" href="?p={{ articles.previous_page_number }}#p">&larr; novější</a>
         {% endif %}
